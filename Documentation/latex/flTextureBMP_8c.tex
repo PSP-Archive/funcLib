@@ -1,0 +1,309 @@
+\section{fl\-Texture\-BMP.c File Reference}
+\label{flTextureBMP_8c}\index{flTextureBMP.c@{flTextureBMP.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include \char`\"{}fl\-Texture\-BMPWin\-Pal.c\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf bmp\-Header}
+\item 
+struct {\bf bmp\-Info\-Header\-Generic}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-RGB}~0
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-RLE8}~1
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-RLE4}~2
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-BITFIELDS}~3
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-JPEG}~4
+\item 
+\#define {\bf BMP\_\-WIN\_\-COMPRESSION\_\-PNG}~5
+\item 
+\#define {\bf BMP\_\-OS2\_\-COMPRESSION\_\-NONE}~0
+\item 
+\#define {\bf BMP\_\-OS2\_\-COMPRESSION\_\-RLE8}~1
+\item 
+\#define {\bf BMP\_\-OS2\_\-COMPRESSION\_\-RLE4}~2
+\item 
+\#define {\bf BMP\_\-OS2\_\-COMPRESSION\_\-HUFF1D}~3
+\item 
+\#define {\bf BMP\_\-OS2\_\-COMPRESSION\_\-RLE24}~4
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-RGB}~0
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-RLE4}~1
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-RLE8}~2
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-HUFF1D}~3
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-RLE24}~4
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-BITFIELDS}~5
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-JPEG}~6
+\item 
+\#define {\bf BMP\_\-GEN\_\-COMPRESSION\_\-PNG}~7
+\item 
+\#define {\bf BMP\_\-HEADER\_\-OS2V1}~12
+\item 
+\#define {\bf BMP\_\-HEADER\_\-OS2V2}~64
+\item 
+\#define {\bf BMP\_\-HEADER\_\-WV1}~10
+\item 
+\#define {\bf BMP\_\-HEADER\_\-WV2}~12
+\item 
+\#define {\bf BMP\_\-HEADER\_\-WV3}~40
+\item 
+\#define {\bf BMP\_\-HEADER\_\-WV4}~108
+\item 
+\#define {\bf BMP\_\-HEADER\_\-WV5}~124
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Load\-BMP} (char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Loads a bitmap image into a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\item 
+{\bf bool} {\bf tex\-Save\-BMP} ({\bf Texture} $\ast$in\-Tex, char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Saves a bitmap image from a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_BITFIELDS@{BMP\_\-GEN\_\-COMPRESSION\_\-BITFIELDS}}
+\index{BMP_GEN_COMPRESSION_BITFIELDS@{BMP\_\-GEN\_\-COMPRESSION\_\-BITFIELDS}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-BITFIELDS~5}\label{flTextureBMP_8c_dfcf7c99f223fc51f6bcce43de32f87b}
+
+
+
+
+Definition at line 193 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_HUFF1D@{BMP\_\-GEN\_\-COMPRESSION\_\-HUFF1D}}
+\index{BMP_GEN_COMPRESSION_HUFF1D@{BMP\_\-GEN\_\-COMPRESSION\_\-HUFF1D}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-HUFF1D~3}\label{flTextureBMP_8c_61f4f766db6fd57ba155b67fd806d631}
+
+
+
+
+Definition at line 191 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_JPEG@{BMP\_\-GEN\_\-COMPRESSION\_\-JPEG}}
+\index{BMP_GEN_COMPRESSION_JPEG@{BMP\_\-GEN\_\-COMPRESSION\_\-JPEG}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-JPEG~6}\label{flTextureBMP_8c_b41a57f0757d757e9462956081f77bd6}
+
+
+
+
+Definition at line 194 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_PNG@{BMP\_\-GEN\_\-COMPRESSION\_\-PNG}}
+\index{BMP_GEN_COMPRESSION_PNG@{BMP\_\-GEN\_\-COMPRESSION\_\-PNG}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-PNG~7}\label{flTextureBMP_8c_999b1757a7dac91b05c94e94e318f687}
+
+
+
+
+Definition at line 195 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_RGB@{BMP\_\-GEN\_\-COMPRESSION\_\-RGB}}
+\index{BMP_GEN_COMPRESSION_RGB@{BMP\_\-GEN\_\-COMPRESSION\_\-RGB}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-RGB~0}\label{flTextureBMP_8c_2ac2193b5ae675bacd3ee77b1b93612e}
+
+
+
+
+Definition at line 188 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_RLE24@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE24}}
+\index{BMP_GEN_COMPRESSION_RLE24@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE24}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-RLE24~4}\label{flTextureBMP_8c_2a1d0c3de44074073fae114b7d9efc5c}
+
+
+
+
+Definition at line 192 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_RLE4@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE4}}
+\index{BMP_GEN_COMPRESSION_RLE4@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE4}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-RLE4~1}\label{flTextureBMP_8c_6abfb4392e5d851dd5d2ce61b0a343af}
+
+
+
+
+Definition at line 189 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_GEN_COMPRESSION_RLE8@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE8}}
+\index{BMP_GEN_COMPRESSION_RLE8@{BMP\_\-GEN\_\-COMPRESSION\_\-RLE8}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-GEN\_\-COMPRESSION\_\-RLE8~2}\label{flTextureBMP_8c_b1bd62805e6a8ded1152ea296a3aa156}
+
+
+
+
+Definition at line 190 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_OS2V1@{BMP\_\-HEADER\_\-OS2V1}}
+\index{BMP_HEADER_OS2V1@{BMP\_\-HEADER\_\-OS2V1}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-OS2V1~12}\label{flTextureBMP_8c_a39e4c8377a2f0100389aa5c4fa05eec}
+
+
+
+
+Definition at line 197 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_OS2V2@{BMP\_\-HEADER\_\-OS2V2}}
+\index{BMP_HEADER_OS2V2@{BMP\_\-HEADER\_\-OS2V2}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-OS2V2~64}\label{flTextureBMP_8c_64d5709f4dba10166f4638821dec2784}
+
+
+
+
+Definition at line 198 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_WV1@{BMP\_\-HEADER\_\-WV1}}
+\index{BMP_HEADER_WV1@{BMP\_\-HEADER\_\-WV1}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-WV1~10}\label{flTextureBMP_8c_ec9bac08aead9e2d76557d73efc2008d}
+
+
+
+
+Definition at line 199 of file fl\-Texture\-BMP.c.
+
+Referenced by tex\-Load\-BMP().\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_WV2@{BMP\_\-HEADER\_\-WV2}}
+\index{BMP_HEADER_WV2@{BMP\_\-HEADER\_\-WV2}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-WV2~12}\label{flTextureBMP_8c_4b558f59eee6ae3d71f5cf27f9913ba0}
+
+
+
+
+Definition at line 200 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_WV3@{BMP\_\-HEADER\_\-WV3}}
+\index{BMP_HEADER_WV3@{BMP\_\-HEADER\_\-WV3}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-WV3~40}\label{flTextureBMP_8c_5304293834baaf6b981122173b0e6285}
+
+
+
+
+Definition at line 201 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_WV4@{BMP\_\-HEADER\_\-WV4}}
+\index{BMP_HEADER_WV4@{BMP\_\-HEADER\_\-WV4}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-WV4~108}\label{flTextureBMP_8c_071439c9549f5c0b51e826f128426334}
+
+
+
+
+Definition at line 202 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_HEADER_WV5@{BMP\_\-HEADER\_\-WV5}}
+\index{BMP_HEADER_WV5@{BMP\_\-HEADER\_\-WV5}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-HEADER\_\-WV5~124}\label{flTextureBMP_8c_c09a54e1ec8e0ec591afdddf525c87ee}
+
+
+
+
+Definition at line 203 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_OS2_COMPRESSION_HUFF1D@{BMP\_\-OS2\_\-COMPRESSION\_\-HUFF1D}}
+\index{BMP_OS2_COMPRESSION_HUFF1D@{BMP\_\-OS2\_\-COMPRESSION\_\-HUFF1D}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-OS2\_\-COMPRESSION\_\-HUFF1D~3}\label{flTextureBMP_8c_cab1536f1037c4ae29f786f685b5ac4a}
+
+
+
+
+Definition at line 185 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_OS2_COMPRESSION_NONE@{BMP\_\-OS2\_\-COMPRESSION\_\-NONE}}
+\index{BMP_OS2_COMPRESSION_NONE@{BMP\_\-OS2\_\-COMPRESSION\_\-NONE}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-OS2\_\-COMPRESSION\_\-NONE~0}\label{flTextureBMP_8c_55fddb926f16a159f1793b1fbd8880d0}
+
+
+
+
+Definition at line 182 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_OS2_COMPRESSION_RLE24@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE24}}
+\index{BMP_OS2_COMPRESSION_RLE24@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE24}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-OS2\_\-COMPRESSION\_\-RLE24~4}\label{flTextureBMP_8c_f00fe091c2010fb60c823e1040b4e99f}
+
+
+
+
+Definition at line 186 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_OS2_COMPRESSION_RLE4@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE4}}
+\index{BMP_OS2_COMPRESSION_RLE4@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE4}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-OS2\_\-COMPRESSION\_\-RLE4~2}\label{flTextureBMP_8c_24344ea5c649f72a0f66aeb1a8640dc7}
+
+
+
+
+Definition at line 184 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_OS2_COMPRESSION_RLE8@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE8}}
+\index{BMP_OS2_COMPRESSION_RLE8@{BMP\_\-OS2\_\-COMPRESSION\_\-RLE8}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-OS2\_\-COMPRESSION\_\-RLE8~1}\label{flTextureBMP_8c_61f550095acac8af01cfea23ceeb4e51}
+
+
+
+
+Definition at line 183 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_BITFIELDS@{BMP\_\-WIN\_\-COMPRESSION\_\-BITFIELDS}}
+\index{BMP_WIN_COMPRESSION_BITFIELDS@{BMP\_\-WIN\_\-COMPRESSION\_\-BITFIELDS}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-BITFIELDS~3}\label{flTextureBMP_8c_fef6f4b03cb1ced8da07762aa5e62836}
+
+
+
+
+Definition at line 178 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_JPEG@{BMP\_\-WIN\_\-COMPRESSION\_\-JPEG}}
+\index{BMP_WIN_COMPRESSION_JPEG@{BMP\_\-WIN\_\-COMPRESSION\_\-JPEG}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-JPEG~4}\label{flTextureBMP_8c_403a046aca609a59d3e9f63e1c22b03b}
+
+
+
+
+Definition at line 179 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_PNG@{BMP\_\-WIN\_\-COMPRESSION\_\-PNG}}
+\index{BMP_WIN_COMPRESSION_PNG@{BMP\_\-WIN\_\-COMPRESSION\_\-PNG}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-PNG~5}\label{flTextureBMP_8c_6f0e5e6dea057b0e4aab0ad4ddb6c0e9}
+
+
+
+
+Definition at line 180 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_RGB@{BMP\_\-WIN\_\-COMPRESSION\_\-RGB}}
+\index{BMP_WIN_COMPRESSION_RGB@{BMP\_\-WIN\_\-COMPRESSION\_\-RGB}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-RGB~0}\label{flTextureBMP_8c_155fd8bbe439b219447e4024fe9373fd}
+
+
+
+
+Definition at line 175 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_RLE4@{BMP\_\-WIN\_\-COMPRESSION\_\-RLE4}}
+\index{BMP_WIN_COMPRESSION_RLE4@{BMP\_\-WIN\_\-COMPRESSION\_\-RLE4}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-RLE4~2}\label{flTextureBMP_8c_d3a6abe69c361da176439491750064d5}
+
+
+
+
+Definition at line 177 of file fl\-Texture\-BMP.c.\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!BMP_WIN_COMPRESSION_RLE8@{BMP\_\-WIN\_\-COMPRESSION\_\-RLE8}}
+\index{BMP_WIN_COMPRESSION_RLE8@{BMP\_\-WIN\_\-COMPRESSION\_\-RLE8}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define BMP\_\-WIN\_\-COMPRESSION\_\-RLE8~1}\label{flTextureBMP_8c_283ea0ec4f0b368584b1c30a6d6ea453}
+
+
+
+
+Definition at line 176 of file fl\-Texture\-BMP.c.
+
+\subsection{Function Documentation}
+\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!texLoadBMP@{texLoadBMP}}
+\index{texLoadBMP@{texLoadBMP}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Load\-BMP (char $\ast$ {\em in\-Path})}\label{flTextureBMP_8c_2f420e1ef597a67e6686e560b2609b89}
+
+
+Loads a bitmap image into a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Path}]Path to the bitmap image in memory or file. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the texture struct created to hold the bmp, or NULL on failure. \end{Desc}
+
+
+Definition at line 206 of file fl\-Texture\-BMP.c.
+
+References BMP\_\-HEADER\_\-WV1, bmp\-Info\-Header\-Generic::bmp\-Alpha\-Mask, bmp\-Info\-Header\-Generic::bmp\-Blue\-Mask, bmp\-Info\-Header\-Generic::bmp\-BPP, bmp\-Info\-Header\-Generic::bmp\-Byte\-Width, bmp\-Info\-Header\-Generic::bmp\-Color\-Encoding, bmp\-Info\-Header\-Generic::bmp\-Colors\-Important, bmp\-Info\-Header\-Generic::bmp\-Colors\-Used, bmp\-Info\-Header\-Generic::bmp\-Compression, bmp\-Info\-Header\-Generic::bmp\-CSType, bmp\-Header::bmp\-Data\-Offset, bmp\-Info\-Header\-Generic::bmp\-Endpoints, bmp\-Header::bmp\-File\-Size, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Blue, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Green, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Red, bmp\-Info\-Header\-Generic::bmp\-Green\-Mask, bmp\-Info\-Header\-Generic::bmp\-Height, bmp\-Info\-Header\-Generic::bmp\-Identifier, bmp\-Info\-Header\-Generic::bmp\-Image\-Size, bmp\-Info\-Header\-Generic::bmp\-Intent, bmp\-Info\-Header\-Generic::bmp\-Planes, bmp\-Info\-Header\-Generic::bmp\-Profile\-Data, bmp\-Info\-Header\-Generic::bmp\-Profile\-Size, bmp\-Info\-Header\-Generic::bmp\-Recording, bmp\-Info\-Header\-Generic::bmp\-Red\-Mask, bmp\-Info\-Header\-Generic::bmp\-Rendering, bmp\-Header::bmp\-Reserved, bmp\-Info\-Header\-Generic::bmp\-Reserved, bmp\-Header::bmp\-Signature, bmp\-Info\-Header\-Generic::bmp\-Size, bmp\-Info\-Header\-Generic::bmp\-Size1, bmp\-Info\-Header\-Generic::bmp\-Size2, bmp\-Info\-Header\-Generic::bmp\-Type, bmp\-Info\-Header\-Generic::bmp\-Units, bmp\-Info\-Header\-Generic::bmp\-Width, bmp\-Info\-Header\-Generic::bmp\-XResolution, bmp\-Info\-Header\-Generic::bmp\-YResolution, debug\-Error, debug\-Warning, FILE\_\-MODE\_\-BINARY, FILE\_\-MODE\_\-READ, file\-Close(), file\-Open(), file\-Read(), and NULL.
+
+Referenced by tex\-Load().\index{flTextureBMP.c@{fl\-Texture\-BMP.c}!texSaveBMP@{texSaveBMP}}
+\index{texSaveBMP@{texSaveBMP}!flTextureBMP.c@{fl\-Texture\-BMP.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Save\-BMP ({\bf Texture} $\ast$ {\em in\-Tex}, char $\ast$ {\em in\-Path})}\label{flTextureBMP_8c_4d61259e31bfe870c7b2b621e3d50092}
+
+
+Saves a bitmap image from a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Tex}]The texture to save as a bmp. \item[{\em in\-Path}]Path to the file to which the bitmap image will be written. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Whether the bitmap was saved successfully or not. \end{Desc}
+\begin{Desc}
+\item[Warning:]This will always return false an log an error as it is not yet implemented. \end{Desc}
+
+
+Definition at line 859 of file fl\-Texture\-BMP.c.
+
+References debug\-Warning.
+
+Referenced by tex\-Save().

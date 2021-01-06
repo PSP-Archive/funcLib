@@ -1,0 +1,14 @@
+[30/08/2007 - 02:29:19] [STATUS] ../funcLib/funcLib.c:flInitialize(@30)> FuncLib Initializing.
+[30/08/2007 - 02:29:19] [STATUS] ../funcLib/funcLib.c:flInitialize(@37)> Callbacks Initialized.
+[30/08/2007 - 02:29:19] [STATUS] ../funcLib/funcLib.c:flInitialize(@44)> Math Initialized.
+[30/08/2007 - 02:29:19] [STATUS] ../funcLib/funcLib.c:flInitialize(@51)> Memory Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@59)> Graphics Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@66)> Texture Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@73)> Input Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@80)> Font Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@87)> Model Initialized.
+[30/08/2007 - 02:29:20] [STATUS] ../funcLib/funcLib.c:flInitialize(@99)> FuncLib Initialized.
+[30/08/2007 - 02:33:17] [STATUS] ../funcLib/funcLib.c:flTerminate(@105)> FuncLib Terminating.
+[30/08/2007 - 02:33:17] [STATUS] ../funcLib/flMemory.c:memTerm(@80)> Restoring scratchpad.
+[30/08/2007 - 02:33:17] [STATUS] ../funcLib/flMemory.c:memTerm(@95)> Memory terminated.
+[30/08/2007 - 02:33:17] [STATUS] ../funcLib/funcLib.c:flTerminate(@113)> FuncLib Terminated.

@@ -1,0 +1,52 @@
+\section{fl\-Model\-OBJ.c File Reference}
+\label{flModelOBJ_8c}\index{flModelOBJ.c@{flModelOBJ.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf bool} {\bf mdl3d\-Stat\-Load\-OBJ\_\-face\-Read} (u8 $\ast$in\-Face\-Str, {\bf Model3d\-Static\-Face} $\ast$in\-Face\-Ptr, {\bf Model3d\-Static} $\ast$in\-Model, {\bf Texture} $\ast$in\-Cur\-Texture, int in\-Vert\-Ptr, int in\-Tex\-Vert\-Ptr, int in\-Norm\-Ptr)
+\item 
+{\bf Model3d\-Static} $\ast$ {\bf mdl3d\-Stat\-Load\-OBJ} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf mdl3d\-Stat\-Save\-OBJ} (char $\ast$in\-Path, {\bf Model3d\-Static} $\ast$in\-Model)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flModelOBJ.c@{fl\-Model\-OBJ.c}!mdl3dStatLoadOBJ@{mdl3dStatLoadOBJ}}
+\index{mdl3dStatLoadOBJ@{mdl3dStatLoadOBJ}!flModelOBJ.c@{fl\-Model\-OBJ.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Model3d\-Static}$\ast$ mdl3d\-Stat\-Load\-OBJ (char $\ast$ {\em in\-Path})}\label{flModelOBJ_8c_da03a66f7027e134ce6d14f0f73149d5}
+
+
+
+
+Definition at line 136 of file fl\-Model\-OBJ.c.
+
+References ASCII\_\-TAB, debug\-Warning, FILE\_\-MODE\_\-READ, FILE\_\-SEEK\_\-SET, file\-Close(), file\-Exists(), file\-Gets(), file\-Open(), file\-Seek(), mdl3d\-Stat\-Free(), mdl3d\-Stat\-Load\-OBJ\_\-face\-Read(), Model3d\-Static::mdl\-Face\-Count, Model3d\-Static::mdl\-Faces, Model3d\-Static::mdl\-Normal\-Count, Model3d\-Static::mdl\-Normals, Model3d\-Static::mdl\-Optimized, Model3d\-Static::mdl\-Texture\-Count, Model3d\-Static::mdl\-Textures, Model3d\-Static::mdl\-Tex\-Vert\-Count, Model3d\-Static::mdl\-Tex\-Verts, Model3d\-Static::mdl\-Vert\-Count, Model3d\-Static::mdl\-Verts, mem\-Alloc, NULL, and tex\-Load().
+
+Referenced by mdl3d\-Stat\-Load().\index{flModelOBJ.c@{fl\-Model\-OBJ.c}!mdl3dStatLoadOBJ_faceRead@{mdl3dStatLoadOBJ\_\-faceRead}}
+\index{mdl3dStatLoadOBJ_faceRead@{mdl3dStatLoadOBJ\_\-faceRead}!flModelOBJ.c@{fl\-Model\-OBJ.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mdl3d\-Stat\-Load\-OBJ\_\-face\-Read (u8 $\ast$ {\em in\-Face\-Str}, {\bf Model3d\-Static\-Face} $\ast$ {\em in\-Face\-Ptr}, {\bf Model3d\-Static} $\ast$ {\em in\-Model}, {\bf Texture} $\ast$ {\em in\-Cur\-Texture}, int {\em in\-Vert\-Ptr}, int {\em in\-Tex\-Vert\-Ptr}, int {\em in\-Norm\-Ptr})}\label{flModelOBJ_8c_c84f7bf28b588c2f72641167b1b2ae0a}
+
+
+
+
+Definition at line 23 of file fl\-Model\-OBJ.c.
+
+References ASCII\_\-TAB, debug\-Warning, Model3d\-Static\-Face::mdlf\-Normals, Model3d\-Static\-Face::mdlf\-Texture, Model3d\-Static\-Face::mdlf\-Tex\-Verts, Model3d\-Static\-Face::mdlf\-Vert\-Count, Model3d\-Static\-Face::mdlf\-Verts, Model3d\-Static::mdl\-Normals, Model3d\-Static::mdl\-Tex\-Verts, Model3d\-Static::mdl\-Verts, mem\-Alloc, mem\-Clear, and NULL.
+
+Referenced by mdl3d\-Stat\-Load\-OBJ().\index{flModelOBJ.c@{fl\-Model\-OBJ.c}!mdl3dStatSaveOBJ@{mdl3dStatSaveOBJ}}
+\index{mdl3dStatSaveOBJ@{mdl3dStatSaveOBJ}!flModelOBJ.c@{fl\-Model\-OBJ.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mdl3d\-Stat\-Save\-OBJ (char $\ast$ {\em in\-Path}, {\bf Model3d\-Static} $\ast$ {\em in\-Model})}\label{flModelOBJ_8c_66f3001e424356a60083f21c3d39f4c1}
+
+
+
+
+Definition at line 278 of file fl\-Model\-OBJ.c.
+
+References debug\-Warning, FILE\_\-MODE\_\-WRITE, file\-Open(), file\-Puts(), Model3d\-Static::mdl\-Face\-Count, Model3d\-Static::mdl\-Faces, Model3d\-Static\-Face::mdlf\-Texture, Model3d\-Static\-Face::mdlf\-Vert\-Count, Model3d\-Static::mdl\-Normal\-Count, Model3d\-Static::mdl\-Normals, Model3d\-Static::mdl\-Texture\-Count, Model3d\-Static::mdl\-Tex\-Vert\-Count, Model3d\-Static::mdl\-Tex\-Verts, Model3d\-Static::mdl\-Vert\-Count, Model3d\-Static::mdl\-Verts, and tex\-Path().
+
+Referenced by mdl3d\-Stat\-Save().

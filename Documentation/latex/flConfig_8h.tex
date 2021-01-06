@@ -1,0 +1,1399 @@
+\section{fl\-Config.h File Reference}
+\label{flConfig_8h}\index{flConfig.h@{flConfig.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf FL\_\-INCLUDE\_\-ALL\_\-H}~1
+\begin{CompactList}\small\item\em Include all enabled headers in \doxyref{func\-Lib.h}{p.}{funcLib_8h} so you only have to include one file in your source. \item\end{CompactList}\item 
+\#define {\bf FL\_\-INCLUDE\_\-ALL\_\-C}~1
+\begin{CompactList}\small\item\em Includes all the c source files into one file, to be compiled as one object file (Adds a lot of optimization, the makefile needs to be changed for this). \item\end{CompactList}\item 
+\#define {\bf FL\_\-PREFIX}~0
+\begin{CompactList}\small\item\em Enable prefixing of function/variable/struct names (e.g so color\-RGB8888 would be fl\-Color\-RGB8888). \item\end{CompactList}\item 
+\#define {\bf FL\_\-PREFIX\_\-BOTH}~0
+\begin{CompactList}\small\item\em Enable use of both prefixed and non-prefixed function/variable/struct names. \item\end{CompactList}\item 
+\#define {\bf FL\_\-VSHMODE}~0
+\begin{CompactList}\small\item\em Enable/Disable VSH mode, used when writing vsh plugins. \item\end{CompactList}\item 
+\#define {\bf FL\_\-KERNELODE}~0
+\begin{CompactList}\small\item\em Enable/Disable kernel mode features in modules. \item\end{CompactList}\item 
+\#define {\bf FL\_\-CALLBACKS}~1
+\begin{CompactList}\small\item\em Include the callbacks module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-CALLBACKS\_\-EXIT}~1
+\begin{CompactList}\small\item\em Include the exit callback (Enables the default home button behaviour). \item\end{CompactList}\item 
+\#define {\bf FL\_\-CALLBACKS\_\-POWER}~0
+\begin{CompactList}\small\item\em [ERRORS] Include the power callback. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG}~1
+\begin{CompactList}\small\item\em Include (and enable) debug module (also enables internal debugging. It's very useful so should only be removed for final releases if at all.). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-TIMESTAMP}~1
+\begin{CompactList}\small\item\em Enable/Disable timestamping in the logfile. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}~0
+\begin{CompactList}\small\item\em Enable/Disable american date format. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-CALLEDFROM}~1
+\begin{CompactList}\small\item\em Enables called from info in warnings/errors aswell as in the log. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGGING}~1
+\begin{CompactList}\small\item\em Enable/Disable error logging. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGCLEAR}~1
+\begin{CompactList}\small\item\em Clear old debug logs at start of program. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGPATH}~\char`\"{}./fl\-Debug\-Log.txt\char`\"{}
+\begin{CompactList}\small\item\em Path to error log file. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS}~1
+\begin{CompactList}\small\item\em Enable/Disable logging of additional events such as program start, etc. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}~1
+\begin{CompactList}\small\item\em Enable/Disable showing of status messages in the notification tray. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-COLOR}~0x\-FFFF0000
+\begin{CompactList}\small\item\em Choose the color in which status messages will be displayed. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-SCREENSHOTPATH}~\char`\"{}./fl\-Debug\-Pic\%i.tga\char`\"{}
+\begin{CompactList}\small\item\em Path to save error screenshot (Must contain a i). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR}~1
+\begin{CompactList}\small\item\em Enable/Disable error handling. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SHOW}~1
+\begin{CompactList}\small\item\em Enable/Disable visible errors (Still get logged if logging is enabled). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}~1
+\begin{CompactList}\small\item\em Enable/Disable showing of errors in the notification tray. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-COLOR}~0x\-FF0000FF
+\begin{CompactList}\small\item\em Choose the color in which errors will be displayed. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}~0
+\begin{CompactList}\small\item\em When enabled a screenshot is taken upon an error occuring (Requires GRAPHICS and TEXTURE). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING}~1
+\begin{CompactList}\small\item\em Enable/Disable warning handling. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SHOW}~0
+\begin{CompactList}\small\item\em Enable/Disable visible warnings (Still get logged if logging is enabled). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}~1
+\begin{CompactList}\small\item\em Enable/Disable showing of warnings in the notification tray. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-COLOR}~0x\-FF007FFF
+\begin{CompactList}\small\item\em Choose the color in which warnings will be displayed. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}~0
+\begin{CompactList}\small\item\em When enabled a screenshot is taken upon a warning occuring (Requires GRAPHICS and TEXTURE). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING}~1
+\begin{CompactList}\small\item\em Enable/Disable dev warning handling. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}~0
+\begin{CompactList}\small\item\em Enable/Disable visible dev warnings (Still get logged if logging is enabled). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}~1
+\begin{CompactList}\small\item\em Enable/Disable showing of developer warnings in the notification tray. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}~0x\-FFFF3F3F
+\begin{CompactList}\small\item\em Choose the color in which dev warnings will be displayed. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}~0
+\begin{CompactList}\small\item\em When enabled a screenshot is taken upon a dev warning occuring (Requires GRAPHICS and TEXTURE). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}~1
+\begin{CompactList}\small\item\em Enable/Disable visible critical error (Programs still quits, critical errors cannot be disabled). \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}~0x\-FF00007F
+\begin{CompactList}\small\item\em Choose the color in which critical errors will be displayed. \item\end{CompactList}\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}~1
+\begin{CompactList}\small\item\em When enabled a screenshot is taken upon a critical error occuring (Requires GRAPHICS and TEXTURE). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY}~1
+\begin{CompactList}\small\item\em Include memory module (wrapper for memory allocation functions). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}~16
+\begin{CompactList}\small\item\em Default alignment (used for mem\-Alloc), should be $>$= 16 and a binary number (e.g 16, 32, 64, etc.). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-SCRATCHPAD}~1
+\begin{CompactList}\small\item\em Enable the use of the 16kb scratchpad. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM}~1
+\begin{CompactList}\small\item\em Include video memory functions. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}~512
+\begin{CompactList}\small\item\em Should be a binary number (128, 256, 512, etc.), lower number means less wastage but slower (Must be above 16). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}~1
+\begin{CompactList}\small\item\em If main memory is full, overflow into vram. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}~1
+\begin{CompactList}\small\item\em If enabled, all memory allocation functions will use stride memory to make best use of it. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-CACHE}~16384
+\begin{CompactList}\small\item\em Size of vmem cache, used to speed up various modules and to provide stability. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-POOL}~1
+\begin{CompactList}\small\item\em Include memory pooling module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-PAGE}~0
+\begin{CompactList}\small\item\em Include memory paging functions. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-PAGE\_\-PATH}~\char`\"{}./fl\-Page\-File.dat\char`\"{}
+\begin{CompactList}\small\item\em The file where paged memory chunks are saved. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-LOGGING}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Enable memory logging. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-LOGPATH}~\char`\"{}./fl\-Memory\-Log.txt\char`\"{}
+\begin{CompactList}\small\item\em Path to memory log file (Set to DEBUG\_\-LOGPATH to use the same file for both). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MEMORY\_\-ERRORBYTES}~1
+\begin{CompactList}\small\item\em Adds error checking bytes to the beginning and end of memory allocations. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FILE}~1
+\begin{CompactList}\small\item\em Include filesys module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TIMER}~1
+\begin{CompactList}\small\item\em Include timer module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-INPUT}~1
+\begin{CompactList}\small\item\em Include input module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH}~1
+\begin{CompactList}\small\item\em Include maths module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH\_\-VFPU}~1
+\begin{CompactList}\small\item\em Use VFPU code where possible (You need to add -lpspvfpu to the LIBS line of your makefile, and PSP\_\-MAIN\_\-THREAD\_\-ATTR(THREAD\_\-ATTR\_\-USER $|$ THREAD\_\-ATTR\_\-VFPU); to the top of your main.c). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH\_\-RANDTYPE}~FL\_\-MATH\_\-RAND\_\-VFPU
+\begin{CompactList}\small\item\em Which method of random number generation to use FL\_\-MATH\_\-RAND\_\-(STDIO/VFPU/MERSENNETWISTER). \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH\_\-RANDOMSEED}~0
+\begin{CompactList}\small\item\em Randomly reseed random number generator, only works for FL\_\-MATH\_\-STDIO. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}~4096
+\begin{CompactList}\small\item\em How often to randomly reseed (A low number can cause repetition if the rand function is called again in less than a microsecond. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MATH\_\-TRIGCACHE}~0
+\begin{CompactList}\small\item\em [SLOW] How many trig calls to cache, so that calls to trig functions should carry a lower average overhead. \item\end{CompactList}\item 
+\#define {\bf FL\_\-STRING}~1
+\begin{CompactList}\small\item\em Include string module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-COLOR}~1
+\begin{CompactList}\small\item\em Include color module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS}~1
+\begin{CompactList}\small\item\em Include (and enable) graphics module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}~GU\_\-PSM\_\-8888
+\begin{CompactList}\small\item\em [ERROR when disp and draw are different] What format to use for the display buffer. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}~GU\_\-PSM\_\-8888
+\begin{CompactList}\small\item\em [ERROR when disp and draw are different] What format to use for the draw buffer. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}~0
+\begin{CompactList}\small\item\em Default (starting) vsync setting. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}~1
+\begin{CompactList}\small\item\em Will automatically enable/disable vsync depending on the framerate. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}~55.0f
+\begin{CompactList}\small\item\em If the FPS goes below this value and GRAPHICS\_\-VSYNC\_\-AUTO is enabled then vsync will turn off. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}~262144
+\begin{CompactList}\small\item\em Initial size of display list. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}~0
+\begin{CompactList}\small\item\em Declare the display list statically rather than dynamically (No real effect, except that the display list cannot be resized). \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}~0
+\begin{CompactList}\small\item\em Default line anti-aliasing value (RECOMMENDATION: Set to 0, and turn Line AA on/off when needed). \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}~0
+\begin{CompactList}\small\item\em Default (starting) show fps setting. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}~0x\-FFFFFFFF
+\begin{CompactList}\small\item\em Color of fps display. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-DAMP}~1
+\begin{CompactList}\small\item\em Whether to damp the fps display (make the numbers stablize). \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}~0.25
+\begin{CompactList}\small\item\em Amount of effect current fps has on fps display. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}~0
+\begin{CompactList}\small\item\em Enable/Disable use of degenerate triangles to lower the amount of calls to draw array required. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D}~1
+\begin{CompactList}\small\item\em Include 2d graphics module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-USEDMA}~1
+\begin{CompactList}\small\item\em Use DMA to copy textures when possible. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}~16
+\begin{CompactList}\small\item\em The minimum number of lines to use when constructing ellipses. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}~0.25
+\begin{CompactList}\small\item\em Number of edges to use per pixel radius. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-3D}~1
+\begin{CompactList}\small\item\em Include 3d graphics module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}~1
+\begin{CompactList}\small\item\em Enable/Disable the fullscreen effects module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-CAMERA}~1
+\begin{CompactList}\small\item\em Enable/Disable camera module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE}~1
+\begin{CompactList}\small\item\em Include texture module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-UNCACHED}~0
+\begin{CompactList}\small\item\em [SEEMS TO CLASH WITH MEMORY ERROR CHECKING] Enable/Disable the use of uncached pointers (Causes wierd artifacts in palettized textures). \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP}~8
+\begin{CompactList}\small\item\em Enable/Disable automatic mipmapping of loaded textures (0 - 8, where 0 is disabled and 8 is maximum). \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}~1
+\begin{CompactList}\small\item\em Allow auto-mipmapping of paletted textures, not advised as it causes artifacts. (There seems to be an error with level 8 at the minute, so it is internally disabled for this option, but will still occur if you call the function at level 8). \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOSWIZZLE}~1
+\begin{CompactList}\small\item\em Enable/Disable automatic swizzling of loaded textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX}~0
+\begin{CompactList}\small\item\em Enable/Disable the use of an error texture. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}~0
+\begin{CompactList}\small\item\em Compile a default error tex into the program. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}~\char`\"{}./fl\-Tex\-Error.tga\char`\"{}
+\begin{CompactList}\small\item\em The path for the image loaded to represent a texture error (if one isn't compiled in). \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-PRESERVENONALPHA}~1
+\begin{CompactList}\small\item\em If enabled images that are loaded with no alpha channel will be treated differently. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-PCX}~1
+\begin{CompactList}\small\item\em Include support for PCX textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-TGA}~1
+\begin{CompactList}\small\item\em Include support for TGA textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-BMP}~1
+\begin{CompactList}\small\item\em Include support for BMP textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-WAL}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Include support for WAL textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-PNG}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Include support for PNG textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-FTF}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Include support for FTF textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-RAW}~0
+\begin{CompactList}\small\item\em Include support for RAW textures. \item\end{CompactList}\item 
+\#define {\bf FL\_\-TEXTURE\_\-MANIPULATION}~1
+\begin{CompactList}\small\item\em Include texture manipulation module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MODEL}~1
+\begin{CompactList}\small\item\em Include model module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MODEL\_\-OBJ}~1
+\begin{CompactList}\small\item\em Include support for OBJ models. \item\end{CompactList}\item 
+\#define {\bf FL\_\-MODEL\_\-MD2}~1
+\begin{CompactList}\small\item\em Include support for MD2 animated models. \item\end{CompactList}\item 
+\#define {\bf FL\_\-SPRITE}~1
+\begin{CompactList}\small\item\em Include sprite module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FONT}~1
+\begin{CompactList}\small\item\em Include font module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FONT\_\-HSPACE\_\-DEFAULT}~0
+\begin{CompactList}\small\item\em Default horizontal spacing (in pixels) for fonts. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FONT\_\-VSPACE\_\-DEFAULT}~0
+\begin{CompactList}\small\item\em Default vertical spacing (in pixels) for fonts. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FONT\_\-COLOR\_\-DEFAULT}~0x\-FFFFFFFF
+\begin{CompactList}\small\item\em Default color for fonts. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}~5
+\begin{CompactList}\small\item\em How many spaces long a tab should be. \item\end{CompactList}\item 
+\#define {\bf FL\_\-COLLISION}~1
+\begin{CompactList}\small\item\em Include collision detection module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY}~1
+\begin{CompactList}\small\item\em Include notification of status changes. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-FREQUENCY}~60
+\begin{CompactList}\small\item\em Check for notifications once every FL\_\-NOTIFY\_\-FREQUENCY frames. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-DURATION}~5.0f
+\begin{CompactList}\small\item\em How long to show notifications for. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-VOLUME}~0
+\begin{CompactList}\small\item\em [REQUIRES KERNEL] Notify the users of volume changes. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-BATTERY}~1
+\begin{CompactList}\small\item\em Notify if they have a low battery, every quarter segment, or everytime the AC status changes. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-TIME}~1
+\begin{CompactList}\small\item\em Notify the user of the time at regular intervals. \item\end{CompactList}\item 
+\#define {\bf FL\_\-NOTIFY\_\-TRAYSIZE}~4
+\begin{CompactList}\small\item\em Size of the notification tray. \item\end{CompactList}\item 
+\#define {\bf FL\_\-UMD}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Include umd info module. \item\end{CompactList}\item 
+\#define {\bf FL\_\-FILEBROWSER}~0
+\begin{CompactList}\small\item\em [INCOMPLETE] Include filebrowser module. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flConfig.h@{fl\-Config.h}!FL_CALLBACKS@{FL\_\-CALLBACKS}}
+\index{FL_CALLBACKS@{FL\_\-CALLBACKS}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS~1}\label{flConfig_8h_99bd249457df41b31e2c2b4ed4e88d33}
+
+
+Include the callbacks module. 
+
+
+
+Definition at line 24 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}}
+\index{FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-EXIT~1}\label{flConfig_8h_f8fdf74f16064484dfb0aa5dd50e1733}
+
+
+Include the exit callback (Enables the default home button behaviour). 
+
+
+
+Definition at line 25 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}}
+\index{FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-POWER~0}\label{flConfig_8h_87448450a6222c3f1acafdff8ab19228}
+
+
+[ERRORS] Include the power callback. 
+
+
+
+Definition at line 26 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_CAMERA@{FL\_\-CAMERA}}
+\index{FL_CAMERA@{FL\_\-CAMERA}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CAMERA~1}\label{flConfig_8h_a7de82853426d18ce06eefa638794755}
+
+
+Enable/Disable camera module. 
+
+
+
+Definition at line 120 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_COLLISION@{FL\_\-COLLISION}}
+\index{FL_COLLISION@{FL\_\-COLLISION}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-COLLISION~1}\label{flConfig_8h_f9bd7e87bc35c7daf3ab38aed815d716}
+
+
+Include collision detection module. 
+
+
+
+Definition at line 152 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_COLOR@{FL\_\-COLOR}}
+\index{FL_COLOR@{FL\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-COLOR~1}\label{flConfig_8h_8678a4ea968ca1b77b6706816438daee}
+
+
+Include color module. 
+
+
+
+Definition at line 97 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG@{FL\_\-DEBUG}}
+\index{FL_DEBUG@{FL\_\-DEBUG}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG~1}\label{flConfig_8h_923af823da4f8ccb7d3a71cda2011862}
+
+
+Include (and enable) debug module (also enables internal debugging. It's very useful so should only be removed for final releases if at all.). 
+
+
+
+Definition at line 28 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}}
+\index{FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CALLEDFROM~1}\label{flConfig_8h_0ee2478766c699c67b446e85bb0f5de5}
+
+
+Enables called from info in warnings/errors aswell as in the log. 
+
+
+
+Definition at line 31 of file fl\-Config.h.
+
+Referenced by memt\-Error\-Bytes\-Check\-From(), and vmem\-Free\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_CRITICALERROR_COLOR@{FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}}
+\index{FL_DEBUG_CRITICALERROR_COLOR@{FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR~0x\-FF00007F}\label{flConfig_8h_70fbafbb41ec43369f6d95f6bd08d0ec}
+
+
+Choose the color in which critical errors will be displayed. 
+
+
+
+Definition at line 55 of file fl\-Config.h.
+
+Referenced by debug\-Critical\-Error\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT~1}\label{flConfig_8h_483e8699a740790b3c1d3b4a0d917052}
+
+
+When enabled a screenshot is taken upon a critical error occuring (Requires GRAPHICS and TEXTURE). 
+
+
+
+Definition at line 56 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}}
+\index{FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW~1}\label{flConfig_8h_67a4bd5712e11b2195a6bb575ef2f73a}
+
+
+Enable/Disable visible critical error (Programs still quits, critical errors cannot be disabled). 
+
+
+
+Definition at line 54 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DATEFORMAT_AMERICAN@{FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}}
+\index{FL_DEBUG_DATEFORMAT_AMERICAN@{FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN~0}\label{flConfig_8h_d34f83d2c9a7b3de4a38178c06c48303}
+
+
+Enable/Disable american date format. 
+
+
+
+Definition at line 30 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}}
+\index{FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING~1}\label{flConfig_8h_ed6afeb1e7784d212ec555ccfe3ea081}
+
+
+Enable/Disable dev warning handling. 
+
+
+
+Definition at line 49 of file fl\-Config.h.
+
+Referenced by tex\-Mip\-Map\-Add().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DEVWARNING_COLOR@{FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}}
+\index{FL_DEBUG_DEVWARNING_COLOR@{FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR~0x\-FFFF3F3F}\label{flConfig_8h_87264eb186e12c11e724a5586cd51044}
+
+
+Choose the color in which dev warnings will be displayed. 
+
+
+
+Definition at line 52 of file fl\-Config.h.
+
+Referenced by debug\-Dev\-Warning\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}}
+\index{FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY~1}\label{flConfig_8h_02b406afb3f81dbfe6f3d3550c10a1f9}
+
+
+Enable/Disable showing of developer warnings in the notification tray. 
+
+
+
+Definition at line 51 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT~0}\label{flConfig_8h_8064ba66bbf5197b84e32f74b9e4c29e}
+
+
+When enabled a screenshot is taken upon a dev warning occuring (Requires GRAPHICS and TEXTURE). 
+
+
+
+Definition at line 53 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}}
+\index{FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW~0}\label{flConfig_8h_608c2a6c6c29d6286136b69f21d05805}
+
+
+Enable/Disable visible dev warnings (Still get logged if logging is enabled). 
+
+
+
+Definition at line 50 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}}
+\index{FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR~1}\label{flConfig_8h_43900c4b670f70af67248dcbffbf45fd}
+
+
+Enable/Disable error handling. 
+
+
+
+Definition at line 39 of file fl\-Config.h.
+
+Referenced by memt\-Error\-Bytes\-Check\-From(), and vmem\-Free\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_ERROR_COLOR@{FL\_\-DEBUG\_\-ERROR\_\-COLOR}}
+\index{FL_DEBUG_ERROR_COLOR@{FL\_\-DEBUG\_\-ERROR\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-COLOR~0x\-FF0000FF}\label{flConfig_8h_ee057bcf4c055999de53502476ba03c7}
+
+
+Choose the color in which errors will be displayed. 
+
+
+
+Definition at line 42 of file fl\-Config.h.
+
+Referenced by debug\-Error\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}}
+\index{FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-NOTIFY~1}\label{flConfig_8h_77c0d6d3a2c51009a74e358bf9a118e9}
+
+
+Enable/Disable showing of errors in the notification tray. 
+
+
+
+Definition at line 41 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT~0}\label{flConfig_8h_6b600fd569f84acd3f5cfe5bf08c4bf7}
+
+
+When enabled a screenshot is taken upon an error occuring (Requires GRAPHICS and TEXTURE). 
+
+
+
+Definition at line 43 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}}
+\index{FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SHOW~1}\label{flConfig_8h_601003ed63ef51a3bd228b3e5cfc650b}
+
+
+Enable/Disable visible errors (Still get logged if logging is enabled). 
+
+
+
+Definition at line 40 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}}
+\index{FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGCLEAR~1}\label{flConfig_8h_ea07f8181d984ebd503a1fe58ddab9c6}
+
+
+Clear old debug logs at start of program. 
+
+
+
+Definition at line 33 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}}
+\index{FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGGING~1}\label{flConfig_8h_60863a62a00f47912259e1f7127f5713}
+
+
+Enable/Disable error logging. 
+
+
+
+Definition at line 32 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_LOGPATH@{FL\_\-DEBUG\_\-LOGPATH}}
+\index{FL_DEBUG_LOGPATH@{FL\_\-DEBUG\_\-LOGPATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGPATH~\char`\"{}./fl\-Debug\-Log.txt\char`\"{}}\label{flConfig_8h_c8e12bce6be6a9aa7c97550a1cd7fc3f}
+
+
+Path to error log file. 
+
+
+
+Definition at line 34 of file fl\-Config.h.
+
+Referenced by debug\-Init(), debug\-Log(), and debug\-Log\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_SCREENSHOTPATH@{FL\_\-DEBUG\_\-SCREENSHOTPATH}}
+\index{FL_DEBUG_SCREENSHOTPATH@{FL\_\-DEBUG\_\-SCREENSHOTPATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-SCREENSHOTPATH~\char`\"{}./fl\-Debug\-Pic\%i.tga\char`\"{}}\label{flConfig_8h_1fbf0614971b57edea29eb37c12df1f9}
+
+
+Path to save error screenshot (Must contain a i). 
+
+
+
+Definition at line 38 of file fl\-Config.h.
+
+Referenced by debug\-Screenshot().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}}
+\index{FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS~1}\label{flConfig_8h_95db7c0db76b05ad758a8b231bc81bd9}
+
+
+Enable/Disable logging of additional events such as program start, etc. 
+
+
+
+Definition at line 35 of file fl\-Config.h.
+
+Referenced by mem\-Init().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_STATUS_COLOR@{FL\_\-DEBUG\_\-STATUS\_\-COLOR}}
+\index{FL_DEBUG_STATUS_COLOR@{FL\_\-DEBUG\_\-STATUS\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-COLOR~0x\-FFFF0000}\label{flConfig_8h_c0279d89bea6db761e9ada2f16f3759d}
+
+
+Choose the color in which status messages will be displayed. 
+
+
+
+Definition at line 37 of file fl\-Config.h.
+
+Referenced by debug\-Status\-Log\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}}
+\index{FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-NOTIFY~1}\label{flConfig_8h_d285ddbf161637a49c715a3402a83c29}
+
+
+Enable/Disable showing of status messages in the notification tray. 
+
+
+
+Definition at line 36 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}}
+\index{FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-TIMESTAMP~1}\label{flConfig_8h_7c30d8dee8d212511b22d0ca696b483c}
+
+
+Enable/Disable timestamping in the logfile. 
+
+
+
+Definition at line 29 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}}
+\index{FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING~1}\label{flConfig_8h_cabc2c15422392d5fea76f8bf968834b}
+
+
+Enable/Disable warning handling. 
+
+
+
+Definition at line 44 of file fl\-Config.h.
+
+Referenced by tex\-Swizzle(), and tex\-Unswizzle().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_WARNING_COLOR@{FL\_\-DEBUG\_\-WARNING\_\-COLOR}}
+\index{FL_DEBUG_WARNING_COLOR@{FL\_\-DEBUG\_\-WARNING\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-COLOR~0x\-FF007FFF}\label{flConfig_8h_ce3dc2ede9e501d60db203366dd3c54a}
+
+
+Choose the color in which warnings will be displayed. 
+
+
+
+Definition at line 47 of file fl\-Config.h.
+
+Referenced by debug\-Warning\-From().\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}}
+\index{FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-NOTIFY~1}\label{flConfig_8h_857035c764ff78d4d734d68c878eb1cd}
+
+
+Enable/Disable showing of warnings in the notification tray. 
+
+
+
+Definition at line 46 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT~0}\label{flConfig_8h_31935479fe02ed48220462d275a662e6}
+
+
+When enabled a screenshot is taken upon a warning occuring (Requires GRAPHICS and TEXTURE). 
+
+
+
+Definition at line 48 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}}
+\index{FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SHOW~0}\label{flConfig_8h_ded42d7e5a8173f5d7d35eb17f0d2c19}
+
+
+Enable/Disable visible warnings (Still get logged if logging is enabled). 
+
+
+
+Definition at line 45 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_FILE@{FL\_\-FILE}}
+\index{FL_FILE@{FL\_\-FILE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FILE~1}\label{flConfig_8h_d929f66e609c265daed46d421cead110}
+
+
+Include filesys module. 
+
+
+
+Definition at line 75 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_FILEBROWSER@{FL\_\-FILEBROWSER}}
+\index{FL_FILEBROWSER@{FL\_\-FILEBROWSER}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FILEBROWSER~0}\label{flConfig_8h_59ac78180abd773e24e9ebce0e7652d1}
+
+
+[INCOMPLETE] Include filebrowser module. 
+
+
+
+Definition at line 164 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_FONT@{FL\_\-FONT}}
+\index{FL_FONT@{FL\_\-FONT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT~1}\label{flConfig_8h_4327fb378c21ebdde136a9e29b183bef}
+
+
+Include font module. 
+
+
+
+Definition at line 146 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_FONT_COLOR_DEFAULT@{FL\_\-FONT\_\-COLOR\_\-DEFAULT}}
+\index{FL_FONT_COLOR_DEFAULT@{FL\_\-FONT\_\-COLOR\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-COLOR\_\-DEFAULT~0x\-FFFFFFFF}\label{flConfig_8h_87772d78c998f3945ccb0fb7f0ccebba}
+
+
+Default color for fonts. 
+
+
+
+Definition at line 149 of file fl\-Config.h.
+
+Referenced by font\-Init(), and font\-Load().\index{flConfig.h@{fl\-Config.h}!FL_FONT_HSPACE_DEFAULT@{FL\_\-FONT\_\-HSPACE\_\-DEFAULT}}
+\index{FL_FONT_HSPACE_DEFAULT@{FL\_\-FONT\_\-HSPACE\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-HSPACE\_\-DEFAULT~0}\label{flConfig_8h_91a88599d6e9d386bea131e302210ed5}
+
+
+Default horizontal spacing (in pixels) for fonts. 
+
+
+
+Definition at line 147 of file fl\-Config.h.
+
+Referenced by font\-Load().\index{flConfig.h@{fl\-Config.h}!FL_FONT_TABWIDTH_DEFAULT@{FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}}
+\index{FL_FONT_TABWIDTH_DEFAULT@{FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT~5}\label{flConfig_8h_207a2f5c99d8707a4bda13fbb34af7a6}
+
+
+How many spaces long a tab should be. 
+
+
+
+Definition at line 150 of file fl\-Config.h.
+
+Referenced by font\-Char\-Width().\index{flConfig.h@{fl\-Config.h}!FL_FONT_VSPACE_DEFAULT@{FL\_\-FONT\_\-VSPACE\_\-DEFAULT}}
+\index{FL_FONT_VSPACE_DEFAULT@{FL\_\-FONT\_\-VSPACE\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-VSPACE\_\-DEFAULT~0}\label{flConfig_8h_c498af28962c13bb49b999fb2ad3ff00}
+
+
+Default vertical spacing (in pixels) for fonts. 
+
+
+
+Definition at line 148 of file fl\-Config.h.
+
+Referenced by font\-Load().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS@{FL\_\-GRAPHICS}}
+\index{FL_GRAPHICS@{FL\_\-GRAPHICS}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS~1}\label{flConfig_8h_00a8d97a6b036b8234a6ffbbeb69ced6}
+
+
+Include (and enable) graphics module. 
+
+
+
+Definition at line 99 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}}
+\index{FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D~1}\label{flConfig_8h_27698ad90bd4f8fe9fb8af9fb319705a}
+
+
+Include 2d graphics module. 
+
+
+
+Definition at line 113 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_2D_ELLIPSE_EDGESPERRAD@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}}
+\index{FL_GRAPHICS_2D_ELLIPSE_EDGESPERRAD@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD~0.25}\label{flConfig_8h_8e261f834152a85989b67aaac4c561db}
+
+
+Number of edges to use per pixel radius. 
+
+
+
+Definition at line 116 of file fl\-Config.h.
+
+Referenced by graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), and graphics2d\-Draw\-Spheroid\-Shaded().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}}
+\index{FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES~16}\label{flConfig_8h_cb5dce5f8dd2b7c9653224654a414e78}
+
+
+The minimum number of lines to use when constructing ellipses. 
+
+
+
+Definition at line 115 of file fl\-Config.h.
+
+Referenced by graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), and graphics2d\-Draw\-Spheroid\-Shaded().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}}
+\index{FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-USEDMA~1}\label{flConfig_8h_e14e7d2a7e56fa6a921a7a0df0aa103b}
+
+
+Use DMA to copy textures when possible. 
+
+
+
+Definition at line 114 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}}
+\index{FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-3D~1}\label{flConfig_8h_ff70de40b296c4b66d2d4d79fafdc218}
+
+
+Include 3d graphics module. 
+
+
+
+Definition at line 117 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_DISP_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}}
+\index{FL_GRAPHICS_DISP_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT~GU\_\-PSM\_\-8888}\label{flConfig_8h_6b4393cb253f4efb3445c98cad9b2805}
+
+
+[ERROR when disp and draw are different] What format to use for the display buffer. 
+
+
+
+Definition at line 100 of file fl\-Config.h.
+
+Referenced by graphics\-Init(), and graphics\-Swap\-Buffers().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_DISPLAYLIST_SIZE@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}}
+\index{FL_GRAPHICS_DISPLAYLIST_SIZE@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE~262144}\label{flConfig_8h_0bb44fc4e0da775f21964b49033d5207}
+
+
+Initial size of display list. 
+
+
+
+Definition at line 105 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}}
+\index{FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC~0}\label{flConfig_8h_b8b4f70f467f8499f628155bae3288b2}
+
+
+Declare the display list statically rather than dynamically (No real effect, except that the display list cannot be resized). 
+
+
+
+Definition at line 106 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_DRAW_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}}
+\index{FL_GRAPHICS_DRAW_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT~GU\_\-PSM\_\-8888}\label{flConfig_8h_c3f185b00e4ac1b8ead59ce45ba16990}
+
+
+[ERROR when disp and draw are different] What format to use for the draw buffer. 
+
+
+
+Definition at line 101 of file fl\-Config.h.
+
+Referenced by graphics\-Init(), graphics\-Render\-To\-Framebuffer(), and graphics\-Swap\-Buffers().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}}
+\index{FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN~1}\label{flConfig_8h_71b7ded0607a3d0db49adb2aa20fb30c}
+
+
+Enable/Disable the fullscreen effects module. 
+
+
+
+Definition at line 118 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}}
+\index{FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-DAMP~1}\label{flConfig_8h_a6a913e8445eaa4568d1b58972c318be}
+
+
+Whether to damp the fps display (make the numbers stablize). 
+
+
+
+Definition at line 110 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_FPS_DAMPRATIO@{FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}}
+\index{FL_GRAPHICS_FPS_DAMPRATIO@{FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO~0.25}\label{flConfig_8h_4fbdf5b9e66789b06bb08f0d81c6a88b}
+
+
+Amount of effect current fps has on fps display. 
+
+
+
+Definition at line 111 of file fl\-Config.h.
+
+Referenced by graphics\-Swap\-Buffers().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_FPS_SHOW_COLOR@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}}
+\index{FL_GRAPHICS_FPS_SHOW_COLOR@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR~0x\-FFFFFFFF}\label{flConfig_8h_94a208988177f5ab123534ab33876f12}
+
+
+Color of fps display. 
+
+
+
+Definition at line 109 of file fl\-Config.h.
+
+Referenced by graphics\-Swap\-Buffers().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}}
+\index{FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT~0}\label{flConfig_8h_5dd0e5e145a77f6d290ef4c09ff8ebaa}
+
+
+Default (starting) show fps setting. 
+
+
+
+Definition at line 108 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}}
+\index{FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT~0}\label{flConfig_8h_be0fc2dab59d051efd3df00c9c327c89}
+
+
+Default line anti-aliasing value (RECOMMENDATION: Set to 0, and turn Line AA on/off when needed). 
+
+
+
+Definition at line 107 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_USEDEGENERATETRIS@{FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}}
+\index{FL_GRAPHICS_USEDEGENERATETRIS@{FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-USEDEGENERATETRIS~0}\label{flConfig_8h_1b1ba6d4e89fea99b09ed9aedaf0e23c}
+
+
+Enable/Disable use of degenerate triangles to lower the amount of calls to draw array required. 
+
+
+
+Definition at line 112 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}}
+\index{FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO~1}\label{flConfig_8h_1f8c65f08ed4a633f0e8434f891f5ce0}
+
+
+Will automatically enable/disable vsync depending on the framerate. 
+
+
+
+Definition at line 103 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_VSYNC_AUTO_CUTOFF@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}}
+\index{FL_GRAPHICS_VSYNC_AUTO_CUTOFF@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF~55.0f}\label{flConfig_8h_9fbb0442685c1f41e4fa1231d58fbef8}
+
+
+If the FPS goes below this value and GRAPHICS\_\-VSYNC\_\-AUTO is enabled then vsync will turn off. 
+
+
+
+Definition at line 104 of file fl\-Config.h.
+
+Referenced by graphics\-Swap\-Buffers().\index{flConfig.h@{fl\-Config.h}!FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}}
+\index{FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT~0}\label{flConfig_8h_4cd44620c70d1f1e92ff06ad4443d64b}
+
+
+Default (starting) vsync setting. 
+
+
+
+Definition at line 102 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_INCLUDE_ALL_C@{FL\_\-INCLUDE\_\-ALL\_\-C}}
+\index{FL_INCLUDE_ALL_C@{FL\_\-INCLUDE\_\-ALL\_\-C}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INCLUDE\_\-ALL\_\-C~1}\label{flConfig_8h_86a6e2958fe94fbec8f95791f272d844}
+
+
+Includes all the c source files into one file, to be compiled as one object file (Adds a lot of optimization, the makefile needs to be changed for this). 
+
+
+
+Definition at line 10 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_INCLUDE_ALL_H@{FL\_\-INCLUDE\_\-ALL\_\-H}}
+\index{FL_INCLUDE_ALL_H@{FL\_\-INCLUDE\_\-ALL\_\-H}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INCLUDE\_\-ALL\_\-H~1}\label{flConfig_8h_f65b34507d1cfa0b2a188644d6bbd2a5}
+
+
+Include all enabled headers in \doxyref{func\-Lib.h}{p.}{funcLib_8h} so you only have to include one file in your source. 
+
+
+
+Definition at line 9 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_INPUT@{FL\_\-INPUT}}
+\index{FL_INPUT@{FL\_\-INPUT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INPUT~1}\label{flConfig_8h_6e9ffb1fbcddf6ebd5bf021a5fbefc3f}
+
+
+Include input module. 
+
+
+
+Definition at line 79 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_KERNELODE@{FL\_\-KERNELODE}}
+\index{FL_KERNELODE@{FL\_\-KERNELODE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-KERNELODE~0}\label{flConfig_8h_a2a66fc6617bf300f61ca6af0f5d4325}
+
+
+Enable/Disable kernel mode features in modules. 
+
+
+
+Definition at line 14 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MATH@{FL\_\-MATH}}
+\index{FL_MATH@{FL\_\-MATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH~1}\label{flConfig_8h_588f887215295890b157df44e15e0618}
+
+
+Include maths module. 
+
+
+
+Definition at line 81 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}}
+\index{FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDOMSEED~0}\label{flConfig_8h_f226e71f3857ee0262ddd3febed39f13}
+
+
+Randomly reseed random number generator, only works for FL\_\-MATH\_\-STDIO. 
+
+
+
+Definition at line 84 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MATH_RANDOMSEED_FREQUENCY@{FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}}
+\index{FL_MATH_RANDOMSEED_FREQUENCY@{FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY~4096}\label{flConfig_8h_7b8cf289b6ff0da6545d5e7ead2459d6}
+
+
+How often to randomly reseed (A low number can cause repetition if the rand function is called again in less than a microsecond. 
+
+
+
+Definition at line 85 of file fl\-Config.h.
+
+Referenced by math\-Randf(), math\-Rand\-Fractf(), and math\-Randi().\index{flConfig.h@{fl\-Config.h}!FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}}
+\index{FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDTYPE~FL\_\-MATH\_\-RAND\_\-VFPU}\label{flConfig_8h_284a57acafa9e61ce8f4877addeab8be}
+
+
+Which method of random number generation to use FL\_\-MATH\_\-RAND\_\-(STDIO/VFPU/MERSENNETWISTER). 
+
+
+
+Definition at line 83 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}}
+\index{FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-TRIGCACHE~0}\label{flConfig_8h_1714c4ffc6f7774695089af0a74730c1}
+
+
+[SLOW] How many trig calls to cache, so that calls to trig functions should carry a lower average overhead. 
+
+
+
+Definition at line 86 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}}
+\index{FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-VFPU~1}\label{flConfig_8h_4f5459716e8b74a4e5127a0b8006de98}
+
+
+Use VFPU code where possible (You need to add -lpspvfpu to the LIBS line of your makefile, and PSP\_\-MAIN\_\-THREAD\_\-ATTR(THREAD\_\-ATTR\_\-USER $|$ THREAD\_\-ATTR\_\-VFPU); to the top of your main.c). 
+
+
+
+Definition at line 82 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY@{FL\_\-MEMORY}}
+\index{FL_MEMORY@{FL\_\-MEMORY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY~1}\label{flConfig_8h_2d6bf78fdd7817d97aba2778c7df0c72}
+
+
+Include memory module (wrapper for memory allocation functions). 
+
+
+
+Definition at line 60 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_ALIGNMENT_DEFAULT@{FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}}
+\index{FL_MEMORY_ALIGNMENT_DEFAULT@{FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT~16}\label{flConfig_8h_d48e104c81048824fb6d6aba8efe5004}
+
+
+Default alignment (used for mem\-Alloc), should be $>$= 16 and a binary number (e.g 16, 32, 64, etc.). 
+
+
+
+Definition at line 61 of file fl\-Config.h.
+
+Referenced by mem\-Align\-From(), mem\-Alloc\-From(), mem\-Alloc\-Uncached\-From(), vmem\-Stride\-Align(), and vmem\-Stride\-Alloc().\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}}
+\index{FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-ERRORBYTES~1}\label{flConfig_8h_6299bc95c7cc7fee09bb99151e3d761a}
+
+
+Adds error checking bytes to the beginning and end of memory allocations. 
+
+
+
+Definition at line 73 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}}
+\index{FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-LOGGING~0}\label{flConfig_8h_5833a4954f6d74f014e407c67da0d70e}
+
+
+[INCOMPLETE] Enable memory logging. 
+
+
+
+Definition at line 71 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_LOGPATH@{FL\_\-MEMORY\_\-LOGPATH}}
+\index{FL_MEMORY_LOGPATH@{FL\_\-MEMORY\_\-LOGPATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-LOGPATH~\char`\"{}./fl\-Memory\-Log.txt\char`\"{}}\label{flConfig_8h_b1d30c8c098636b08182ad4838df7232}
+
+
+Path to memory log file (Set to DEBUG\_\-LOGPATH to use the same file for both). 
+
+
+
+Definition at line 72 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}}
+\index{FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-PAGE~0}\label{flConfig_8h_d4d6acf1ebf7cae10eb5b6861f85671f}
+
+
+Include memory paging functions. 
+
+
+
+Definition at line 69 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_PAGE_PATH@{FL\_\-MEMORY\_\-PAGE\_\-PATH}}
+\index{FL_MEMORY_PAGE_PATH@{FL\_\-MEMORY\_\-PAGE\_\-PATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-PAGE\_\-PATH~\char`\"{}./fl\-Page\-File.dat\char`\"{}}\label{flConfig_8h_619ea6e9d1cfca41eb552fbb13493823}
+
+
+The file where paged memory chunks are saved. 
+
+
+
+Definition at line 70 of file fl\-Config.h.
+
+Referenced by mem\-Term().\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}}
+\index{FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-POOL~1}\label{flConfig_8h_bb86f06f48f024c9115932c9b7af67ad}
+
+
+Include memory pooling module. 
+
+
+
+Definition at line 68 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}}
+\index{FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-SCRATCHPAD~1}\label{flConfig_8h_18d87c3e65f36b5c7e92d95d3c65681b}
+
+
+Enable the use of the 16kb scratchpad. 
+
+
+
+Definition at line 62 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}}
+\index{FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM~1}\label{flConfig_8h_1c855bc51ef4206ce723899f5b90aa53}
+
+
+Include video memory functions. 
+
+
+
+Definition at line 63 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_VMEM_BLOCKSIZE@{FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}}
+\index{FL_MEMORY_VMEM_BLOCKSIZE@{FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE~512}\label{flConfig_8h_68870092a12645a59e6408a0ead8a725}
+
+
+Should be a binary number (128, 256, 512, etc.), lower number means less wastage but slower (Must be above 16). 
+
+
+
+Definition at line 64 of file fl\-Config.h.
+
+Referenced by vmem\-Alloc\-From(), vmem\-Fragmentation(), vmem\-Free\-From(), vmem\-Free\-Space(), vmem\-Init(), vmem\-Largest\-Free\-Block(), and vmem\-Realloc\-From().\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}}
+\index{FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-CACHE~16384}\label{flConfig_8h_8c4c673a301c8cf29cb76f49f7d04321}
+
+
+Size of vmem cache, used to speed up various modules and to provide stability. 
+
+
+
+Definition at line 67 of file fl\-Config.h.
+
+Referenced by vmem\-Init().\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}}
+\index{FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW~1}\label{flConfig_8h_b87f3228f2e381627c72b6f240424006}
+
+
+If main memory is full, overflow into vram. 
+
+
+
+Definition at line 65 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MEMORY_VMEM_STIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}}
+\index{FL_MEMORY_VMEM_STIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL~1}\label{flConfig_8h_f4f1fa1104c26b00549c820b4f8c8270}
+
+
+If enabled, all memory allocation functions will use stride memory to make best use of it. 
+
+
+
+Definition at line 66 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MODEL@{FL\_\-MODEL}}
+\index{FL_MODEL@{FL\_\-MODEL}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL~1}\label{flConfig_8h_5edb84629e1decf9f6145c606b5bb3a9}
+
+
+Include model module. 
+
+
+
+Definition at line 140 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}}
+\index{FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-MD2~1}\label{flConfig_8h_d7f7817739ee4efadc63876ddf942b10}
+
+
+Include support for MD2 animated models. 
+
+
+
+Definition at line 142 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}}
+\index{FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-OBJ~1}\label{flConfig_8h_f52b3283325f42cd049b4b6e38d4e742}
+
+
+Include support for OBJ models. 
+
+
+
+Definition at line 141 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY@{FL\_\-NOTIFY}}
+\index{FL_NOTIFY@{FL\_\-NOTIFY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY~1}\label{flConfig_8h_5f1e10b9a14efbbb555b1f42d4751edd}
+
+
+Include notification of status changes. 
+
+
+
+Definition at line 154 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}}
+\index{FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-BATTERY~1}\label{flConfig_8h_e5172494d10bdf2190e4cc93c72eb590}
+
+
+Notify if they have a low battery, every quarter segment, or everytime the AC status changes. 
+
+
+
+Definition at line 158 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_DURATION@{FL\_\-NOTIFY\_\-DURATION}}
+\index{FL_NOTIFY_DURATION@{FL\_\-NOTIFY\_\-DURATION}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-DURATION~5.0f}\label{flConfig_8h_8fbde230321202ac0be129399da674e2}
+
+
+How long to show notifications for. 
+
+
+
+Definition at line 156 of file fl\-Config.h.
+
+Referenced by ntfy\-Check\-Battery(), ntfy\-Check\-Time(), and ntfy\-Tray\-Add().\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_FREQUENCY@{FL\_\-NOTIFY\_\-FREQUENCY}}
+\index{FL_NOTIFY_FREQUENCY@{FL\_\-NOTIFY\_\-FREQUENCY}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-FREQUENCY~60}\label{flConfig_8h_4b0e951e99f362f3468f29ed54663877}
+
+
+Check for notifications once every FL\_\-NOTIFY\_\-FREQUENCY frames. 
+
+
+
+Definition at line 155 of file fl\-Config.h.
+
+Referenced by ntfy\-Tick().\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}}
+\index{FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TIME~1}\label{flConfig_8h_80019d39373eaf22d5a83705ef7cbd10}
+
+
+Notify the user of the time at regular intervals. 
+
+
+
+Definition at line 159 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}}
+\index{FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TRAYSIZE~4}\label{flConfig_8h_ff38ea39f307df3514a6f05cf998ebee}
+
+
+Size of the notification tray. 
+
+
+
+Definition at line 160 of file fl\-Config.h.
+
+Referenced by ntfy\-Init(), ntfy\-Tray\-Add(), ntfy\-Tray\-Show(), and ntfy\-Tray\-Tick().\index{flConfig.h@{fl\-Config.h}!FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}}
+\index{FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-VOLUME~0}\label{flConfig_8h_ffa7fa3d9da5ce7d7af6b80bbe2744c2}
+
+
+[REQUIRES KERNEL] Notify the users of volume changes. 
+
+
+
+Definition at line 157 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_PREFIX@{FL\_\-PREFIX}}
+\index{FL_PREFIX@{FL\_\-PREFIX}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-PREFIX~0}\label{flConfig_8h_9d20d58a99892a0e80b04d0047ec2fbe}
+
+
+Enable prefixing of function/variable/struct names (e.g so color\-RGB8888 would be fl\-Color\-RGB8888). 
+
+
+
+Definition at line 11 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_PREFIX_BOTH@{FL\_\-PREFIX\_\-BOTH}}
+\index{FL_PREFIX_BOTH@{FL\_\-PREFIX\_\-BOTH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-PREFIX\_\-BOTH~0}\label{flConfig_8h_cc4bd7cd3e9982cc46768e7d8807f984}
+
+
+Enable use of both prefixed and non-prefixed function/variable/struct names. 
+
+
+
+Definition at line 12 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_SPRITE@{FL\_\-SPRITE}}
+\index{FL_SPRITE@{FL\_\-SPRITE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-SPRITE~1}\label{flConfig_8h_4cb2a7a735b32b623a4811291aad6195}
+
+
+Include sprite module. 
+
+
+
+Definition at line 144 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_STRING@{FL\_\-STRING}}
+\index{FL_STRING@{FL\_\-STRING}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-STRING~1}\label{flConfig_8h_5bb7d4bfe430e9f75b338c9b5307f274}
+
+
+Include string module. 
+
+
+
+Definition at line 88 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE@{FL\_\-TEXTURE}}
+\index{FL_TEXTURE@{FL\_\-TEXTURE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE~1}\label{flConfig_8h_69e22e4013a619ae5ef424f41167aea7}
+
+
+Include texture module. 
+
+
+
+Definition at line 122 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}}
+\index{FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP~8}\label{flConfig_8h_fad1cb51883ab52cf8355d5d49c6389e}
+
+
+Enable/Disable automatic mipmapping of loaded textures (0 - 8, where 0 is disabled and 8 is maximum). 
+
+
+
+Definition at line 124 of file fl\-Config.h.
+
+Referenced by tex\-Load().\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}}
+\index{FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED~1}\label{flConfig_8h_2c1693dd16f8248dcdbb2aa3c0488bbd}
+
+
+Allow auto-mipmapping of paletted textures, not advised as it causes artifacts. (There seems to be an error with level 8 at the minute, so it is internally disabled for this option, but will still occur if you call the function at level 8). 
+
+
+
+Definition at line 125 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}}
+\index{FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOSWIZZLE~1}\label{flConfig_8h_f2361564487303dc487f1f6a96b2b24e}
+
+
+Enable/Disable automatic swizzling of loaded textures. 
+
+
+
+Definition at line 126 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}}
+\index{FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-BMP~1}\label{flConfig_8h_6f8fa136099750044bcf6b0e8cf18f88}
+
+
+Include support for BMP textures. 
+
+
+
+Definition at line 133 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}}
+\index{FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX~0}\label{flConfig_8h_6b8f7e320065bbb74e5482f0e15ea3cf}
+
+
+Enable/Disable the use of an error texture. 
+
+
+
+Definition at line 127 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}}
+\index{FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE~0}\label{flConfig_8h_35829e395f85aef7a4f01bf27a8c1e8e}
+
+
+Compile a default error tex into the program. 
+
+
+
+Definition at line 128 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_ERRORTEX_PATH@{FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}}
+\index{FL_TEXTURE_ERRORTEX_PATH@{FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH~\char`\"{}./fl\-Tex\-Error.tga\char`\"{}}\label{flConfig_8h_9debe0069651ca2af7fde1e42c19072e}
+
+
+The path for the image loaded to represent a texture error (if one isn't compiled in). 
+
+
+
+Definition at line 129 of file fl\-Config.h.
+
+Referenced by tex\-Init().\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_FTF@{FL\_\-TEXTURE\_\-FTF}}
+\index{FL_TEXTURE_FTF@{FL\_\-TEXTURE\_\-FTF}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-FTF~0}\label{flConfig_8h_a827f1889386a840a78013c7764f355e}
+
+
+[INCOMPLETE] Include support for FTF textures. 
+
+
+
+Definition at line 136 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}}
+\index{FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-MANIPULATION~1}\label{flConfig_8h_9bf1ceaf7b5bcd83866e701ea65bed63}
+
+
+Include texture manipulation module. 
+
+
+
+Definition at line 138 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}}
+\index{FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PCX~1}\label{flConfig_8h_7e75b36a7aa3161b48217cb3c8ce051a}
+
+
+Include support for PCX textures. 
+
+
+
+Definition at line 131 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}}
+\index{FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PNG~0}\label{flConfig_8h_ee82dbb354ff232858fc21491b3767dc}
+
+
+[INCOMPLETE] Include support for PNG textures. 
+
+
+
+Definition at line 135 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}}
+\index{FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PRESERVENONALPHA~1}\label{flConfig_8h_96e1468f49e81357791f12182998b984}
+
+
+If enabled images that are loaded with no alpha channel will be treated differently. 
+
+
+
+Definition at line 130 of file fl\-Config.h.
+
+Referenced by tex\-Save\-TGA().\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}}
+\index{FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-RAW~0}\label{flConfig_8h_d8cfcbf06d4bcafc57ce8ef8058ecc5a}
+
+
+Include support for RAW textures. 
+
+
+
+Definition at line 137 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}}
+\index{FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-TGA~1}\label{flConfig_8h_a88a5c8ef0ed3e27edd03b00240922cd}
+
+
+Include support for TGA textures. 
+
+
+
+Definition at line 132 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}}
+\index{FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-UNCACHED~0}\label{flConfig_8h_19e91ca240a0e8d4097fdff7e7e1ab2b}
+
+
+[SEEMS TO CLASH WITH MEMORY ERROR CHECKING] Enable/Disable the use of uncached pointers (Causes wierd artifacts in palettized textures). 
+
+
+
+Definition at line 123 of file fl\-Config.h.
+
+Referenced by pal\-Create\-Default\-Color\-T4(), and tex\-Screenshot().\index{flConfig.h@{fl\-Config.h}!FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}}
+\index{FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-WAL~0}\label{flConfig_8h_afcc051020cb5d1a2eedd6399c382807}
+
+
+[INCOMPLETE] Include support for WAL textures. 
+
+
+
+Definition at line 134 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_TIMER@{FL\_\-TIMER}}
+\index{FL_TIMER@{FL\_\-TIMER}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TIMER~1}\label{flConfig_8h_b657921a468c65191fcb4e4951a0ceb1}
+
+
+Include timer module. 
+
+
+
+Definition at line 77 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_UMD@{FL\_\-UMD}}
+\index{FL_UMD@{FL\_\-UMD}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-UMD~0}\label{flConfig_8h_772f22a5c2c26e6db00d3e31cd85c677}
+
+
+[INCOMPLETE] Include umd info module. 
+
+
+
+Definition at line 162 of file fl\-Config.h.\index{flConfig.h@{fl\-Config.h}!FL_VSHMODE@{FL\_\-VSHMODE}}
+\index{FL_VSHMODE@{FL\_\-VSHMODE}!flConfig.h@{fl\-Config.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-VSHMODE~0}\label{flConfig_8h_1960a39a5223a5ca96836719e6fbbd31}
+
+
+Enable/Disable VSH mode, used when writing vsh plugins. 
+
+
+
+Definition at line 13 of file fl\-Config.h.

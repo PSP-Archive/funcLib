@@ -1,0 +1,412 @@
+\section{fl\-Input.h File Reference}
+\label{flInput_8h}\index{flInput.h@{flInput.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf INPUT\_\-STILL\_\-UP}~0
+\begin{CompactList}\small\item\em This button state represents a button that is not pressed and wasn't pressed last frame either. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-JUST\_\-UP}~2
+\begin{CompactList}\small\item\em This button state represents a button that has just been released. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-STILL\_\-DOWN}~1
+\begin{CompactList}\small\item\em This button state represents a button that is down and was down last frame too. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-JUST\_\-DOWN}~3
+\begin{CompactList}\small\item\em This button state represents a button that has just been pressed. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-SELECT}~0
+\begin{CompactList}\small\item\em This is the button number representing the SELECT button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-START}~3
+\begin{CompactList}\small\item\em This is the button number representing the START button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-DPAD\_\-UP}~4
+\begin{CompactList}\small\item\em This is the button number representing the DPAD UP button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-DPAD\_\-RIGHT}~5
+\begin{CompactList}\small\item\em This is the button number representing the DPAD RIGHT button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-DPAD\_\-DOWN}~6
+\begin{CompactList}\small\item\em This is the button number representing the DPAD DOWN button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-DPAD\_\-LEFT}~7
+\begin{CompactList}\small\item\em This is the button number representing the DPAD LEFT button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-LTRIGGER}~8
+\begin{CompactList}\small\item\em This is the button number representing the LEFT TRIGGER button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-RTRIGGER}~9
+\begin{CompactList}\small\item\em This is the button number representing the RIGHT TRIGGER button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-TRIANGLE}~12
+\begin{CompactList}\small\item\em This is the button number representing the TRIANGLE button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-CIRCLE}~13
+\begin{CompactList}\small\item\em This is the button number representing the CIRCLE button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-CROSS}~14
+\begin{CompactList}\small\item\em This is the button number representing the CROSS button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-SQUARE}~15
+\begin{CompactList}\small\item\em This is the button number representing the SQUARE button. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-HOME}~16
+\begin{CompactList}\small\item\em This is the button number representing the HOME button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-HOLD}~17
+\begin{CompactList}\small\item\em This is the button number representing the POWER HOLD slider, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-NOTE}~18
+\begin{CompactList}\small\item\em This is the button number representing the NOTE/MUSIC button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-SCREEN}~19
+\begin{CompactList}\small\item\em This is the button number representing the SCREEN button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-VOLUP}~20
+\begin{CompactList}\small\item\em This is the button number representing the VOLUME UP button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-VOLDOWN}~21
+\begin{CompactList}\small\item\em This is the button number representing the VOLUME DOWN button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-WLANUP}~22
+\begin{CompactList}\small\item\em This is the button number representing the WLAN slider, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-REMOTE}~23
+\begin{CompactList}\small\item\em This is the button number representing the HEADPHONE REMOTE button, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-DISC}~24
+\begin{CompactList}\small\item\em This is the button number representing the DISC status, this requires KERNEL mode to poll. \item\end{CompactList}\item 
+\#define {\bf INPUT\_\-BUTTON\_\-MS}~25
+\begin{CompactList}\small\item\em This is the button number representing the MEMORY STICK status, this requires KERNEL mode to poll. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf input\-Init} ()
+\begin{CompactList}\small\item\em Initializes the input system, this is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. \item\end{CompactList}\item 
+u8 {\bf input\-Check} (u8 in\-Input)
+\begin{CompactList}\small\item\em This returns the current state of a button. \item\end{CompactList}\item 
+{\bf bool} {\bf input\-Down} (u8 in\-Input)
+\begin{CompactList}\small\item\em This returns a non-zero value if the button supplied by in\-Input is currently pressed. \item\end{CompactList}\item 
+void {\bf input\-Poll} ()
+\begin{CompactList}\small\item\em This updates the input system, and should be called at least once every frame in which input is required. \item\end{CompactList}\item 
+void {\bf input\-Lock} (float in\-Time)
+\begin{CompactList}\small\item\em This locks the input system for a small period so that button presses are ignored. \item\end{CompactList}\item 
+void {\bf input\-Pause\-Func} (u8 in\-Input, u8 in\-State, void($\ast$in\-Func)())
+\begin{CompactList}\small\item\em This function allows you to define a button, a state and a function to call, so that you can register a pause event, in retrospect callbacks would possibly be better. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_CIRCLE@{INPUT\_\-BUTTON\_\-CIRCLE}}
+\index{INPUT_BUTTON_CIRCLE@{INPUT\_\-BUTTON\_\-CIRCLE}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-CIRCLE~13}\label{flInput_8h_42b046db155f92cb4265513f2d1fca5a}
+
+
+This is the button number representing the CIRCLE button. 
+
+
+
+Definition at line 37 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_CROSS@{INPUT\_\-BUTTON\_\-CROSS}}
+\index{INPUT_BUTTON_CROSS@{INPUT\_\-BUTTON\_\-CROSS}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-CROSS~14}\label{flInput_8h_67fb1fb5020f987ddd88a866f10cce48}
+
+
+This is the button number representing the CROSS button. 
+
+
+
+Definition at line 38 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_DISC@{INPUT\_\-BUTTON\_\-DISC}}
+\index{INPUT_BUTTON_DISC@{INPUT\_\-BUTTON\_\-DISC}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-DISC~24}\label{flInput_8h_8fdad36e379428072aa5564667f62e63}
+
+
+This is the button number representing the DISC status, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 49 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_HOLD@{INPUT\_\-BUTTON\_\-HOLD}}
+\index{INPUT_BUTTON_HOLD@{INPUT\_\-BUTTON\_\-HOLD}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-HOLD~17}\label{flInput_8h_77ffdb53c3a1f26b13e23a8c3b98ae28}
+
+
+This is the button number representing the POWER HOLD slider, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 42 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_HOME@{INPUT\_\-BUTTON\_\-HOME}}
+\index{INPUT_BUTTON_HOME@{INPUT\_\-BUTTON\_\-HOME}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-HOME~16}\label{flInput_8h_f0347c7fce36880782da5e4e69882f73}
+
+
+This is the button number representing the HOME button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 41 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_LTRIGGER@{INPUT\_\-BUTTON\_\-LTRIGGER}}
+\index{INPUT_BUTTON_LTRIGGER@{INPUT\_\-BUTTON\_\-LTRIGGER}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-LTRIGGER~8}\label{flInput_8h_001d9817d2e115039cd4413bdbe432e1}
+
+
+This is the button number representing the LEFT TRIGGER button. 
+
+
+
+Definition at line 34 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_MS@{INPUT\_\-BUTTON\_\-MS}}
+\index{INPUT_BUTTON_MS@{INPUT\_\-BUTTON\_\-MS}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-MS~25}\label{flInput_8h_37e171f70a4db85608c88570937ceda7}
+
+
+This is the button number representing the MEMORY STICK status, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 50 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_NOTE@{INPUT\_\-BUTTON\_\-NOTE}}
+\index{INPUT_BUTTON_NOTE@{INPUT\_\-BUTTON\_\-NOTE}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-NOTE~18}\label{flInput_8h_03e61c667ff4e7eb36a1451ee4a96077}
+
+
+This is the button number representing the NOTE/MUSIC button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 43 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_REMOTE@{INPUT\_\-BUTTON\_\-REMOTE}}
+\index{INPUT_BUTTON_REMOTE@{INPUT\_\-BUTTON\_\-REMOTE}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-REMOTE~23}\label{flInput_8h_028698807faf8d4d46f82041fdacb1bd}
+
+
+This is the button number representing the HEADPHONE REMOTE button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 48 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_RTRIGGER@{INPUT\_\-BUTTON\_\-RTRIGGER}}
+\index{INPUT_BUTTON_RTRIGGER@{INPUT\_\-BUTTON\_\-RTRIGGER}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-RTRIGGER~9}\label{flInput_8h_56e0c267ff8fa0382554d5fc58525aca}
+
+
+This is the button number representing the RIGHT TRIGGER button. 
+
+
+
+Definition at line 35 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_SCREEN@{INPUT\_\-BUTTON\_\-SCREEN}}
+\index{INPUT_BUTTON_SCREEN@{INPUT\_\-BUTTON\_\-SCREEN}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-SCREEN~19}\label{flInput_8h_fb2db81de25f1c977b420b83d12a7d35}
+
+
+This is the button number representing the SCREEN button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 44 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_SELECT@{INPUT\_\-BUTTON\_\-SELECT}}
+\index{INPUT_BUTTON_SELECT@{INPUT\_\-BUTTON\_\-SELECT}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-SELECT~0}\label{flInput_8h_b7d1a2bae405bf7264e7cab3f5376266}
+
+
+This is the button number representing the SELECT button. 
+
+
+
+Definition at line 28 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_SQUARE@{INPUT\_\-BUTTON\_\-SQUARE}}
+\index{INPUT_BUTTON_SQUARE@{INPUT\_\-BUTTON\_\-SQUARE}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-SQUARE~15}\label{flInput_8h_7e55606e95fd6015e539397b3080bcde}
+
+
+This is the button number representing the SQUARE button. 
+
+
+
+Definition at line 39 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_START@{INPUT\_\-BUTTON\_\-START}}
+\index{INPUT_BUTTON_START@{INPUT\_\-BUTTON\_\-START}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-START~3}\label{flInput_8h_67f974dc8a6962ea510fc5b0bcc989e5}
+
+
+This is the button number representing the START button. 
+
+
+
+Definition at line 29 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_TRIANGLE@{INPUT\_\-BUTTON\_\-TRIANGLE}}
+\index{INPUT_BUTTON_TRIANGLE@{INPUT\_\-BUTTON\_\-TRIANGLE}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-TRIANGLE~12}\label{flInput_8h_d30ef3985ae0fb4810767817b8da0229}
+
+
+This is the button number representing the TRIANGLE button. 
+
+
+
+Definition at line 36 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_VOLDOWN@{INPUT\_\-BUTTON\_\-VOLDOWN}}
+\index{INPUT_BUTTON_VOLDOWN@{INPUT\_\-BUTTON\_\-VOLDOWN}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-VOLDOWN~21}\label{flInput_8h_fe9cd62f3b87cc714be9eacc45d60c09}
+
+
+This is the button number representing the VOLUME DOWN button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 46 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_VOLUP@{INPUT\_\-BUTTON\_\-VOLUP}}
+\index{INPUT_BUTTON_VOLUP@{INPUT\_\-BUTTON\_\-VOLUP}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-VOLUP~20}\label{flInput_8h_5f6e2a8679aaf55ea6f8a3bd8c84d101}
+
+
+This is the button number representing the VOLUME UP button, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 45 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_BUTTON_WLANUP@{INPUT\_\-BUTTON\_\-WLANUP}}
+\index{INPUT_BUTTON_WLANUP@{INPUT\_\-BUTTON\_\-WLANUP}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-BUTTON\_\-WLANUP~22}\label{flInput_8h_abd9f41c6d2b7fd6335db662f513c5ca}
+
+
+This is the button number representing the WLAN slider, this requires KERNEL mode to poll. 
+
+
+
+Definition at line 47 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_DPAD_DOWN@{INPUT\_\-DPAD\_\-DOWN}}
+\index{INPUT_DPAD_DOWN@{INPUT\_\-DPAD\_\-DOWN}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-DPAD\_\-DOWN~6}\label{flInput_8h_f9697a3fd94b95882447e6c5068a9b2c}
+
+
+This is the button number representing the DPAD DOWN button. 
+
+
+
+Definition at line 32 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_DPAD_LEFT@{INPUT\_\-DPAD\_\-LEFT}}
+\index{INPUT_DPAD_LEFT@{INPUT\_\-DPAD\_\-LEFT}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-DPAD\_\-LEFT~7}\label{flInput_8h_007c052ca51db71798b8e0ec1fb85950}
+
+
+This is the button number representing the DPAD LEFT button. 
+
+
+
+Definition at line 33 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_DPAD_RIGHT@{INPUT\_\-DPAD\_\-RIGHT}}
+\index{INPUT_DPAD_RIGHT@{INPUT\_\-DPAD\_\-RIGHT}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-DPAD\_\-RIGHT~5}\label{flInput_8h_48b28517306cac4ae43a49054096abca}
+
+
+This is the button number representing the DPAD RIGHT button. 
+
+
+
+Definition at line 31 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_DPAD_UP@{INPUT\_\-DPAD\_\-UP}}
+\index{INPUT_DPAD_UP@{INPUT\_\-DPAD\_\-UP}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-DPAD\_\-UP~4}\label{flInput_8h_04b47e6125dd41cc3b1f8007ded4473f}
+
+
+This is the button number representing the DPAD UP button. 
+
+
+
+Definition at line 30 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_JUST_DOWN@{INPUT\_\-JUST\_\-DOWN}}
+\index{INPUT_JUST_DOWN@{INPUT\_\-JUST\_\-DOWN}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-JUST\_\-DOWN~3}\label{flInput_8h_e11b6db4b3d7444deb78f77d15515fcf}
+
+
+This button state represents a button that has just been pressed. 
+
+
+
+Definition at line 26 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_JUST_UP@{INPUT\_\-JUST\_\-UP}}
+\index{INPUT_JUST_UP@{INPUT\_\-JUST\_\-UP}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-JUST\_\-UP~2}\label{flInput_8h_39aabaad8c49de6ed4e948ecdec008cc}
+
+
+This button state represents a button that has just been released. 
+
+
+
+Definition at line 24 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_STILL_DOWN@{INPUT\_\-STILL\_\-DOWN}}
+\index{INPUT_STILL_DOWN@{INPUT\_\-STILL\_\-DOWN}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-STILL\_\-DOWN~1}\label{flInput_8h_5cc81a4a3564ca2d38d7458db6f82bb6}
+
+
+This button state represents a button that is down and was down last frame too. 
+
+
+
+Definition at line 25 of file fl\-Input.h.\index{flInput.h@{fl\-Input.h}!INPUT_STILL_UP@{INPUT\_\-STILL\_\-UP}}
+\index{INPUT_STILL_UP@{INPUT\_\-STILL\_\-UP}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INPUT\_\-STILL\_\-UP~0}\label{flInput_8h_28673a5e1864bbdc27354c443dc8bd6c}
+
+
+This button state represents a button that is not pressed and wasn't pressed last frame either. 
+
+
+
+Definition at line 23 of file fl\-Input.h.
+
+\subsection{Function Documentation}
+\index{flInput.h@{fl\-Input.h}!inputCheck@{inputCheck}}
+\index{inputCheck@{inputCheck}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 input\-Check (u8 {\em in\-Input})}\label{flInput_8h_eaad289fdb4a59173ce0095d73f93e1f}
+
+
+This returns the current state of a button. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button whose state will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The state of the button. \end{Desc}
+
+
+Definition at line 34 of file fl\-Input.c.
+
+References input\-Lock\-Time, and input\-States.\index{flInput.h@{fl\-Input.h}!inputDown@{inputDown}}
+\index{inputDown@{inputDown}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} input\-Down (u8 {\em in\-Input})}\label{flInput_8h_b1da600f66d3b201294e47d45bb12d1d}
+
+
+This returns a non-zero value if the button supplied by in\-Input is currently pressed. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button whose to be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Non-zero if the button is pressed. \end{Desc}
+
+
+Definition at line 40 of file fl\-Input.c.
+
+References input\-Lock\-Time, and input\-States.\index{flInput.h@{fl\-Input.h}!inputInit@{inputInit}}
+\index{inputInit@{inputInit}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Init ()}\label{flInput_8h_212a6fde8e289ecf188ec1490e2ddc3c}
+
+
+Initializes the input system, this is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} \end{Desc}
+
+
+Definition at line 27 of file fl\-Input.c.
+
+References input\-Data, input\-Timer, and timer\-Create().
+
+Referenced by fl\-Initialize().\index{flInput.h@{fl\-Input.h}!inputLock@{inputLock}}
+\index{inputLock@{inputLock}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Lock (float {\em in\-Time})}\label{flInput_8h_1a32b959ace602d4fb965c7d51b4d8cd}
+
+
+This locks the input system for a small period so that button presses are ignored. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Time}]The amount of time in seconds that the system will be locked for. \end{description}
+\end{Desc}
+
+
+Definition at line 77 of file fl\-Input.c.
+
+References input\-Lock\-Time, input\-Timer, and timer\-Get\-Delta\-Time().
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Warning\-From(), and input\-Poll().\index{flInput.h@{fl\-Input.h}!inputPauseFunc@{inputPauseFunc}}
+\index{inputPauseFunc@{inputPauseFunc}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Pause\-Func (u8 {\em in\-Input}, u8 {\em in\-State}, void($\ast$)() {\em in\-Func})}\label{flInput_8h_c395426c1f4a36d915f4dc87edfb1838}
+
+
+This function allows you to define a button, a state and a function to call, so that you can register a pause event, in retrospect callbacks would possibly be better. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button that will be used for pausing. \item[{\em in\-State}]The state the button must be in for in\-Func() to be called. \item[{\em in\-Func}]A pointer to the pause function to be used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Warning:]This function doesn't seem to work, although is pretty much untested. \end{Desc}
+
+
+Definition at line 83 of file fl\-Input.c.
+
+References input\-Pause, input\-Pause\-Button, and input\-Pause\-State.\index{flInput.h@{fl\-Input.h}!inputPoll@{inputPoll}}
+\index{inputPoll@{inputPoll}!flInput.h@{fl\-Input.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Poll ()}\label{flInput_8h_2817892968ec4ab3fc76a2551b09aed3}
+
+
+This updates the input system, and should be called at least once every frame in which input is required. 
+
+
+
+Definition at line 46 of file fl\-Input.c.
+
+References input\-Data, input\-Lock(), input\-Lock\-Time, input\-Pause, input\-Pause\-Button, input\-Pause\-State, input\-States, input\-Timer, and timer\-Get\-Delta\-Time().

@@ -1,0 +1,78 @@
+\section{fl\-Timer.c File Reference}
+\label{flTimer_8c}\index{flTimer.c@{flTimer.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Timer} $\ast$ {\bf timer\-Create} ()
+\item 
+double {\bf timer\-Get\-Delta\-Time} ({\bf Timer} $\ast$in\-Timer)
+\item 
+void {\bf timer\-Free} ({\bf Timer} $\ast$in\-Timer)
+\item 
+void {\bf timer\-Pause\-All} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+u64 {\bf timer\-Pause\-Until} = 0
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flTimer.c@{fl\-Timer.c}!timerCreate@{timerCreate}}
+\index{timerCreate@{timerCreate}!flTimer.c@{fl\-Timer.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer}$\ast$ timer\-Create ()}\label{flTimer_8c_4081033c0b3db3af0897edf915431b73}
+
+
+
+
+Definition at line 18 of file fl\-Timer.c.
+
+References debug\-Error, mem\-Alloc, NULL, Timer::timer\-Tick\-Resolution, Timer::timer\-Time\-Last, and Timer::timer\-Time\-Now.
+
+Referenced by graphics\-Init(), input\-Init(), and ntfy\-Init().\index{flTimer.c@{fl\-Timer.c}!timerFree@{timerFree}}
+\index{timerFree@{timerFree}!flTimer.c@{fl\-Timer.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void timer\-Free ({\bf Timer} $\ast$ {\em in\-Timer})}\label{flTimer_8c_725e9715b3a290861aab8af7146aa2b3}
+
+
+
+
+Definition at line 48 of file fl\-Timer.c.
+
+References mem\-Free.\index{flTimer.c@{fl\-Timer.c}!timerGetDeltaTime@{timerGetDeltaTime}}
+\index{timerGetDeltaTime@{timerGetDeltaTime}!flTimer.c@{fl\-Timer.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double timer\-Get\-Delta\-Time ({\bf Timer} $\ast$ {\em in\-Timer})}\label{flTimer_8c_154b34b0d32a2c77e90dc904a634fd59}
+
+
+
+
+Definition at line 32 of file fl\-Timer.c.
+
+References debug\-Warning, timer\-Pause\-Until, Timer::timer\-Tick\-Resolution, Timer::timer\-Time\-Last, and Timer::timer\-Time\-Now.
+
+Referenced by graphics\-Swap\-Buffers(), input\-Lock(), input\-Poll(), ntfy\-Tick(), and ntfy\-Tray\-Tick().\index{flTimer.c@{fl\-Timer.c}!timerPauseAll@{timerPauseAll}}
+\index{timerPauseAll@{timerPauseAll}!flTimer.c@{fl\-Timer.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void timer\-Pause\-All ()}\label{flTimer_8c_944af842e6771f6d921f56381ec457ea}
+
+
+
+
+Definition at line 57 of file fl\-Timer.c.
+
+References timer\-Pause\-Until.
+
+\subsection{Variable Documentation}
+\index{flTimer.c@{fl\-Timer.c}!timerPauseUntil@{timerPauseUntil}}
+\index{timerPauseUntil@{timerPauseUntil}!flTimer.c@{fl\-Timer.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u64 {\bf timer\-Pause\-Until} = 0}\label{flTimer_8c_fa057cd91ce37941ba5ece66cf1e7ecc}
+
+
+
+
+Definition at line 16 of file fl\-Timer.c.
+
+Referenced by timer\-Get\-Delta\-Time(), and timer\-Pause\-All().

@@ -1,0 +1,127 @@
+\section{fl\-Graphics3d.h File Reference}
+\label{flGraphics3d_8h}\index{flGraphics3d.h@{flGraphics3d.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include \char`\"{}fl\-Texture.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf SPHERE\_\-MAP\_\-CYLINDER\_\-EQUAL}~0
+\item 
+\#define {\bf SPHERE\_\-MAP\_\-CYLINDER}~1
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf graphics3d\-Draw\-Origin} ()
+\item 
+void {\bf graphics3d\-Draw\-Cube\-Wireframe} ()
+\item 
+void {\bf graphics3d\-Draw\-Cube} ()
+\item 
+void {\bf graphics3d\-Draw\-Sphere} (u32 in\-Detail)
+\item 
+void {\bf graphics3d\-Draw\-Cube\-Wireframea} ({\bf vect3f} in\-Location, {\bf vect3f} in\-Dimensions, {\bf vect3f} in\-Rotation, u32 in\-Color)
+\item 
+void {\bf graphics3d\-Draw\-Cubea} ({\bf vect3f} in\-Location, {\bf vect3f} in\-Dimensions, {\bf vect3f} in\-Rotation, u32 in\-Color)
+\item 
+void {\bf graphics3d\-Draw\-Cube\-Textured} ({\bf Texture} $\ast$in\-Tex)
+\item 
+void {\bf graphics3d\-Draw\-Sphere\-Textured} (u32 in\-Detail, u8 in\-Map\-Type, {\bf Texture} $\ast$in\-Tex)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flGraphics3d.h@{fl\-Graphics3d.h}!SPHERE_MAP_CYLINDER@{SPHERE\_\-MAP\_\-CYLINDER}}
+\index{SPHERE_MAP_CYLINDER@{SPHERE\_\-MAP\_\-CYLINDER}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SPHERE\_\-MAP\_\-CYLINDER~1}\label{flGraphics3d_8h_ffdd702c0c99ef101616823e21733537}
+
+
+
+
+Definition at line 20 of file fl\-Graphics3d.h.\index{flGraphics3d.h@{fl\-Graphics3d.h}!SPHERE_MAP_CYLINDER_EQUAL@{SPHERE\_\-MAP\_\-CYLINDER\_\-EQUAL}}
+\index{SPHERE_MAP_CYLINDER_EQUAL@{SPHERE\_\-MAP\_\-CYLINDER\_\-EQUAL}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SPHERE\_\-MAP\_\-CYLINDER\_\-EQUAL~0}\label{flGraphics3d_8h_b90e3cb649b56f510fdef4ced485990b}
+
+
+
+
+Definition at line 19 of file fl\-Graphics3d.h.
+
+Referenced by graphics3d\-Draw\-Sphere\-Textured().
+
+\subsection{Function Documentation}
+\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawCube@{graphics3dDrawCube}}
+\index{graphics3dDrawCube@{graphics3dDrawCube}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Cube ()}\label{flGraphics3d_8h_da479ff269707cfe2851e2ba7b964811}
+
+
+
+
+Definition at line 85 of file fl\-Graphics3d.c.
+
+References graphics3d\-Draw\-Cube\-Wireframe(), graphics\-Wireframe, vert\-Vf::vert\-X, vert\-Vf::vert\-Y, and vert\-Vf::vert\-Z.
+
+Referenced by graphics3d\-Draw\-Cube\-Coloreda().\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawCubea@{graphics3dDrawCubea}}
+\index{graphics3dDrawCubea@{graphics3dDrawCubea}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Cubea ({\bf vect3f} {\em in\-Location}, {\bf vect3f} {\em in\-Dimensions}, {\bf vect3f} {\em in\-Rotation}, u32 {\em in\-Color})}\label{flGraphics3d_8h_30788da39402ad6ef14394babdb1f36f}
+
+
+\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawCubeTextured@{graphics3dDrawCubeTextured}}
+\index{graphics3dDrawCubeTextured@{graphics3dDrawCubeTextured}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Cube\-Textured ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flGraphics3d_8h_17894417032253bd513612931b2653bc}
+
+
+
+
+Definition at line 263 of file fl\-Graphics3d.c.
+
+References tex\-Bind(), Texture::tex\-Mip\-Maps, vert\-Tf\-Vf::vert\-U, vert\-Tf\-Vf::vert\-V, vert\-Tf\-Vf::vert\-X, vert\-Tf\-Vf::vert\-Y, and vert\-Tf\-Vf::vert\-Z.\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawCubeWireframe@{graphics3dDrawCubeWireframe}}
+\index{graphics3dDrawCubeWireframe@{graphics3dDrawCubeWireframe}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Cube\-Wireframe ()}\label{flGraphics3d_8h_bb58801464c96ef8a95409f1ad292eb3}
+
+
+
+
+Definition at line 46 of file fl\-Graphics3d.c.
+
+References vert\-Vf::vert\-X, vert\-Vf::vert\-Y, and vert\-Vf::vert\-Z.
+
+Referenced by graphics3d\-Draw\-Cube(), and graphics3d\-Draw\-Cube\-Wireframea().\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawCubeWireframea@{graphics3dDrawCubeWireframea}}
+\index{graphics3dDrawCubeWireframea@{graphics3dDrawCubeWireframea}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Cube\-Wireframea ({\bf vect3f} {\em in\-Location}, {\bf vect3f} {\em in\-Dimensions}, {\bf vect3f} {\em in\-Rotation}, u32 {\em in\-Color})}\label{flGraphics3d_8h_e30ad6cfdb58334a287b0400a0ebf38f}
+
+
+
+
+Definition at line 238 of file fl\-Graphics3d.c.
+
+References graphics3d\-Draw\-Cube\-Wireframe().
+
+Referenced by graphics3d\-Draw\-Cube\-Coloreda().\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawOrigin@{graphics3dDrawOrigin}}
+\index{graphics3dDrawOrigin@{graphics3dDrawOrigin}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Origin ()}\label{flGraphics3d_8h_70cda2b57491cf276d3ad0c401f59abd}
+
+
+
+
+Definition at line 24 of file fl\-Graphics3d.c.
+
+References vertc\-Vf::vert\-Color, vertc\-Vf::vert\-X, vertc\-Vf::vert\-Y, and vertc\-Vf::vert\-Z.\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawSphere@{graphics3dDrawSphere}}
+\index{graphics3dDrawSphere@{graphics3dDrawSphere}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Sphere (u32 {\em in\-Detail})}\label{flGraphics3d_8h_43c11eb10953728f60e288499ce1edd8}
+
+
+
+
+Definition at line 128 of file fl\-Graphics3d.c.
+
+References MATH\_\-PI, math\-Cosf(), math\-Sinf(), vert\-Vf::vert\-X, vert\-Vf::vert\-Y, and vert\-Vf::vert\-Z.\index{flGraphics3d.h@{fl\-Graphics3d.h}!graphics3dDrawSphereTextured@{graphics3dDrawSphereTextured}}
+\index{graphics3dDrawSphereTextured@{graphics3dDrawSphereTextured}!flGraphics3d.h@{fl\-Graphics3d.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics3d\-Draw\-Sphere\-Textured (u32 {\em in\-Detail}, u8 {\em in\-Map\-Type}, {\bf Texture} $\ast$ {\em in\-Tex})}\label{flGraphics3d_8h_ef33215a17288686665b4450ba241bfc}
+
+
+
+
+Definition at line 328 of file fl\-Graphics3d.c.
+
+References MATH\_\-PI, math\-Cosf(), math\-Sinf(), SPHERE\_\-MAP\_\-CYLINDER\_\-EQUAL, tex\-Bind(), Texture::tex\-Mip\-Maps, vert\-Tf\-Vf::vert\-U, vert\-Tf\-Vf::vert\-V, vert\-Tf\-Vf::vert\-X, vert\-Tf\-Vf::vert\-Y, and vert\-Tf\-Vf::vert\-Z.

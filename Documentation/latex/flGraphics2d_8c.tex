@@ -1,0 +1,241 @@
+\section{fl\-Graphics2d.c File Reference}
+\label{flGraphics2d_8c}\index{flGraphics2d.c@{flGraphics2d.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspgum.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf graphics2d\-Draw\-Line\-Grad} (int in\-Source\-X, int in\-Source\-Y, u32 in\-Source\-Color, int in\-Target\-X, int in\-Target\-Y, u32 in\-Target\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Triangle\-Grad} (int in\-X0, int in\-Y0, u32 in\-Color0, int in\-X1, int in\-Y1, u32 in\-Color1, int in\-X2, int in\-Y2, u32 in\-Color2)
+\item 
+void {\bf graphics2d\-Draw\-Triangle\-Filled\-Grad} (int in\-X0, int in\-Y0, u32 in\-Color0, int in\-X1, int in\-Y1, u32 in\-Color1, int in\-X2, int in\-Y2, u32 in\-Color2)
+\item 
+void {\bf graphics2d\-Draw\-Quad\-Grad} (int in\-X0, int in\-Y0, u32 in\-Color0, int in\-X1, int in\-Y1, u32 in\-Color1, int in\-X2, int in\-Y2, u32 in\-Color2, int in\-X3, int in\-Y3, u32 in\-Color3)
+\item 
+void {\bf graphics2d\-Draw\-Quad\-Filled\-Grad} (int in\-X0, int in\-Y0, u32 in\-Color0, int in\-X1, int in\-Y1, u32 in\-Color1, int in\-X2, int in\-Y2, u32 in\-Color2, int in\-X3, int in\-Y3, u32 in\-Color3)
+\item 
+void {\bf graphics2d\-Draw\-Ellipse\-Filled\-Grad} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Inner\-Color, u32 in\-Outer\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Point} (int in\-X, int in\-Y, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Line} (int in\-Source\-X, int in\-Source\-Y, int in\-Target\-X, int in\-Target\-Y, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Triangle} (int in\-X0, int in\-Y0, int in\-X1, int in\-Y1, int in\-X2, int in\-Y2, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Triangle\-Filled} (int in\-X0, int in\-Y0, int in\-X1, int in\-Y1, int in\-X2, int in\-Y2, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Quad} (int in\-X0, int in\-Y0, int in\-X1, int in\-Y1, int in\-X2, int in\-Y2, int in\-X3, int in\-Y3, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Quad\-Filled} (int in\-X0, int in\-Y0, int in\-X1, int in\-Y1, int in\-X2, int in\-Y2, int in\-X3, int in\-Y3, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Rect} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Rect\-Filled} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Ellipse} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Ellipse\-Filled} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Color)
+\item 
+void {\bf graphics2d\-Draw\-Spheroid\-Shaded} (int in\-X, int in\-Y, int in\-Width, int in\-Height, u32 in\-Color, float in\-Shade\-Angle)
+\item 
+void {\bf graphics2d\-Draw\-Texture} (int in\-X, int in\-Y, int in\-Width, int in\-Height, {\bf Texture} $\ast$in\-Tex)
+\item 
+void {\bf graphics2d\-Draw\-Texture\-Section} (int in\-X, int in\-Y, int in\-Width, int in\-Height, {\bf Texture} $\ast$in\-Tex, unsigned int in\-Src\-X, unsigned int in\-Src\-Y, unsigned int in\-Src\-Width, unsigned int in\-Src\-Height)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawEllipse@{graphics2dDrawEllipse}}
+\index{graphics2dDrawEllipse@{graphics2dDrawEllipse}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Ellipse (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Color})}\label{flGraphics2d_8c_1801c42fc90be61982c4fb7a77f0c44a}
+
+
+
+
+Definition at line 359 of file fl\-Graphics2d.c.
+
+References FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD, FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES, MATH\_\-PI, math\-Cosf(), math\-Sinf(), max, pos, vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by ntfy\-Show\-Time().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawEllipseFilled@{graphics2dDrawEllipseFilled}}
+\index{graphics2dDrawEllipseFilled@{graphics2dDrawEllipseFilled}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Ellipse\-Filled (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Color})}\label{flGraphics2d_8c_29b5a0adce9404448962b19aac6b2bc3}
+
+
+
+
+Definition at line 397 of file fl\-Graphics2d.c.
+
+References graphics2d\-Draw\-Ellipse\-Filled\-Grad().
+
+Referenced by ntfy\-Show\-Time().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawEllipseFilledGrad@{graphics2dDrawEllipseFilledGrad}}
+\index{graphics2dDrawEllipseFilledGrad@{graphics2dDrawEllipseFilledGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Ellipse\-Filled\-Grad (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Inner\-Color}, u32 {\em in\-Outer\-Color})}\label{flGraphics2d_8c_2878c73198480cb1ec5413c4c6d3f0b2}
+
+
+
+
+Definition at line 178 of file fl\-Graphics2d.c.
+
+References FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD, FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES, MATH\_\-PI, math\-Cosf(), math\-Sinf(), max, pos, vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by graphics2d\-Draw\-Ellipse\-Filled().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawLine@{graphics2dDrawLine}}
+\index{graphics2dDrawLine@{graphics2dDrawLine}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Line (int {\em in\-Source\-X}, int {\em in\-Source\-Y}, int {\em in\-Target\-X}, int {\em in\-Target\-Y}, u32 {\em in\-Color})}\label{flGraphics2d_8c_91470709f2985e747c865ec42a1c5db6}
+
+
+
+
+Definition at line 253 of file fl\-Graphics2d.c.
+
+References vert\-Vs::vert\-X, vert\-Vs::vert\-Y, and vert\-Vs::vert\-Z.
+
+Referenced by ntfy\-Show\-Battery(), and ntfy\-Show\-Time().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawLineGrad@{graphics2dDrawLineGrad}}
+\index{graphics2dDrawLineGrad@{graphics2dDrawLineGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Line\-Grad (int {\em in\-Source\-X}, int {\em in\-Source\-Y}, u32 {\em in\-Source\-Color}, int {\em in\-Target\-X}, int {\em in\-Target\-Y}, u32 {\em in\-Target\-Color})}\label{flGraphics2d_8c_050ddc43fb117ac6974124bfc739f9ab}
+
+
+
+
+Definition at line 24 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawPoint@{graphics2dDrawPoint}}
+\index{graphics2dDrawPoint@{graphics2dDrawPoint}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Point (int {\em in\-X}, int {\em in\-Y}, u32 {\em in\-Color})}\label{flGraphics2d_8c_21062187e2fc088d5baff827b840956e}
+
+
+
+
+Definition at line 233 of file fl\-Graphics2d.c.
+
+References vert\-Vs::vert\-X, vert\-Vs::vert\-Y, and vert\-Vs::vert\-Z.\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawQuad@{graphics2dDrawQuad}}
+\index{graphics2dDrawQuad@{graphics2dDrawQuad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Quad (int {\em in\-X0}, int {\em in\-Y0}, int {\em in\-X1}, int {\em in\-Y1}, int {\em in\-X2}, int {\em in\-Y2}, int {\em in\-X3}, int {\em in\-Y3}, u32 {\em in\-Color})}\label{flGraphics2d_8c_c1d2e699b20f3d9ae7239f6785f43ba8}
+
+
+
+
+Definition at line 285 of file fl\-Graphics2d.c.
+
+References graphics2d\-Draw\-Quad\-Grad().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawQuadFilled@{graphics2dDrawQuadFilled}}
+\index{graphics2dDrawQuadFilled@{graphics2dDrawQuadFilled}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Quad\-Filled (int {\em in\-X0}, int {\em in\-Y0}, int {\em in\-X1}, int {\em in\-Y1}, int {\em in\-X2}, int {\em in\-Y2}, int {\em in\-X3}, int {\em in\-Y3}, u32 {\em in\-Color})}\label{flGraphics2d_8c_d3af9c2ef1e8251493b8b15a6bdb7583}
+
+
+
+
+Definition at line 289 of file fl\-Graphics2d.c.
+
+References graphics2d\-Draw\-Quad\-Filled\-Grad().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawQuadFilledGrad@{graphics2dDrawQuadFilledGrad}}
+\index{graphics2dDrawQuadFilledGrad@{graphics2dDrawQuadFilledGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Quad\-Filled\-Grad (int {\em in\-X0}, int {\em in\-Y0}, u32 {\em in\-Color0}, int {\em in\-X1}, int {\em in\-Y1}, u32 {\em in\-Color1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color2}, int {\em in\-X3}, int {\em in\-Y3}, u32 {\em in\-Color3})}\label{flGraphics2d_8c_cd1c14a7dd6e330988bc27e99f90dd95}
+
+
+
+
+Definition at line 144 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by graphics2d\-Draw\-Quad\-Filled().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawQuadGrad@{graphics2dDrawQuadGrad}}
+\index{graphics2dDrawQuadGrad@{graphics2dDrawQuadGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Quad\-Grad (int {\em in\-X0}, int {\em in\-Y0}, u32 {\em in\-Color0}, int {\em in\-X1}, int {\em in\-Y1}, u32 {\em in\-Color1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color2}, int {\em in\-X3}, int {\em in\-Y3}, u32 {\em in\-Color3})}\label{flGraphics2d_8c_21343e825ae31bc9f80b14f0ccc0e4e6}
+
+
+
+
+Definition at line 107 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by graphics2d\-Draw\-Quad().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawRect@{graphics2dDrawRect}}
+\index{graphics2dDrawRect@{graphics2dDrawRect}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Rect (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Color})}\label{flGraphics2d_8c_32b7a6e54f6fda2ea7210fca6e0c3e04}
+
+
+
+
+Definition at line 293 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by ntfy\-Show\-Battery().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawRectFilled@{graphics2dDrawRectFilled}}
+\index{graphics2dDrawRectFilled@{graphics2dDrawRectFilled}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Rect\-Filled (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Color})}\label{flGraphics2d_8c_ea93dd1ab20e3d997f5a663690ed5386}
+
+
+
+
+Definition at line 337 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by ntfy\-Show\-Battery(), ntfy\-Show\-Time(), and ntfy\-Tray\-Show().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawSpheroidShaded@{graphics2dDrawSpheroidShaded}}
+\index{graphics2dDrawSpheroidShaded@{graphics2dDrawSpheroidShaded}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Spheroid\-Shaded (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, u32 {\em in\-Color}, float {\em in\-Shade\-Angle})}\label{flGraphics2d_8c_f62d364e925524bbd27414944d24c095}
+
+
+
+
+Definition at line 406 of file fl\-Graphics2d.c.
+
+References color\-Lum\-Mult8888(), FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD, FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES, MATH\_\-PI, math\-Cosf(), math\-Sinf(), max, pos, vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTexture@{graphics2dDrawTexture}}
+\index{graphics2dDrawTexture@{graphics2dDrawTexture}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Texture (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, {\bf Texture} $\ast$ {\em in\-Tex})}\label{flGraphics2d_8c_23111757ed0c0b70bb8131cd0436dd84}
+
+
+
+
+Definition at line 471 of file fl\-Graphics2d.c.
+
+References debug\-Warning, graphics\-Draw\-Buffer, SCREEN\_\-PITCH, Texture::tex\-Alpha, tex\-Bind(), Texture::tex\-Data, Texture::tex\-Data\-Width, Texture::tex\-Height, Texture::tex\-Pixel\-Format, Texture::tex\-Stride, Texture::tex\-Width, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, and vmem\-Absolute\-Ptr.\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTextureSection@{graphics2dDrawTextureSection}}
+\index{graphics2dDrawTextureSection@{graphics2dDrawTextureSection}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Texture\-Section (int {\em in\-X}, int {\em in\-Y}, int {\em in\-Width}, int {\em in\-Height}, {\bf Texture} $\ast$ {\em in\-Tex}, unsigned int {\em in\-Src\-X}, unsigned int {\em in\-Src\-Y}, unsigned int {\em in\-Src\-Width}, unsigned int {\em in\-Src\-Height})}\label{flGraphics2d_8c_f98a19591e7c77534158c6085627bfe2}
+
+
+
+
+Definition at line 546 of file fl\-Graphics2d.c.
+
+References graphics\-Draw\-Buffer, SCREEN\_\-PITCH, Texture::tex\-Alpha, tex\-Bind(), Texture::tex\-Data, Texture::tex\-Pixel\-Format, Texture::tex\-Stride, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, and vmem\-Absolute\-Ptr.\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTriangle@{graphics2dDrawTriangle}}
+\index{graphics2dDrawTriangle@{graphics2dDrawTriangle}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Triangle (int {\em in\-X0}, int {\em in\-Y0}, int {\em in\-X1}, int {\em in\-Y1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color})}\label{flGraphics2d_8c_2134a34ded663ac28ea07c7e45527275}
+
+
+
+
+Definition at line 277 of file fl\-Graphics2d.c.
+
+References graphics2d\-Draw\-Triangle\-Grad().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTriangleFilled@{graphics2dDrawTriangleFilled}}
+\index{graphics2dDrawTriangleFilled@{graphics2dDrawTriangleFilled}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Triangle\-Filled (int {\em in\-X0}, int {\em in\-Y0}, int {\em in\-X1}, int {\em in\-Y1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color})}\label{flGraphics2d_8c_88e42b65fc55f6b1095af9789e3de3f8}
+
+
+
+
+Definition at line 281 of file fl\-Graphics2d.c.
+
+References graphics2d\-Draw\-Triangle\-Filled\-Grad().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTriangleFilledGrad@{graphics2dDrawTriangleFilledGrad}}
+\index{graphics2dDrawTriangleFilledGrad@{graphics2dDrawTriangleFilledGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Triangle\-Filled\-Grad (int {\em in\-X0}, int {\em in\-Y0}, u32 {\em in\-Color0}, int {\em in\-X1}, int {\em in\-Y1}, u32 {\em in\-Color1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color2})}\label{flGraphics2d_8c_503a127802567b2d5d3ead8d2281ed56}
+
+
+
+
+Definition at line 78 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by graphics2d\-Draw\-Triangle\-Filled().\index{flGraphics2d.c@{fl\-Graphics2d.c}!graphics2dDrawTriangleGrad@{graphics2dDrawTriangleGrad}}
+\index{graphics2dDrawTriangleGrad@{graphics2dDrawTriangleGrad}!flGraphics2d.c@{fl\-Graphics2d.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics2d\-Draw\-Triangle\-Grad (int {\em in\-X0}, int {\em in\-Y0}, u32 {\em in\-Color0}, int {\em in\-X1}, int {\em in\-Y1}, u32 {\em in\-Color1}, int {\em in\-X2}, int {\em in\-Y2}, u32 {\em in\-Color2})}\label{flGraphics2d_8c_b0897647bc7e2d680962b311b2882eef}
+
+
+
+
+Definition at line 46 of file fl\-Graphics2d.c.
+
+References vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.
+
+Referenced by graphics2d\-Draw\-Triangle().

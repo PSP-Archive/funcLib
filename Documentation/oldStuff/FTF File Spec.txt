@@ -1,0 +1,119 @@
+FTF - Flatmush Texture Format/File
+
+
+=================================================
+	File Definition
+=================================================
+
+Header
+{
+	char[4] FileType	= "FTF\0"
+	uint32	ChunksOffset	(Other applications may add chunks to a file to hold additional information)
+	ubyte	Version		= 1
+	ubyte	Layers		= 1+
+	ubyte	Frames		= 1 to 255
+        char[5] Padding         = ~
+} // 16
+
+Generic Layer
+{
+	uint32	DataOffset
+	uint32	Height		
+	uint32	Width		
+	ubyte	LayerID		(See notes)
+}
+
+Image Layer
+{
+	uint32	DataOffset
+	uint32	Height		
+	uint32	Width		
+
+	ubyte	LayerID		(See notes)
+	ubyte	Compression	(See notes)
+        ubyte   Encoding        (See notes)
+
+        // The following describes how the colors are stored (In the data or palette, depending on Encoding)
+	ubyte	ColorBPP	(usually 24 RGB for the ImageLayer or 32 for RGBA, but can support most lengths)
+        ubyte   Comp0Bits
+        ubyte   Comp0BitsOffset
+        ubyte   Comp1Bits
+        ubyte   Comp1BitsOffset
+        ubyte   Comp2Bits
+        ubyte   Comp2BitsOffset
+        ubyte   Comp3Bits
+        ubyte   Comp3BitsOffset
+} // 16
+
+Color Map (Precedes the image data if it is colormapped)
+{
+        ubyte   Entries
+        ubyte   IndexBPP
+        char[6] Padding
+} // 8
+
+<Possible Direct/Color Map>
+<RAW Image Data>
+
+
+
+=================================================
+	Notes
+=================================================
+
+LayerID
+
+iiim mmmm
+
+i = 0 - ImageLayer
+i = 1 - HeightMap
+i = 2 - AmbienceMap
+i = 3 - NormalMap
+i = 4 - GlossMap
+i > 4 - Undefined
+
+(For ImageLayer)
+m - Signed bitfield for mipmap level, where -ve indicates a magnification
+
+
+
+Image Layer
+
+'Raw' Image data, may also contain extra information depending upon it's header.
+Chunks may contain any information and are described in 'File Format Notes.txt'
+
+
+Encoding
+
+cc ssss hv
+01 2345 67
+
+c = 0 - Truecolor
+c = 1 - Palettized/ColorMapped
+c = 2 - DirectColor (Mapped Planes)
+c = 3 - Undefined
+
+(Applies to trueColorData/colorMap/planarColorMap)
+s = 0 - RGBA
+s = 1 - GA (Grayscale with Alpha)
+s = 2 - HSLA (Hue Saturation Luminescence Alpha)
+s = 3 - CYMK (Cyan Yellow Magenta Key)
+s = 4 - CYMA (Cyan Yellow Magenta Alpha)
+s > 4 - Undefined
+
+h = hflip
+v = vflip
+
+A negative bitOffset or a bitOffset >127 indicates that the said component is inverted.
+
+In the header the compression numbers are for s3tc and data compression, the field is split into two fields:
+ddddd sss Where d is the dataCompression field(eg RLE, etc) and s is the st3c compression field.
+s = 0 - None
+s = 1 - DXT1
+s = 2 - DXT2
+s = 3 - DXT3
+s = 4 - DXT4
+s = 5 - DXT5
+
+d = 0 - None
+d = 1 - RLE<BPP> (TGA style)

@@ -1,0 +1,801 @@
+\section{fl\-Config\-Validate.h File Reference}
+\label{flConfigValidate_8h}\index{flConfigValidate.h@{flConfigValidate.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-VOLUME}~0
+\item 
+\#define {\bf FL\_\-CALLBACKS\_\-EXIT}~0
+\item 
+\#define {\bf FL\_\-CALLBACKS\_\-POWER}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-TIMESTAMP}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CALLEDFROM}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGGING}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGCLEAR}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SHOW}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SHOW}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-POOL}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-PAGE}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-LOGGING}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-ERRORBYTES}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-SCRATCHPAD}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}~16
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-STRIDE\_\-FILL}~0
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-CACHE}~0
+\item 
+\#define {\bf FL\_\-MATH\_\-VFPU}~0
+\item 
+\#define {\bf FL\_\-MATH\_\-RANDOMSEED}~0
+\item 
+\#define {\bf FL\_\-MATH\_\-TRIGCACHE}~0
+\item 
+\#define {\bf FL\_\-MATH\_\-RANDTYPE}~FL\_\-MATH\_\-RAND\_\-STDIO
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-DAMP}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-3D}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-CAMERA}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOSWIZZLE}~0
+\item 
+\#define {\bf FL\_\-MODEL}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-USEDMA}~0
+\item 
+\#define {\bf FL\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}~3
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-UNCACHED}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOSWIZZLE}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PRESERVENONALPHA}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PCX}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-TGA}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-BMP}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-WAL}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PNG}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-RAW}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-MANIPULATION}~0
+\item 
+\#define {\bf FL\_\-SPRITE}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}~0
+\item 
+\#define {\bf FL\_\-MODEL}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}~0
+\item 
+\#define {\bf FL\_\-MODEL\_\-OBJ}~0
+\item 
+\#define {\bf FL\_\-MODEL\_\-MD2}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-TRAYSIZE}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-VOLUME}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-BATTERY}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-TIME}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-TRAYSIZE}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}~0
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}}
+\index{FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-EXIT~0}\label{flConfigValidate_8h_f8fdf74f16064484dfb0aa5dd50e1733}
+
+
+
+
+Definition at line 32 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}}
+\index{FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-POWER~0}\label{flConfigValidate_8h_87448450a6222c3f1acafdff8ab19228}
+
+
+
+
+Definition at line 33 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_CAMERA@{FL\_\-CAMERA}}
+\index{FL_CAMERA@{FL\_\-CAMERA}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CAMERA~0}\label{flConfigValidate_8h_a7de82853426d18ce06eefa638794755}
+
+
+
+
+Definition at line 182 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}}
+\index{FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CALLEDFROM~0}\label{flConfigValidate_8h_0ee2478766c699c67b446e85bb0f5de5}
+
+
+
+
+Definition at line 46 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_483e8699a740790b3c1d3b4a0d917052}
+
+
+
+
+Definition at line 244 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_483e8699a740790b3c1d3b4a0d917052}
+
+
+
+
+Definition at line 244 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_483e8699a740790b3c1d3b4a0d917052}
+
+
+
+
+Definition at line 244 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}}
+\index{FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW~0}\label{flConfigValidate_8h_67a4bd5712e11b2195a6bb575ef2f73a}
+
+
+
+
+Definition at line 51 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}}
+\index{FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING~0}\label{flConfigValidate_8h_ed6afeb1e7784d212ec555ccfe3ea081}
+
+
+
+
+Definition at line 50 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}}
+\index{FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY~0}\label{flConfigValidate_8h_02b406afb3f81dbfe6f3d3550c10a1f9}
+
+
+
+
+Definition at line 304 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}}
+\index{FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY~0}\label{flConfigValidate_8h_02b406afb3f81dbfe6f3d3550c10a1f9}
+
+
+
+
+Definition at line 304 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_8064ba66bbf5197b84e32f74b9e4c29e}
+
+
+
+
+Definition at line 243 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_8064ba66bbf5197b84e32f74b9e4c29e}
+
+
+
+
+Definition at line 243 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_8064ba66bbf5197b84e32f74b9e4c29e}
+
+
+
+
+Definition at line 243 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}}
+\index{FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW~0}\label{flConfigValidate_8h_608c2a6c6c29d6286136b69f21d05805}
+
+
+
+
+Definition at line 89 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}}
+\index{FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR~0}\label{flConfigValidate_8h_43900c4b670f70af67248dcbffbf45fd}
+
+
+
+
+Definition at line 48 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}}
+\index{FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-NOTIFY~0}\label{flConfigValidate_8h_77c0d6d3a2c51009a74e358bf9a118e9}
+
+
+
+
+Definition at line 302 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}}
+\index{FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-NOTIFY~0}\label{flConfigValidate_8h_77c0d6d3a2c51009a74e358bf9a118e9}
+
+
+
+
+Definition at line 302 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_6b600fd569f84acd3f5cfe5bf08c4bf7}
+
+
+
+
+Definition at line 241 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_6b600fd569f84acd3f5cfe5bf08c4bf7}
+
+
+
+
+Definition at line 241 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT~0}\label{flConfigValidate_8h_6b600fd569f84acd3f5cfe5bf08c4bf7}
+
+
+
+
+Definition at line 241 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}}
+\index{FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SHOW~0}\label{flConfigValidate_8h_601003ed63ef51a3bd228b3e5cfc650b}
+
+
+
+
+Definition at line 71 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}}
+\index{FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGCLEAR~0}\label{flConfigValidate_8h_ea07f8181d984ebd503a1fe58ddab9c6}
+
+
+
+
+Definition at line 58 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}}
+\index{FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGGING~0}\label{flConfigValidate_8h_60863a62a00f47912259e1f7127f5713}
+
+
+
+
+Definition at line 47 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}}
+\index{FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS~0}\label{flConfigValidate_8h_95db7c0db76b05ad758a8b231bc81bd9}
+
+
+
+
+Definition at line 59 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}}
+\index{FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-NOTIFY~0}\label{flConfigValidate_8h_d285ddbf161637a49c715a3402a83c29}
+
+
+
+
+Definition at line 301 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}}
+\index{FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-NOTIFY~0}\label{flConfigValidate_8h_d285ddbf161637a49c715a3402a83c29}
+
+
+
+
+Definition at line 301 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}}
+\index{FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-TIMESTAMP~0}\label{flConfigValidate_8h_7c30d8dee8d212511b22d0ca696b483c}
+
+
+
+
+Definition at line 45 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}}
+\index{FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING~0}\label{flConfigValidate_8h_cabc2c15422392d5fea76f8bf968834b}
+
+
+
+
+Definition at line 49 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}}
+\index{FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-NOTIFY~0}\label{flConfigValidate_8h_857035c764ff78d4d734d68c878eb1cd}
+
+
+
+
+Definition at line 303 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}}
+\index{FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-NOTIFY~0}\label{flConfigValidate_8h_857035c764ff78d4d734d68c878eb1cd}
+
+
+
+
+Definition at line 303 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_31935479fe02ed48220462d275a662e6}
+
+
+
+
+Definition at line 242 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_31935479fe02ed48220462d275a662e6}
+
+
+
+
+Definition at line 242 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT~0}\label{flConfigValidate_8h_31935479fe02ed48220462d275a662e6}
+
+
+
+
+Definition at line 242 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}}
+\index{FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SHOW~0}\label{flConfigValidate_8h_ded42d7e5a8173f5d7d35eb17f0d2c19}
+
+
+
+
+Definition at line 80 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}}
+\index{FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D~0}\label{flConfigValidate_8h_27698ad90bd4f8fe9fb8af9fb319705a}
+
+
+
+
+Definition at line 175 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}}
+\index{FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES~3}\label{flConfigValidate_8h_cb5dce5f8dd2b7c9653224654a414e78}
+
+
+
+
+Definition at line 206 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}}
+\index{FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-USEDMA~0}\label{flConfigValidate_8h_e14e7d2a7e56fa6a921a7a0df0aa103b}
+
+
+
+
+Definition at line 200 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}}
+\index{FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-3D~0}\label{flConfigValidate_8h_ff70de40b296c4b66d2d4d79fafdc218}
+
+
+
+
+Definition at line 176 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}}
+\index{FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC~0}\label{flConfigValidate_8h_b8b4f70f467f8499f628155bae3288b2}
+
+
+
+
+Definition at line 171 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}}
+\index{FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN~0}\label{flConfigValidate_8h_71b7ded0607a3d0db49adb2aa20fb30c}
+
+
+
+
+Definition at line 177 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}}
+\index{FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-DAMP~0}\label{flConfigValidate_8h_a6a913e8445eaa4568d1b58972c318be}
+
+
+
+
+Definition at line 174 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}}
+\index{FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT~0}\label{flConfigValidate_8h_5dd0e5e145a77f6d290ef4c09ff8ebaa}
+
+
+
+
+Definition at line 173 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}}
+\index{FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT~0}\label{flConfigValidate_8h_be0fc2dab59d051efd3df00c9c327c89}
+
+
+
+
+Definition at line 172 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}}
+\index{FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO~0}\label{flConfigValidate_8h_1f8c65f08ed4a633f0e8434f891f5ce0}
+
+
+
+
+Definition at line 170 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}}
+\index{FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT~0}\label{flConfigValidate_8h_4cd44620c70d1f1e92ff06ad4443d64b}
+
+
+
+
+Definition at line 169 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}}
+\index{FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDOMSEED~0}\label{flConfigValidate_8h_f226e71f3857ee0262ddd3febed39f13}
+
+
+
+
+Definition at line 133 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}}
+\index{FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDTYPE~FL\_\-MATH\_\-RAND\_\-STDIO}\label{flConfigValidate_8h_284a57acafa9e61ce8f4877addeab8be}
+
+
+
+
+Definition at line 144 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}}
+\index{FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-TRIGCACHE~0}\label{flConfigValidate_8h_1714c4ffc6f7774695089af0a74730c1}
+
+
+
+
+Definition at line 134 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}}
+\index{FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-VFPU~0}\label{flConfigValidate_8h_4f5459716e8b74a4e5127a0b8006de98}
+
+
+
+
+Definition at line 132 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_ALIGNMENT_DEFAULT@{FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}}
+\index{FL_MEMORY_ALIGNMENT_DEFAULT@{FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT~16}\label{flConfigValidate_8h_d48e104c81048824fb6d6aba8efe5004}
+
+
+
+
+Definition at line 116 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}}
+\index{FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-ERRORBYTES~0}\label{flConfigValidate_8h_6299bc95c7cc7fee09bb99151e3d761a}
+
+
+
+
+Definition at line 110 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}}
+\index{FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-LOGGING~0}\label{flConfigValidate_8h_5833a4954f6d74f014e407c67da0d70e}
+
+
+
+
+Definition at line 109 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}}
+\index{FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-PAGE~0}\label{flConfigValidate_8h_d4d6acf1ebf7cae10eb5b6861f85671f}
+
+
+
+
+Definition at line 108 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}}
+\index{FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-POOL~0}\label{flConfigValidate_8h_bb86f06f48f024c9115932c9b7af67ad}
+
+
+
+
+Definition at line 107 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}}
+\index{FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-SCRATCHPAD~0}\label{flConfigValidate_8h_18d87c3e65f36b5c7e92d95d3c65681b}
+
+
+
+
+Definition at line 111 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}}
+\index{FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM~0}\label{flConfigValidate_8h_1c855bc51ef4206ce723899f5b90aa53}
+
+
+
+
+Definition at line 106 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}}
+\index{FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-CACHE~0}\label{flConfigValidate_8h_8c4c673a301c8cf29cb76f49f7d04321}
+
+
+
+
+Definition at line 125 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}}
+\index{FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW~0}\label{flConfigValidate_8h_b87f3228f2e381627c72b6f240424006}
+
+
+
+
+Definition at line 123 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MEMORY_VMEM_STRIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STRIDE\_\-FILL}}
+\index{FL_MEMORY_VMEM_STRIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STRIDE\_\-FILL}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-STRIDE\_\-FILL~0}\label{flConfigValidate_8h_2352c88e1a501dbb397e60a5d1976815}
+
+
+
+
+Definition at line 124 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MODEL@{FL\_\-MODEL}}
+\index{FL_MODEL@{FL\_\-MODEL}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL~0}\label{flConfigValidate_8h_5edb84629e1decf9f6145c606b5bb3a9}
+
+
+
+
+Definition at line 245 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MODEL@{FL\_\-MODEL}}
+\index{FL_MODEL@{FL\_\-MODEL}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL~0}\label{flConfigValidate_8h_5edb84629e1decf9f6145c606b5bb3a9}
+
+
+
+
+Definition at line 245 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}}
+\index{FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-MD2~0}\label{flConfigValidate_8h_d7f7817739ee4efadc63876ddf942b10}
+
+
+
+
+Definition at line 272 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}}
+\index{FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-OBJ~0}\label{flConfigValidate_8h_f52b3283325f42cd049b4b6e38d4e742}
+
+
+
+
+Definition at line 271 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY@{FL\_\-NOTIFY}}
+\index{FL_NOTIFY@{FL\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY~0}\label{flConfigValidate_8h_5f1e10b9a14efbbb555b1f42d4751edd}
+
+
+
+
+Definition at line 201 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY@{FL\_\-NOTIFY}}
+\index{FL_NOTIFY@{FL\_\-NOTIFY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY~0}\label{flConfigValidate_8h_5f1e10b9a14efbbb555b1f42d4751edd}
+
+
+
+
+Definition at line 201 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}}
+\index{FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-BATTERY~0}\label{flConfigValidate_8h_e5172494d10bdf2190e4cc93c72eb590}
+
+
+
+
+Definition at line 286 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}}
+\index{FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TIME~0}\label{flConfigValidate_8h_80019d39373eaf22d5a83705ef7cbd10}
+
+
+
+
+Definition at line 287 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}}
+\index{FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TRAYSIZE~0}\label{flConfigValidate_8h_ff38ea39f307df3514a6f05cf998ebee}
+
+
+
+
+Definition at line 288 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}}
+\index{FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TRAYSIZE~0}\label{flConfigValidate_8h_ff38ea39f307df3514a6f05cf998ebee}
+
+
+
+
+Definition at line 288 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}}
+\index{FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-VOLUME~0}\label{flConfigValidate_8h_ffa7fa3d9da5ce7d7af6b80bbe2744c2}
+
+
+
+
+Definition at line 285 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}}
+\index{FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-VOLUME~0}\label{flConfigValidate_8h_ffa7fa3d9da5ce7d7af6b80bbe2744c2}
+
+
+
+
+Definition at line 285 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_SPRITE@{FL\_\-SPRITE}}
+\index{FL_SPRITE@{FL\_\-SPRITE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-SPRITE~0}\label{flConfigValidate_8h_4cb2a7a735b32b623a4811291aad6195}
+
+
+
+
+Definition at line 240 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}}
+\index{FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP~0}\label{flConfigValidate_8h_fad1cb51883ab52cf8355d5d49c6389e}
+
+
+
+
+Definition at line 229 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}}
+\index{FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED~0}\label{flConfigValidate_8h_2c1693dd16f8248dcdbb2aa3c0488bbd}
+
+
+
+
+Definition at line 260 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}}
+\index{FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOSWIZZLE~0}\label{flConfigValidate_8h_f2361564487303dc487f1f6a96b2b24e}
+
+
+
+
+Definition at line 230 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}}
+\index{FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOSWIZZLE~0}\label{flConfigValidate_8h_f2361564487303dc487f1f6a96b2b24e}
+
+
+
+
+Definition at line 230 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}}
+\index{FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-BMP~0}\label{flConfigValidate_8h_6f8fa136099750044bcf6b0e8cf18f88}
+
+
+
+
+Definition at line 235 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}}
+\index{FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX~0}\label{flConfigValidate_8h_6b8f7e320065bbb74e5482f0e15ea3cf}
+
+
+
+
+Definition at line 231 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}}
+\index{FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE~0}\label{flConfigValidate_8h_35829e395f85aef7a4f01bf27a8c1e8e}
+
+
+
+
+Definition at line 265 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}}
+\index{FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-MANIPULATION~0}\label{flConfigValidate_8h_9bf1ceaf7b5bcd83866e701ea65bed63}
+
+
+
+
+Definition at line 239 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}}
+\index{FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PCX~0}\label{flConfigValidate_8h_7e75b36a7aa3161b48217cb3c8ce051a}
+
+
+
+
+Definition at line 233 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}}
+\index{FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PNG~0}\label{flConfigValidate_8h_ee82dbb354ff232858fc21491b3767dc}
+
+
+
+
+Definition at line 237 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}}
+\index{FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PRESERVENONALPHA~0}\label{flConfigValidate_8h_96e1468f49e81357791f12182998b984}
+
+
+
+
+Definition at line 232 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}}
+\index{FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-RAW~0}\label{flConfigValidate_8h_d8cfcbf06d4bcafc57ce8ef8058ecc5a}
+
+
+
+
+Definition at line 238 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}}
+\index{FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-TGA~0}\label{flConfigValidate_8h_a88a5c8ef0ed3e27edd03b00240922cd}
+
+
+
+
+Definition at line 234 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}}
+\index{FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-UNCACHED~0}\label{flConfigValidate_8h_19e91ca240a0e8d4097fdff7e7e1ab2b}
+
+
+
+
+Definition at line 228 of file fl\-Config\-Validate.h.\index{flConfigValidate.h@{fl\-Config\-Validate.h}!FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}}
+\index{FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}!flConfigValidate.h@{fl\-Config\-Validate.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-WAL~0}\label{flConfigValidate_8h_afcc051020cb5d1a2eedd6399c382807}
+
+
+
+
+Definition at line 236 of file fl\-Config\-Validate.h.

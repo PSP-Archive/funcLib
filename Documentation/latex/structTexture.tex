@@ -1,0 +1,165 @@
+\section{Texture Struct Reference}
+\label{structTexture}\index{Texture@{Texture}}
+{\tt \#include $<$fl\-Texture.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+u32 {\bf tex\-Width}
+\item 
+u32 {\bf tex\-Height}
+\item 
+u32 {\bf tex\-Data\-Width}
+\item 
+u32 {\bf tex\-Data\-Height}
+\item 
+u32 {\bf tex\-Stride}
+\item 
+char $\ast$ {\bf tex\-Data}
+\item 
+char $\ast$ {\bf tex\-Mip\-Data} [8]
+\item 
+{\bf Palette} $\ast$ {\bf tex\-Palette}
+\item 
+u32 {\bf tex\-Use\-Count}
+\item 
+u8 {\bf tex\-Pixel\-Format}
+\item 
+{\bf bool} {\bf tex\-Swizzled}
+\item 
+u8 {\bf tex\-Mip\-Maps}
+\item 
+{\bf bool} {\bf tex\-Alpha}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+
+
+Definition at line 29 of file fl\-Texture.h.
+
+\subsection{Member Data Documentation}
+\index{Texture@{Texture}!texWidth@{texWidth}}
+\index{texWidth@{texWidth}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Width}}\label{structTexture_7197574d38aa038db43cf47554b6fe17}
+
+
+
+
+Definition at line 30 of file fl\-Texture.h.
+
+Referenced by font\-Char\-Width(), graphics2d\-Draw\-Texture(), sprite\-Create(), sprite\-Draw2d\-Frame(), tex\-Create(), tex\-Mnp\-Color\-Replace(), tex\-Pixel(), and tex\-Save\-TGA().\index{Texture@{Texture}!texHeight@{texHeight}}
+\index{texHeight@{texHeight}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Height}}\label{structTexture_e1c0cacd0be001d79c758796ba0b4f8f}
+
+
+
+
+Definition at line 31 of file fl\-Texture.h.
+
+Referenced by font\-Height(), graphics2d\-Draw\-Texture(), sprite\-Create(), tex\-Create(), tex\-Pixel(), tex\-Save\-TGA(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texDataWidth@{texDataWidth}}
+\index{texDataWidth@{texDataWidth}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Data\-Width}}\label{structTexture_e23e28838c5e73a89d7216c9d84a9bdd}
+
+
+
+
+Definition at line 32 of file fl\-Texture.h.
+
+Referenced by graphics2d\-Draw\-Texture(), tex\-Bind(), tex\-Create(), tex\-Create\-Blank(), tex\-Mip\-Map(), tex\-Mnp\-Color\-Replace(), tex\-Move\-VMem(), tex\-Pixel(), tex\-Save\-TGA(), tex\-Screenshot(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texDataHeight@{texDataHeight}}
+\index{texDataHeight@{texDataHeight}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Data\-Height}}\label{structTexture_49f176a1b14b0d85d9e539f95a349fc3}
+
+
+
+
+Definition at line 33 of file fl\-Texture.h.
+
+Referenced by tex\-Bind(), tex\-Create(), tex\-Create\-Blank(), tex\-Mip\-Map(), tex\-Move\-VMem(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texStride@{texStride}}
+\index{texStride@{texStride}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Stride}}\label{structTexture_2d7654a07b6ea609b806fd719d7fd81b}
+
+
+
+
+Definition at line 35 of file fl\-Texture.h.
+
+Referenced by graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), tex\-Bind(), and tex\-Create().\index{Texture@{Texture}!texData@{texData}}
+\index{texData@{texData}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf Texture::tex\-Data}}\label{structTexture_4384d0e3734c3a45f6ebc36f6738962d}
+
+
+
+
+Definition at line 36 of file fl\-Texture.h.
+
+Referenced by graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), tex\-Bind(), tex\-Create(), tex\-Create\-Blank(), tex\-Free(), tex\-Load(), tex\-Mnp\-Color\-Replace(), tex\-Move\-VMem(), tex\-Pixel(), tex\-Save\-TGA(), tex\-Screenshot(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texMipData@{texMipData}}
+\index{texMipData@{texMipData}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf Texture::tex\-Mip\-Data}[8]}\label{structTexture_05ed58a762e35e97b1a65bde830aee6c}
+
+
+
+
+Definition at line 37 of file fl\-Texture.h.
+
+Referenced by tex\-Bind(), tex\-Create(), tex\-Free(), tex\-Move\-VMem(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texPalette@{texPalette}}
+\index{texPalette@{texPalette}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ {\bf Texture::tex\-Palette}}\label{structTexture_01d7cb5c9b302dea1b79112f1cf1cb37}
+
+
+
+
+Definition at line 38 of file fl\-Texture.h.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), tex\-Bind(), tex\-Create(), tex\-Free(), and tex\-Save\-TGA().\index{Texture@{Texture}!texUseCount@{texUseCount}}
+\index{texUseCount@{texUseCount}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf Texture::tex\-Use\-Count}}\label{structTexture_b4e258d8ac5eea84e02eeef676b50367}
+
+
+
+
+Definition at line 40 of file fl\-Texture.h.
+
+Referenced by tex\-Create(), tex\-Free(), and tex\-Load().\index{Texture@{Texture}!texPixelFormat@{texPixelFormat}}
+\index{texPixelFormat@{texPixelFormat}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf Texture::tex\-Pixel\-Format}}\label{structTexture_ef91e63f1b683d8d2b8243b75b490494}
+
+
+
+
+Definition at line 41 of file fl\-Texture.h.
+
+Referenced by graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), tex\-Bind(), tex\-BPP(), tex\-Create(), tex\-Mnp\-Color\-Replace(), tex\-Move\-VMem(), tex\-Palettized(), tex\-Save\-TGA(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texSwizzled@{texSwizzled}}
+\index{texSwizzled@{texSwizzled}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf Texture::tex\-Swizzled}}\label{structTexture_38a406d2ade728542da2027fec63e334}
+
+
+
+
+Definition at line 42 of file fl\-Texture.h.
+
+Referenced by tex\-Bind(), tex\-Create(), tex\-Mip\-Map\-Add(), tex\-Save\-TGA(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texMipMaps@{texMipMaps}}
+\index{texMipMaps@{texMipMaps}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf Texture::tex\-Mip\-Maps}}\label{structTexture_dde8d456bf4f3557fead4c1d20f7adcf}
+
+
+
+
+Definition at line 43 of file fl\-Texture.h.
+
+Referenced by graphics3d\-Draw\-Cube\-Textured(), graphics3d\-Draw\-Sphere\-Textured(), mdl3d\-Stat\-Draw\-Textured(), tex\-Bind(), tex\-Create(), tex\-Free(), tex\-Mip\-Map(), tex\-Mip\-Map\-Add(), tex\-Move\-VMem(), tex\-Swizzle(), and tex\-Unswizzle().\index{Texture@{Texture}!texAlpha@{texAlpha}}
+\index{texAlpha@{texAlpha}!Texture@{Texture}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf Texture::tex\-Alpha}}\label{structTexture_1e77e466ea5a49a2b60ee743b00d2605}
+
+
+
+
+Definition at line 45 of file fl\-Texture.h.
+
+Referenced by graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), tex\-Create(), tex\-Save\-TGA(), and tex\-Screenshot().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf fl\-Texture.h}\end{CompactItemize}

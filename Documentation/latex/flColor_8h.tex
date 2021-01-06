@@ -1,0 +1,745 @@
+\section{fl\-Color.h File Reference}
+\label{flColor_8h}\index{flColor.h@{flColor.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf color\-Red8888}(in\-Color)~color8888\_\-Red(in\-Color)
+\item 
+\#define {\bf color\-Green8888}(in\-Color)~color8888\_\-Green(in\-Color)
+\item 
+\#define {\bf color\-Blue8888}(in\-Color)~color8888\_\-Blue(in\-Color)
+\item 
+\#define {\bf color\-Alpha8888}(in\-Color)~color8888\_\-Alpha(in\-Color)
+\item 
+\#define {\bf color\-RGB8888}(in\-Red, in\-Green, in\-Blue)~color8888\_\-RGB(in\-Red, in\-Green, in\-Blue)
+\item 
+\#define {\bf color\-RGBA8888}(in\-Red, in\-Green, in\-Blue, in\-Alpha)~color8888\_\-RGBA(in\-Red, in\-Green, in\-Blue, in\-Alpha)
+\item 
+\#define {\bf color\-Blend8888}(in\-Color0, in\-Color1, in\-Ratio)~color8888\_\-Blend(in\-Color0, in\-Color1, in\-Ratio)
+\item 
+\#define {\bf color\-Merge8888}(in\-Color0, in\-Color1)~color8888\_\-Merge(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color\-Merge\-N5650}(in\-Color, in\-Color\-Count)~color\-Merge\-N565(in\-Color, in\-Color\-Count)
+\item 
+\#define {\bf color8888\_\-Red}(in\-Color)~((in\-Color) \& 0x000000FF)
+\item 
+\#define {\bf color8888\_\-Green}(in\-Color)~(((in\-Color) \& 0x0000FF00) $>$$>$ 8)
+\item 
+\#define {\bf color8888\_\-Blue}(in\-Color)~(((in\-Color) \& 0x00FF0000) $>$$>$ 16)
+\item 
+\#define {\bf color8888\_\-Alpha}(in\-Color)~(((in\-Color) \& 0x\-FF0000) $>$$>$ 24)
+\item 
+\#define {\bf color8888\_\-Set\-Alpha}(in\-Color, in\-Alpha)~(((in\-Color) \& 0x00FFFFFF) $|$ (((in\-Alpha) \& 0x\-FF) $<$$<$ 24))
+\item 
+\#define {\bf color8888\_\-RGBA}(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) + ((in\-Green) $<$$<$ 8) + ((in\-Blue) $<$$<$ 16)) $|$ ((in\-Alpha) $<$$<$ 24))
+\item 
+\#define {\bf color8888\_\-RGB}(in\-Red, in\-Green, in\-Blue)~(((in\-Red) + ((in\-Green) $<$$<$ 8) + ((in\-Blue) $<$$<$ 16)) $|$ (0x\-FF000000))
+\item 
+\#define {\bf color8888\_\-Merge}(in\-Color0, in\-Color1)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1)) $>$$>$ 1), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1)) $>$$>$ 1), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1)) $>$$>$ 1), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1)) $>$$>$ 1))
+\item 
+\#define {\bf color8888\_\-Merge3}(in\-Color0, in\-Color1, in\-Color2)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1) + color8888\_\-Red(in\-Color2)) / 3), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1) + color8888\_\-Green(in\-Color2)) / 3), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1) + color8888\_\-Blue(in\-Color2)) / 3), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1) + color8888\_\-Alpha(in\-Color2)) / 3))
+\item 
+\#define {\bf color8888\_\-Merge4}(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1) + color8888\_\-Red(in\-Color2) + color8888\_\-Red(in\-Color3)) $>$$>$ 2), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1) + color8888\_\-Green(in\-Color2) + color8888\_\-Green(in\-Color3)) $>$$>$ 2), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1) + color8888\_\-Blue(in\-Color2) + color8888\_\-Blue(in\-Color3)) $>$$>$ 2), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1) + color8888\_\-Alpha(in\-Color2) + color8888\_\-Alpha(in\-Color3)) $>$$>$ 2))
+\item 
+\#define {\bf color8888\_\-Blend}(in\-Color0, in\-Color1, in\-Fract)~color8888\_\-RGBA((int)(((float)color8888\_\-Red(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Red(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Green(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Green(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Blue(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Blue(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Alpha(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Alpha(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))))
+\item 
+\#define {\bf color8888\_\-CMYK}(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key)~color8888\_\-Merge3(color8888\_\-Blend(0x\-FFFFFF00, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Cyan) / 255.0f)), color8888\_\-Blend(0x\-FFFF00FF, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Magenta) / 255.0f)), color8888\_\-Blend(0x\-FF00FFFF, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Yellow) / 255.0f)))
+\item 
+\#define {\bf color8888\_\-CMYKA}(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key, in\-Alpha)~color8888\_\-Set\-Alpha(color8888\_\-CMYK(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key), in\-Alpha)
+\item 
+\#define {\bf color8888\_\-CMY}(in\-Cyan, in\-Magenta, in\-Yellow)~color8888\_\-RGB((255 - (in\-Cyan)), (255 - (in\-Magenta)), (255 - (in\-Yellow)))
+\item 
+\#define {\bf color8888\_\-CMYA}(in\-Cyan, in\-Magenta, in\-Yellow, in\-Alpha)~color8888\_\-Set\-Alpha(color8888\_\-CMY(in\-Cyan, in\-Magenta, in\-Yellow), in\-Alpha)
+\item 
+\#define {\bf color8888\_\-Cmp}(in\-Color0, in\-Color1)~(pos((int)color8888\_\-Red(in\-Color0) - (int)color8888\_\-Red(in\-Color1)) + pos((int)color8888\_\-Green(in\-Color0) - (int)color8888\_\-Green(in\-Color1)) + pos((int)color8888\_\-Blue(in\-Color0) - (int)color8888\_\-Blue(in\-Color1)) + pos((int)color8888\_\-Alpha(in\-Color0) - (int)color8888\_\-Alpha(in\-Color1)))
+\item 
+\#define {\bf color8888\_\-Compare}(in\-Color0, in\-Color1)~color8888\_\-Cmp(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color4444\_\-Red}(in\-Color)~((in\-Color) \& 0x000F)
+\item 
+\#define {\bf color4444\_\-Green}(in\-Color)~(((in\-Color) \& 0x00F0) $>$$>$ 4)
+\item 
+\#define {\bf color4444\_\-Blue}(in\-Color)~(((in\-Color) \& 0x0F00) $>$$>$ 8)
+\item 
+\#define {\bf color4444\_\-Alpha}(in\-Color)~(((in\-Color) \& 0x\-F000) $>$$>$ 12)
+\item 
+\#define {\bf color4444\_\-RGBA}(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) \& 0x000F) + (((in\-Green) \& 0x000F) $<$$<$ 4) + (((in\-Blue) \& 0x000F) $<$$<$ 8) + (((in\-Alpha) \& 0x000F) $<$$<$ 12))
+\item 
+\#define {\bf color4444\_\-RGB}(in\-Red, in\-Green, in\-Blue)~color4444\_\-RGBA(in\-Red, in\-Green, in\-Blue, 15);
+\item 
+\#define {\bf color4444\_\-Merge}(in\-Color0, in\-Color1)~color4444\_\-RGBA(((color4444\_\-Red(in\-Color0) + color4444\_\-Red(in\-Color1)) $>$$>$ 1), ((color4444\_\-Green(in\-Color0) + color4444\_\-Green(in\-Color1)) $>$$>$ 1), ((color4444\_\-Blue(in\-Color0) + color4444\_\-Blue(in\-Color1)) $>$$>$ 1), ((color4444\_\-Alpha(in\-Color0) + color4444\_\-Alpha(in\-Color1)) $>$$>$ 1))
+\item 
+\#define {\bf color4444\_\-Merge4}(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color4444\_\-RGBA(((color4444\_\-Red(in\-Color0) + color4444\_\-Red(in\-Color1) + color4444\_\-Red(in\-Color2) + color4444\_\-Red(in\-Color3)) $>$$>$ 2), ((color4444\_\-Green(in\-Color0) + color4444\_\-Green(in\-Color1) + color4444\_\-Green(in\-Color2) + color4444\_\-Green(in\-Color3)) $>$$>$ 2), ((color4444\_\-Blue(in\-Color0) + color4444\_\-Blue(in\-Color1) + color4444\_\-Blue(in\-Color2) + color4444\_\-Blue(in\-Color3)) $>$$>$ 2), ((color4444\_\-Alpha(in\-Color0) + color4444\_\-Alpha(in\-Color1) + color4444\_\-Alpha(in\-Color2) + color4444\_\-Alpha(in\-Color3)) $>$$>$ 2))
+\item 
+\#define {\bf color4444\_\-Cmp}(in\-Color0, in\-Color1)~(pos((int)color4444\_\-Red(in\-Color0) - (int)color4444\_\-Red(in\-Color1)) + pos((int)color4444\_\-Green(in\-Color0) - (int)color4444\_\-Green(in\-Color1)) + pos((int)color4444\_\-Blue(in\-Color0) - (int)color4444\_\-Blue(in\-Color1)) + pos((int)color4444\_\-Alpha(in\-Color0) - (int)color4444\_\-Alpha(in\-Color1)))
+\item 
+\#define {\bf color4444\_\-Compare}(in\-Color0, in\-Color1)~color4444\_\-Cmp(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color5551\_\-Red}(in\-Color)~((in\-Color) \& 0x001F)
+\item 
+\#define {\bf color5551\_\-Green}(in\-Color)~(((in\-Color) \& 0x03E0) $>$$>$ 5)
+\item 
+\#define {\bf color5551\_\-Blue}(in\-Color)~(((in\-Color) \& 0x7C00) $>$$>$ 10)
+\item 
+\#define {\bf color5551\_\-Alpha}(in\-Color)~(((in\-Color) \& 0x8000) $>$$>$ 15)
+\item 
+\#define {\bf color5551\_\-RGBA}(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) \& 0x001F) + (((in\-Green) \& 0x001F) $<$$<$ 5) + (((in\-Blue) \& 0x001F) $<$$<$ 10) + (((in\-Alpha) \& 0x0001) $<$$<$ 15))
+\item 
+\#define {\bf color5551\_\-RGB}(in\-Red, in\-Green, in\-Blue)~color5551\_\-RGBA(in\-Red, in\-Green, in\-Blue, 1);
+\item 
+\#define {\bf color5551\_\-Merge}(in\-Color0, in\-Color1)~color5551\_\-RGBA(((color5551\_\-Red(in\-Color0) + color5551\_\-Red(in\-Color1)) $>$$>$ 1), ((color5551\_\-Green(in\-Color0) + color5551\_\-Green(in\-Color1)) $>$$>$ 1), ((color5551\_\-Blue(in\-Color0) + color5551\_\-Blue(in\-Color1)) $>$$>$ 1), ((color5551\_\-Alpha(in\-Color0) + color5551\_\-Alpha(in\-Color1)) $>$$>$ 1))
+\item 
+\#define {\bf color5551\_\-Merge4}(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color5551\_\-RGBA(((color5551\_\-Red(in\-Color0) + color5551\_\-Red(in\-Color1) + color5551\_\-Red(in\-Color2) + color5551\_\-Red(in\-Color3)) $>$$>$ 2), ((color5551\_\-Green(in\-Color0) + color5551\_\-Green(in\-Color1) + color5551\_\-Green(in\-Color2) + color5551\_\-Green(in\-Color3)) $>$$>$ 2), ((color5551\_\-Blue(in\-Color0) + color5551\_\-Blue(in\-Color1) + color5551\_\-Blue(in\-Color2) + color5551\_\-Blue(in\-Color3)) $>$$>$ 2), ((color5551\_\-Alpha(in\-Color0) + color5551\_\-Alpha(in\-Color1) + color5551\_\-Alpha(in\-Color2) + color5551\_\-Alpha(in\-Color3)) $>$$>$ 2))
+\item 
+\#define {\bf color5551\_\-Cmp}(in\-Color0, in\-Color1)~(pos((int)color5551\_\-Red(in\-Color0) - (int)color5551\_\-Red(in\-Color1)) + pos((int)color5551\_\-Green(in\-Color0) - (int)color5551\_\-Green(in\-Color1)) + pos((int)color5551\_\-Blue(in\-Color0) - (int)color5551\_\-Blue(in\-Color1)) + pos((int)color5551\_\-Alpha(in\-Color0) - (int)color5551\_\-Alpha(in\-Color1)))
+\item 
+\#define {\bf color5551\_\-Compare}(in\-Color0, in\-Color1)~color5551\_\-Cmp(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color565\_\-Red}(in\-Color)~((in\-Color) \& 0x001F)
+\item 
+\#define {\bf color565\_\-Green}(in\-Color)~(((in\-Color) \& 0x07E0) $>$$>$ 5)
+\item 
+\#define {\bf color565\_\-Blue}(in\-Color)~(((in\-Color) \& 0x\-F800) $>$$>$ 11)
+\item 
+\#define {\bf color565\_\-RGB}(in\-Red, in\-Green, in\-Blue)~(((in\-Red) \& 0x001F) + (((in\-Green) \& 0x003F) $<$$<$ 5) + (((in\-Blue) \& 0x001F) $<$$<$ 11))
+\item 
+\#define {\bf color565\_\-Merge}(in\-Color0, in\-Color1)~color565\_\-RGB(((color565\_\-Red(in\-Color0) + color565\_\-Red(in\-Color1)) $>$$>$ 1), ((color565\_\-Green(in\-Color0) + color565\_\-Green(in\-Color1)) $>$$>$ 1), ((color565\_\-Blue(in\-Color0) + color565\_\-Blue(in\-Color1)) $>$$>$ 1))
+\item 
+\#define {\bf color565\_\-Merge4}(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color565\_\-RGB(((color565\_\-Red(in\-Color0) + color565\_\-Red(in\-Color1) + color565\_\-Red(in\-Color2) + color565\_\-Red(in\-Color3)) $>$$>$ 2), ((color565\_\-Green(in\-Color0) + color565\_\-Green(in\-Color1) + color565\_\-Green(in\-Color2) + color565\_\-Green(in\-Color3)) $>$$>$ 2), ((color565\_\-Blue(in\-Color0) + color565\_\-Blue(in\-Color1) + color565\_\-Blue(in\-Color2) + color565\_\-Blue(in\-Color3)) $>$$>$ 2))
+\item 
+\#define {\bf color565\_\-Cmp}(in\-Color0, in\-Color1)~(pos((int)color565\_\-Red(in\-Color0) - (int)color565\_\-Red(in\-Color1)) + pos((int)color565\_\-Green(in\-Color0) - (int)color565\_\-Green(in\-Color1)) + pos((int)color565\_\-Blue(in\-Color0) - (int)color565\_\-Blue(in\-Color1)))
+\item 
+\#define {\bf color565\_\-Compare}(in\-Color0, in\-Color1)~color565\_\-Cmp(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color5650\_\-Red}(in\-Color)~color565\_\-Red(in\-Color)
+\item 
+\#define {\bf color5650\_\-Green}(in\-Color)~color565\_\-Green(in\-Color)
+\item 
+\#define {\bf color5650\_\-Blue}(in\-Color)~color565\_\-Blue(in\-Color)
+\item 
+\#define {\bf color5650\_\-RGB}(in\-Red, in\-Green, in\-Blue)~color565\_\-RGB(in\-Red, in\-Green, in\-Blue)
+\item 
+\#define {\bf color5650\_\-Merge}(in\-Color0, in\-Color1)~color565\_\-Merge(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color5650\_\-Merge4}(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color565\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)
+\item 
+\#define {\bf color5650\_\-Cmp}(in\-Color0, in\-Color1)~color565\_\-Cmp(in\-Color0, in\-Color1)
+\item 
+\#define {\bf color5650\_\-Compare}(in\-Color0, in\-Color1)~color565\_\-Compare(in\-Color0, in\-Color1)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+u32 {\bf color\-HSL} (u8 in\-Hue, u8 in\-Sat, u8 in\-Lum)
+\item 
+u8 {\bf color\-Hue8888} (u32 in\-Color)
+\item 
+u8 {\bf color\-Lum8888} (u32 in\-Color)
+\item 
+u8 {\bf color\-Sat8888} (u32 in\-Color)
+\item 
+u32 {\bf color\-Merge\-N8888} (u32 $\ast$in\-Color, u32 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N4444} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N5551} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N565} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u32 {\bf color\-Random8888} (u8 in\-Base\-Lum, u8 in\-Rand\-Lum, u8 in\-Alpha)
+\item 
+u32 {\bf color\-Lum\-Mult8888} (u32 in\-Color, float in\-Lum)
+\item 
+u32 {\bf color\-Alpha\-Mult8888} (u32 in\-Color, float in\-Mult)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flColor.h@{fl\-Color.h}!color4444_Alpha@{color4444\_\-Alpha}}
+\index{color4444_Alpha@{color4444\_\-Alpha}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Alpha(in\-Color)~(((in\-Color) \& 0x\-F000) $>$$>$ 12)}\label{flColor_8h_627833325c4dd9a07fd3dbf14c6ca250}
+
+
+
+
+Definition at line 91 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N4444().\index{flColor.h@{fl\-Color.h}!color4444_Blue@{color4444\_\-Blue}}
+\index{color4444_Blue@{color4444\_\-Blue}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Blue(in\-Color)~(((in\-Color) \& 0x0F00) $>$$>$ 8)}\label{flColor_8h_9278fe56f05e764daf41388c27a2373a}
+
+
+
+
+Definition at line 90 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N4444().\index{flColor.h@{fl\-Color.h}!color4444_Cmp@{color4444\_\-Cmp}}
+\index{color4444_Cmp@{color4444\_\-Cmp}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Cmp(in\-Color0, in\-Color1)~(pos((int)color4444\_\-Red(in\-Color0) - (int)color4444\_\-Red(in\-Color1)) + pos((int)color4444\_\-Green(in\-Color0) - (int)color4444\_\-Green(in\-Color1)) + pos((int)color4444\_\-Blue(in\-Color0) - (int)color4444\_\-Blue(in\-Color1)) + pos((int)color4444\_\-Alpha(in\-Color0) - (int)color4444\_\-Alpha(in\-Color1)))}\label{flColor_8h_7b66bdc2462e9f67e32a88f8985f5941}
+
+
+
+
+Definition at line 96 of file fl\-Color.h.
+
+Referenced by pal\-Closest\-Color().\index{flColor.h@{fl\-Color.h}!color4444_Compare@{color4444\_\-Compare}}
+\index{color4444_Compare@{color4444\_\-Compare}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Compare(in\-Color0, in\-Color1)~color4444\_\-Cmp(in\-Color0, in\-Color1)}\label{flColor_8h_2fcf922ddd02c6f3a9c1f2376cfb0c43}
+
+
+
+
+Definition at line 97 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color4444_Green@{color4444\_\-Green}}
+\index{color4444_Green@{color4444\_\-Green}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Green(in\-Color)~(((in\-Color) \& 0x00F0) $>$$>$ 4)}\label{flColor_8h_bce497834b81242059aba40f0a5bbeff}
+
+
+
+
+Definition at line 89 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N4444().\index{flColor.h@{fl\-Color.h}!color4444_Merge@{color4444\_\-Merge}}
+\index{color4444_Merge@{color4444\_\-Merge}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Merge(in\-Color0, in\-Color1)~color4444\_\-RGBA(((color4444\_\-Red(in\-Color0) + color4444\_\-Red(in\-Color1)) $>$$>$ 1), ((color4444\_\-Green(in\-Color0) + color4444\_\-Green(in\-Color1)) $>$$>$ 1), ((color4444\_\-Blue(in\-Color0) + color4444\_\-Blue(in\-Color1)) $>$$>$ 1), ((color4444\_\-Alpha(in\-Color0) + color4444\_\-Alpha(in\-Color1)) $>$$>$ 1))}\label{flColor_8h_9a6e8c08ce8ca07bd73362e883556a54}
+
+
+
+
+Definition at line 94 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color4444_Merge4@{color4444\_\-Merge4}}
+\index{color4444_Merge4@{color4444\_\-Merge4}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color4444\_\-RGBA(((color4444\_\-Red(in\-Color0) + color4444\_\-Red(in\-Color1) + color4444\_\-Red(in\-Color2) + color4444\_\-Red(in\-Color3)) $>$$>$ 2), ((color4444\_\-Green(in\-Color0) + color4444\_\-Green(in\-Color1) + color4444\_\-Green(in\-Color2) + color4444\_\-Green(in\-Color3)) $>$$>$ 2), ((color4444\_\-Blue(in\-Color0) + color4444\_\-Blue(in\-Color1) + color4444\_\-Blue(in\-Color2) + color4444\_\-Blue(in\-Color3)) $>$$>$ 2), ((color4444\_\-Alpha(in\-Color0) + color4444\_\-Alpha(in\-Color1) + color4444\_\-Alpha(in\-Color2) + color4444\_\-Alpha(in\-Color3)) $>$$>$ 2))}\label{flColor_8h_b1b360b073ab6144855ffd5908435e7e}
+
+
+
+
+Definition at line 95 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color4444_Red@{color4444\_\-Red}}
+\index{color4444_Red@{color4444\_\-Red}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-Red(in\-Color)~((in\-Color) \& 0x000F)}\label{flColor_8h_0e508e63d5a89cef0587fbc10ab4e7cb}
+
+
+
+
+Definition at line 88 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N4444().\index{flColor.h@{fl\-Color.h}!color4444_RGB@{color4444\_\-RGB}}
+\index{color4444_RGB@{color4444\_\-RGB}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-RGB(in\-Red, in\-Green, in\-Blue)~color4444\_\-RGBA(in\-Red, in\-Green, in\-Blue, 15);}\label{flColor_8h_a56630f8a65825e0c2e1b03e0908bff3}
+
+
+
+
+Definition at line 93 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color4444_RGBA@{color4444\_\-RGBA}}
+\index{color4444_RGBA@{color4444\_\-RGBA}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color4444\_\-RGBA(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) \& 0x000F) + (((in\-Green) \& 0x000F) $<$$<$ 4) + (((in\-Blue) \& 0x000F) $<$$<$ 8) + (((in\-Alpha) \& 0x000F) $<$$<$ 12))}\label{flColor_8h_87a7da302fe9e236a38c47bdca3d311e}
+
+
+
+
+Definition at line 92 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N4444().\index{flColor.h@{fl\-Color.h}!color5551_Alpha@{color5551\_\-Alpha}}
+\index{color5551_Alpha@{color5551\_\-Alpha}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Alpha(in\-Color)~(((in\-Color) \& 0x8000) $>$$>$ 15)}\label{flColor_8h_865a555aa1a09d6ff723fd8c5272627d}
+
+
+
+
+Definition at line 102 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N5551().\index{flColor.h@{fl\-Color.h}!color5551_Blue@{color5551\_\-Blue}}
+\index{color5551_Blue@{color5551\_\-Blue}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Blue(in\-Color)~(((in\-Color) \& 0x7C00) $>$$>$ 10)}\label{flColor_8h_f1507d1e0a6d99884810a3d336696307}
+
+
+
+
+Definition at line 101 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N5551().\index{flColor.h@{fl\-Color.h}!color5551_Cmp@{color5551\_\-Cmp}}
+\index{color5551_Cmp@{color5551\_\-Cmp}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Cmp(in\-Color0, in\-Color1)~(pos((int)color5551\_\-Red(in\-Color0) - (int)color5551\_\-Red(in\-Color1)) + pos((int)color5551\_\-Green(in\-Color0) - (int)color5551\_\-Green(in\-Color1)) + pos((int)color5551\_\-Blue(in\-Color0) - (int)color5551\_\-Blue(in\-Color1)) + pos((int)color5551\_\-Alpha(in\-Color0) - (int)color5551\_\-Alpha(in\-Color1)))}\label{flColor_8h_2464768e69053d0053fa9aba68c24e62}
+
+
+
+
+Definition at line 107 of file fl\-Color.h.
+
+Referenced by pal\-Closest\-Color().\index{flColor.h@{fl\-Color.h}!color5551_Compare@{color5551\_\-Compare}}
+\index{color5551_Compare@{color5551\_\-Compare}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Compare(in\-Color0, in\-Color1)~color5551\_\-Cmp(in\-Color0, in\-Color1)}\label{flColor_8h_d24d0c3ffdab7ba9755438243891d57a}
+
+
+
+
+Definition at line 108 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5551_Green@{color5551\_\-Green}}
+\index{color5551_Green@{color5551\_\-Green}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Green(in\-Color)~(((in\-Color) \& 0x03E0) $>$$>$ 5)}\label{flColor_8h_5ffe65ab053cbd9b50c7604a225989a1}
+
+
+
+
+Definition at line 100 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N5551().\index{flColor.h@{fl\-Color.h}!color5551_Merge@{color5551\_\-Merge}}
+\index{color5551_Merge@{color5551\_\-Merge}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Merge(in\-Color0, in\-Color1)~color5551\_\-RGBA(((color5551\_\-Red(in\-Color0) + color5551\_\-Red(in\-Color1)) $>$$>$ 1), ((color5551\_\-Green(in\-Color0) + color5551\_\-Green(in\-Color1)) $>$$>$ 1), ((color5551\_\-Blue(in\-Color0) + color5551\_\-Blue(in\-Color1)) $>$$>$ 1), ((color5551\_\-Alpha(in\-Color0) + color5551\_\-Alpha(in\-Color1)) $>$$>$ 1))}\label{flColor_8h_0d1316cb13d2afaf48d0f457c4af926e}
+
+
+
+
+Definition at line 105 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5551_Merge4@{color5551\_\-Merge4}}
+\index{color5551_Merge4@{color5551\_\-Merge4}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color5551\_\-RGBA(((color5551\_\-Red(in\-Color0) + color5551\_\-Red(in\-Color1) + color5551\_\-Red(in\-Color2) + color5551\_\-Red(in\-Color3)) $>$$>$ 2), ((color5551\_\-Green(in\-Color0) + color5551\_\-Green(in\-Color1) + color5551\_\-Green(in\-Color2) + color5551\_\-Green(in\-Color3)) $>$$>$ 2), ((color5551\_\-Blue(in\-Color0) + color5551\_\-Blue(in\-Color1) + color5551\_\-Blue(in\-Color2) + color5551\_\-Blue(in\-Color3)) $>$$>$ 2), ((color5551\_\-Alpha(in\-Color0) + color5551\_\-Alpha(in\-Color1) + color5551\_\-Alpha(in\-Color2) + color5551\_\-Alpha(in\-Color3)) $>$$>$ 2))}\label{flColor_8h_3c1b2b9996c4b074bc05831e97f12f0f}
+
+
+
+
+Definition at line 106 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5551_Red@{color5551\_\-Red}}
+\index{color5551_Red@{color5551\_\-Red}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-Red(in\-Color)~((in\-Color) \& 0x001F)}\label{flColor_8h_9f303b43fc667bb502a221e451b2c042}
+
+
+
+
+Definition at line 99 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N5551().\index{flColor.h@{fl\-Color.h}!color5551_RGB@{color5551\_\-RGB}}
+\index{color5551_RGB@{color5551\_\-RGB}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-RGB(in\-Red, in\-Green, in\-Blue)~color5551\_\-RGBA(in\-Red, in\-Green, in\-Blue, 1);}\label{flColor_8h_c50680d144fda38ebea40c430e7b972c}
+
+
+
+
+Definition at line 104 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5551_RGBA@{color5551\_\-RGBA}}
+\index{color5551_RGBA@{color5551\_\-RGBA}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5551\_\-RGBA(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) \& 0x001F) + (((in\-Green) \& 0x001F) $<$$<$ 5) + (((in\-Blue) \& 0x001F) $<$$<$ 10) + (((in\-Alpha) \& 0x0001) $<$$<$ 15))}\label{flColor_8h_161d1e454e1660b8f4ab1ac88764fe2b}
+
+
+
+
+Definition at line 103 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N5551().\index{flColor.h@{fl\-Color.h}!color5650_Blue@{color5650\_\-Blue}}
+\index{color5650_Blue@{color5650\_\-Blue}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Blue(in\-Color)~color565\_\-Blue(in\-Color)}\label{flColor_8h_9e94ceee7d85700b2783382ca2576381}
+
+
+
+
+Definition at line 121 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_Cmp@{color5650\_\-Cmp}}
+\index{color5650_Cmp@{color5650\_\-Cmp}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Cmp(in\-Color0, in\-Color1)~color565\_\-Cmp(in\-Color0, in\-Color1)}\label{flColor_8h_f8e9b6bc80612d38dc31f6db2489d84e}
+
+
+
+
+Definition at line 125 of file fl\-Color.h.
+
+Referenced by pal\-Closest\-Color().\index{flColor.h@{fl\-Color.h}!color5650_Compare@{color5650\_\-Compare}}
+\index{color5650_Compare@{color5650\_\-Compare}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Compare(in\-Color0, in\-Color1)~color565\_\-Compare(in\-Color0, in\-Color1)}\label{flColor_8h_8d348fa57df4aaeab6667511f66180f2}
+
+
+
+
+Definition at line 126 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_Green@{color5650\_\-Green}}
+\index{color5650_Green@{color5650\_\-Green}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Green(in\-Color)~color565\_\-Green(in\-Color)}\label{flColor_8h_5a36ce5f003a50db5de53cf9cedeb4a3}
+
+
+
+
+Definition at line 120 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_Merge@{color5650\_\-Merge}}
+\index{color5650_Merge@{color5650\_\-Merge}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Merge(in\-Color0, in\-Color1)~color565\_\-Merge(in\-Color0, in\-Color1)}\label{flColor_8h_0061c718cf02a31ddfdfc7ba4967c55a}
+
+
+
+
+Definition at line 123 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_Merge4@{color5650\_\-Merge4}}
+\index{color5650_Merge4@{color5650\_\-Merge4}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color565\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)}\label{flColor_8h_2906def7798a09863aa451d739965ed5}
+
+
+
+
+Definition at line 124 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_Red@{color5650\_\-Red}}
+\index{color5650_Red@{color5650\_\-Red}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-Red(in\-Color)~color565\_\-Red(in\-Color)}\label{flColor_8h_d9d22c0b1171d2251b5524a345352210}
+
+
+
+
+Definition at line 119 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color5650_RGB@{color5650\_\-RGB}}
+\index{color5650_RGB@{color5650\_\-RGB}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color5650\_\-RGB(in\-Red, in\-Green, in\-Blue)~color565\_\-RGB(in\-Red, in\-Green, in\-Blue)}\label{flColor_8h_1f6be18c4166b38f7995ddf0314b037a}
+
+
+
+
+Definition at line 122 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color565_Blue@{color565\_\-Blue}}
+\index{color565_Blue@{color565\_\-Blue}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Blue(in\-Color)~(((in\-Color) \& 0x\-F800) $>$$>$ 11)}\label{flColor_8h_0d04c95d20db2536d979fa8512fad717}
+
+
+
+
+Definition at line 112 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N565().\index{flColor.h@{fl\-Color.h}!color565_Cmp@{color565\_\-Cmp}}
+\index{color565_Cmp@{color565\_\-Cmp}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Cmp(in\-Color0, in\-Color1)~(pos((int)color565\_\-Red(in\-Color0) - (int)color565\_\-Red(in\-Color1)) + pos((int)color565\_\-Green(in\-Color0) - (int)color565\_\-Green(in\-Color1)) + pos((int)color565\_\-Blue(in\-Color0) - (int)color565\_\-Blue(in\-Color1)))}\label{flColor_8h_24bf7e5e9050dd27e8ce637017b31750}
+
+
+
+
+Definition at line 116 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color565_Compare@{color565\_\-Compare}}
+\index{color565_Compare@{color565\_\-Compare}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Compare(in\-Color0, in\-Color1)~color565\_\-Cmp(in\-Color0, in\-Color1)}\label{flColor_8h_5710d2ad6345d9a2b2cd6de274c82482}
+
+
+
+
+Definition at line 117 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color565_Green@{color565\_\-Green}}
+\index{color565_Green@{color565\_\-Green}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Green(in\-Color)~(((in\-Color) \& 0x07E0) $>$$>$ 5)}\label{flColor_8h_a7f6ab20e4338874c3ddce320eaf3fe5}
+
+
+
+
+Definition at line 111 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N565().\index{flColor.h@{fl\-Color.h}!color565_Merge@{color565\_\-Merge}}
+\index{color565_Merge@{color565\_\-Merge}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Merge(in\-Color0, in\-Color1)~color565\_\-RGB(((color565\_\-Red(in\-Color0) + color565\_\-Red(in\-Color1)) $>$$>$ 1), ((color565\_\-Green(in\-Color0) + color565\_\-Green(in\-Color1)) $>$$>$ 1), ((color565\_\-Blue(in\-Color0) + color565\_\-Blue(in\-Color1)) $>$$>$ 1))}\label{flColor_8h_767d1f5dae3d49a16b823a502fb00d07}
+
+
+
+
+Definition at line 114 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color565_Merge4@{color565\_\-Merge4}}
+\index{color565_Merge4@{color565\_\-Merge4}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color565\_\-RGB(((color565\_\-Red(in\-Color0) + color565\_\-Red(in\-Color1) + color565\_\-Red(in\-Color2) + color565\_\-Red(in\-Color3)) $>$$>$ 2), ((color565\_\-Green(in\-Color0) + color565\_\-Green(in\-Color1) + color565\_\-Green(in\-Color2) + color565\_\-Green(in\-Color3)) $>$$>$ 2), ((color565\_\-Blue(in\-Color0) + color565\_\-Blue(in\-Color1) + color565\_\-Blue(in\-Color2) + color565\_\-Blue(in\-Color3)) $>$$>$ 2))}\label{flColor_8h_0d108b48bd76b845b700acb6c4b39885}
+
+
+
+
+Definition at line 115 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color565_Red@{color565\_\-Red}}
+\index{color565_Red@{color565\_\-Red}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-Red(in\-Color)~((in\-Color) \& 0x001F)}\label{flColor_8h_20aa5ee6336b1d64bff2c05ccb1665fc}
+
+
+
+
+Definition at line 110 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N565().\index{flColor.h@{fl\-Color.h}!color565_RGB@{color565\_\-RGB}}
+\index{color565_RGB@{color565\_\-RGB}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color565\_\-RGB(in\-Red, in\-Green, in\-Blue)~(((in\-Red) \& 0x001F) + (((in\-Green) \& 0x003F) $<$$<$ 5) + (((in\-Blue) \& 0x001F) $<$$<$ 11))}\label{flColor_8h_689396802693078d06461d6bde9f0c59}
+
+
+
+
+Definition at line 113 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N565().\index{flColor.h@{fl\-Color.h}!color8888_Alpha@{color8888\_\-Alpha}}
+\index{color8888_Alpha@{color8888\_\-Alpha}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Alpha(in\-Color)~(((in\-Color) \& 0x\-FF0000) $>$$>$ 24)}\label{flColor_8h_c52094d7ed85cc5e19c4222705757077}
+
+
+
+
+Definition at line 73 of file fl\-Color.h.
+
+Referenced by color\-Alpha\-Mult8888(), graphics\-Effect\-Fs\-Grayscale\-SW(), and graphics\-Effect\-Fs\-Night\-Vision\-SW().\index{flColor.h@{fl\-Color.h}!color8888_Blend@{color8888\_\-Blend}}
+\index{color8888_Blend@{color8888\_\-Blend}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Blend(in\-Color0, in\-Color1, in\-Fract)~color8888\_\-RGBA((int)(((float)color8888\_\-Red(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Red(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Green(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Green(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Blue(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Blue(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))), (int)(((float)color8888\_\-Alpha(in\-Color0) $\ast$ (float)(in\-Fract)) + ((float)color8888\_\-Alpha(in\-Color1) $\ast$ (1.0f - (float)(in\-Fract)))))}\label{flColor_8h_463c7064745285f1f35f0efdefa7e94e}
+
+
+
+
+Definition at line 80 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Blue@{color8888\_\-Blue}}
+\index{color8888_Blue@{color8888\_\-Blue}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Blue(in\-Color)~(((in\-Color) \& 0x00FF0000) $>$$>$ 16)}\label{flColor_8h_c09995ef6e65b29323f5514a08a9ce41}
+
+
+
+
+Definition at line 72 of file fl\-Color.h.
+
+Referenced by color\-Hue8888(), color\-Lum8888(), color\-Lum\-Mult8888(), color\-Sat8888(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Grayscale\-SW(), and graphics\-Effect\-Fs\-Night\-Vision\-SW().\index{flColor.h@{fl\-Color.h}!color8888_Cmp@{color8888\_\-Cmp}}
+\index{color8888_Cmp@{color8888\_\-Cmp}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Cmp(in\-Color0, in\-Color1)~(pos((int)color8888\_\-Red(in\-Color0) - (int)color8888\_\-Red(in\-Color1)) + pos((int)color8888\_\-Green(in\-Color0) - (int)color8888\_\-Green(in\-Color1)) + pos((int)color8888\_\-Blue(in\-Color0) - (int)color8888\_\-Blue(in\-Color1)) + pos((int)color8888\_\-Alpha(in\-Color0) - (int)color8888\_\-Alpha(in\-Color1)))}\label{flColor_8h_c7fe25af6c89992e11a2d57994304fb3}
+
+
+
+
+Definition at line 85 of file fl\-Color.h.
+
+Referenced by pal\-Closest\-Color().\index{flColor.h@{fl\-Color.h}!color8888_CMY@{color8888\_\-CMY}}
+\index{color8888_CMY@{color8888\_\-CMY}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-CMY(in\-Cyan, in\-Magenta, in\-Yellow)~color8888\_\-RGB((255 - (in\-Cyan)), (255 - (in\-Magenta)), (255 - (in\-Yellow)))}\label{flColor_8h_72b7c3a7943951bf832c794ac93fb0c3}
+
+
+
+
+Definition at line 83 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_CMYA@{color8888\_\-CMYA}}
+\index{color8888_CMYA@{color8888\_\-CMYA}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-CMYA(in\-Cyan, in\-Magenta, in\-Yellow, in\-Alpha)~color8888\_\-Set\-Alpha(color8888\_\-CMY(in\-Cyan, in\-Magenta, in\-Yellow), in\-Alpha)}\label{flColor_8h_6bc1eaf94c1ce4da205597cf5a17d654}
+
+
+
+
+Definition at line 84 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_CMYK@{color8888\_\-CMYK}}
+\index{color8888_CMYK@{color8888\_\-CMYK}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-CMYK(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key)~color8888\_\-Merge3(color8888\_\-Blend(0x\-FFFFFF00, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Cyan) / 255.0f)), color8888\_\-Blend(0x\-FFFF00FF, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Magenta) / 255.0f)), color8888\_\-Blend(0x\-FF00FFFF, color\-RGB((in\-Key), (in\-Key), (in\-Key)), ((float)(in\-Yellow) / 255.0f)))}\label{flColor_8h_5ca7cfa9d0dcbb050c4b157bbfb20ed1}
+
+
+
+
+Definition at line 81 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_CMYKA@{color8888\_\-CMYKA}}
+\index{color8888_CMYKA@{color8888\_\-CMYKA}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-CMYKA(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key, in\-Alpha)~color8888\_\-Set\-Alpha(color8888\_\-CMYK(in\-Cyan, in\-Magenta, in\-Yellow, in\-Key), in\-Alpha)}\label{flColor_8h_7c76393479db34cb16fd293fffb30f63}
+
+
+
+
+Definition at line 82 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Compare@{color8888\_\-Compare}}
+\index{color8888_Compare@{color8888\_\-Compare}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Compare(in\-Color0, in\-Color1)~color8888\_\-Cmp(in\-Color0, in\-Color1)}\label{flColor_8h_29fafabf192dffb4edf4cd3644f7331f}
+
+
+
+
+Definition at line 86 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Green@{color8888\_\-Green}}
+\index{color8888_Green@{color8888\_\-Green}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Green(in\-Color)~(((in\-Color) \& 0x0000FF00) $>$$>$ 8)}\label{flColor_8h_b81f6971f534c22102d89843cdd0f79c}
+
+
+
+
+Definition at line 71 of file fl\-Color.h.
+
+Referenced by color\-Hue8888(), color\-Lum8888(), color\-Lum\-Mult8888(), color\-Sat8888(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Grayscale\-SW(), and graphics\-Effect\-Fs\-Night\-Vision\-SW().\index{flColor.h@{fl\-Color.h}!color8888_Merge@{color8888\_\-Merge}}
+\index{color8888_Merge@{color8888\_\-Merge}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Merge(in\-Color0, in\-Color1)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1)) $>$$>$ 1), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1)) $>$$>$ 1), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1)) $>$$>$ 1), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1)) $>$$>$ 1))}\label{flColor_8h_d96b4f70c37dc98c40ed25af0f109316}
+
+
+
+
+Definition at line 77 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Merge3@{color8888\_\-Merge3}}
+\index{color8888_Merge3@{color8888\_\-Merge3}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Merge3(in\-Color0, in\-Color1, in\-Color2)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1) + color8888\_\-Red(in\-Color2)) / 3), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1) + color8888\_\-Green(in\-Color2)) / 3), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1) + color8888\_\-Blue(in\-Color2)) / 3), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1) + color8888\_\-Alpha(in\-Color2)) / 3))}\label{flColor_8h_1102cbb8e20fbccdc9ec9aa09ee755b1}
+
+
+
+
+Definition at line 78 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Merge4@{color8888\_\-Merge4}}
+\index{color8888_Merge4@{color8888\_\-Merge4}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Merge4(in\-Color0, in\-Color1, in\-Color2, in\-Color3)~color8888\_\-RGBA(((color8888\_\-Red(in\-Color0) + color8888\_\-Red(in\-Color1) + color8888\_\-Red(in\-Color2) + color8888\_\-Red(in\-Color3)) $>$$>$ 2), ((color8888\_\-Green(in\-Color0) + color8888\_\-Green(in\-Color1) + color8888\_\-Green(in\-Color2) + color8888\_\-Green(in\-Color3)) $>$$>$ 2), ((color8888\_\-Blue(in\-Color0) + color8888\_\-Blue(in\-Color1) + color8888\_\-Blue(in\-Color2) + color8888\_\-Blue(in\-Color3)) $>$$>$ 2), ((color8888\_\-Alpha(in\-Color0) + color8888\_\-Alpha(in\-Color1) + color8888\_\-Alpha(in\-Color2) + color8888\_\-Alpha(in\-Color3)) $>$$>$ 2))}\label{flColor_8h_2a3e218aaea8b2a1027c269be349622b}
+
+
+
+
+Definition at line 79 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!color8888_Red@{color8888\_\-Red}}
+\index{color8888_Red@{color8888\_\-Red}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Red(in\-Color)~((in\-Color) \& 0x000000FF)}\label{flColor_8h_8e6b43835a4cca887aeddf15486e82e7}
+
+
+
+
+Definition at line 70 of file fl\-Color.h.
+
+Referenced by color\-Hue8888(), color\-Lum8888(), color\-Lum\-Mult8888(), color\-Sat8888(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Grayscale\-SW(), and graphics\-Effect\-Fs\-Night\-Vision\-SW().\index{flColor.h@{fl\-Color.h}!color8888_RGB@{color8888\_\-RGB}}
+\index{color8888_RGB@{color8888\_\-RGB}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-RGB(in\-Red, in\-Green, in\-Blue)~(((in\-Red) + ((in\-Green) $<$$<$ 8) + ((in\-Blue) $<$$<$ 16)) $|$ (0x\-FF000000))}\label{flColor_8h_fcc66ea3401039c04a5ad4065c41f81a}
+
+
+
+
+Definition at line 76 of file fl\-Color.h.
+
+Referenced by color\-HSL().\index{flColor.h@{fl\-Color.h}!color8888_RGBA@{color8888\_\-RGBA}}
+\index{color8888_RGBA@{color8888\_\-RGBA}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-RGBA(in\-Red, in\-Green, in\-Blue, in\-Alpha)~(((in\-Red) + ((in\-Green) $<$$<$ 8) + ((in\-Blue) $<$$<$ 16)) $|$ ((in\-Alpha) $<$$<$ 24))}\label{flColor_8h_c6df7fc369067e03da31777b47aba268}
+
+
+
+
+Definition at line 75 of file fl\-Color.h.
+
+Referenced by color\-Merge\-N8888(), graphics\-Effect\-Fs\-Grayscale\-SW(), and graphics\-Effect\-Fs\-Night\-Vision\-SW().\index{flColor.h@{fl\-Color.h}!color8888_SetAlpha@{color8888\_\-SetAlpha}}
+\index{color8888_SetAlpha@{color8888\_\-SetAlpha}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color8888\_\-Set\-Alpha(in\-Color, in\-Alpha)~(((in\-Color) \& 0x00FFFFFF) $|$ (((in\-Alpha) \& 0x\-FF) $<$$<$ 24))}\label{flColor_8h_1bde3a7888d1058047b7d572fcbaccd9}
+
+
+
+
+Definition at line 74 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorAlpha8888@{colorAlpha8888}}
+\index{colorAlpha8888@{colorAlpha8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Alpha8888(in\-Color)~color8888\_\-Alpha(in\-Color)}\label{flColor_8h_67f30158f5d9f7d602e5e8c0f45db7fb}
+
+
+
+
+Definition at line 32 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorBlend8888@{colorBlend8888}}
+\index{colorBlend8888@{colorBlend8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Blend8888(in\-Color0, in\-Color1, in\-Ratio)~color8888\_\-Blend(in\-Color0, in\-Color1, in\-Ratio)}\label{flColor_8h_3d5ee582ac6f2a3e51d1c1296a929f5a}
+
+
+
+
+Definition at line 42 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorBlue8888@{colorBlue8888}}
+\index{colorBlue8888@{colorBlue8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Blue8888(in\-Color)~color8888\_\-Blue(in\-Color)}\label{flColor_8h_dace7342dfc64ba7d1249b951f5fc507}
+
+
+
+
+Definition at line 31 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorGreen8888@{colorGreen8888}}
+\index{colorGreen8888@{colorGreen8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Green8888(in\-Color)~color8888\_\-Green(in\-Color)}\label{flColor_8h_a09744e0115d834931e50490372f475a}
+
+
+
+
+Definition at line 30 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorMerge8888@{colorMerge8888}}
+\index{colorMerge8888@{colorMerge8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Merge8888(in\-Color0, in\-Color1)~color8888\_\-Merge(in\-Color0, in\-Color1)}\label{flColor_8h_3341f8a7676f477ed9f5d397b4ea350a}
+
+
+
+
+Definition at line 43 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorMergeN5650@{colorMergeN5650}}
+\index{colorMergeN5650@{colorMergeN5650}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Merge\-N5650(in\-Color, in\-Color\-Count)~color\-Merge\-N565(in\-Color, in\-Color\-Count)}\label{flColor_8h_6d282c1c2e8bb959636945e02a033d26}
+
+
+
+
+Definition at line 48 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorRed8888@{colorRed8888}}
+\index{colorRed8888@{colorRed8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-Red8888(in\-Color)~color8888\_\-Red(in\-Color)}\label{flColor_8h_78601b4984dfb423d4a73d2158c2e785}
+
+
+
+
+Definition at line 29 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorRGB8888@{colorRGB8888}}
+\index{colorRGB8888@{colorRGB8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-RGB8888(in\-Red, in\-Green, in\-Blue)~color8888\_\-RGB(in\-Red, in\-Green, in\-Blue)}\label{flColor_8h_7fbc854ffb17e7c4a7f8c7e838da8f76}
+
+
+
+
+Definition at line 33 of file fl\-Color.h.\index{flColor.h@{fl\-Color.h}!colorRGBA8888@{colorRGBA8888}}
+\index{colorRGBA8888@{colorRGBA8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define color\-RGBA8888(in\-Red, in\-Green, in\-Blue, in\-Alpha)~color8888\_\-RGBA(in\-Red, in\-Green, in\-Blue, in\-Alpha)}\label{flColor_8h_d663d33dc27f0b3c5f6b7ed9e0c3928e}
+
+
+
+
+Definition at line 34 of file fl\-Color.h.
+
+\subsection{Function Documentation}
+\index{flColor.h@{fl\-Color.h}!colorAlphaMult8888@{colorAlphaMult8888}}
+\index{colorAlphaMult8888@{colorAlphaMult8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Alpha\-Mult8888 (u32 {\em in\-Color}, float {\em in\-Mult})}\label{flColor_8h_fb596a1100915bb37f2077abd553b0f4}
+
+
+
+
+Definition at line 194 of file fl\-Color.c.
+
+References color8888\_\-Alpha, and min.\index{flColor.h@{fl\-Color.h}!colorHSL@{colorHSL}}
+\index{colorHSL@{colorHSL}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-HSL (u8 {\em in\-Hue}, u8 {\em in\-Sat}, u8 {\em in\-Lum})}\label{flColor_8h_1f1236cd3a557da2460a8ea749a1a281}
+
+
+
+
+Definition at line 11 of file fl\-Color.c.
+
+References color8888\_\-RGB.\index{flColor.h@{fl\-Color.h}!colorHue8888@{colorHue8888}}
+\index{colorHue8888@{colorHue8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Hue8888 (u32 {\em in\-Color})}\label{flColor_8h_9b21668439ded2a1e473584fa56ee9a1}
+
+
+
+
+Definition at line 43 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, max, and min.\index{flColor.h@{fl\-Color.h}!colorLum8888@{colorLum8888}}
+\index{colorLum8888@{colorLum8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Lum8888 (u32 {\em in\-Color})}\label{flColor_8h_a8a43be1182590891faaf0c93d26e62f}
+
+
+
+
+Definition at line 89 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, max, and min.\index{flColor.h@{fl\-Color.h}!colorLumMult8888@{colorLumMult8888}}
+\index{colorLumMult8888@{colorLumMult8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Lum\-Mult8888 (u32 {\em in\-Color}, float {\em in\-Lum})}\label{flColor_8h_eabbaad667dc71427eb83782d1588762}
+
+
+
+
+Definition at line 185 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, min, and pos.
+
+Referenced by graphics2d\-Draw\-Spheroid\-Shaded().\index{flColor.h@{fl\-Color.h}!colorMergeN4444@{colorMergeN4444}}
+\index{colorMergeN4444@{colorMergeN4444}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N4444 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8h_9061458880496c59dbb038847f691c21}
+
+
+
+
+Definition at line 122 of file fl\-Color.c.
+
+References color4444\_\-Alpha, color4444\_\-Blue, color4444\_\-Green, color4444\_\-Red, and color4444\_\-RGBA.\index{flColor.h@{fl\-Color.h}!colorMergeN5551@{colorMergeN5551}}
+\index{colorMergeN5551@{colorMergeN5551}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N5551 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8h_bb41f344d97f285f6e39ae0e931e3b80}
+
+
+
+
+Definition at line 139 of file fl\-Color.c.
+
+References color5551\_\-Alpha, color5551\_\-Blue, color5551\_\-Green, color5551\_\-Red, and color5551\_\-RGBA.\index{flColor.h@{fl\-Color.h}!colorMergeN565@{colorMergeN565}}
+\index{colorMergeN565@{colorMergeN565}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N565 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8h_7aa019d179d856b74f3c50b1bd0187a5}
+
+
+
+
+Definition at line 156 of file fl\-Color.c.
+
+References color565\_\-Blue, color565\_\-Green, color565\_\-Red, and color565\_\-RGB.\index{flColor.h@{fl\-Color.h}!colorMergeN8888@{colorMergeN8888}}
+\index{colorMergeN8888@{colorMergeN8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Merge\-N8888 (u32 $\ast$ {\em in\-Color}, u32 {\em in\-Color\-Count})}\label{flColor_8h_b8b06e4b309e0490876e4c853ccbebcd}
+
+
+
+
+Definition at line 104 of file fl\-Color.c.
+
+References color8888\_\-RGBA.\index{flColor.h@{fl\-Color.h}!colorRandom8888@{colorRandom8888}}
+\index{colorRandom8888@{colorRandom8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Random8888 (u8 {\em in\-Base\-Lum}, u8 {\em in\-Rand\-Lum}, u8 {\em in\-Alpha})}\label{flColor_8h_30cd44a08fded741a0764165d2062f45}
+
+
+
+
+Definition at line 171 of file fl\-Color.c.
+
+References math\-Randi().\index{flColor.h@{fl\-Color.h}!colorSat8888@{colorSat8888}}
+\index{colorSat8888@{colorSat8888}!flColor.h@{fl\-Color.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Sat8888 (u32 {\em in\-Color})}\label{flColor_8h_7c525628b898faa9a99e217c0232c4d7}
+
+
+
+
+Definition at line 72 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, and color8888\_\-Red.

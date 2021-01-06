@@ -1,0 +1,1071 @@
+\section{fl\-Config\-Default.h File Reference}
+\label{flConfigDefault_8h}\index{flConfigDefault.h@{flConfigDefault.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf FL\_\-INCLUDE\_\-ALL\_\-H}~1
+\item 
+\#define {\bf FL\_\-INCLUDE\_\-ALL\_\-C}~1
+\item 
+\#define {\bf FL\_\-PREFIX}~0
+\item 
+\#define {\bf FL\_\-PREFIX\_\-BOTH}~1
+\item 
+\#define {\bf FL\_\-VSHMODE}~0
+\item 
+\#define {\bf FL\_\-KERNELMODE}~0
+\item 
+\#define {\bf FL\_\-CALLBACKS}~1
+\item 
+\#define {\bf FL\_\-CALLBACKS\_\-EXIT}~1
+\item 
+\#define {\bf FL\_\-CALLBACKS\_\-POWER}~0
+\item 
+\#define {\bf FL\_\-DEBUG}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-TIMESTAMP}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CALLEDFROM}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGGING}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGCLEAR}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-LOGPATH}~\char`\"{}./fl\-Debug\-Log.txt\char`\"{}
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS}~0
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-STATUS\_\-COLOR}~0x\-FFFF0000
+\item 
+\#define {\bf FL\_\-DEBUG\_\-SCREENSHOTPATH}~\char`\"{}./fl\-Debug\-Pic\%i.tga\char`\"{}
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SHOW}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-COLOR}~0x\-FF0000FF
+\item 
+\#define {\bf FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SHOW}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-COLOR}~0x\-FF007FFF
+\item 
+\#define {\bf FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}~0x\-FF007FFF
+\item 
+\#define {\bf FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}~1
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}~0x\-FF00007F
+\item 
+\#define {\bf FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}~1
+\item 
+\#define {\bf FL\_\-MEMORY}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-SCRATCHPAD}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-POOL}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}~512
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-VMEM\_\-CACHE}~16384
+\item 
+\#define {\bf FL\_\-MEMORY\_\-PAGE}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-PAGE\_\-PATH}~\char`\"{}./fl\-Page\-File.dat\char`\"{}
+\item 
+\#define {\bf FL\_\-MEMORY\_\-LOGGING}~1
+\item 
+\#define {\bf FL\_\-MEMORY\_\-LOGPATH}~\char`\"{}./fl\-Memory\-Log.txt\char`\"{}
+\item 
+\#define {\bf FL\_\-MEMORY\_\-ERRORBYTES}~0
+\item 
+\#define {\bf FL\_\-FILE}~1
+\item 
+\#define {\bf FL\_\-TIMER}~1
+\item 
+\#define {\bf FL\_\-INPUT}~1
+\item 
+\#define {\bf FL\_\-MATH}~1
+\item 
+\#define {\bf FL\_\-MATH\_\-VFPU}~1
+\item 
+\#define {\bf FL\_\-MATH\_\-RANDTYPE}~0
+\item 
+\#define {\bf FL\_\-MATH\_\-RANDOMSEED}~1
+\item 
+\#define {\bf FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}~4096
+\item 
+\#define {\bf FL\_\-MATH\_\-TRIGCACHE}~0
+\item 
+\#define {\bf FL\_\-STRING}~1
+\item 
+\#define {\bf FL\_\-COLOR}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}~GU\_\-PSM\_\-8888
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}~GU\_\-PSM\_\-8888
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}~55.0f
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}~262144
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}~0x\-FFFFFFFF
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-DAMP}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}~0.25f
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-USEDMA}~0
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}~16
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}~0.25
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-3D}~1
+\item 
+\#define {\bf FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}~1
+\item 
+\#define {\bf FL\_\-CAMERA}~1
+\item 
+\#define {\bf FL\_\-TEXTURE}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-UNCACHED}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP}~8
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-AUTOSWIZZLE}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}~\char`\"{}./fl\-Tex\-Error.tga\char`\"{}
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PRESERVENONALPHA}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PCX}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-TGA}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-BMP}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-WAL}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-PNG}~0
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-RAW}~1
+\item 
+\#define {\bf FL\_\-TEXTURE\_\-MANIPULATION}~1
+\item 
+\#define {\bf FL\_\-MODEL}~1
+\item 
+\#define {\bf FL\_\-MODEL\_\-OBJ}~1
+\item 
+\#define {\bf FL\_\-MODEL\_\-MD2}~1
+\item 
+\#define {\bf FL\_\-SPRITE}~1
+\item 
+\#define {\bf FL\_\-FONT}~1
+\item 
+\#define {\bf FL\_\-FONT\_\-HSPACE\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-FONT\_\-VSPACE\_\-DEFAULT}~0
+\item 
+\#define {\bf FL\_\-FONT\_\-COLOR\_\-DEFAULT}~0x\-FFFFFFFF
+\item 
+\#define {\bf FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}~5
+\item 
+\#define {\bf FL\_\-COLLISION}~1
+\item 
+\#define {\bf FL\_\-NOTIFY}~1
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-FREQUENCY}~120
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-DURATION}~3.0f
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-VOLUME}~0
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-BATTERY}~1
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-TIME}~1
+\item 
+\#define {\bf FL\_\-NOTIFY\_\-TRAYSIZE}~4
+\item 
+\#define {\bf FL\_\-UMD}~0
+\item 
+\#define {\bf FL\_\-FILEBROWSER}~0
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_CALLBACKS@{FL\_\-CALLBACKS}}
+\index{FL_CALLBACKS@{FL\_\-CALLBACKS}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS~1}\label{flConfigDefault_8h_99bd249457df41b31e2c2b4ed4e88d33}
+
+
+
+
+Definition at line 28 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}}
+\index{FL_CALLBACKS_EXIT@{FL\_\-CALLBACKS\_\-EXIT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-EXIT~1}\label{flConfigDefault_8h_f8fdf74f16064484dfb0aa5dd50e1733}
+
+
+
+
+Definition at line 31 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}}
+\index{FL_CALLBACKS_POWER@{FL\_\-CALLBACKS\_\-POWER}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CALLBACKS\_\-POWER~0}\label{flConfigDefault_8h_87448450a6222c3f1acafdff8ab19228}
+
+
+
+
+Definition at line 34 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_CAMERA@{FL\_\-CAMERA}}
+\index{FL_CAMERA@{FL\_\-CAMERA}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-CAMERA~1}\label{flConfigDefault_8h_a7de82853426d18ce06eefa638794755}
+
+
+
+
+Definition at line 272 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_COLLISION@{FL\_\-COLLISION}}
+\index{FL_COLLISION@{FL\_\-COLLISION}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-COLLISION~1}\label{flConfigDefault_8h_f9bd7e87bc35c7daf3ab38aed815d716}
+
+
+
+
+Definition at line 355 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_COLOR@{FL\_\-COLOR}}
+\index{FL_COLOR@{FL\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-COLOR~1}\label{flConfigDefault_8h_8678a4ea968ca1b77b6706816438daee}
+
+
+
+
+Definition at line 207 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG@{FL\_\-DEBUG}}
+\index{FL_DEBUG@{FL\_\-DEBUG}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG~1}\label{flConfigDefault_8h_923af823da4f8ccb7d3a71cda2011862}
+
+
+
+
+Definition at line 38 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}}
+\index{FL_DEBUG_CALLEDFROM@{FL\_\-DEBUG\_\-CALLEDFROM}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CALLEDFROM~1}\label{flConfigDefault_8h_0ee2478766c699c67b446e85bb0f5de5}
+
+
+
+
+Definition at line 47 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_CRITICALERROR_COLOR@{FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}}
+\index{FL_DEBUG_CRITICALERROR_COLOR@{FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR~0x\-FF00007F}\label{flConfigDefault_8h_70fbafbb41ec43369f6d95f6bd08d0ec}
+
+
+
+
+Definition at line 119 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_CRITICALERROR_SCREENSHOT@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SCREENSHOT~1}\label{flConfigDefault_8h_483e8699a740790b3c1d3b4a0d917052}
+
+
+
+
+Definition at line 122 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}}
+\index{FL_DEBUG_CRITICALERROR_SHOW@{FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-CRITICALERROR\_\-SHOW~1}\label{flConfigDefault_8h_67a4bd5712e11b2195a6bb575ef2f73a}
+
+
+
+
+Definition at line 116 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DATEFORMAT_AMERICAN@{FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}}
+\index{FL_DEBUG_DATEFORMAT_AMERICAN@{FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DATEFORMAT\_\-AMERICAN~0}\label{flConfigDefault_8h_d34f83d2c9a7b3de4a38178c06c48303}
+
+
+
+
+Definition at line 44 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}}
+\index{FL_DEBUG_DEVWARNING@{FL\_\-DEBUG\_\-DEVWARNING}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING~1}\label{flConfigDefault_8h_ed6afeb1e7784d212ec555ccfe3ea081}
+
+
+
+
+Definition at line 101 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DEVWARNING_COLOR@{FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}}
+\index{FL_DEBUG_DEVWARNING_COLOR@{FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR~0x\-FF007FFF}\label{flConfigDefault_8h_87264eb186e12c11e724a5586cd51044}
+
+
+
+
+Definition at line 110 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}}
+\index{FL_DEBUG_DEVWARNING_NOTIFY@{FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-NOTIFY~1}\label{flConfigDefault_8h_02b406afb3f81dbfe6f3d3550c10a1f9}
+
+
+
+
+Definition at line 107 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_DEVWARNING_SCREENSHOT@{FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SCREENSHOT~1}\label{flConfigDefault_8h_8064ba66bbf5197b84e32f74b9e4c29e}
+
+
+
+
+Definition at line 113 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}}
+\index{FL_DEBUG_DEVWARNING_SHOW@{FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-DEVWARNING\_\-SHOW~1}\label{flConfigDefault_8h_608c2a6c6c29d6286136b69f21d05805}
+
+
+
+
+Definition at line 104 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}}
+\index{FL_DEBUG_ERROR@{FL\_\-DEBUG\_\-ERROR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR~1}\label{flConfigDefault_8h_43900c4b670f70af67248dcbffbf45fd}
+
+
+
+
+Definition at line 71 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_ERROR_COLOR@{FL\_\-DEBUG\_\-ERROR\_\-COLOR}}
+\index{FL_DEBUG_ERROR_COLOR@{FL\_\-DEBUG\_\-ERROR\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-COLOR~0x\-FF0000FF}\label{flConfigDefault_8h_ee057bcf4c055999de53502476ba03c7}
+
+
+
+
+Definition at line 80 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}}
+\index{FL_DEBUG_ERROR_NOTIFY@{FL\_\-DEBUG\_\-ERROR\_\-NOTIFY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-NOTIFY~1}\label{flConfigDefault_8h_77c0d6d3a2c51009a74e358bf9a118e9}
+
+
+
+
+Definition at line 77 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}}
+\index{FL_DEBUG_ERROR_SCREENSHOT@{FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SCREENSHOT~1}\label{flConfigDefault_8h_6b600fd569f84acd3f5cfe5bf08c4bf7}
+
+
+
+
+Definition at line 83 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}}
+\index{FL_DEBUG_ERROR_SHOW@{FL\_\-DEBUG\_\-ERROR\_\-SHOW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-ERROR\_\-SHOW~1}\label{flConfigDefault_8h_601003ed63ef51a3bd228b3e5cfc650b}
+
+
+
+
+Definition at line 74 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}}
+\index{FL_DEBUG_LOGCLEAR@{FL\_\-DEBUG\_\-LOGCLEAR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGCLEAR~1}\label{flConfigDefault_8h_ea07f8181d984ebd503a1fe58ddab9c6}
+
+
+
+
+Definition at line 53 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}}
+\index{FL_DEBUG_LOGGING@{FL\_\-DEBUG\_\-LOGGING}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGGING~1}\label{flConfigDefault_8h_60863a62a00f47912259e1f7127f5713}
+
+
+
+
+Definition at line 50 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_LOGPATH@{FL\_\-DEBUG\_\-LOGPATH}}
+\index{FL_DEBUG_LOGPATH@{FL\_\-DEBUG\_\-LOGPATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-LOGPATH~\char`\"{}./fl\-Debug\-Log.txt\char`\"{}}\label{flConfigDefault_8h_c8e12bce6be6a9aa7c97550a1cd7fc3f}
+
+
+
+
+Definition at line 56 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_SCREENSHOTPATH@{FL\_\-DEBUG\_\-SCREENSHOTPATH}}
+\index{FL_DEBUG_SCREENSHOTPATH@{FL\_\-DEBUG\_\-SCREENSHOTPATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-SCREENSHOTPATH~\char`\"{}./fl\-Debug\-Pic\%i.tga\char`\"{}}\label{flConfigDefault_8h_1fbf0614971b57edea29eb37c12df1f9}
+
+
+
+
+Definition at line 68 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}}
+\index{FL_DEBUG_STATUS@{FL\_\-DEBUG\_\-STATUS}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS~0}\label{flConfigDefault_8h_95db7c0db76b05ad758a8b231bc81bd9}
+
+
+
+
+Definition at line 59 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_STATUS_COLOR@{FL\_\-DEBUG\_\-STATUS\_\-COLOR}}
+\index{FL_DEBUG_STATUS_COLOR@{FL\_\-DEBUG\_\-STATUS\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-COLOR~0x\-FFFF0000}\label{flConfigDefault_8h_c0279d89bea6db761e9ada2f16f3759d}
+
+
+
+
+Definition at line 65 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}}
+\index{FL_DEBUG_STATUS_NOTIFY@{FL\_\-DEBUG\_\-STATUS\_\-NOTIFY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-STATUS\_\-NOTIFY~1}\label{flConfigDefault_8h_d285ddbf161637a49c715a3402a83c29}
+
+
+
+
+Definition at line 62 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}}
+\index{FL_DEBUG_TIMESTAMP@{FL\_\-DEBUG\_\-TIMESTAMP}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-TIMESTAMP~1}\label{flConfigDefault_8h_7c30d8dee8d212511b22d0ca696b483c}
+
+
+
+
+Definition at line 41 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}}
+\index{FL_DEBUG_WARNING@{FL\_\-DEBUG\_\-WARNING}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING~1}\label{flConfigDefault_8h_cabc2c15422392d5fea76f8bf968834b}
+
+
+
+
+Definition at line 86 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_WARNING_COLOR@{FL\_\-DEBUG\_\-WARNING\_\-COLOR}}
+\index{FL_DEBUG_WARNING_COLOR@{FL\_\-DEBUG\_\-WARNING\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-COLOR~0x\-FF007FFF}\label{flConfigDefault_8h_ce3dc2ede9e501d60db203366dd3c54a}
+
+
+
+
+Definition at line 95 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}}
+\index{FL_DEBUG_WARNING_NOTIFY@{FL\_\-DEBUG\_\-WARNING\_\-NOTIFY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-NOTIFY~1}\label{flConfigDefault_8h_857035c764ff78d4d734d68c878eb1cd}
+
+
+
+
+Definition at line 92 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}}
+\index{FL_DEBUG_WARNING_SCREENSHOT@{FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SCREENSHOT~1}\label{flConfigDefault_8h_31935479fe02ed48220462d275a662e6}
+
+
+
+
+Definition at line 98 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}}
+\index{FL_DEBUG_WARNING_SHOW@{FL\_\-DEBUG\_\-WARNING\_\-SHOW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-DEBUG\_\-WARNING\_\-SHOW~1}\label{flConfigDefault_8h_ded42d7e5a8173f5d7d35eb17f0d2c19}
+
+
+
+
+Definition at line 89 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FILE@{FL\_\-FILE}}
+\index{FL_FILE@{FL\_\-FILE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FILE~1}\label{flConfigDefault_8h_d929f66e609c265daed46d421cead110}
+
+
+
+
+Definition at line 169 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FILEBROWSER@{FL\_\-FILEBROWSER}}
+\index{FL_FILEBROWSER@{FL\_\-FILEBROWSER}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FILEBROWSER~0}\label{flConfigDefault_8h_59ac78180abd773e24e9ebce0e7652d1}
+
+
+
+
+Definition at line 385 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FONT@{FL\_\-FONT}}
+\index{FL_FONT@{FL\_\-FONT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT~1}\label{flConfigDefault_8h_4327fb378c21ebdde136a9e29b183bef}
+
+
+
+
+Definition at line 339 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FONT_COLOR_DEFAULT@{FL\_\-FONT\_\-COLOR\_\-DEFAULT}}
+\index{FL_FONT_COLOR_DEFAULT@{FL\_\-FONT\_\-COLOR\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-COLOR\_\-DEFAULT~0x\-FFFFFFFF}\label{flConfigDefault_8h_87772d78c998f3945ccb0fb7f0ccebba}
+
+
+
+
+Definition at line 348 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FONT_HSPACE_DEFAULT@{FL\_\-FONT\_\-HSPACE\_\-DEFAULT}}
+\index{FL_FONT_HSPACE_DEFAULT@{FL\_\-FONT\_\-HSPACE\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-HSPACE\_\-DEFAULT~0}\label{flConfigDefault_8h_91a88599d6e9d386bea131e302210ed5}
+
+
+
+
+Definition at line 342 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FONT_TABWIDTH_DEFAULT@{FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}}
+\index{FL_FONT_TABWIDTH_DEFAULT@{FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT~5}\label{flConfigDefault_8h_207a2f5c99d8707a4bda13fbb34af7a6}
+
+
+
+
+Definition at line 351 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_FONT_VSPACE_DEFAULT@{FL\_\-FONT\_\-VSPACE\_\-DEFAULT}}
+\index{FL_FONT_VSPACE_DEFAULT@{FL\_\-FONT\_\-VSPACE\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-FONT\_\-VSPACE\_\-DEFAULT~0}\label{flConfigDefault_8h_c498af28962c13bb49b999fb2ad3ff00}
+
+
+
+
+Definition at line 345 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS@{FL\_\-GRAPHICS}}
+\index{FL_GRAPHICS@{FL\_\-GRAPHICS}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS~1}\label{flConfigDefault_8h_00a8d97a6b036b8234a6ffbbeb69ced6}
+
+
+
+
+Definition at line 211 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}}
+\index{FL_GRAPHICS_2D@{FL\_\-GRAPHICS\_\-2D}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D~1}\label{flConfigDefault_8h_27698ad90bd4f8fe9fb8af9fb319705a}
+
+
+
+
+Definition at line 253 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_2D_ELLIPSE_EDGESPERRAD@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}}
+\index{FL_GRAPHICS_2D_ELLIPSE_EDGESPERRAD@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-EDGESPERRAD~0.25}\label{flConfigDefault_8h_8e261f834152a85989b67aaac4c561db}
+
+
+
+
+Definition at line 262 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}}
+\index{FL_GRAPHICS_2D_ELLIPSE_MINLINES@{FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-ELLIPSE\_\-MINLINES~16}\label{flConfigDefault_8h_cb5dce5f8dd2b7c9653224654a414e78}
+
+
+
+
+Definition at line 259 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}}
+\index{FL_GRAPHICS_2D_USEDMA@{FL\_\-GRAPHICS\_\-2D\_\-USEDMA}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-2D\_\-USEDMA~0}\label{flConfigDefault_8h_e14e7d2a7e56fa6a921a7a0df0aa103b}
+
+
+
+
+Definition at line 256 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}}
+\index{FL_GRAPHICS_3D@{FL\_\-GRAPHICS\_\-3D}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-3D~1}\label{flConfigDefault_8h_ff70de40b296c4b66d2d4d79fafdc218}
+
+
+
+
+Definition at line 265 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_DISP_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}}
+\index{FL_GRAPHICS_DISP_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT~GU\_\-PSM\_\-8888}\label{flConfigDefault_8h_6b4393cb253f4efb3445c98cad9b2805}
+
+
+
+
+Definition at line 214 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_DISPLAYLIST_SIZE@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}}
+\index{FL_GRAPHICS_DISPLAYLIST_SIZE@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-SIZE~262144}\label{flConfigDefault_8h_0bb44fc4e0da775f21964b49033d5207}
+
+
+
+
+Definition at line 229 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}}
+\index{FL_GRAPHICS_DISPLAYLIST_STATIC@{FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DISPLAYLIST\_\-STATIC~1}\label{flConfigDefault_8h_b8b4f70f467f8499f628155bae3288b2}
+
+
+
+
+Definition at line 232 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_DRAW_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}}
+\index{FL_GRAPHICS_DRAW_BUFFER_FORMAT@{FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT~GU\_\-PSM\_\-8888}\label{flConfigDefault_8h_c3f185b00e4ac1b8ead59ce45ba16990}
+
+
+
+
+Definition at line 217 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}}
+\index{FL_GRAPHICS_EFFECTS_FULLSCREEN@{FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-EFFECTS\_\-FULLSCREEN~1}\label{flConfigDefault_8h_71b7ded0607a3d0db49adb2aa20fb30c}
+
+
+
+
+Definition at line 268 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}}
+\index{FL_GRAPHICS_FPS_DAMP@{FL\_\-GRAPHICS\_\-FPS\_\-DAMP}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-DAMP~1}\label{flConfigDefault_8h_a6a913e8445eaa4568d1b58972c318be}
+
+
+
+
+Definition at line 244 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_FPS_DAMPRATIO@{FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}}
+\index{FL_GRAPHICS_FPS_DAMPRATIO@{FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO~0.25f}\label{flConfigDefault_8h_4fbdf5b9e66789b06bb08f0d81c6a88b}
+
+
+
+
+Definition at line 247 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_FPS_SHOW_COLOR@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}}
+\index{FL_GRAPHICS_FPS_SHOW_COLOR@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR~0x\-FFFFFFFF}\label{flConfigDefault_8h_94a208988177f5ab123534ab33876f12}
+
+
+
+
+Definition at line 241 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}}
+\index{FL_GRAPHICS_FPS_SHOW_DEFAULT@{FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT~0}\label{flConfigDefault_8h_5dd0e5e145a77f6d290ef4c09ff8ebaa}
+
+
+
+
+Definition at line 238 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}}
+\index{FL_GRAPHICS_LINES_ANTIALIAS_DEFAULT@{FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-LINES\_\-ANTIALIAS\_\-DEFAULT~0}\label{flConfigDefault_8h_be0fc2dab59d051efd3df00c9c327c89}
+
+
+
+
+Definition at line 235 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_USEDEGENERATETRIS@{FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}}
+\index{FL_GRAPHICS_USEDEGENERATETRIS@{FL\_\-GRAPHICS\_\-USEDEGENERATETRIS}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-USEDEGENERATETRIS~0}\label{flConfigDefault_8h_1b1ba6d4e89fea99b09ed9aedaf0e23c}
+
+
+
+
+Definition at line 250 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}}
+\index{FL_GRAPHICS_VSYNC_AUTO@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO~1}\label{flConfigDefault_8h_1f8c65f08ed4a633f0e8434f891f5ce0}
+
+
+
+
+Definition at line 223 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_VSYNC_AUTO_CUTOFF@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}}
+\index{FL_GRAPHICS_VSYNC_AUTO_CUTOFF@{FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF~55.0f}\label{flConfigDefault_8h_9fbb0442685c1f41e4fa1231d58fbef8}
+
+
+
+
+Definition at line 226 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}}
+\index{FL_GRAPHICS_VSYNC_DEFAULT@{FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-GRAPHICS\_\-VSYNC\_\-DEFAULT~1}\label{flConfigDefault_8h_4cd44620c70d1f1e92ff06ad4443d64b}
+
+
+
+
+Definition at line 220 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_INCLUDE_ALL_C@{FL\_\-INCLUDE\_\-ALL\_\-C}}
+\index{FL_INCLUDE_ALL_C@{FL\_\-INCLUDE\_\-ALL\_\-C}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INCLUDE\_\-ALL\_\-C~1}\label{flConfigDefault_8h_86a6e2958fe94fbec8f95791f272d844}
+
+
+
+
+Definition at line 9 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_INCLUDE_ALL_H@{FL\_\-INCLUDE\_\-ALL\_\-H}}
+\index{FL_INCLUDE_ALL_H@{FL\_\-INCLUDE\_\-ALL\_\-H}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INCLUDE\_\-ALL\_\-H~1}\label{flConfigDefault_8h_f65b34507d1cfa0b2a188644d6bbd2a5}
+
+
+
+
+Definition at line 6 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_INPUT@{FL\_\-INPUT}}
+\index{FL_INPUT@{FL\_\-INPUT}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-INPUT~1}\label{flConfigDefault_8h_6e9ffb1fbcddf6ebd5bf021a5fbefc3f}
+
+
+
+
+Definition at line 177 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_KERNELMODE@{FL\_\-KERNELMODE}}
+\index{FL_KERNELMODE@{FL\_\-KERNELMODE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-KERNELMODE~0}\label{flConfigDefault_8h_d9b4adf9c92fb1117c5bba6d4887aecc}
+
+
+
+
+Definition at line 21 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH@{FL\_\-MATH}}
+\index{FL_MATH@{FL\_\-MATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH~1}\label{flConfigDefault_8h_588f887215295890b157df44e15e0618}
+
+
+
+
+Definition at line 181 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}}
+\index{FL_MATH_RANDOMSEED@{FL\_\-MATH\_\-RANDOMSEED}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDOMSEED~1}\label{flConfigDefault_8h_f226e71f3857ee0262ddd3febed39f13}
+
+
+
+
+Definition at line 190 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH_RANDOMSEED_FREQUENCY@{FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}}
+\index{FL_MATH_RANDOMSEED_FREQUENCY@{FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY~4096}\label{flConfigDefault_8h_7b8cf289b6ff0da6545d5e7ead2459d6}
+
+
+
+
+Definition at line 193 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}}
+\index{FL_MATH_RANDTYPE@{FL\_\-MATH\_\-RANDTYPE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-RANDTYPE~0}\label{flConfigDefault_8h_284a57acafa9e61ce8f4877addeab8be}
+
+
+
+
+Definition at line 187 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}}
+\index{FL_MATH_TRIGCACHE@{FL\_\-MATH\_\-TRIGCACHE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-TRIGCACHE~0}\label{flConfigDefault_8h_1714c4ffc6f7774695089af0a74730c1}
+
+
+
+
+Definition at line 196 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}}
+\index{FL_MATH_VFPU@{FL\_\-MATH\_\-VFPU}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MATH\_\-VFPU~1}\label{flConfigDefault_8h_4f5459716e8b74a4e5127a0b8006de98}
+
+
+
+
+Definition at line 184 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY@{FL\_\-MEMORY}}
+\index{FL_MEMORY@{FL\_\-MEMORY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY~1}\label{flConfigDefault_8h_2d6bf78fdd7817d97aba2778c7df0c72}
+
+
+
+
+Definition at line 126 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}}
+\index{FL_MEMORY_ERRORBYTES@{FL\_\-MEMORY\_\-ERRORBYTES}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-ERRORBYTES~0}\label{flConfigDefault_8h_6299bc95c7cc7fee09bb99151e3d761a}
+
+
+
+
+Definition at line 165 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}}
+\index{FL_MEMORY_LOGGING@{FL\_\-MEMORY\_\-LOGGING}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-LOGGING~1}\label{flConfigDefault_8h_5833a4954f6d74f014e407c67da0d70e}
+
+
+
+
+Definition at line 159 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_LOGPATH@{FL\_\-MEMORY\_\-LOGPATH}}
+\index{FL_MEMORY_LOGPATH@{FL\_\-MEMORY\_\-LOGPATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-LOGPATH~\char`\"{}./fl\-Memory\-Log.txt\char`\"{}}\label{flConfigDefault_8h_b1d30c8c098636b08182ad4838df7232}
+
+
+
+
+Definition at line 162 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}}
+\index{FL_MEMORY_PAGE@{FL\_\-MEMORY\_\-PAGE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-PAGE~1}\label{flConfigDefault_8h_d4d6acf1ebf7cae10eb5b6861f85671f}
+
+
+
+
+Definition at line 153 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_PAGE_PATH@{FL\_\-MEMORY\_\-PAGE\_\-PATH}}
+\index{FL_MEMORY_PAGE_PATH@{FL\_\-MEMORY\_\-PAGE\_\-PATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-PAGE\_\-PATH~\char`\"{}./fl\-Page\-File.dat\char`\"{}}\label{flConfigDefault_8h_619ea6e9d1cfca41eb552fbb13493823}
+
+
+
+
+Definition at line 156 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}}
+\index{FL_MEMORY_POOL@{FL\_\-MEMORY\_\-POOL}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-POOL~1}\label{flConfigDefault_8h_bb86f06f48f024c9115932c9b7af67ad}
+
+
+
+
+Definition at line 138 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}}
+\index{FL_MEMORY_SCRATCHPAD@{FL\_\-MEMORY\_\-SCRATCHPAD}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-SCRATCHPAD~1}\label{flConfigDefault_8h_18d87c3e65f36b5c7e92d95d3c65681b}
+
+
+
+
+Definition at line 132 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}}
+\index{FL_MEMORY_VMEM@{FL\_\-MEMORY\_\-VMEM}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM~1}\label{flConfigDefault_8h_1c855bc51ef4206ce723899f5b90aa53}
+
+
+
+
+Definition at line 135 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_VMEM_BLOCKSIZE@{FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}}
+\index{FL_MEMORY_VMEM_BLOCKSIZE@{FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE~512}\label{flConfigDefault_8h_68870092a12645a59e6408a0ead8a725}
+
+
+
+
+Definition at line 141 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}}
+\index{FL_MEMORY_VMEM_CACHE@{FL\_\-MEMORY\_\-VMEM\_\-CACHE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-CACHE~16384}\label{flConfigDefault_8h_8c4c673a301c8cf29cb76f49f7d04321}
+
+
+
+
+Definition at line 150 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}}
+\index{FL_MEMORY_VMEM_OVERFLOW@{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW~1}\label{flConfigDefault_8h_b87f3228f2e381627c72b6f240424006}
+
+
+
+
+Definition at line 144 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MEMORY_VMEM_STIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}}
+\index{FL_MEMORY_VMEM_STIDE_FILL@{FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL~1}\label{flConfigDefault_8h_f4f1fa1104c26b00549c820b4f8c8270}
+
+
+
+
+Definition at line 147 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MODEL@{FL\_\-MODEL}}
+\index{FL_MODEL@{FL\_\-MODEL}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL~1}\label{flConfigDefault_8h_5edb84629e1decf9f6145c606b5bb3a9}
+
+
+
+
+Definition at line 325 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}}
+\index{FL_MODEL_MD2@{FL\_\-MODEL\_\-MD2}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-MD2~1}\label{flConfigDefault_8h_d7f7817739ee4efadc63876ddf942b10}
+
+
+
+
+Definition at line 331 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}}
+\index{FL_MODEL_OBJ@{FL\_\-MODEL\_\-OBJ}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-MODEL\_\-OBJ~1}\label{flConfigDefault_8h_f52b3283325f42cd049b4b6e38d4e742}
+
+
+
+
+Definition at line 328 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY@{FL\_\-NOTIFY}}
+\index{FL_NOTIFY@{FL\_\-NOTIFY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY~1}\label{flConfigDefault_8h_5f1e10b9a14efbbb555b1f42d4751edd}
+
+
+
+
+Definition at line 359 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}}
+\index{FL_NOTIFY_BATTERY@{FL\_\-NOTIFY\_\-BATTERY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-BATTERY~1}\label{flConfigDefault_8h_e5172494d10bdf2190e4cc93c72eb590}
+
+
+
+
+Definition at line 371 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_DURATION@{FL\_\-NOTIFY\_\-DURATION}}
+\index{FL_NOTIFY_DURATION@{FL\_\-NOTIFY\_\-DURATION}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-DURATION~3.0f}\label{flConfigDefault_8h_8fbde230321202ac0be129399da674e2}
+
+
+
+
+Definition at line 365 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_FREQUENCY@{FL\_\-NOTIFY\_\-FREQUENCY}}
+\index{FL_NOTIFY_FREQUENCY@{FL\_\-NOTIFY\_\-FREQUENCY}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-FREQUENCY~120}\label{flConfigDefault_8h_4b0e951e99f362f3468f29ed54663877}
+
+
+
+
+Definition at line 362 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}}
+\index{FL_NOTIFY_TIME@{FL\_\-NOTIFY\_\-TIME}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TIME~1}\label{flConfigDefault_8h_80019d39373eaf22d5a83705ef7cbd10}
+
+
+
+
+Definition at line 374 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}}
+\index{FL_NOTIFY_TRAYSIZE@{FL\_\-NOTIFY\_\-TRAYSIZE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-TRAYSIZE~4}\label{flConfigDefault_8h_ff38ea39f307df3514a6f05cf998ebee}
+
+
+
+
+Definition at line 377 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}}
+\index{FL_NOTIFY_VOLUME@{FL\_\-NOTIFY\_\-VOLUME}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-NOTIFY\_\-VOLUME~0}\label{flConfigDefault_8h_ffa7fa3d9da5ce7d7af6b80bbe2744c2}
+
+
+
+
+Definition at line 368 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_PREFIX@{FL\_\-PREFIX}}
+\index{FL_PREFIX@{FL\_\-PREFIX}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-PREFIX~0}\label{flConfigDefault_8h_9d20d58a99892a0e80b04d0047ec2fbe}
+
+
+
+
+Definition at line 12 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_PREFIX_BOTH@{FL\_\-PREFIX\_\-BOTH}}
+\index{FL_PREFIX_BOTH@{FL\_\-PREFIX\_\-BOTH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-PREFIX\_\-BOTH~1}\label{flConfigDefault_8h_cc4bd7cd3e9982cc46768e7d8807f984}
+
+
+
+
+Definition at line 15 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_SPRITE@{FL\_\-SPRITE}}
+\index{FL_SPRITE@{FL\_\-SPRITE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-SPRITE~1}\label{flConfigDefault_8h_4cb2a7a735b32b623a4811291aad6195}
+
+
+
+
+Definition at line 335 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_STRING@{FL\_\-STRING}}
+\index{FL_STRING@{FL\_\-STRING}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-STRING~1}\label{flConfigDefault_8h_5bb7d4bfe430e9f75b338c9b5307f274}
+
+
+
+
+Definition at line 200 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE@{FL\_\-TEXTURE}}
+\index{FL_TEXTURE@{FL\_\-TEXTURE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE~1}\label{flConfigDefault_8h_69e22e4013a619ae5ef424f41167aea7}
+
+
+
+
+Definition at line 276 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}}
+\index{FL_TEXTURE_AUTOMIPMAP@{FL\_\-TEXTURE\_\-AUTOMIPMAP}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP~8}\label{flConfigDefault_8h_fad1cb51883ab52cf8355d5d49c6389e}
+
+
+
+
+Definition at line 282 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}}
+\index{FL_TEXTURE_AUTOMIPMAP_PALETTED@{FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOMIPMAP\_\-PALETTED~0}\label{flConfigDefault_8h_2c1693dd16f8248dcdbb2aa3c0488bbd}
+
+
+
+
+Definition at line 285 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}}
+\index{FL_TEXTURE_AUTOSWIZZLE@{FL\_\-TEXTURE\_\-AUTOSWIZZLE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-AUTOSWIZZLE~1}\label{flConfigDefault_8h_f2361564487303dc487f1f6a96b2b24e}
+
+
+
+
+Definition at line 288 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}}
+\index{FL_TEXTURE_BMP@{FL\_\-TEXTURE\_\-BMP}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-BMP~1}\label{flConfigDefault_8h_6f8fa136099750044bcf6b0e8cf18f88}
+
+
+
+
+Definition at line 309 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}}
+\index{FL_TEXTURE_ERRORTEX@{FL\_\-TEXTURE\_\-ERRORTEX}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX~0}\label{flConfigDefault_8h_6b8f7e320065bbb74e5482f0e15ea3cf}
+
+
+
+
+Definition at line 291 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}}
+\index{FL_TEXTURE_ERRORTEX_COMPILE@{FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX\_\-COMPILE~0}\label{flConfigDefault_8h_35829e395f85aef7a4f01bf27a8c1e8e}
+
+
+
+
+Definition at line 294 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_ERRORTEX_PATH@{FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}}
+\index{FL_TEXTURE_ERRORTEX_PATH@{FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH~\char`\"{}./fl\-Tex\-Error.tga\char`\"{}}\label{flConfigDefault_8h_9debe0069651ca2af7fde1e42c19072e}
+
+
+
+
+Definition at line 297 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}}
+\index{FL_TEXTURE_MANIPULATION@{FL\_\-TEXTURE\_\-MANIPULATION}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-MANIPULATION~1}\label{flConfigDefault_8h_9bf1ceaf7b5bcd83866e701ea65bed63}
+
+
+
+
+Definition at line 321 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}}
+\index{FL_TEXTURE_PCX@{FL\_\-TEXTURE\_\-PCX}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PCX~1}\label{flConfigDefault_8h_7e75b36a7aa3161b48217cb3c8ce051a}
+
+
+
+
+Definition at line 303 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}}
+\index{FL_TEXTURE_PNG@{FL\_\-TEXTURE\_\-PNG}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PNG~0}\label{flConfigDefault_8h_ee82dbb354ff232858fc21491b3767dc}
+
+
+
+
+Definition at line 315 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}}
+\index{FL_TEXTURE_PRESERVENONALPHA@{FL\_\-TEXTURE\_\-PRESERVENONALPHA}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-PRESERVENONALPHA~1}\label{flConfigDefault_8h_96e1468f49e81357791f12182998b984}
+
+
+
+
+Definition at line 300 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}}
+\index{FL_TEXTURE_RAW@{FL\_\-TEXTURE\_\-RAW}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-RAW~1}\label{flConfigDefault_8h_d8cfcbf06d4bcafc57ce8ef8058ecc5a}
+
+
+
+
+Definition at line 318 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}}
+\index{FL_TEXTURE_TGA@{FL\_\-TEXTURE\_\-TGA}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-TGA~1}\label{flConfigDefault_8h_a88a5c8ef0ed3e27edd03b00240922cd}
+
+
+
+
+Definition at line 306 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}}
+\index{FL_TEXTURE_UNCACHED@{FL\_\-TEXTURE\_\-UNCACHED}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-UNCACHED~0}\label{flConfigDefault_8h_19e91ca240a0e8d4097fdff7e7e1ab2b}
+
+
+
+
+Definition at line 279 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}}
+\index{FL_TEXTURE_WAL@{FL\_\-TEXTURE\_\-WAL}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TEXTURE\_\-WAL~0}\label{flConfigDefault_8h_afcc051020cb5d1a2eedd6399c382807}
+
+
+
+
+Definition at line 312 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_TIMER@{FL\_\-TIMER}}
+\index{FL_TIMER@{FL\_\-TIMER}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-TIMER~1}\label{flConfigDefault_8h_b657921a468c65191fcb4e4951a0ceb1}
+
+
+
+
+Definition at line 173 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_UMD@{FL\_\-UMD}}
+\index{FL_UMD@{FL\_\-UMD}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-UMD~0}\label{flConfigDefault_8h_772f22a5c2c26e6db00d3e31cd85c677}
+
+
+
+
+Definition at line 381 of file fl\-Config\-Default.h.\index{flConfigDefault.h@{fl\-Config\-Default.h}!FL_VSHMODE@{FL\_\-VSHMODE}}
+\index{FL_VSHMODE@{FL\_\-VSHMODE}!flConfigDefault.h@{fl\-Config\-Default.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FL\_\-VSHMODE~0}\label{flConfigDefault_8h_1960a39a5223a5ca96836719e6fbbd31}
+
+
+
+
+Definition at line 18 of file fl\-Config\-Default.h.

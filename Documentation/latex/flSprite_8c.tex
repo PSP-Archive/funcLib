@@ -1,0 +1,104 @@
+\section{fl\-Sprite.c File Reference}
+\label{flSprite_8c}\index{flSprite.c@{flSprite.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspgum.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Sprite} $\ast$ {\bf sprite\-Create} ({\bf Texture} $\ast$in\-Tex, int in\-Frame\-Width, int in\-Frame\-Height)
+\item 
+void {\bf sprite\-Free} ({\bf Sprite} $\ast$in\-Sprite)
+\item 
+void {\bf sprite\-Rotate} ({\bf Sprite} $\ast$in\-Sprite, float in\-Angle)
+\item 
+void {\bf sprite\-Resize} ({\bf Sprite} $\ast$in\-Sprite, float in\-Width, float in\-Height)
+\item 
+void {\bf sprite\-Move} ({\bf Sprite} $\ast$in\-Sprite, int in\-X, int in\-Y)
+\item 
+void {\bf sprite\-Move\-To} ({\bf Sprite} $\ast$in\-Sprite, int in\-X, int in\-Y)
+\item 
+void {\bf sprite\-Draw2d} ({\bf Sprite} $\ast$in\-Sprite)
+\item 
+void {\bf sprite\-Draw2d\-Frame} ({\bf Sprite} $\ast$in\-Sprite, int in\-Frame)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flSprite.c@{fl\-Sprite.c}!spriteCreate@{spriteCreate}}
+\index{spriteCreate@{spriteCreate}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Sprite}$\ast$ sprite\-Create ({\bf Texture} $\ast$ {\em in\-Tex}, int {\em in\-Frame\-Width}, int {\em in\-Frame\-Height})}\label{flSprite_8c_75ec4b4209f048cbad04c4f882851961}
+
+
+
+
+Definition at line 15 of file fl\-Sprite.c.
+
+References debug\-Error, debug\-Warning, mem\-Alloc, NULL, Sprite::sprite\-Angle, Sprite::sprite\-Frame, Sprite::sprite\-Frame\-Count, Sprite::sprite\-Height, Sprite::sprite\-Scale\-X, Sprite::sprite\-Scale\-Y, Sprite::sprite\-Tex, Sprite::sprite\-Width, Sprite::sprite\-X, Sprite::sprite\-Y, Texture::tex\-Height, and Texture::tex\-Width.\index{flSprite.c@{fl\-Sprite.c}!spriteDraw2d@{spriteDraw2d}}
+\index{spriteDraw2d@{spriteDraw2d}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Draw2d ({\bf Sprite} $\ast$ {\em in\-Sprite})}\label{flSprite_8c_ba260da216330964da593c7a6ad9ab51}
+
+
+
+
+Definition at line 73 of file fl\-Sprite.c.
+
+References sprite\-Draw2d\-Frame(), Sprite::sprite\-Frame, and Sprite::sprite\-Frame\-Count.\index{flSprite.c@{fl\-Sprite.c}!spriteDraw2dFrame@{spriteDraw2dFrame}}
+\index{spriteDraw2dFrame@{spriteDraw2dFrame}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Draw2d\-Frame ({\bf Sprite} $\ast$ {\em in\-Sprite}, int {\em in\-Frame})}\label{flSprite_8c_c34d1e4b449c227734bfa340f470d4f1}
+
+
+
+
+Definition at line 82 of file fl\-Sprite.c.
+
+References MATH\_\-PI, math\-ATanf(), math\-Cosf(), math\-Pythag2f(), math\-Sinf(), Sprite::sprite\-Angle, Sprite::sprite\-Frame\-Count, Sprite::sprite\-Height, Sprite::sprite\-Scale\-X, Sprite::sprite\-Scale\-Y, Sprite::sprite\-Tex, Sprite::sprite\-Width, Sprite::sprite\-X, Sprite::sprite\-Y, tex\-Bind(), Texture::tex\-Width, vert\-Ts\-Vf::vert\-U, vert\-Ts\-Vf::vert\-V, vert\-Ts\-Vf::vert\-X, vert\-Ts\-Vf::vert\-Y, and vert\-Ts\-Vf::vert\-Z.
+
+Referenced by sprite\-Draw2d().\index{flSprite.c@{fl\-Sprite.c}!spriteFree@{spriteFree}}
+\index{spriteFree@{spriteFree}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Free ({\bf Sprite} $\ast$ {\em in\-Sprite})}\label{flSprite_8c_ba10606746e61c0fb83f4d128ebe1c57}
+
+
+
+
+Definition at line 44 of file fl\-Sprite.c.
+
+References debug\-Warning, and mem\-Free.\index{flSprite.c@{fl\-Sprite.c}!spriteMove@{spriteMove}}
+\index{spriteMove@{spriteMove}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Move ({\bf Sprite} $\ast$ {\em in\-Sprite}, int {\em in\-X}, int {\em in\-Y})}\label{flSprite_8c_d56cc0d4d9b2984ee0a06f12c1da3263}
+
+
+
+
+Definition at line 63 of file fl\-Sprite.c.
+
+References Sprite::sprite\-X, and Sprite::sprite\-Y.\index{flSprite.c@{fl\-Sprite.c}!spriteMoveTo@{spriteMoveTo}}
+\index{spriteMoveTo@{spriteMoveTo}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Move\-To ({\bf Sprite} $\ast$ {\em in\-Sprite}, int {\em in\-X}, int {\em in\-Y})}\label{flSprite_8c_c8da86cb58ec719832b10d5185197901}
+
+
+
+
+Definition at line 68 of file fl\-Sprite.c.
+
+References Sprite::sprite\-X, and Sprite::sprite\-Y.\index{flSprite.c@{fl\-Sprite.c}!spriteResize@{spriteResize}}
+\index{spriteResize@{spriteResize}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Resize ({\bf Sprite} $\ast$ {\em in\-Sprite}, float {\em in\-Width}, float {\em in\-Height})}\label{flSprite_8c_e695b7e4c94be550370faae21d704f51}
+
+
+
+
+Definition at line 58 of file fl\-Sprite.c.
+
+References Sprite::sprite\-Height, Sprite::sprite\-Scale\-X, Sprite::sprite\-Scale\-Y, and Sprite::sprite\-Width.\index{flSprite.c@{fl\-Sprite.c}!spriteRotate@{spriteRotate}}
+\index{spriteRotate@{spriteRotate}!flSprite.c@{fl\-Sprite.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sprite\-Rotate ({\bf Sprite} $\ast$ {\em in\-Sprite}, float {\em in\-Angle})}\label{flSprite_8c_a03f96fb85bdc642a43418313e9eb466}
+
+
+
+
+Definition at line 54 of file fl\-Sprite.c.
+
+References Sprite::sprite\-Angle.

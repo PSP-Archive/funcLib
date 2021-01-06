@@ -1,0 +1,206 @@
+\section{fl\-Input.c File Reference}
+\label{flInput_8c}\index{flInput.c@{flInput.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$pspctrl.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf input\-Init} ()
+\begin{CompactList}\small\item\em Initializes the input system, this is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. \item\end{CompactList}\item 
+u8 {\bf input\-Check} (u8 in\-Input)
+\begin{CompactList}\small\item\em This returns the current state of a button. \item\end{CompactList}\item 
+{\bf bool} {\bf input\-Down} (u8 in\-Input)
+\begin{CompactList}\small\item\em This returns a non-zero value if the button supplied by in\-Input is currently pressed. \item\end{CompactList}\item 
+void {\bf input\-Poll} ()
+\begin{CompactList}\small\item\em This updates the input system, and should be called at least once every frame in which input is required. \item\end{CompactList}\item 
+void {\bf input\-Lock} (float in\-Time)
+\begin{CompactList}\small\item\em This locks the input system for a small period so that button presses are ignored. \item\end{CompactList}\item 
+void {\bf input\-Pause\-Func} (u8 in\-Input, u8 in\-State, void($\ast$in\-Func)())
+\begin{CompactList}\small\item\em This function allows you to define a button, a state and a function to call, so that you can register a pause event, in retrospect callbacks would possibly be better. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+u8 {\bf input\-States} [32]
+\item 
+Sce\-Ctrl\-Data {\bf input\-Data} [2]
+\item 
+{\bf Timer} $\ast$ {\bf input\-Timer}
+\item 
+float {\bf input\-Lock\-Time} = 0
+\item 
+void($\ast$) {\bf input\-Pause} () = NULL
+\item 
+u8 {\bf input\-Pause\-Button} = 0
+\item 
+u8 {\bf input\-Pause\-State} = 0
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flInput.c@{fl\-Input.c}!inputCheck@{inputCheck}}
+\index{inputCheck@{inputCheck}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 input\-Check (u8 {\em in\-Input})}\label{flInput_8c_eaad289fdb4a59173ce0095d73f93e1f}
+
+
+This returns the current state of a button. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button whose state will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The state of the button. \end{Desc}
+
+
+Definition at line 34 of file fl\-Input.c.
+
+References input\-Lock\-Time, and input\-States.\index{flInput.c@{fl\-Input.c}!inputDown@{inputDown}}
+\index{inputDown@{inputDown}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} input\-Down (u8 {\em in\-Input})}\label{flInput_8c_b1da600f66d3b201294e47d45bb12d1d}
+
+
+This returns a non-zero value if the button supplied by in\-Input is currently pressed. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button whose to be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Non-zero if the button is pressed. \end{Desc}
+
+
+Definition at line 40 of file fl\-Input.c.
+
+References input\-Lock\-Time, and input\-States.\index{flInput.c@{fl\-Input.c}!inputInit@{inputInit}}
+\index{inputInit@{inputInit}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Init ()}\label{flInput_8c_212a6fde8e289ecf188ec1490e2ddc3c}
+
+
+Initializes the input system, this is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} \end{Desc}
+
+
+Definition at line 27 of file fl\-Input.c.
+
+References input\-Data, input\-Timer, and timer\-Create().
+
+Referenced by fl\-Initialize().\index{flInput.c@{fl\-Input.c}!inputLock@{inputLock}}
+\index{inputLock@{inputLock}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Lock (float {\em in\-Time})}\label{flInput_8c_1a32b959ace602d4fb965c7d51b4d8cd}
+
+
+This locks the input system for a small period so that button presses are ignored. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Time}]The amount of time in seconds that the system will be locked for. \end{description}
+\end{Desc}
+
+
+Definition at line 77 of file fl\-Input.c.
+
+References input\-Lock\-Time, input\-Timer, and timer\-Get\-Delta\-Time().
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Warning\-From(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputPauseFunc@{inputPauseFunc}}
+\index{inputPauseFunc@{inputPauseFunc}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Pause\-Func (u8 {\em in\-Input}, u8 {\em in\-State}, void($\ast$)() {\em in\-Func})}\label{flInput_8c_c395426c1f4a36d915f4dc87edfb1838}
+
+
+This function allows you to define a button, a state and a function to call, so that you can register a pause event, in retrospect callbacks would possibly be better. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Input}]The number of the button that will be used for pausing. \item[{\em in\-State}]The state the button must be in for in\-Func() to be called. \item[{\em in\-Func}]A pointer to the pause function to be used. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Warning:]This function doesn't seem to work, although is pretty much untested. \end{Desc}
+
+
+Definition at line 83 of file fl\-Input.c.
+
+References input\-Pause, input\-Pause\-Button, and input\-Pause\-State.\index{flInput.c@{fl\-Input.c}!inputPoll@{inputPoll}}
+\index{inputPoll@{inputPoll}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void input\-Poll ()}\label{flInput_8c_2817892968ec4ab3fc76a2551b09aed3}
+
+
+This updates the input system, and should be called at least once every frame in which input is required. 
+
+
+
+Definition at line 46 of file fl\-Input.c.
+
+References input\-Data, input\-Lock(), input\-Lock\-Time, input\-Pause, input\-Pause\-Button, input\-Pause\-State, input\-States, input\-Timer, and timer\-Get\-Delta\-Time().
+
+\subsection{Variable Documentation}
+\index{flInput.c@{fl\-Input.c}!inputData@{inputData}}
+\index{inputData@{inputData}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}Sce\-Ctrl\-Data {\bf input\-Data}[2]}\label{flInput_8c_0bc7006f0967390a0035d104be92706d}
+
+
+
+
+Definition at line 16 of file fl\-Input.c.
+
+Referenced by input\-Init(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputLockTime@{inputLockTime}}
+\index{inputLockTime@{inputLockTime}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf input\-Lock\-Time} = 0}\label{flInput_8c_a6327311b15828b9790616ac39dd8964}
+
+
+
+
+Definition at line 21 of file fl\-Input.c.
+
+Referenced by input\-Check(), input\-Down(), input\-Lock(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputPause@{inputPause}}
+\index{inputPause@{inputPause}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$) {\bf input\-Pause}() = NULL}\label{flInput_8c_3bb855c4e9d3d29fd680e7a7ddf1a760}
+
+
+
+
+Definition at line 23 of file fl\-Input.c.
+
+Referenced by input\-Pause\-Func(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputPauseButton@{inputPauseButton}}
+\index{inputPauseButton@{inputPauseButton}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf input\-Pause\-Button} = 0}\label{flInput_8c_cb564aef4fdf5e5a4521a414441da110}
+
+
+
+
+Definition at line 24 of file fl\-Input.c.
+
+Referenced by input\-Pause\-Func(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputPauseState@{inputPauseState}}
+\index{inputPauseState@{inputPauseState}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf input\-Pause\-State} = 0}\label{flInput_8c_fb5217e4e12172bb07b8ee0a90f30050}
+
+
+
+
+Definition at line 25 of file fl\-Input.c.
+
+Referenced by input\-Pause\-Func(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputStates@{inputStates}}
+\index{inputStates@{inputStates}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf input\-States}[32]}\label{flInput_8c_b919d2af737ffc62fd0bf442f1a944d5}
+
+
+
+
+Definition at line 15 of file fl\-Input.c.
+
+Referenced by input\-Check(), input\-Down(), and input\-Poll().\index{flInput.c@{fl\-Input.c}!inputTimer@{inputTimer}}
+\index{inputTimer@{inputTimer}!flInput.c@{fl\-Input.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer}$\ast$ {\bf input\-Timer}}\label{flInput_8c_c32700fd6f4406b04b1c2a4b0a1e425f}
+
+
+
+
+Definition at line 19 of file fl\-Input.c.
+
+Referenced by input\-Init(), input\-Lock(), and input\-Poll().

@@ -1,0 +1,81 @@
+\section{fl\-Callbacks.c File Reference}
+\label{flCallbacks_8c}\index{flCallbacks.c@{flCallbacks.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+{\tt \#include $<$psppower.h$>$}\par
+{\tt \#include $<$pspdisplay.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf callback\-Exit} (int in\-Arg1, int in\-Arg2, void $\ast$in\-Common)
+\begin{CompactList}\small\item\em This is called when funclib is quit via the HOME menu on the PSP, it simply calls \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} and returns. \item\end{CompactList}\item 
+int {\bf callback\-Create\-Thread} (Sce\-Size args, void $\ast$argp)
+\begin{CompactList}\small\item\em This is called by \doxyref{callback\-Init()}{p.}{flCallbacks_8c_2131b8272acd65596d24922e22fd0685}, and is executed in the callbacks thread. \item\end{CompactList}\item 
+int {\bf callback\-Init} ()
+\begin{CompactList}\small\item\em This is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize callbacks. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flCallbacks.c@{fl\-Callbacks.c}!callbackCreateThread@{callbackCreateThread}}
+\index{callbackCreateThread@{callbackCreateThread}!flCallbacks.c@{fl\-Callbacks.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int callback\-Create\-Thread (Sce\-Size {\em args}, void $\ast$ {\em argp})}\label{flCallbacks_8c_ade5575ad47c9942f2c22384571b5d04}
+
+
+This is called by \doxyref{callback\-Init()}{p.}{flCallbacks_8c_2131b8272acd65596d24922e22fd0685}, and is executed in the callbacks thread. 
+
+\begin{Desc}
+\item[Returns:]Always 0. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{callback\-Init()}{p.}{flCallbacks_8c_2131b8272acd65596d24922e22fd0685} \end{Desc}
+\begin{Desc}
+\item[Warning:]This shouldn't be be called except internally by func\-Lib itself. \end{Desc}
+
+
+Definition at line 53 of file fl\-Callbacks.c.
+
+References callback\-Exit(), debug\-Error, and NULL.
+
+Referenced by callback\-Init().\index{flCallbacks.c@{fl\-Callbacks.c}!callbackExit@{callbackExit}}
+\index{callbackExit@{callbackExit}!flCallbacks.c@{fl\-Callbacks.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int callback\-Exit (int {\em in\-Arg1}, int {\em in\-Arg2}, void $\ast$ {\em in\-Common})}\label{flCallbacks_8c_0a29a63754ca5059527b88c6c6a77825}
+
+
+This is called when funclib is quit via the HOME menu on the PSP, it simply calls \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} and returns. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Arg1}]Unused \item[{\em in\-Arg2}]Unused \item[{\em in\-Common}]Unused \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Always 0. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} \end{Desc}
+\begin{Desc}
+\item[Warning:]This shouldn't be be called except internally by func\-Lib itself. \end{Desc}
+
+
+Definition at line 18 of file fl\-Callbacks.c.
+
+References fl\-Terminate().
+
+Referenced by callback\-Create\-Thread().\index{flCallbacks.c@{fl\-Callbacks.c}!callbackInit@{callbackInit}}
+\index{callbackInit@{callbackInit}!flCallbacks.c@{fl\-Callbacks.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int callback\-Init ()}\label{flCallbacks_8c_2131b8272acd65596d24922e22fd0685}
+
+
+This is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize callbacks. 
+
+\begin{Desc}
+\item[Returns:]The thread ID of the callback thread. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} \end{Desc}
+\begin{Desc}
+\item[Warning:]This shouldn't be be called except internally by func\-Lib itself. \end{Desc}
+
+
+Definition at line 86 of file fl\-Callbacks.c.
+
+References callback\-Create\-Thread().
+
+Referenced by fl\-Initialize().

@@ -1,0 +1,303 @@
+\section{fl\-Notify.c File Reference}
+\label{flNotify_8c}\index{flNotify.c@{flNotify.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+{\tt \#include $<$psppower.h$>$}\par
+{\tt \#include $<$pspimpose\_\-driver.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf ntfy\-Init} ()
+\item 
+void {\bf ntfy\-Tick} ()
+\item 
+void {\bf ntfy\-Show\-All} (float in\-Time)
+\item 
+void {\bf ntfy\-Check\-Battery} ()
+\item 
+void {\bf ntfy\-Check\-Time} ()
+\item 
+void {\bf ntfy\-Show\-Battery} ()
+\item 
+void {\bf ntfy\-Show\-Time} ()
+\item 
+void {\bf ntfy\-Show\-Date} ()
+\item 
+void {\bf ntfy\-Tray\-Add} (char $\ast$in\-Message, u32 in\-Color)
+\item 
+void {\bf ntfy\-Tray\-Tick} ()
+\item 
+void {\bf ntfy\-Tray\-Show} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+int {\bf ntfy\-Batt\-Chrg\-Last} = -1
+\item 
+int {\bf ntfy\-Batt\-Percent\-Last} = -1
+\item 
+int {\bf ntfy\-Batt\-Low\-Last} = -1
+\item 
+float {\bf ntfy\-Batt\-Time} = 0.0f
+\item 
+{\bf Timer} $\ast$ {\bf ntfy\-Batt\-Timer} = NULL
+\item 
+psp\-Time {\bf ntfy\-Time\-Last}
+\item 
+float {\bf ntfy\-Time\-Time} = 0.0f
+\item 
+{\bf Timer} $\ast$ {\bf ntfy\-Time\-Timer} = NULL
+\item 
+{\bf Notify\-Tray\-Item} {\bf ntfy\-Tray} [FL\_\-NOTIFY\_\-TRAYSIZE]
+\item 
+{\bf Timer} $\ast$ {\bf ntfy\-Tray\-Timer} = NULL
+\item 
+u32 {\bf ntfy\-Tick\-Count} = 0
+\item 
+{\bf bool} {\bf ntfy\-Initialized} = false
+\item 
+{\bf bool} {\bf ntfy\-Visible} = true
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flNotify.c@{fl\-Notify.c}!ntfyCheckBattery@{ntfyCheckBattery}}
+\index{ntfyCheckBattery@{ntfyCheckBattery}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Check\-Battery ()}\label{flNotify_8c_600e4ac54e9fb4dee440b5264b9e1df3}
+
+
+
+
+Definition at line 170 of file fl\-Notify.c.
+
+References debug\-Status\-Log, FL\_\-NOTIFY\_\-DURATION, ntfy\-Batt\-Chrg\-Last, ntfy\-Batt\-Low\-Last, ntfy\-Batt\-Percent\-Last, ntfy\-Batt\-Time, and ntfy\-Initialized.
+
+Referenced by ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyCheckTime@{ntfyCheckTime}}
+\index{ntfyCheckTime@{ntfyCheckTime}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Check\-Time ()}\label{flNotify_8c_a63e049aa2dbb4902b6f0d3363e5a8b7}
+
+
+
+
+Definition at line 217 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-DURATION, ntfy\-Initialized, ntfy\-Time\-Last, and ntfy\-Time\-Time.
+
+Referenced by ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyInit@{ntfyInit}}
+\index{ntfyInit@{ntfyInit}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Init ()}\label{flNotify_8c_7c77f61ed638b2fc959277c5cf301a0a}
+
+
+
+
+Definition at line 46 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-TRAYSIZE, ntfy\-Batt\-Timer, ntfy\-Initialized, ntfy\-Time\-Last, ntfy\-Time\-Timer, ntfy\-Tray, ntfy\-Tray\-Timer, and timer\-Create().
+
+Referenced by fl\-Initialize().\index{flNotify.c@{fl\-Notify.c}!ntfyShowAll@{ntfyShowAll}}
+\index{ntfyShowAll@{ntfyShowAll}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Show\-All (float {\em in\-Time})}\label{flNotify_8c_7a3d59ce781288cef7644451105d6715}
+
+
+
+
+Definition at line 131 of file fl\-Notify.c.
+
+References ntfy\-Batt\-Time, ntfy\-Show\-Battery(), ntfy\-Show\-Date(), ntfy\-Show\-Time(), and ntfy\-Time\-Time.\index{flNotify.c@{fl\-Notify.c}!ntfyShowBattery@{ntfyShowBattery}}
+\index{ntfyShowBattery@{ntfyShowBattery}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Show\-Battery ()}\label{flNotify_8c_4dc9a519cd973d1b8f9672d709f7471e}
+
+
+
+
+Definition at line 261 of file fl\-Notify.c.
+
+References debug\-Warning, font\-Default, font\-Draw2d\-String(), font\-Height(), font\-String\-Width(), graphics2d\-Draw\-Line(), graphics2d\-Draw\-Rect(), graphics2d\-Draw\-Rect\-Filled(), ntfy\-Visible, and SCREEN\_\-WIDTH.
+
+Referenced by ntfy\-Show\-All(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyShowDate@{ntfyShowDate}}
+\index{ntfyShowDate@{ntfyShowDate}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Show\-Date ()}\label{flNotify_8c_d4ad320596b2f405aae8dffff7ee9f47}
+
+
+
+
+Definition at line 327 of file fl\-Notify.c.
+
+Referenced by ntfy\-Show\-All().\index{flNotify.c@{fl\-Notify.c}!ntfyShowTime@{ntfyShowTime}}
+\index{ntfyShowTime@{ntfyShowTime}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Show\-Time ()}\label{flNotify_8c_b820d2dca060b648b4c51bdc592c2d95}
+
+
+
+
+Definition at line 300 of file fl\-Notify.c.
+
+References font\-Default, font\-Draw2d\-String(), font\-Height(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled(), graphics2d\-Draw\-Line(), graphics2d\-Draw\-Rect\-Filled(), ntfy\-Visible, and SCREEN\_\-WIDTH.
+
+Referenced by ntfy\-Show\-All(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTick@{ntfyTick}}
+\index{ntfyTick@{ntfyTick}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Tick ()}\label{flNotify_8c_7aeb64804d2b67f5d68a9e737a8c929b}
+
+
+
+
+Definition at line 67 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-FREQUENCY, ntfy\-Batt\-Time, ntfy\-Batt\-Timer, ntfy\-Check\-Battery(), ntfy\-Check\-Time(), ntfy\-Initialized, ntfy\-Show\-Battery(), ntfy\-Show\-Time(), ntfy\-Tick\-Count, ntfy\-Time\-Time, ntfy\-Time\-Timer, ntfy\-Tray\-Show(), ntfy\-Tray\-Tick(), and timer\-Get\-Delta\-Time().
+
+Referenced by graphics\-Swap\-Buffers().\index{flNotify.c@{fl\-Notify.c}!ntfyTrayAdd@{ntfyTrayAdd}}
+\index{ntfyTrayAdd@{ntfyTrayAdd}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Tray\-Add (char $\ast$ {\em in\-Message}, u32 {\em in\-Color})}\label{flNotify_8c_9a5dce75d9d2b20e3ce17d8f4f80e278}
+
+
+
+
+Definition at line 332 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-DURATION, FL\_\-NOTIFY\_\-TRAYSIZE, ntfy\-Initialized, ntfy\-Tray, Notify\-Tray\-Item::nti\-Color, Notify\-Tray\-Item::nti\-Message, and Notify\-Tray\-Item::nti\-Time.
+
+Referenced by debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Status\-Log\-From(), and debug\-Warning\-From().\index{flNotify.c@{fl\-Notify.c}!ntfyTrayShow@{ntfyTrayShow}}
+\index{ntfyTrayShow@{ntfyTrayShow}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Tray\-Show ()}\label{flNotify_8c_335d3a9276709c7fc08635f7555b1194}
+
+
+
+
+Definition at line 363 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-TRAYSIZE, font\-Default, font\-Draw2d\-String(), font\-Height(), graphics2d\-Draw\-Rect\-Filled(), ntfy\-Tray, ntfy\-Visible, SCREEN\_\-HEIGHT, and SCREEN\_\-WIDTH.
+
+Referenced by ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTrayTick@{ntfyTrayTick}}
+\index{ntfyTrayTick@{ntfyTrayTick}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ntfy\-Tray\-Tick ()}\label{flNotify_8c_62e1c6f0194cee8e8505f76ef8b1e168}
+
+
+
+
+Definition at line 348 of file fl\-Notify.c.
+
+References FL\_\-NOTIFY\_\-TRAYSIZE, ntfy\-Initialized, ntfy\-Tray, ntfy\-Tray\-Timer, and timer\-Get\-Delta\-Time().
+
+Referenced by ntfy\-Tick().
+
+\subsection{Variable Documentation}
+\index{flNotify.c@{fl\-Notify.c}!ntfyBattChrgLast@{ntfyBattChrgLast}}
+\index{ntfyBattChrgLast@{ntfyBattChrgLast}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf ntfy\-Batt\-Chrg\-Last} = -1}\label{flNotify_8c_b0c871dc5759f171078a7e8e7786f2a3}
+
+
+
+
+Definition at line 26 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Battery().\index{flNotify.c@{fl\-Notify.c}!ntfyBattLowLast@{ntfyBattLowLast}}
+\index{ntfyBattLowLast@{ntfyBattLowLast}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf ntfy\-Batt\-Low\-Last} = -1}\label{flNotify_8c_7e58df18b4f2d12477fc796b4a81a863}
+
+
+
+
+Definition at line 28 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Battery().\index{flNotify.c@{fl\-Notify.c}!ntfyBattPercentLast@{ntfyBattPercentLast}}
+\index{ntfyBattPercentLast@{ntfyBattPercentLast}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf ntfy\-Batt\-Percent\-Last} = -1}\label{flNotify_8c_532036aa016bdf7f32aabcd3e93c82e0}
+
+
+
+
+Definition at line 27 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Battery().\index{flNotify.c@{fl\-Notify.c}!ntfyBattTime@{ntfyBattTime}}
+\index{ntfyBattTime@{ntfyBattTime}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf ntfy\-Batt\-Time} = 0.0f}\label{flNotify_8c_03a203ba3c5858fc12ae1f76f74f944e}
+
+
+
+
+Definition at line 29 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Battery(), ntfy\-Show\-All(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyBattTimer@{ntfyBattTimer}}
+\index{ntfyBattTimer@{ntfyBattTimer}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer}$\ast$ {\bf ntfy\-Batt\-Timer} = NULL}\label{flNotify_8c_e5c54dd51d7b68d54e0087651022ced5}
+
+
+
+
+Definition at line 30 of file fl\-Notify.c.
+
+Referenced by ntfy\-Init(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyInitialized@{ntfyInitialized}}
+\index{ntfyInitialized@{ntfyInitialized}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf ntfy\-Initialized} = false}\label{flNotify_8c_6d3ba2e4609062a98bc1ecdd3dd82afd}
+
+
+
+
+Definition at line 42 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Battery(), ntfy\-Check\-Time(), ntfy\-Init(), ntfy\-Tick(), ntfy\-Tray\-Add(), and ntfy\-Tray\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTickCount@{ntfyTickCount}}
+\index{ntfyTickCount@{ntfyTickCount}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf ntfy\-Tick\-Count} = 0}\label{flNotify_8c_8a001c468ca918da05d444cbbc82c21b}
+
+
+
+
+Definition at line 41 of file fl\-Notify.c.
+
+Referenced by ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTimeLast@{ntfyTimeLast}}
+\index{ntfyTimeLast@{ntfyTimeLast}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}psp\-Time {\bf ntfy\-Time\-Last}}\label{flNotify_8c_bcf0c3d5dc92f30cc21b7de43bf73d57}
+
+
+
+
+Definition at line 32 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Time(), and ntfy\-Init().\index{flNotify.c@{fl\-Notify.c}!ntfyTimeTime@{ntfyTimeTime}}
+\index{ntfyTimeTime@{ntfyTimeTime}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf ntfy\-Time\-Time} = 0.0f}\label{flNotify_8c_6ba80c402400303f97ee31f55512a7fd}
+
+
+
+
+Definition at line 33 of file fl\-Notify.c.
+
+Referenced by ntfy\-Check\-Time(), ntfy\-Show\-All(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTimeTimer@{ntfyTimeTimer}}
+\index{ntfyTimeTimer@{ntfyTimeTimer}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer}$\ast$ {\bf ntfy\-Time\-Timer} = NULL}\label{flNotify_8c_4de40991164a87ce80583f843c5ff083}
+
+
+
+
+Definition at line 34 of file fl\-Notify.c.
+
+Referenced by ntfy\-Init(), and ntfy\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTray@{ntfyTray}}
+\index{ntfyTray@{ntfyTray}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Notify\-Tray\-Item} {\bf ntfy\-Tray}[FL\_\-NOTIFY\_\-TRAYSIZE]}\label{flNotify_8c_456b0084ad987c08d2efbe9342b1dd27}
+
+
+
+
+Definition at line 37 of file fl\-Notify.c.
+
+Referenced by ntfy\-Init(), ntfy\-Tray\-Add(), ntfy\-Tray\-Show(), and ntfy\-Tray\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyTrayTimer@{ntfyTrayTimer}}
+\index{ntfyTrayTimer@{ntfyTrayTimer}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer}$\ast$ {\bf ntfy\-Tray\-Timer} = NULL}\label{flNotify_8c_6b3b93c9625bce65cd1d21fb55836de8}
+
+
+
+
+Definition at line 38 of file fl\-Notify.c.
+
+Referenced by ntfy\-Init(), and ntfy\-Tray\-Tick().\index{flNotify.c@{fl\-Notify.c}!ntfyVisible@{ntfyVisible}}
+\index{ntfyVisible@{ntfyVisible}!flNotify.c@{fl\-Notify.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf ntfy\-Visible} = true}\label{flNotify_8c_2cdc8553a78172b2afcd7d87828d90dd}
+
+
+
+
+Definition at line 43 of file fl\-Notify.c.
+
+Referenced by ntfy\-Show\-Battery(), ntfy\-Show\-Time(), and ntfy\-Tray\-Show().

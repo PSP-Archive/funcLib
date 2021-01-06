@@ -1,0 +1,152 @@
+\section{fl\-Debug.c File Reference}
+\label{flDebug_8c}\index{flDebug.c@{flDebug.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+{\tt \#include $<$pspdebug.h$>$}\par
+{\tt \#include $<$pspdisplay.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspctrl.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf debug\-Init} ()
+\item 
+void {\bf debug\-Error\-From} (const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Warning\-From} (const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Dev\-Warning\-From} (const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Critical\-Error\-From} (const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Log\-From} (char $\ast$in\-Type, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Log} (char $\ast$in\-Type, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Status\-Log\-From} (const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line, char $\ast$in\-Message,...)
+\item 
+void {\bf debug\-Screenshot} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf bool} {\bf debug\-Enabled} = true
+\begin{CompactList}\small\item\em A boolean value to set whether debugging is disabled at this point or not. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flDebug.c@{fl\-Debug.c}!debugCriticalErrorFrom@{debugCriticalErrorFrom}}
+\index{debugCriticalErrorFrom@{debugCriticalErrorFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Critical\-Error\-From (const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_f7b8726be0c7d77f33f037efc03f06cf}
+
+
+
+
+Definition at line 270 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Critical\-Error, debug\-Enabled, debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), FL\_\-DEBUG\_\-CRITICALERROR\_\-COLOR, fl\-Terminate(), graphics\-Disp\-Buffer, graphics\-Draw\-Buffer, graphics\-Swap\-Buffers(), input\-Lock(), max, and mem\-Qalloc.\index{flDebug.c@{fl\-Debug.c}!debugDevWarningFrom@{debugDevWarningFrom}}
+\index{debugDevWarningFrom@{debugDevWarningFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Dev\-Warning\-From (const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_4d07cff8a1476a26ecd6e675bb0cbe8f}
+
+
+
+
+Definition at line 194 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Dev\-Warning, debug\-Enabled, debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), FL\_\-DEBUG\_\-DEVWARNING\_\-COLOR, graphics\-Disp\-Buffer, graphics\-Draw\-Buffer, input\-Lock(), max, mem\-Free, mem\-Qalloc, and ntfy\-Tray\-Add().
+
+Referenced by vmem\-Realloc\-From().\index{flDebug.c@{fl\-Debug.c}!debugErrorFrom@{debugErrorFrom}}
+\index{debugErrorFrom@{debugErrorFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Error\-From (const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_71fe856a9d6b43b341ca87a8395b3120}
+
+
+
+
+Definition at line 38 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Enabled, debug\-Error, debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), FL\_\-DEBUG\_\-ERROR\_\-COLOR, fl\-Terminate(), graphics\-Disp\-Buffer, graphics\-Draw\-Buffer, input\-Lock(), max, mem\-Free, mem\-Qalloc, and ntfy\-Tray\-Add().
+
+Referenced by mem\-Error\-Bytes\-Check\-From(), mem\-Free\-From(), mem\-Realloc\-From(), memt\-Add\-From(), memt\-Del\-From(), memt\-Error\-Bytes\-Check\-From(), vmem\-Free\-From(), and vmem\-Realloc\-From().\index{flDebug.c@{fl\-Debug.c}!debugInit@{debugInit}}
+\index{debugInit@{debugInit}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Init ()}\label{flDebug_8c_e2643425aaa970f732820d91522a9111}
+
+
+
+
+Definition at line 26 of file fl\-Debug.c.
+
+References file\-Delete(), and FL\_\-DEBUG\_\-LOGPATH.
+
+Referenced by fl\-Initialize().\index{flDebug.c@{fl\-Debug.c}!debugLog@{debugLog}}
+\index{debugLog@{debugLog}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Log (char $\ast$ {\em in\-Type}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_85f3e65773a4f1bc98b37d29c6dde276}
+
+
+
+
+Definition at line 394 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Error, FILE\_\-MODE\_\-APPEND, file\-Close(), file\-Open(), file\-Puts(), FL\_\-DEBUG\_\-LOGPATH, max, mem\-Free, and mem\-Qalloc.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Status\-Log\-From(), and debug\-Warning\-From().\index{flDebug.c@{fl\-Debug.c}!debugLogFrom@{debugLogFrom}}
+\index{debugLogFrom@{debugLogFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Log\-From (char $\ast$ {\em in\-Type}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_79821f9452c6693004f6d30bb36ac990}
+
+
+
+
+Definition at line 346 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Error, FILE\_\-MODE\_\-APPEND, file\-Close(), file\-Open(), file\-Puts(), FL\_\-DEBUG\_\-LOGPATH, max, mem\-Free, and mem\-Qalloc.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Status\-Log\-From(), and debug\-Warning\-From().\index{flDebug.c@{fl\-Debug.c}!debugScreenshot@{debugScreenshot}}
+\index{debugScreenshot@{debugScreenshot}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Screenshot ()}\label{flDebug_8c_0ff85d5de01d6b009ced35171955ea39}
+
+
+
+
+Definition at line 467 of file fl\-Debug.c.
+
+References debug\-Error, debug\-Status\-Log, FILE\_\-MODE\_\-BINARY, FILE\_\-MODE\_\-READ, file\-Close(), file\-Open(), FL\_\-DEBUG\_\-SCREENSHOTPATH, tex\-Save(), and tex\-Screenshot().
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), and debug\-Warning\-From().\index{flDebug.c@{fl\-Debug.c}!debugStatusLogFrom@{debugStatusLogFrom}}
+\index{debugStatusLogFrom@{debugStatusLogFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Status\-Log\-From (const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_3a1508e1b415b6a03753a186799d5258}
+
+
+
+
+Definition at line 440 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Log(), debug\-Log\-From(), debug\-Status\-Log, FL\_\-DEBUG\_\-STATUS\_\-COLOR, max, mem\-Free, mem\-Qalloc, and ntfy\-Tray\-Add().\index{flDebug.c@{fl\-Debug.c}!debugWarningFrom@{debugWarningFrom}}
+\index{debugWarningFrom@{debugWarningFrom}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void debug\-Warning\-From (const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line}, char $\ast$ {\em in\-Message},  {\em ...})}\label{flDebug_8c_8ae2b8f15c4362510e8ea880ca4f688c}
+
+
+
+
+Definition at line 117 of file fl\-Debug.c.
+
+References DEBUG\_\-ARGEXTEND, debug\-Enabled, debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), debug\-Warning, FL\_\-DEBUG\_\-WARNING\_\-COLOR, graphics\-Disp\-Buffer, graphics\-Draw\-Buffer, input\-Lock(), max, mem\-Free, mem\-Qalloc, and ntfy\-Tray\-Add().
+
+Referenced by mem\-Align\-From(), mem\-Alloc\-Uncached\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Qalloc\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), mem\-Set\-Short\-From(), memt\-Error\-Bytes\-Check\-From(), mem\-Uncached\-Ptr\-From(), vmem\-Alloc\-From(), and vmem\-Realloc\-From().
+
+\subsection{Variable Documentation}
+\index{flDebug.c@{fl\-Debug.c}!debugEnabled@{debugEnabled}}
+\index{debugEnabled@{debugEnabled}!flDebug.c@{fl\-Debug.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf debug\-Enabled} = true}\label{flDebug_8c_d0344eb1bc475981a837e350c08fb53a}
+
+
+A boolean value to set whether debugging is disabled at this point or not. 
+
+\begin{Desc}
+\item[Note:]This is modified internally to stop infinite loops of errors, but it is also possible for the user to use this to stop debugging in certain critical parts of a program. \end{Desc}
+
+
+Definition at line 24 of file fl\-Debug.c.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), and debug\-Warning\-From().

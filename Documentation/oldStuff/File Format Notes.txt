@@ -1,0 +1,40 @@
+This is a general spec for all Flatmush files.
+
+All start with the same 3 fields
+
+char[4]	FileType	(Contains the file extension in caps followed by a null char)
+ubyte	Version		(Contains the version of that file)
+uint32	ChunksOffset	(Offset of custom chunks so that additional information may be stored within the file)
+
+NB: a chunk Offset of 0 implies no chunks are contained.
+
+
+Chunks all follow the following format.
+
+ChunkHeader
+{
+	uint32	ChunkCount	(A count of all chunks within file)
+}
+
+Chunk
+{
+	char[8]	ChunkID		(an 8 character long string padded with null chars)
+	uint32	ChunkLength	(Length of Chunk)
+	uint32	ChunkOffset	(Offset of related chunk data)
+}
+
+<Chunk Data Follows>
+
+The following are what I mean by the terms byte, ubyte etc...
+
+u8  / ubyte		unsigned byte		8 bits		1 byte		0 -> 255s8ss
+s8  / byte		signed byte		8 bits		1 byte		-128 -> 127
+u32 / uint		unsigned integer	32 bits		4 bytes		0 -> (2^32)-1
+s32 / int		signed integer		32 bits		4 bytes		-2^31 -> (2^31)-1
+u64 / ulong		unsigned long integer	64 bits		8 bytes		0 -> (2^64)-1
+s64 / long		signed long integer	64 bits		8 bytes		-2^63 -> (2^63)-1
+u8* / string		unsigned char array	~~~ 1 bit per char ~~~		~ASCII TABLE~~
+uxx / uintXX		unsigned integer	XX bits		(XX / 8) bytes	0 -> (2^XX)-1
+sxx / intXX		signed integer		XX bits		(XX / 8) bytes	-(2^(XX-1)) -> (2^(XX-1))-1
+
+NB: These _SHOULD_ be the standard sizings for c/c++ on a 32-bit computer.

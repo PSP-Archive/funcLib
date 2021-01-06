@@ -1,0 +1,417 @@
+\section{fl\-File.h File Reference}
+\label{flFile_8h}\index{flFile.h@{flFile.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf File\-Dir\-Entry}
+\item 
+struct {\bf File}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf FILE\_\-MODE\_\-APPEND}~(0)
+\item 
+\#define {\bf FILE\_\-MODE\_\-READ}~(1)
+\item 
+\#define {\bf FILE\_\-MODE\_\-WRITE}~(2)
+\item 
+\#define {\bf FILE\_\-MODE\_\-BINARY}~(4)
+\item 
+\#define {\bf FILE\_\-MODE\_\-READWRITE}~(8)
+\item 
+\#define {\bf FILE\_\-TYPE\_\-FILE}~(0)
+\item 
+\#define {\bf FILE\_\-TYPE\_\-MEMORY}~(1)
+\item 
+\#define {\bf FILE\_\-TYPE\_\-ZIP}~(2)
+\item 
+\#define {\bf FILE\_\-TYPE\_\-PBP}~(3)
+\item 
+\#define {\bf FILE\_\-STATE\_\-NORMAL}~(0)
+\item 
+\#define {\bf FILE\_\-STATE\_\-EOF}~(1)
+\item 
+\#define {\bf FILE\_\-STATE\_\-ERROR}~(2)
+\item 
+\#define {\bf FILE\_\-SEEK\_\-SET}~(SEEK\_\-SET)
+\item 
+\#define {\bf FILE\_\-SEEK\_\-CUR}~(SEEK\_\-CUR)
+\item 
+\#define {\bf FILE\_\-SEEK\_\-END}~(SEEK\_\-END)
+\item 
+\#define {\bf FILE\_\-COPY\_\-BLOCKSIZE}~16384
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf File} $\ast$ {\bf file\-Open} (char $\ast$in\-Path, u8 in\-Mode)
+\item 
+void {\bf file\-Close} ({\bf File} $\ast$in\-File)
+\item 
+{\bf bool} {\bf file\-Check\-State} ({\bf File} $\ast$in\-File)
+\item 
+void {\bf file\-Seek} ({\bf File} $\ast$in\-File, long in\-Seek, int in\-Mode)
+\item 
+int {\bf file\-Read} (void $\ast$in\-Dest, int in\-Size, {\bf File} $\ast$in\-File)
+\item 
+int {\bf file\-Write} (void $\ast$in\-Src, int in\-Size, {\bf File} $\ast$in\-File)
+\item 
+int {\bf file\-Puts} (char $\ast$in\-String, {\bf File} $\ast$in\-File)
+\item 
+char $\ast$ {\bf file\-Gets} (char $\ast$in\-String, int in\-Count, {\bf File} $\ast$in\-File)
+\item 
+{\bf bool} {\bf file\-EOF} ({\bf File} $\ast$in\-File)
+\item 
+{\bf bool} {\bf file\-Error} ({\bf File} $\ast$in\-File)
+\item 
+char {\bf file\-Type\-Get} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf file\-Exists} (char $\ast$in\-Path)
+\item 
+char $\ast$ {\bf file\-Name\-From\-Path} (char $\ast$in\-Path)
+\item 
+char $\ast$ {\bf file\-Extension} (char $\ast$in\-Path)
+\item 
+char $\ast$ {\bf file\-Path\-Validate} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf file\-Mkdir} (char $\ast$in\-Dir)
+\item 
+{\bf bool} {\bf file\-Delete} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf file\-Copy} (char $\ast$in\-Src, char $\ast$in\-Dest)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flFile.h@{fl\-File.h}!FILE_COPY_BLOCKSIZE@{FILE\_\-COPY\_\-BLOCKSIZE}}
+\index{FILE_COPY_BLOCKSIZE@{FILE\_\-COPY\_\-BLOCKSIZE}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-COPY\_\-BLOCKSIZE~16384}\label{flFile_8h_992a9b120a1bd17d0fef8b7e9b6b3a7c}
+
+
+
+
+Definition at line 40 of file fl\-File.h.
+
+Referenced by file\-Copy().\index{flFile.h@{fl\-File.h}!FILE_MODE_APPEND@{FILE\_\-MODE\_\-APPEND}}
+\index{FILE_MODE_APPEND@{FILE\_\-MODE\_\-APPEND}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-MODE\_\-APPEND~(0)}\label{flFile_8h_7f2e51c33faea832061aa194a761dc2b}
+
+
+
+
+Definition at line 21 of file fl\-File.h.
+
+Referenced by debug\-Log(), and debug\-Log\-From().\index{flFile.h@{fl\-File.h}!FILE_MODE_BINARY@{FILE\_\-MODE\_\-BINARY}}
+\index{FILE_MODE_BINARY@{FILE\_\-MODE\_\-BINARY}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-MODE\_\-BINARY~(4)}\label{flFile_8h_0f396696b14f2798b74cab1408c7f554}
+
+
+
+
+Definition at line 24 of file fl\-File.h.
+
+Referenced by debug\-Screenshot(), mdl3d\-Anim\-Load\-MD2(), tex\-Load\-BMP(), tex\-Load\-PCX(), tex\-Load\-TGA(), and tex\-Save\-TGA().\index{flFile.h@{fl\-File.h}!FILE_MODE_READ@{FILE\_\-MODE\_\-READ}}
+\index{FILE_MODE_READ@{FILE\_\-MODE\_\-READ}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-MODE\_\-READ~(1)}\label{flFile_8h_01a82af4b478b1d490bf495e26c319d8}
+
+
+
+
+Definition at line 22 of file fl\-File.h.
+
+Referenced by debug\-Screenshot(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), tex\-Load\-BMP(), tex\-Load\-PCX(), and tex\-Load\-TGA().\index{flFile.h@{fl\-File.h}!FILE_MODE_READWRITE@{FILE\_\-MODE\_\-READWRITE}}
+\index{FILE_MODE_READWRITE@{FILE\_\-MODE\_\-READWRITE}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-MODE\_\-READWRITE~(8)}\label{flFile_8h_32b1578a05f16f45b3d017fcd1d0eba1}
+
+
+
+
+Definition at line 25 of file fl\-File.h.\index{flFile.h@{fl\-File.h}!FILE_MODE_WRITE@{FILE\_\-MODE\_\-WRITE}}
+\index{FILE_MODE_WRITE@{FILE\_\-MODE\_\-WRITE}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-MODE\_\-WRITE~(2)}\label{flFile_8h_38868be632c78d78cffed793136025df}
+
+
+
+
+Definition at line 23 of file fl\-File.h.
+
+Referenced by mdl3d\-Stat\-Save\-OBJ(), and tex\-Save\-TGA().\index{flFile.h@{fl\-File.h}!FILE_SEEK_CUR@{FILE\_\-SEEK\_\-CUR}}
+\index{FILE_SEEK_CUR@{FILE\_\-SEEK\_\-CUR}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-SEEK\_\-CUR~(SEEK\_\-CUR)}\label{flFile_8h_7c3bbd9732668a3188d931034a5f230b}
+
+
+
+
+Definition at line 37 of file fl\-File.h.
+
+Referenced by file\-Seek(), and tex\-Load\-TGA().\index{flFile.h@{fl\-File.h}!FILE_SEEK_END@{FILE\_\-SEEK\_\-END}}
+\index{FILE_SEEK_END@{FILE\_\-SEEK\_\-END}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-SEEK\_\-END~(SEEK\_\-END)}\label{flFile_8h_3c580687c3aced8196380525e9532973}
+
+
+
+
+Definition at line 38 of file fl\-File.h.
+
+Referenced by file\-Seek().\index{flFile.h@{fl\-File.h}!FILE_SEEK_SET@{FILE\_\-SEEK\_\-SET}}
+\index{FILE_SEEK_SET@{FILE\_\-SEEK\_\-SET}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-SEEK\_\-SET~(SEEK\_\-SET)}\label{flFile_8h_e2c4c68b8f9b63358f8c8f32b77ecb09}
+
+
+
+
+Definition at line 36 of file fl\-File.h.
+
+Referenced by file\-Seek(), mdl3d\-Anim\-Load\-MD2(), and mdl3d\-Stat\-Load\-OBJ().\index{flFile.h@{fl\-File.h}!FILE_STATE_EOF@{FILE\_\-STATE\_\-EOF}}
+\index{FILE_STATE_EOF@{FILE\_\-STATE\_\-EOF}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-STATE\_\-EOF~(1)}\label{flFile_8h_53e0b120f12e61c9c077dc96cca3b83c}
+
+
+
+
+Definition at line 33 of file fl\-File.h.
+
+Referenced by file\-Check\-State(), and file\-EOF().\index{flFile.h@{fl\-File.h}!FILE_STATE_ERROR@{FILE\_\-STATE\_\-ERROR}}
+\index{FILE_STATE_ERROR@{FILE\_\-STATE\_\-ERROR}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-STATE\_\-ERROR~(2)}\label{flFile_8h_83cb987e3f1d0a7b39baab96633d7a71}
+
+
+
+
+Definition at line 34 of file fl\-File.h.
+
+Referenced by file\-Check\-State(), and file\-Error().\index{flFile.h@{fl\-File.h}!FILE_STATE_NORMAL@{FILE\_\-STATE\_\-NORMAL}}
+\index{FILE_STATE_NORMAL@{FILE\_\-STATE\_\-NORMAL}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-STATE\_\-NORMAL~(0)}\label{flFile_8h_d713096415e978fd601e76c07d844f46}
+
+
+
+
+Definition at line 32 of file fl\-File.h.
+
+Referenced by file\-Check\-State(), and file\-Open().\index{flFile.h@{fl\-File.h}!FILE_TYPE_FILE@{FILE\_\-TYPE\_\-FILE}}
+\index{FILE_TYPE_FILE@{FILE\_\-TYPE\_\-FILE}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-TYPE\_\-FILE~(0)}\label{flFile_8h_bace2d6eb53e065d5a32ab4c4758813b}
+
+
+
+
+Definition at line 27 of file fl\-File.h.
+
+Referenced by file\-Check\-State(), file\-Close(), file\-Open(), file\-Read(), file\-Seek(), and file\-Write().\index{flFile.h@{fl\-File.h}!FILE_TYPE_MEMORY@{FILE\_\-TYPE\_\-MEMORY}}
+\index{FILE_TYPE_MEMORY@{FILE\_\-TYPE\_\-MEMORY}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-TYPE\_\-MEMORY~(1)}\label{flFile_8h_e83b3f2eafce99a04213855010cdc1c2}
+
+
+
+
+Definition at line 28 of file fl\-File.h.
+
+Referenced by file\-Check\-State(), file\-Open(), file\-Read(), file\-Seek(), and file\-Write().\index{flFile.h@{fl\-File.h}!FILE_TYPE_PBP@{FILE\_\-TYPE\_\-PBP}}
+\index{FILE_TYPE_PBP@{FILE\_\-TYPE\_\-PBP}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-TYPE\_\-PBP~(3)}\label{flFile_8h_2d0bc552dd1a51a23d60f3d129bbb40b}
+
+
+
+
+Definition at line 30 of file fl\-File.h.\index{flFile.h@{fl\-File.h}!FILE_TYPE_ZIP@{FILE\_\-TYPE\_\-ZIP}}
+\index{FILE_TYPE_ZIP@{FILE\_\-TYPE\_\-ZIP}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-TYPE\_\-ZIP~(2)}\label{flFile_8h_5aac195e570572b59b17a91da593cba0}
+
+
+
+
+Definition at line 29 of file fl\-File.h.
+
+\subsection{Function Documentation}
+\index{flFile.h@{fl\-File.h}!fileCheckState@{fileCheckState}}
+\index{fileCheckState@{fileCheckState}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Check\-State ({\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_e4d685a401ce21554ebda7d01d4469e6}
+
+
+
+
+Definition at line 123 of file fl\-File.c.
+
+References debug\-Warning, FILE\_\-STATE\_\-EOF, FILE\_\-STATE\_\-ERROR, FILE\_\-STATE\_\-NORMAL, FILE\_\-TYPE\_\-FILE, FILE\_\-TYPE\_\-MEMORY, File::file\-Data, File::file\-Pointer, File::file\-Size, File::file\-State, and File::file\-Type.
+
+Referenced by file\-EOF(), file\-Error(), file\-Read(), and file\-Write().\index{flFile.h@{fl\-File.h}!fileClose@{fileClose}}
+\index{fileClose@{fileClose}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void file\-Close ({\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_bdd17f626a43391a546883c7a0544dc3}
+
+
+
+
+Definition at line 109 of file fl\-File.c.
+
+References debug\-Warning, FILE\_\-TYPE\_\-FILE, File::file\-Data, File::file\-Path, File::file\-Type, and mem\-Free.
+
+Referenced by debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), tex\-Load\-BMP(), tex\-Load\-PCX(), and tex\-Load\-TGA().\index{flFile.h@{fl\-File.h}!fileCopy@{fileCopy}}
+\index{fileCopy@{fileCopy}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Copy (char $\ast$ {\em in\-Src}, char $\ast$ {\em in\-Dest})}\label{flFile_8h_05c6b10c65b33fe1e721042c9770105c}
+
+
+
+
+Definition at line 415 of file fl\-File.c.
+
+References debug\-Warning, FILE\_\-COPY\_\-BLOCKSIZE, and mem\-Qalloc.\index{flFile.h@{fl\-File.h}!fileDelete@{fileDelete}}
+\index{fileDelete@{fileDelete}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Delete (char $\ast$ {\em in\-Path})}\label{flFile_8h_c1a484538015c2484789df26ddc797b0}
+
+
+
+
+Definition at line 383 of file fl\-File.c.
+
+References ASCII\_\-0, ASCII\_\-9, debug\-Warning, file\-Type\-Get(), and mem\-Free.
+
+Referenced by debug\-Init(), and mem\-Term().\index{flFile.h@{fl\-File.h}!fileEOF@{fileEOF}}
+\index{fileEOF@{fileEOF}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-EOF ({\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_19a3ec1ad7d0cd9025f03e79413b2047}
+
+
+
+
+Definition at line 240 of file fl\-File.c.
+
+References FILE\_\-STATE\_\-EOF, file\-Check\-State(), and File::file\-State.\index{flFile.h@{fl\-File.h}!fileError@{fileError}}
+\index{fileError@{fileError}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Error ({\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_fc8a85a9141393dcf10baa6a2872488a}
+
+
+
+
+Definition at line 245 of file fl\-File.c.
+
+References FILE\_\-STATE\_\-ERROR, file\-Check\-State(), and File::file\-State.\index{flFile.h@{fl\-File.h}!fileExists@{fileExists}}
+\index{fileExists@{fileExists}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Exists (char $\ast$ {\em in\-Path})}\label{flFile_8h_cb13135f9a1ef103656139296d2caf4d}
+
+
+
+
+Definition at line 284 of file fl\-File.c.
+
+References debug\-Warning.
+
+Referenced by file\-Open(), file\-Type\-Get(), and mdl3d\-Stat\-Load\-OBJ().\index{flFile.h@{fl\-File.h}!fileExtension@{fileExtension}}
+\index{fileExtension@{fileExtension}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\-Extension (char $\ast$ {\em in\-Path})}\label{flFile_8h_af44cc7d91d32ad0474ad4bc359aeaf3}
+
+
+
+
+Definition at line 328 of file fl\-File.c.
+
+References debug\-Warning, mem\-Alloc, and NULL.
+
+Referenced by mdl3d\-Anim\-Load(), mdl3d\-Stat\-Load(), mdl3d\-Stat\-Save(), tex\-Load(), and tex\-Save().\index{flFile.h@{fl\-File.h}!fileGets@{fileGets}}
+\index{fileGets@{fileGets}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\-Gets (char $\ast$ {\em in\-String}, int {\em in\-Count}, {\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_2d7ffa40537f5f73b11830033ab1bad4}
+
+
+
+
+Definition at line 224 of file fl\-File.c.
+
+References file\-Read(), and NULL.
+
+Referenced by mdl3d\-Stat\-Load\-OBJ().\index{flFile.h@{fl\-File.h}!fileMkdir@{fileMkdir}}
+\index{fileMkdir@{fileMkdir}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} file\-Mkdir (char $\ast$ {\em in\-Dir})}\label{flFile_8h_e477e900a835500927fc559f80c96136}
+
+
+
+
+Definition at line 372 of file fl\-File.c.
+
+References debug\-Warning.\index{flFile.h@{fl\-File.h}!fileNameFromPath@{fileNameFromPath}}
+\index{fileNameFromPath@{fileNameFromPath}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\-Name\-From\-Path (char $\ast$ {\em in\-Path})}\label{flFile_8h_fc44c878de74cd1411e468d2d68545c5}
+
+
+
+
+Definition at line 303 of file fl\-File.c.
+
+References debug\-Warning, mem\-Alloc, mem\-Copy, and NULL.\index{flFile.h@{fl\-File.h}!fileOpen@{fileOpen}}
+\index{fileOpen@{fileOpen}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf File}$\ast$ file\-Open (char $\ast$ {\em in\-Path}, u8 {\em in\-Mode})}\label{flFile_8h_c93941480776a7835fc0b7eec7ebea85}
+
+
+
+
+Definition at line 16 of file fl\-File.c.
+
+References ASCII\_\-0, ASCII\_\-9, debug\-Warning, FILE\_\-STATE\_\-NORMAL, FILE\_\-TYPE\_\-FILE, FILE\_\-TYPE\_\-MEMORY, File::file\-Data, file\-Exists(), File::file\-Mode, File::file\-Path, File::file\-Pointer, File::file\-Size, File::file\-State, File::file\-Type, mem\-Alloc, mem\-Clear, mem\-Free, and NULL.
+
+Referenced by debug\-Log(), debug\-Log\-From(), debug\-Screenshot(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), mdl3d\-Stat\-Save\-OBJ(), tex\-Load\-BMP(), tex\-Load\-PCX(), tex\-Load\-TGA(), and tex\-Save\-TGA().\index{flFile.h@{fl\-File.h}!filePathValidate@{filePathValidate}}
+\index{filePathValidate@{filePathValidate}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ file\-Path\-Validate (char $\ast$ {\em in\-Path})}\label{flFile_8h_0dad80defd73606d8e58ae85ec6bf68b}
+
+
+
+
+Definition at line 361 of file fl\-File.c.
+
+References NULL.
+
+Referenced by tex\-Load(), and tex\-Save().\index{flFile.h@{fl\-File.h}!filePuts@{filePuts}}
+\index{filePuts@{filePuts}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int file\-Puts (char $\ast$ {\em in\-String}, {\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_d30509e008ced313861416066057940d}
+
+
+
+
+Definition at line 214 of file fl\-File.c.
+
+References debug\-Warning, and file\-Write().
+
+Referenced by debug\-Log(), debug\-Log\-From(), and mdl3d\-Stat\-Save\-OBJ().\index{flFile.h@{fl\-File.h}!fileRead@{fileRead}}
+\index{fileRead@{fileRead}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int file\-Read (void $\ast$ {\em in\-Dest}, int {\em in\-Size}, {\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_bd15952bb98932926572c806c3b3cf20}
+
+
+
+
+Definition at line 174 of file fl\-File.c.
+
+References debug\-Error, FILE\_\-TYPE\_\-FILE, FILE\_\-TYPE\_\-MEMORY, file\-Check\-State(), File::file\-Data, File::file\-Pointer, File::file\-Size, File::file\-Type, and mem\-Copy.
+
+Referenced by file\-Gets(), mdl3d\-Anim\-Load\-MD2(), tex\-Load\-BMP(), tex\-Load\-PCX(), and tex\-Load\-TGA().\index{flFile.h@{fl\-File.h}!fileSeek@{fileSeek}}
+\index{fileSeek@{fileSeek}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void file\-Seek ({\bf File} $\ast$ {\em in\-File}, long {\em in\-Seek}, int {\em in\-Mode})}\label{flFile_8h_e5232070b4bd85cfcbeee00f4e8e32a4}
+
+
+
+
+Definition at line 154 of file fl\-File.c.
+
+References debug\-Warning, FILE\_\-SEEK\_\-CUR, FILE\_\-SEEK\_\-END, FILE\_\-SEEK\_\-SET, FILE\_\-TYPE\_\-FILE, FILE\_\-TYPE\_\-MEMORY, File::file\-Data, File::file\-Pointer, File::file\-Size, and File::file\-Type.
+
+Referenced by mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), and tex\-Load\-TGA().\index{flFile.h@{fl\-File.h}!fileTypeGet@{fileTypeGet}}
+\index{fileTypeGet@{fileTypeGet}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char file\-Type\-Get (char $\ast$ {\em in\-Path})}\label{flFile_8h_702afef29c951ec19b533d9109bbc155}
+
+
+
+
+Definition at line 250 of file fl\-File.c.
+
+References debug\-Warning, and file\-Exists().
+
+Referenced by file\-Delete().\index{flFile.h@{fl\-File.h}!fileWrite@{fileWrite}}
+\index{fileWrite@{fileWrite}!flFile.h@{fl\-File.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int file\-Write (void $\ast$ {\em in\-Src}, int {\em in\-Size}, {\bf File} $\ast$ {\em in\-File})}\label{flFile_8h_2c30646df4736c414f5017339780ea82}
+
+
+
+
+Definition at line 193 of file fl\-File.c.
+
+References debug\-Error, FILE\_\-TYPE\_\-FILE, FILE\_\-TYPE\_\-MEMORY, file\-Check\-State(), File::file\-Data, File::file\-Pointer, File::file\-Size, File::file\-Type, and mem\-Copy.
+
+Referenced by file\-Puts(), and tex\-Save\-TGA().

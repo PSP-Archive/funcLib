@@ -1,0 +1,569 @@
+\section{fl\-Texture.c File Reference}
+\label{flTexture_8c}\index{flTexture.c@{flTexture.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf tex\-Tree\-Node}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf bool} {\bf tex\-Tree\-Add} (char $\ast$in\-Path, {\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Tree\-Find\-Tex\-By\-Path} (char $\ast$in\-Path)
+\item 
+{\bf tex\-Tree\-Node} $\ast$ {\bf tex\-Tree\-Find\-Node\-By\-Tex\-R} ({\bf Texture} $\ast$in\-Tex, {\bf tex\-Tree\-Node} $\ast$in\-Node)
+\item 
+char $\ast$ {\bf tex\-Tree\-Find\-Path\-By\-Tex} ({\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf tex\-Tree\-Node} $\ast$ {\bf tex\-Tree\-Find\-Node\-By\-Tex} ({\bf Texture} $\ast$in\-Tex)
+\item 
+void {\bf tex\-Tree\-Add\-R} ({\bf tex\-Tree\-Node} $\ast$in\-Node)
+\item 
+void {\bf tex\-Tree\-Del\-R} ({\bf tex\-Tree\-Node} $\ast$in\-Node)
+\item 
+{\bf bool} {\bf tex\-Tree\-Del\-Node\-By\-Tex} ({\bf Texture} $\ast$in\-Tex)
+\item 
+u8 {\bf tex\-BPP} ({\bf Texture} $\ast$in\-Tex)
+\item 
+u8 {\bf tex\-Palettized} ({\bf Texture} $\ast$in\-Tex)
+\item 
+u8 {\bf pal\-BPP} ({\bf Palette} $\ast$in\-Pal)
+\item 
+void {\bf pal\-Bind} ({\bf Palette} $\ast$in\-Palette)
+\item 
+void {\bf tex\-Init} ()
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Load} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf tex\-Save} ({\bf Texture} $\ast$in\-Tex, char $\ast$in\-Path)
+\item 
+char $\ast$ {\bf tex\-Path} ({\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Create} (u32 in\-Width, u32 in\-Height, u8 in\-Pixel\-Format)
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Create\-Blank} (u32 in\-Width, u32 in\-Height, u8 in\-Pixel\-Format)
+\item 
+{\bf bool} {\bf tex\-Swizzle} ({\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf bool} {\bf tex\-Unswizzle} ({\bf Texture} $\ast$in\-Tex)
+\item 
+void {\bf tex\-Bind} ({\bf Texture} $\ast$in\-Tex)
+\item 
+void {\bf tex\-Free} (void $\ast$in\-Tex)
+\item 
+int {\bf tex\-Mip\-Map} ({\bf Texture} $\ast$in\-Tex, u8 in\-Level)
+\item 
+{\bf bool} {\bf tex\-Mip\-Map\-Add} ({\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Create} (u32 in\-Entries, u8 in\-Format, {\bf bool} in\-Global)
+\item 
+void {\bf pal\-Free} ({\bf Palette} $\ast$in\-Palette)
+\item 
+s32 {\bf pal\-Closest\-Color} ({\bf Palette} $\ast$in\-Pal, u32 in\-Color)
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Create\-Grayscale\-T8} ()
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Create\-Grayscale\-T4} ()
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Create\-Mono\-T4} (u32 in\-Fore\-Color, u32 in\-Back\-Color)
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Create\-Default\-Color\-T4} ()
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Grayscale\-T8} ()
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Grayscale\-T4} ()
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Default\-Color\-T4} ()
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Screenshot} ()
+\item 
+{\bf bool} {\bf tex\-Move\-VMem} ({\bf Texture} $\ast$in\-Tex)
+\item 
+{\bf bool} {\bf pal\-Move\-VMem} ({\bf Palette} $\ast$in\-Pal)
+\item 
+u32 {\bf tex\-Pixel} ({\bf Texture} $\ast$in\-Tex, int in\-X, int in\-Y)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf tex\-Tree\-Node} $\ast$ {\bf tex\-Tree} = NULL
+\item 
+void $\ast$ {\bf tex\-Bound} = NULL
+\item 
+void $\ast$ {\bf pal\-Bound} = NULL
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Grayscale\-T8Ptr} = NULL
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Grayscale\-T4Ptr} = NULL
+\item 
+{\bf Palette} $\ast$ {\bf pal\-Default\-Color\-T4Ptr} = NULL
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flTexture.c@{fl\-Texture.c}!palBind@{palBind}}
+\index{palBind@{palBind}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pal\-Bind ({\bf Palette} $\ast$ {\em in\-Palette})\hspace{0.3cm}{\tt  [inline]}}\label{flTexture_8c_41e78049fb4a6e9d9f866a67042d4d51}
+
+
+
+
+Definition at line 158 of file fl\-Texture.c.
+
+References pal\-Bound, Palette::pal\-Data, Palette::pal\-Entries, and Palette::pal\-Pixel\-Format.
+
+Referenced by tex\-Bind().\index{flTexture.c@{fl\-Texture.c}!palBPP@{palBPP}}
+\index{palBPP@{palBPP}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 pal\-BPP ({\bf Palette} $\ast$ {\em in\-Pal})\hspace{0.3cm}{\tt  [inline]}}\label{flTexture_8c_3bc371a87c5df314b09a477704d5ee24}
+
+
+
+
+Definition at line 125 of file fl\-Texture.c.
+
+References debug\-Warning, graphics\-Pixel\-Format\-BPP(), and Palette::pal\-Pixel\-Format.
+
+Referenced by pal\-Create(), and pal\-Move\-VMem().\index{flTexture.c@{fl\-Texture.c}!palClosestColor@{palClosestColor}}
+\index{palClosestColor@{palClosestColor}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}s32 pal\-Closest\-Color ({\bf Palette} $\ast$ {\em in\-Pal}, u32 {\em in\-Color})}\label{flTexture_8c_57fa8eca9371b4c3bc52915f4e871ff8}
+
+
+
+
+Definition at line 875 of file fl\-Texture.c.
+
+References color4444\_\-Cmp, color5551\_\-Cmp, color5650\_\-Cmp, color8888\_\-Cmp, debug\-Warning, Palette::pal\-Data, Palette::pal\-Entries, and Palette::pal\-Pixel\-Format.\index{flTexture.c@{fl\-Texture.c}!palCreate@{palCreate}}
+\index{palCreate@{palCreate}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Create (u32 {\em in\-Entries}, u8 {\em in\-Format}, {\bf bool} {\em in\-Global})}\label{flTexture_8c_e3ed244173473fbbe4f84cc8e773ca88}
+
+
+
+
+Definition at line 805 of file fl\-Texture.c.
+
+References debug\-Dev\-Warning, debug\-Error, mem\-Align, mem\-Alloc, mem\-Alloc\-Uncached, mem\-Clear, mem\-Free, NULL, pal\-BPP(), Palette::pal\-Data, Palette::pal\-Entries, Palette::pal\-Global, and Palette::pal\-Pixel\-Format.
+
+Referenced by pal\-Create\-Default\-Color\-T4(), pal\-Create\-Grayscale\-T4(), pal\-Create\-Grayscale\-T8(), pal\-Create\-Mono\-T4(), and tex\-Load\-TGA().\index{flTexture.c@{fl\-Texture.c}!palCreateDefaultColorT4@{palCreateDefaultColorT4}}
+\index{palCreateDefaultColorT4@{palCreateDefaultColorT4}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Create\-Default\-Color\-T4 ()}\label{flTexture_8c_785a70ea2c158455b1f2217bfaac80c0}
+
+
+
+
+Definition at line 1004 of file fl\-Texture.c.
+
+References FL\_\-TEXTURE\_\-UNCACHED, pal\-Create(), and Palette::pal\-Data.
+
+Referenced by pal\-Default\-Color\-T4().\index{flTexture.c@{fl\-Texture.c}!palCreateGrayscaleT4@{palCreateGrayscaleT4}}
+\index{palCreateGrayscaleT4@{palCreateGrayscaleT4}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Create\-Grayscale\-T4 ()}\label{flTexture_8c_d5fed51ee2e1e83baaaa623b92819c2f}
+
+
+
+
+Definition at line 972 of file fl\-Texture.c.
+
+References pal\-Create(), and Palette::pal\-Data.
+
+Referenced by pal\-Grayscale\-T4().\index{flTexture.c@{fl\-Texture.c}!palCreateGrayscaleT8@{palCreateGrayscaleT8}}
+\index{palCreateGrayscaleT8@{palCreateGrayscaleT8}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Create\-Grayscale\-T8 ()}\label{flTexture_8c_8ffa2ade3f63babe659c20011e7249e8}
+
+
+
+
+Definition at line 956 of file fl\-Texture.c.
+
+References pal\-Create(), and Palette::pal\-Data.
+
+Referenced by pal\-Grayscale\-T8().\index{flTexture.c@{fl\-Texture.c}!palCreateMonoT4@{palCreateMonoT4}}
+\index{palCreateMonoT4@{palCreateMonoT4}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Create\-Mono\-T4 (u32 {\em in\-Fore\-Color}, u32 {\em in\-Back\-Color})}\label{flTexture_8c_5eeec9707c8c18854c134ea6860946f4}
+
+
+
+
+Definition at line 988 of file fl\-Texture.c.
+
+References pal\-Create(), and Palette::pal\-Data.
+
+Referenced by font\-Draw2d\-Char(), and font\-Draw2d\-String().\index{flTexture.c@{fl\-Texture.c}!palDefaultColorT4@{palDefaultColorT4}}
+\index{palDefaultColorT4@{palDefaultColorT4}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Default\-Color\-T4 ()}\label{flTexture_8c_7a829d96ab4f8371f9696c22a913160e}
+
+
+
+
+Definition at line 1045 of file fl\-Texture.c.
+
+References pal\-Create\-Default\-Color\-T4(), pal\-Default\-Color\-T4Ptr, and Palette::pal\-Global.\index{flTexture.c@{fl\-Texture.c}!palFree@{palFree}}
+\index{palFree@{palFree}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void pal\-Free ({\bf Palette} $\ast$ {\em in\-Palette})}\label{flTexture_8c_306915805350c2933a2ccfee61cfc7da}
+
+
+
+
+Definition at line 860 of file fl\-Texture.c.
+
+References mem\-Free, NULL, pal\-Bound, and Palette::pal\-Data.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), and tex\-Free().\index{flTexture.c@{fl\-Texture.c}!palGrayscaleT4@{palGrayscaleT4}}
+\index{palGrayscaleT4@{palGrayscaleT4}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Grayscale\-T4 ()}\label{flTexture_8c_da86a59d2bc5f0c599fa03520fddf2d1}
+
+
+
+
+Definition at line 1037 of file fl\-Texture.c.
+
+References pal\-Create\-Grayscale\-T4(), Palette::pal\-Global, and pal\-Grayscale\-T4Ptr.\index{flTexture.c@{fl\-Texture.c}!palGrayscaleT8@{palGrayscaleT8}}
+\index{palGrayscaleT8@{palGrayscaleT8}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ pal\-Grayscale\-T8 ()}\label{flTexture_8c_113e5035bc82299348d36164c91e76c6}
+
+
+
+
+Definition at line 1029 of file fl\-Texture.c.
+
+References pal\-Create\-Grayscale\-T8(), Palette::pal\-Global, and pal\-Grayscale\-T8Ptr.
+
+Referenced by tex\-Load\-TGA().\index{flTexture.c@{fl\-Texture.c}!palMoveVMem@{palMoveVMem}}
+\index{palMoveVMem@{palMoveVMem}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} pal\-Move\-VMem ({\bf Palette} $\ast$ {\em in\-Pal})}\label{flTexture_8c_9d39735408cff76e1af6a14b07c9e93f}
+
+
+
+
+Definition at line 1132 of file fl\-Texture.c.
+
+References debug\-Warning, graphics\-Display\-List, graphics\-Frame, mem\-Copy, mem\-Free, pal\-BPP(), Palette::pal\-Data, Palette::pal\-Entries, Palette::pal\-Pixel\-Format, and vmem\-Alloc.\index{flTexture.c@{fl\-Texture.c}!texBind@{texBind}}
+\index{texBind@{texBind}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tex\-Bind ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_83362b9a35e8267e6e24cc103e864cda}
+
+
+
+
+Definition at line 506 of file fl\-Texture.c.
+
+References debug\-Warning, NULL, pal\-Bind(), tex\-Bound, Texture::tex\-Data, Texture::tex\-Data\-Height, Texture::tex\-Data\-Width, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Palette, tex\-Palettized(), Texture::tex\-Pixel\-Format, Texture::tex\-Stride, and Texture::tex\-Swizzled.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), graphics3d\-Draw\-Cube\-Textured(), graphics3d\-Draw\-Sphere\-Textured(), mdl3d\-Stat\-Draw\-Textured(), and sprite\-Draw2d\-Frame().\index{flTexture.c@{fl\-Texture.c}!texBPP@{texBPP}}
+\index{texBPP@{texBPP}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 tex\-BPP ({\bf Texture} $\ast$ {\em in\-Tex})\hspace{0.3cm}{\tt  [inline]}}\label{flTexture_8c_6190af1ad84f1a53b7383c16fd17b59b}
+
+
+
+
+Definition at line 99 of file fl\-Texture.c.
+
+References Texture::tex\-Pixel\-Format.
+
+Referenced by tex\-Create(), tex\-Create\-Blank(), tex\-Pixel(), tex\-Save\-TGA(), tex\-Swizzle(), and tex\-Unswizzle().\index{flTexture.c@{fl\-Texture.c}!texCreate@{texCreate}}
+\index{texCreate@{texCreate}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Create (u32 {\em in\-Width}, u32 {\em in\-Height}, u8 {\em in\-Pixel\-Format})}\label{flTexture_8c_4cdb1a72f4cf0008c2cbce4ce95c99e2}
+
+
+
+
+Definition at line 376 of file fl\-Texture.c.
+
+References debug\-Error, mem\-Align, mem\-Alloc, mem\-Alloc\-Uncached, mem\-Clear, mem\-Free, NULL, Texture::tex\-Alpha, tex\-BPP(), Texture::tex\-Data, Texture::tex\-Data\-Height, tex\-Data\-Size, Texture::tex\-Data\-Width, Texture::tex\-Height, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Palette, Texture::tex\-Pixel\-Format, Texture::tex\-Stride, Texture::tex\-Swizzled, Texture::tex\-Use\-Count, and Texture::tex\-Width.
+
+Referenced by tex\-Create\-Blank(), and tex\-Screenshot().\index{flTexture.c@{fl\-Texture.c}!texCreateBlank@{texCreateBlank}}
+\index{texCreateBlank@{texCreateBlank}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Create\-Blank (u32 {\em in\-Width}, u32 {\em in\-Height}, u8 {\em in\-Pixel\-Format})}\label{flTexture_8c_6e73ae11c73736849b72913fa3835bf0}
+
+
+
+
+Definition at line 428 of file fl\-Texture.c.
+
+References mem\-Clear, NULL, tex\-BPP(), tex\-Create(), Texture::tex\-Data, Texture::tex\-Data\-Height, and Texture::tex\-Data\-Width.\index{flTexture.c@{fl\-Texture.c}!texFree@{texFree}}
+\index{texFree@{texFree}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tex\-Free (void $\ast$ {\em in\-Tex})}\label{flTexture_8c_8fb8e4b38a9296ed9af008419170efee}
+
+
+
+
+Definition at line 546 of file fl\-Texture.c.
+
+References mem\-Free, NULL, pal\-Free(), Palette::pal\-Global, tex\-Bound, Texture::tex\-Data, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Palette, and Texture::tex\-Use\-Count.
+
+Referenced by font\-Free(), and mdl3d\-Stat\-Free().\index{flTexture.c@{fl\-Texture.c}!texInit@{texInit}}
+\index{texInit@{texInit}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tex\-Init ()}\label{flTexture_8c_d71c7b4ba0396ef491df47e51dd55235}
+
+
+
+
+Definition at line 168 of file fl\-Texture.c.
+
+References FL\_\-TEXTURE\_\-ERRORTEX\_\-PATH, and tex\-Load().
+
+Referenced by fl\-Initialize().\index{flTexture.c@{fl\-Texture.c}!texLoad@{texLoad}}
+\index{texLoad@{texLoad}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Load (char $\ast$ {\em in\-Path})}\label{flTexture_8c_723acca77c2b47c9f8f9d1064ee509ee}
+
+
+
+
+Definition at line 178 of file fl\-Texture.c.
+
+References debug\-Error, debug\-Warning, file\-Extension(), file\-Path\-Validate(), FL\_\-TEXTURE\_\-AUTOMIPMAP, mem\-Free, mem\-Is\-Cached\-Pointer, NULL, Texture::tex\-Data, tex\-Data\-Size, tex\-Load\-BMP(), tex\-Load\-PCX(), tex\-Load\-TGA(), tex\-Mip\-Map(), tex\-Palettized(), tex\-Swizzle(), tex\-Tree\-Add(), tex\-Tree\-Find\-Tex\-By\-Path(), and Texture::tex\-Use\-Count.
+
+Referenced by font\-Load(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), and tex\-Init().\index{flTexture.c@{fl\-Texture.c}!texMipMap@{texMipMap}}
+\index{texMipMap@{texMipMap}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int tex\-Mip\-Map ({\bf Texture} $\ast$ {\em in\-Tex}, u8 {\em in\-Level})}\label{flTexture_8c_ccd044292ceedac29759d5f3fb600e52}
+
+
+
+
+Definition at line 590 of file fl\-Texture.c.
+
+References debug\-Warning, min, Texture::tex\-Data\-Height, Texture::tex\-Data\-Width, tex\-Mip\-Map\-Add(), and Texture::tex\-Mip\-Maps.
+
+Referenced by tex\-Load().\index{flTexture.c@{fl\-Texture.c}!texMipMapAdd@{texMipMapAdd}}
+\index{texMipMapAdd@{texMipMapAdd}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Mip\-Map\-Add ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_ef3fcbb2958ad0f0f4ece629b81b82e7}
+
+
+
+
+Definition at line 611 of file fl\-Texture.c.
+
+References debug\-Dev\-Warning, debug\-Warning, FL\_\-DEBUG\_\-DEVWARNING, Texture::tex\-Mip\-Maps, tex\-Palettized(), Texture::tex\-Swizzled, and tex\-Unswizzle().
+
+Referenced by tex\-Mip\-Map().\index{flTexture.c@{fl\-Texture.c}!texMoveVMem@{texMoveVMem}}
+\index{texMoveVMem@{texMoveVMem}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Move\-VMem ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_2ef41233c1e08b86325c0453443cd6dd}
+
+
+
+
+Definition at line 1081 of file fl\-Texture.c.
+
+References debug\-Warning, graphics\-Display\-List, graphics\-Frame, mem\-Copy, mem\-Free, Texture::tex\-Data, Texture::tex\-Data\-Height, tex\-Data\-Size, Texture::tex\-Data\-Width, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Pixel\-Format, and vmem\-Alloc.\index{flTexture.c@{fl\-Texture.c}!texPalettized@{texPalettized}}
+\index{texPalettized@{texPalettized}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 tex\-Palettized ({\bf Texture} $\ast$ {\em in\-Tex})\hspace{0.3cm}{\tt  [inline]}}\label{flTexture_8c_b4c79c10195fdf369c6c9152a350eb78}
+
+
+
+
+Definition at line 121 of file fl\-Texture.c.
+
+References Texture::tex\-Pixel\-Format.
+
+Referenced by tex\-Bind(), tex\-Load(), tex\-Mip\-Map\-Add(), and tex\-Save\-TGA().\index{flTexture.c@{fl\-Texture.c}!texPath@{texPath}}
+\index{texPath@{texPath}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ tex\-Path ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_2aae7806529590f9b74414da4a2c20a8}
+
+
+
+
+Definition at line 372 of file fl\-Texture.c.
+
+References tex\-Tree\-Find\-Path\-By\-Tex().
+
+Referenced by mdl3d\-Stat\-Save\-OBJ().\index{flTexture.c@{fl\-Texture.c}!texPixel@{texPixel}}
+\index{texPixel@{texPixel}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 tex\-Pixel ({\bf Texture} $\ast$ {\em in\-Tex}, int {\em in\-X}, int {\em in\-Y})}\label{flTexture_8c_d448cd310f08ef57c369e1dfa10cfa3b}
+
+
+
+
+Definition at line 1164 of file fl\-Texture.c.
+
+References mem\-Copy, tex\-BPP(), Texture::tex\-Data, Texture::tex\-Data\-Width, Texture::tex\-Height, and Texture::tex\-Width.\index{flTexture.c@{fl\-Texture.c}!texSave@{texSave}}
+\index{texSave@{texSave}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Save ({\bf Texture} $\ast$ {\em in\-Tex}, char $\ast$ {\em in\-Path})}\label{flTexture_8c_42ef43dc0bebab5c836db2e1b9ec0962}
+
+
+
+
+Definition at line 282 of file fl\-Texture.c.
+
+References debug\-Error, debug\-Warning, file\-Extension(), file\-Path\-Validate(), mem\-Free, tex\-Save\-BMP(), tex\-Save\-PCX(), and tex\-Save\-TGA().
+
+Referenced by debug\-Screenshot().\index{flTexture.c@{fl\-Texture.c}!texScreenshot@{texScreenshot}}
+\index{texScreenshot@{texScreenshot}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Screenshot ()}\label{flTexture_8c_bba74e07093e026798aa20f44a390610}
+
+
+
+
+Definition at line 1054 of file fl\-Texture.c.
+
+References debug\-Error, FL\_\-TEXTURE\_\-UNCACHED, graphics\-Disp\-Buffer, mem\-Copy, NULL, SCREEN\_\-HEIGHT, SCREEN\_\-STRIDE, SCREEN\_\-WIDTH, Texture::tex\-Alpha, tex\-Create(), Texture::tex\-Data, Texture::tex\-Data\-Width, and vmem\-Absolute\-Ptr.
+
+Referenced by debug\-Screenshot().\index{flTexture.c@{fl\-Texture.c}!texSwizzle@{texSwizzle}}
+\index{texSwizzle@{texSwizzle}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Swizzle ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_30b31c0af73bf82ad9236a981a812eec}
+
+
+
+
+Definition at line 439 of file fl\-Texture.c.
+
+References debug\-Warning, FL\_\-DEBUG\_\-WARNING, graphics\-Swizzle\-Data(), tex\-BPP(), Texture::tex\-Data, Texture::tex\-Data\-Height, Texture::tex\-Data\-Width, Texture::tex\-Height, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Pixel\-Format, and Texture::tex\-Swizzled.
+
+Referenced by tex\-Load().\index{flTexture.c@{fl\-Texture.c}!texTreeAdd@{texTreeAdd}}
+\index{texTreeAdd@{texTreeAdd}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Tree\-Add (char $\ast$ {\em in\-Path}, {\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_acb29d67427aa933809ac424ae4b6a66}
+
+
+
+
+Definition at line 1208 of file fl\-Texture.c.
+
+References debug\-Warning, fl\-Running, mem\-Alloc, NULL, tex\-Tree\-Node::tex\-Node\-Data, tex\-Tree\-Node::tex\-Node\-Next, tex\-Tree\-Node::tex\-Node\-Path, and tex\-Tree.
+
+Referenced by tex\-Load(), and tex\-Tree\-Add\-R().\index{flTexture.c@{fl\-Texture.c}!texTreeAddR@{texTreeAddR}}
+\index{texTreeAddR@{texTreeAddR}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tex\-Tree\-Add\-R ({\bf tex\-Tree\-Node} $\ast$ {\em in\-Node})}\label{flTexture_8c_70c464d6c099508464c9ebd5ffda2989}
+
+
+
+
+Definition at line 1295 of file fl\-Texture.c.
+
+References tex\-Tree\-Node::tex\-Node\-Data, tex\-Tree\-Node::tex\-Node\-Next, tex\-Tree\-Node::tex\-Node\-Path, and tex\-Tree\-Add().
+
+Referenced by tex\-Tree\-Del\-Node\-By\-Tex().\index{flTexture.c@{fl\-Texture.c}!texTreeDelNodeByTex@{texTreeDelNodeByTex}}
+\index{texTreeDelNodeByTex@{texTreeDelNodeByTex}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Tree\-Del\-Node\-By\-Tex ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_529475c7483a05634f0dc7b4bc9d02cb}
+
+
+
+
+Definition at line 1311 of file fl\-Texture.c.
+
+References debug\-Warning, tex\-Tree\-Node::tex\-Node\-Next, tex\-Tree, tex\-Tree\-Add\-R(), tex\-Tree\-Del\-R(), and tex\-Tree\-Find\-Node\-By\-Tex().\index{flTexture.c@{fl\-Texture.c}!texTreeDelR@{texTreeDelR}}
+\index{texTreeDelR@{texTreeDelR}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void tex\-Tree\-Del\-R ({\bf tex\-Tree\-Node} $\ast$ {\em in\-Node})}\label{flTexture_8c_6fbab22bac4735da679083e9ffd6b488}
+
+
+
+
+Definition at line 1303 of file fl\-Texture.c.
+
+References tex\-Tree\-Node::tex\-Node\-Next.
+
+Referenced by tex\-Tree\-Del\-Node\-By\-Tex().\index{flTexture.c@{fl\-Texture.c}!texTreeFindNodeByTex@{texTreeFindNodeByTex}}
+\index{texTreeFindNodeByTex@{texTreeFindNodeByTex}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf tex\-Tree\-Node} $\ast$ tex\-Tree\-Find\-Node\-By\-Tex ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_d3fb8d6295018388cdebd39ba1de0e7d}
+
+
+
+
+Definition at line 1289 of file fl\-Texture.c.
+
+References NULL, tex\-Tree, and tex\-Tree\-Find\-Node\-By\-Tex\-R().
+
+Referenced by tex\-Tree\-Del\-Node\-By\-Tex().\index{flTexture.c@{fl\-Texture.c}!texTreeFindNodeByTexR@{texTreeFindNodeByTexR}}
+\index{texTreeFindNodeByTexR@{texTreeFindNodeByTexR}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf tex\-Tree\-Node} $\ast$ tex\-Tree\-Find\-Node\-By\-Tex\-R ({\bf Texture} $\ast$ {\em in\-Tex}, {\bf tex\-Tree\-Node} $\ast$ {\em in\-Node})}\label{flTexture_8c_bfb1a268a4d1637cf49afc96757acbe8}
+
+
+
+
+Definition at line 1267 of file fl\-Texture.c.
+
+References NULL, tex\-Tree\-Node::tex\-Node\-Data, and tex\-Tree\-Node::tex\-Node\-Next.
+
+Referenced by tex\-Tree\-Find\-Node\-By\-Tex(), and tex\-Tree\-Find\-Path\-By\-Tex().\index{flTexture.c@{fl\-Texture.c}!texTreeFindPathByTex@{texTreeFindPathByTex}}
+\index{texTreeFindPathByTex@{texTreeFindPathByTex}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ tex\-Tree\-Find\-Path\-By\-Tex ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_321b3589d8db12e38592f4622c2c05c1}
+
+
+
+
+Definition at line 1283 of file fl\-Texture.c.
+
+References NULL, tex\-Tree\-Node::tex\-Node\-Path, tex\-Tree, and tex\-Tree\-Find\-Node\-By\-Tex\-R().
+
+Referenced by tex\-Path().\index{flTexture.c@{fl\-Texture.c}!texTreeFindTexByPath@{texTreeFindTexByPath}}
+\index{texTreeFindTexByPath@{texTreeFindTexByPath}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture} $\ast$ tex\-Tree\-Find\-Tex\-By\-Path (char $\ast$ {\em in\-Path})}\label{flTexture_8c_13fd0c5bfa46542ff69ba50c5bd688c4}
+
+
+
+
+Definition at line 1250 of file fl\-Texture.c.
+
+References fl\-Running, NULL, tex\-Tree\-Node::tex\-Node\-Data, tex\-Tree\-Node::tex\-Node\-Next, tex\-Tree\-Node::tex\-Node\-Path, and tex\-Tree.
+
+Referenced by tex\-Load().\index{flTexture.c@{fl\-Texture.c}!texUnswizzle@{texUnswizzle}}
+\index{texUnswizzle@{texUnswizzle}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Unswizzle ({\bf Texture} $\ast$ {\em in\-Tex})}\label{flTexture_8c_9974158b286d32e981d2f00f301c00eb}
+
+
+
+
+Definition at line 472 of file fl\-Texture.c.
+
+References debug\-Warning, FL\_\-DEBUG\_\-WARNING, graphics\-Unswizzle\-Data(), tex\-BPP(), Texture::tex\-Data, Texture::tex\-Data\-Height, Texture::tex\-Data\-Width, Texture::tex\-Height, Texture::tex\-Mip\-Data, Texture::tex\-Mip\-Maps, Texture::tex\-Pixel\-Format, and Texture::tex\-Swizzled.
+
+Referenced by tex\-Mip\-Map\-Add(), and tex\-Save\-TGA().
+
+\subsection{Variable Documentation}
+\index{flTexture.c@{fl\-Texture.c}!palBound@{palBound}}
+\index{palBound@{palBound}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf pal\-Bound} = NULL}\label{flTexture_8c_e67e55c1dd935fedcb7c2fe59b24e832}
+
+
+
+
+Definition at line 75 of file fl\-Texture.c.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), pal\-Bind(), and pal\-Free().\index{flTexture.c@{fl\-Texture.c}!palDefaultColorT4Ptr@{palDefaultColorT4Ptr}}
+\index{palDefaultColorT4Ptr@{palDefaultColorT4Ptr}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ {\bf pal\-Default\-Color\-T4Ptr} = NULL}\label{flTexture_8c_2d3cd5972e125488064d6deb08aac5bd}
+
+
+
+
+Definition at line 79 of file fl\-Texture.c.
+
+Referenced by pal\-Default\-Color\-T4().\index{flTexture.c@{fl\-Texture.c}!palGrayscaleT4Ptr@{palGrayscaleT4Ptr}}
+\index{palGrayscaleT4Ptr@{palGrayscaleT4Ptr}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ {\bf pal\-Grayscale\-T4Ptr} = NULL}\label{flTexture_8c_ae2e3745e97379224a96f7b81ee27903}
+
+
+
+
+Definition at line 78 of file fl\-Texture.c.
+
+Referenced by pal\-Grayscale\-T4().\index{flTexture.c@{fl\-Texture.c}!palGrayscaleT8Ptr@{palGrayscaleT8Ptr}}
+\index{palGrayscaleT8Ptr@{palGrayscaleT8Ptr}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Palette}$\ast$ {\bf pal\-Grayscale\-T8Ptr} = NULL}\label{flTexture_8c_189b59bf2f96e1a3e1adf208b4e85c5b}
+
+
+
+
+Definition at line 77 of file fl\-Texture.c.
+
+Referenced by pal\-Grayscale\-T8().\index{flTexture.c@{fl\-Texture.c}!texBound@{texBound}}
+\index{texBound@{texBound}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf tex\-Bound} = NULL}\label{flTexture_8c_669099ea7e18ce677cfd3a697f83b71c}
+
+
+
+
+Definition at line 74 of file fl\-Texture.c.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Swap\-Buffers(), tex\-Bind(), and tex\-Free().\index{flTexture.c@{fl\-Texture.c}!texTree@{texTree}}
+\index{texTree@{texTree}!flTexture.c@{fl\-Texture.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf tex\-Tree\-Node}$\ast$ {\bf tex\-Tree} = NULL}\label{flTexture_8c_d9e5b1375dfb7f8b280ae075d5bd7c0e}
+
+
+
+
+Definition at line 62 of file fl\-Texture.c.
+
+Referenced by tex\-Tree\-Add(), tex\-Tree\-Del\-Node\-By\-Tex(), tex\-Tree\-Find\-Node\-By\-Tex(), tex\-Tree\-Find\-Path\-By\-Tex(), and tex\-Tree\-Find\-Tex\-By\-Path().

@@ -1,0 +1,89 @@
+\section{Camera Struct Reference}
+\label{structCamera}\index{Camera@{Camera}}
+This structure holds all information about the cameras position and orientation.  
+
+
+{\tt \#include $<$fl\-Camera.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+{\bf vect3f} {\bf cam\-Pos}
+\begin{CompactList}\small\item\em A vect3f representing the position of the \doxyref{Camera}{p.}{structCamera} in 3d space. \item\end{CompactList}\item 
+{\bf vect3f} {\bf cam\-View}
+\begin{CompactList}\small\item\em A vect3f representing a point in 3d space that the camera is pointing towards. \item\end{CompactList}\item 
+{\bf vect3f} {\bf cam\-Up}
+\begin{CompactList}\small\item\em A vect3f representing the direction of that is considered Up. \item\end{CompactList}\item 
+{\bf vect3f} {\bf cam\-Rot}
+\begin{CompactList}\small\item\em A vect3f representing the yaw pitch and roll of the camera. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This structure holds all information about the cameras position and orientation. 
+
+\begin{Desc}
+\item[See also:]\doxyref{cam\-Create()}{p.}{flCamera_8c_6962e33a7caa83bdc73bb3238e7480a1}, \doxyref{vect3f}{p.}{flTypes_8h_3a47c621e6f02f2c15ee0f9ac6a4c9a1} \end{Desc}
+
+
+
+
+Definition at line 25 of file fl\-Camera.h.
+
+\subsection{Member Data Documentation}
+\index{Camera@{Camera}!camPos@{camPos}}
+\index{camPos@{camPos}!Camera@{Camera}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} {\bf Camera::cam\-Pos}}\label{structCamera_3670067c064c255c7f63e53923785aa7}
+
+
+A vect3f representing the position of the \doxyref{Camera}{p.}{structCamera} in 3d space. 
+
+\begin{Desc}
+\item[Note:]Defaults to (0, 0, 0). \end{Desc}
+
+
+Definition at line 29 of file fl\-Camera.h.
+
+Referenced by cam\-Move(), cam\-Move\-To(), cam\-Reset(), and cam\-View().\index{Camera@{Camera}!camView@{camView}}
+\index{camView@{camView}!Camera@{Camera}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} {\bf Camera::cam\-View}}\label{structCamera_922802ab030fa6566636913bebcb5e72}
+
+
+A vect3f representing a point in 3d space that the camera is pointing towards. 
+
+\begin{Desc}
+\item[Note:]Defaults to (0, 1, 0). \end{Desc}
+
+
+Definition at line 33 of file fl\-Camera.h.
+
+Referenced by cam\-Move\-Forward(), cam\-Reset(), cam\-View(), and cam\-View\-Calc().\index{Camera@{Camera}!camUp@{camUp}}
+\index{camUp@{camUp}!Camera@{Camera}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} {\bf Camera::cam\-Up}}\label{structCamera_7390793ce7ebf458493ea7e8656ad4df}
+
+
+A vect3f representing the direction of that is considered Up. 
+
+\begin{Desc}
+\item[Note:]Defaults to (0, 0, 1). \end{Desc}
+
+
+Definition at line 37 of file fl\-Camera.h.
+
+Referenced by cam\-Reset(), cam\-View(), and cam\-View\-Calc().\index{Camera@{Camera}!camRot@{camRot}}
+\index{camRot@{camRot}!Camera@{Camera}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} {\bf Camera::cam\-Rot}}\label{structCamera_15a903ccd106da2b27fb40d40cc07c10}
+
+
+A vect3f representing the yaw pitch and roll of the camera. 
+
+\begin{Desc}
+\item[Note:]Defaults to (0, 0, 0). \end{Desc}
+
+
+Definition at line 41 of file fl\-Camera.h.
+
+Referenced by cam\-Move\-Strafe(), cam\-Reset(), and cam\-View\-Calc().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf fl\-Camera.h}\end{CompactItemize}

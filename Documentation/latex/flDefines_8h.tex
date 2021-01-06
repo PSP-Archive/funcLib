@@ -1,0 +1,396 @@
+\section{fl\-Defines.h File Reference}
+\label{flDefines_8h}\index{flDefines.h@{flDefines.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf max}(x, y)~((x) $>$ (y) ? (x) : (y))
+\item 
+\#define {\bf min}(x, y)~((x) $<$ (y) ? (x) : (y))
+\item 
+\#define {\bf pos}(x)~((x) $<$ (0) ? (0 - (x)) : (x))
+\item 
+\#define {\bf cmp}(in\-Type, in\-Val0, in\-Val1)~(memcmp((in\-Val0), (in\-Val1), sizeof(in\-Type)))
+\item 
+\#define {\bf LOGICAL\_\-XOR}(in\-Expr0, in\-Expr1)~(((in\-Expr0) $|$$|$ (in\-Expr1)) \&\& !((in\-Expr0) \&\& (in\-Expr1)))
+\item 
+\#define {\bf SCREEN\_\-WIDTH}~480
+\item 
+\#define {\bf SCREEN\_\-HEIGHT}~272
+\item 
+\#define {\bf SCREEN\_\-PITCH}~512
+\item 
+\#define {\bf SCREEN\_\-STRIDE}~SCREEN\_\-PITCH
+\item 
+\#define {\bf SCREEN\_\-LINESIZE}~SCREEN\_\-PITCH
+\item 
+\#define {\bf SCREEN\_\-GAMMA}~2.5f
+\item 
+\#define {\bf ASCII\_\-NULL}~0
+\item 
+\#define {\bf ASCII\_\-BELL}~7
+\item 
+\#define {\bf ASCII\_\-AUDIBLE\_\-BELL}~ASCII\_\-BELL
+\item 
+\#define {\bf ASCII\_\-AUDIBLEBELL}~ASCII\_\-BELL
+\item 
+\#define {\bf ASCII\_\-BS}~8
+\item 
+\#define {\bf ASCII\_\-BACKSPACE}~ASCII\_\-BS
+\item 
+\#define {\bf ASCII\_\-TAB}~9
+\item 
+\#define {\bf ASCII\_\-LF}~10
+\item 
+\#define {\bf ASCII\_\-LINEFEED}~ASCII\_\-LF
+\item 
+\#define {\bf ASCII\_\-CR}~13
+\item 
+\#define {\bf ASCII\_\-CARRIAGERETURN}~ASCII\_\-CR
+\item 
+\#define {\bf ASCII\_\-SHIFT\_\-OUT}~14
+\item 
+\#define {\bf ASCII\_\-SHIFT\_\-IN}~15
+\item 
+\#define {\bf ASCII\_\-SPACE}~32
+\item 
+\#define {\bf ASCII\_\-DEL}~127
+\item 
+\#define {\bf ASCII\_\-DELETE}~ASCII\_\-DEL
+\item 
+\#define {\bf ASCII\_\-A}~'A'
+\item 
+\#define {\bf ASCII\_\-Z}~'Z'
+\item 
+\#define {\bf ASCII\_\-a}~'a'
+\item 
+\#define {\bf ASCII\_\-z}~'z'
+\item 
+\#define {\bf ASCII\_\-0}~'0'
+\item 
+\#define {\bf ASCII\_\-9}~'9'
+\item 
+\#define {\bf ASCII\_\-MULTIPLY}~158
+\item 
+\#define {\bf MATH\_\-PI}~3.14159265358979323846264338327950288f
+\item 
+\#define {\bf MATH\_\-E}~2.71828182845904523536028747135266249f
+\item 
+\#define {\bf MATH\_\-GOLDENRATIO}~1.61803398874989484820458683436563811f
+\item 
+\#define {\bf GU\_\-SYNC\_\-WAIT}~0
+\item 
+\#define {\bf GU\_\-SYNC\_\-NOWAIT}~1
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flDefines.h@{fl\-Defines.h}!ASCII_0@{ASCII\_\-0}}
+\index{ASCII_0@{ASCII\_\-0}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-0~'0'}\label{flDefines_8h_a3f75ad2972ec8996ce5206feac0e52c}
+
+
+
+
+Definition at line 39 of file fl\-Defines.h.
+
+Referenced by file\-Delete(), and file\-Open().\index{flDefines.h@{fl\-Defines.h}!ASCII_9@{ASCII\_\-9}}
+\index{ASCII_9@{ASCII\_\-9}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-9~'9'}\label{flDefines_8h_7d01b034dc2511a5f77fdd9a742b10f2}
+
+
+
+
+Definition at line 40 of file fl\-Defines.h.
+
+Referenced by file\-Delete(), and file\-Open().\index{flDefines.h@{fl\-Defines.h}!ASCII_a@{ASCII\_\-a}}
+\index{ASCII_a@{ASCII\_\-a}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-a~'a'}\label{flDefines_8h_cb0c7653dabe53da8a7fb03bcad505e7}
+
+
+
+
+Definition at line 37 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_A@{ASCII\_\-A}}
+\index{ASCII_A@{ASCII\_\-A}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-A~'A'}\label{flDefines_8h_6ccdee41712ed103021e82cb944f47e6}
+
+
+
+
+Definition at line 35 of file fl\-Defines.h.
+
+Referenced by font\-Load().\index{flDefines.h@{fl\-Defines.h}!ASCII_AUDIBLE_BELL@{ASCII\_\-AUDIBLE\_\-BELL}}
+\index{ASCII_AUDIBLE_BELL@{ASCII\_\-AUDIBLE\_\-BELL}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-AUDIBLE\_\-BELL~ASCII\_\-BELL}\label{flDefines_8h_dcfdb1a80427061ef65fcbcd77342d32}
+
+
+
+
+Definition at line 20 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_AUDIBLEBELL@{ASCII\_\-AUDIBLEBELL}}
+\index{ASCII_AUDIBLEBELL@{ASCII\_\-AUDIBLEBELL}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-AUDIBLEBELL~ASCII\_\-BELL}\label{flDefines_8h_cf99cbd210aea2cc887f638003a9e1de}
+
+
+
+
+Definition at line 21 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_BACKSPACE@{ASCII\_\-BACKSPACE}}
+\index{ASCII_BACKSPACE@{ASCII\_\-BACKSPACE}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-BACKSPACE~ASCII\_\-BS}\label{flDefines_8h_97f70a2430c640e184380e20e1c1d0ea}
+
+
+
+
+Definition at line 23 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_BELL@{ASCII\_\-BELL}}
+\index{ASCII_BELL@{ASCII\_\-BELL}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-BELL~7}\label{flDefines_8h_a4e9a7dee5a1249aebb466ca0eab8a37}
+
+
+
+
+Definition at line 19 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_BS@{ASCII\_\-BS}}
+\index{ASCII_BS@{ASCII\_\-BS}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-BS~8}\label{flDefines_8h_74cfd0b97396b41e6cbb25de858ece5b}
+
+
+
+
+Definition at line 22 of file fl\-Defines.h.
+
+Referenced by font\-Char\-Width(), and font\-Draw2d\-String().\index{flDefines.h@{fl\-Defines.h}!ASCII_CARRIAGERETURN@{ASCII\_\-CARRIAGERETURN}}
+\index{ASCII_CARRIAGERETURN@{ASCII\_\-CARRIAGERETURN}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-CARRIAGERETURN~ASCII\_\-CR}\label{flDefines_8h_f7f8f4d42704bc2f5d8fec34a29dab6a}
+
+
+
+
+Definition at line 28 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_CR@{ASCII\_\-CR}}
+\index{ASCII_CR@{ASCII\_\-CR}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-CR~13}\label{flDefines_8h_089ed4925403ab02a05e603967c74579}
+
+
+
+
+Definition at line 27 of file fl\-Defines.h.
+
+Referenced by font\-Draw2d\-String().\index{flDefines.h@{fl\-Defines.h}!ASCII_DEL@{ASCII\_\-DEL}}
+\index{ASCII_DEL@{ASCII\_\-DEL}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-DEL~127}\label{flDefines_8h_3bb28e223b7c203113dc8c0387d43b36}
+
+
+
+
+Definition at line 32 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_DELETE@{ASCII\_\-DELETE}}
+\index{ASCII_DELETE@{ASCII\_\-DELETE}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-DELETE~ASCII\_\-DEL}\label{flDefines_8h_2d026fa8edd8f2d4ea731fe04915427f}
+
+
+
+
+Definition at line 33 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_LF@{ASCII\_\-LF}}
+\index{ASCII_LF@{ASCII\_\-LF}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-LF~10}\label{flDefines_8h_ca3b498f5936dbe4f3076a47c3e1810d}
+
+
+
+
+Definition at line 25 of file fl\-Defines.h.
+
+Referenced by font\-Draw2d\-String(), and font\-String\-Width().\index{flDefines.h@{fl\-Defines.h}!ASCII_LINEFEED@{ASCII\_\-LINEFEED}}
+\index{ASCII_LINEFEED@{ASCII\_\-LINEFEED}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-LINEFEED~ASCII\_\-LF}\label{flDefines_8h_dab3cea3881d5543cef4332ad3263e4f}
+
+
+
+
+Definition at line 26 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_MULTIPLY@{ASCII\_\-MULTIPLY}}
+\index{ASCII_MULTIPLY@{ASCII\_\-MULTIPLY}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-MULTIPLY~158}\label{flDefines_8h_6019587ddc75e98f2dd1a0127519b94d}
+
+
+
+
+Definition at line 42 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_NULL@{ASCII\_\-NULL}}
+\index{ASCII_NULL@{ASCII\_\-NULL}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-NULL~0}\label{flDefines_8h_0a12d2e8706f5d39ab82bd43044efc20}
+
+
+
+
+Definition at line 18 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_SHIFT_IN@{ASCII\_\-SHIFT\_\-IN}}
+\index{ASCII_SHIFT_IN@{ASCII\_\-SHIFT\_\-IN}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-SHIFT\_\-IN~15}\label{flDefines_8h_2e57874e2c893c09934fcba6187a6732}
+
+
+
+
+Definition at line 30 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_SHIFT_OUT@{ASCII\_\-SHIFT\_\-OUT}}
+\index{ASCII_SHIFT_OUT@{ASCII\_\-SHIFT\_\-OUT}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-SHIFT\_\-OUT~14}\label{flDefines_8h_f15b77c88b88d362ad35d89e1513f207}
+
+
+
+
+Definition at line 29 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_SPACE@{ASCII\_\-SPACE}}
+\index{ASCII_SPACE@{ASCII\_\-SPACE}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-SPACE~32}\label{flDefines_8h_7b42baa421e0d53aa73e093326d3d033}
+
+
+
+
+Definition at line 31 of file fl\-Defines.h.
+
+Referenced by font\-Draw2d\-String(), and font\-String\-Width().\index{flDefines.h@{fl\-Defines.h}!ASCII_TAB@{ASCII\_\-TAB}}
+\index{ASCII_TAB@{ASCII\_\-TAB}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-TAB~9}\label{flDefines_8h_bcd3d8c3082acbb105816e2274d1fb2f}
+
+
+
+
+Definition at line 24 of file fl\-Defines.h.
+
+Referenced by font\-Char\-Width(), font\-Draw2d\-String(), mdl3d\-Stat\-Load\-OBJ(), and mdl3d\-Stat\-Load\-OBJ\_\-face\-Read().\index{flDefines.h@{fl\-Defines.h}!ASCII_z@{ASCII\_\-z}}
+\index{ASCII_z@{ASCII\_\-z}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-z~'z'}\label{flDefines_8h_76cb409bf2d31112b1bec0056271e3ce}
+
+
+
+
+Definition at line 38 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!ASCII_Z@{ASCII\_\-Z}}
+\index{ASCII_Z@{ASCII\_\-Z}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ASCII\_\-Z~'Z'}\label{flDefines_8h_282e9a9765b0ae5f0a4aa813c3a4932c}
+
+
+
+
+Definition at line 36 of file fl\-Defines.h.
+
+Referenced by font\-Load().\index{flDefines.h@{fl\-Defines.h}!cmp@{cmp}}
+\index{cmp@{cmp}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define cmp(in\-Type, in\-Val0, in\-Val1)~(memcmp((in\-Val0), (in\-Val1), sizeof(in\-Type)))}\label{flDefines_8h_92141b345a236824d8d013e73bbdd401}
+
+
+
+
+Definition at line 7 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!GU_SYNC_NOWAIT@{GU\_\-SYNC\_\-NOWAIT}}
+\index{GU_SYNC_NOWAIT@{GU\_\-SYNC\_\-NOWAIT}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GU\_\-SYNC\_\-NOWAIT~1}\label{flDefines_8h_2ed5add4ff76bd8f0528d8ad66275130}
+
+
+
+
+Definition at line 50 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!GU_SYNC_WAIT@{GU\_\-SYNC\_\-WAIT}}
+\index{GU_SYNC_WAIT@{GU\_\-SYNC\_\-WAIT}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define GU\_\-SYNC\_\-WAIT~0}\label{flDefines_8h_0d7196c453c3aa3d6738b949cb2f82e6}
+
+
+
+
+Definition at line 49 of file fl\-Defines.h.
+
+Referenced by graphics\-Init(), graphics\-Swap\-Buffers(), and graphics\-Term().\index{flDefines.h@{fl\-Defines.h}!LOGICAL_XOR@{LOGICAL\_\-XOR}}
+\index{LOGICAL_XOR@{LOGICAL\_\-XOR}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LOGICAL\_\-XOR(in\-Expr0, in\-Expr1)~(((in\-Expr0) $|$$|$ (in\-Expr1)) \&\& !((in\-Expr0) \&\& (in\-Expr1)))}\label{flDefines_8h_054a81397da45dd4089bd2f9757572a0}
+
+
+
+
+Definition at line 9 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!MATH_E@{MATH\_\-E}}
+\index{MATH_E@{MATH\_\-E}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MATH\_\-E~2.71828182845904523536028747135266249f}\label{flDefines_8h_9ee56816d83d03ce2644259a848f0ecb}
+
+
+
+
+Definition at line 45 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!MATH_GOLDENRATIO@{MATH\_\-GOLDENRATIO}}
+\index{MATH_GOLDENRATIO@{MATH\_\-GOLDENRATIO}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MATH\_\-GOLDENRATIO~1.61803398874989484820458683436563811f}\label{flDefines_8h_bcfb6c818bbf0dbaf7500967c078672c}
+
+
+
+
+Definition at line 46 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!MATH_PI@{MATH\_\-PI}}
+\index{MATH_PI@{MATH\_\-PI}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MATH\_\-PI~3.14159265358979323846264338327950288f}\label{flDefines_8h_c58cbaeae310f551049f77b7c098599e}
+
+
+
+
+Definition at line 44 of file fl\-Defines.h.
+
+Referenced by cam\-View\-Calc(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), graphics2d\-Draw\-Spheroid\-Shaded(), graphics3d\-Draw\-Sphere(), graphics3d\-Draw\-Sphere\-Textured(), math\-Deg\-To\-Rad(), math\-Fix\-Rad\-Range(), math\-Rad\-To\-Deg(), and sprite\-Draw2d\-Frame().\index{flDefines.h@{fl\-Defines.h}!max@{max}}
+\index{max@{max}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define max(x, y)~((x) $>$ (y) ? (x) : (y))}\label{flDefines_8h_c39d9cef6a5e030ba8d9e11121054268}
+
+
+
+
+Definition at line 4 of file fl\-Defines.h.
+
+Referenced by collision2d\-Circle\-Circle(), collision2d\-Line\-Circle(), collision2d\-Line\-Line(), color\-Hue8888(), color\-Lum8888(), debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Log(), debug\-Log\-From(), debug\-Status\-Log\-From(), debug\-Warning\-From(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), graphics2d\-Draw\-Spheroid\-Shaded(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), and mem\-Alloc\-Uncached\-From().\index{flDefines.h@{fl\-Defines.h}!min@{min}}
+\index{min@{min}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define min(x, y)~((x) $<$ (y) ? (x) : (y))}\label{flDefines_8h_bb702d8b501669a23aa0ab3b281b9384}
+
+
+
+
+Definition at line 5 of file fl\-Defines.h.
+
+Referenced by collision2d\-Circle\-Circle(), collision2d\-Line\-Circle(), collision2d\-Line\-Line(), color\-Alpha\-Mult8888(), color\-Hue8888(), color\-Lum8888(), color\-Lum\-Mult8888(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), tex\-Mip\-Map(), and vmem\-Stride\-Block\-Add().\index{flDefines.h@{fl\-Defines.h}!pos@{pos}}
+\index{pos@{pos}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define pos(x)~((x) $<$ (0) ? (0 - (x)) : (x))}\label{flDefines_8h_42f121ae9f519a25bd4d2697456e2e8f}
+
+
+
+
+Definition at line 6 of file fl\-Defines.h.
+
+Referenced by color\-Lum\-Mult8888(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), and graphics2d\-Draw\-Spheroid\-Shaded().\index{flDefines.h@{fl\-Defines.h}!SCREEN_GAMMA@{SCREEN\_\-GAMMA}}
+\index{SCREEN_GAMMA@{SCREEN\_\-GAMMA}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-GAMMA~2.5f}\label{flDefines_8h_76469cbf8aaa4092ce85470f148a6f03}
+
+
+
+
+Definition at line 16 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!SCREEN_HEIGHT@{SCREEN\_\-HEIGHT}}
+\index{SCREEN_HEIGHT@{SCREEN\_\-HEIGHT}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-HEIGHT~272}\label{flDefines_8h_6974d08a74da681b3957b2fead2608b8}
+
+
+
+
+Definition at line 12 of file fl\-Defines.h.
+
+Referenced by graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), graphics\-Effect\-Fs\-Sepia(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Init(), graphics\-Set\-Projection(), graphics\-Swap\-Buffers(), ntfy\-Tray\-Show(), and tex\-Screenshot().\index{flDefines.h@{fl\-Defines.h}!SCREEN_LINESIZE@{SCREEN\_\-LINESIZE}}
+\index{SCREEN_LINESIZE@{SCREEN\_\-LINESIZE}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-LINESIZE~SCREEN\_\-PITCH}\label{flDefines_8h_a74f83c08f554b83174fc5ec760c90d5}
+
+
+
+
+Definition at line 15 of file fl\-Defines.h.\index{flDefines.h@{fl\-Defines.h}!SCREEN_PITCH@{SCREEN\_\-PITCH}}
+\index{SCREEN_PITCH@{SCREEN\_\-PITCH}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-PITCH~512}\label{flDefines_8h_226f7444fc504b827957882b9d0aeb5a}
+
+
+
+
+Definition at line 13 of file fl\-Defines.h.
+
+Referenced by graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), graphics\-Effect\-Fs\-Thermal\-Vision(), and graphics\-Init().\index{flDefines.h@{fl\-Defines.h}!SCREEN_STRIDE@{SCREEN\_\-STRIDE}}
+\index{SCREEN_STRIDE@{SCREEN\_\-STRIDE}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-STRIDE~SCREEN\_\-PITCH}\label{flDefines_8h_c2d64057e7c0a0c3679fdeeb3141e7ce}
+
+
+
+
+Definition at line 14 of file fl\-Defines.h.
+
+Referenced by graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Init(), graphics\-Render\-To\-Framebuffer(), graphics\-Swap\-Buffers(), and tex\-Screenshot().\index{flDefines.h@{fl\-Defines.h}!SCREEN_WIDTH@{SCREEN\_\-WIDTH}}
+\index{SCREEN_WIDTH@{SCREEN\_\-WIDTH}!flDefines.h@{fl\-Defines.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREEN\_\-WIDTH~480}\label{flDefines_8h_2cd109632a6dcccaa80b43561b1ab700}
+
+
+
+
+Definition at line 11 of file fl\-Defines.h.
+
+Referenced by font\-Draw2d\-String\-Center(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), graphics\-Effect\-Fs\-Sepia(), graphics\-Init(), graphics\-Set\-Projection(), graphics\-Swap\-Buffers(), ntfy\-Show\-Battery(), ntfy\-Show\-Time(), ntfy\-Tray\-Show(), and tex\-Screenshot().

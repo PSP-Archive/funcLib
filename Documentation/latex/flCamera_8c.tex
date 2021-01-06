@@ -1,0 +1,189 @@
+\section{fl\-Camera.c File Reference}
+\label{flCamera_8c}\index{flCamera.c@{flCamera.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspgum.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf cam\-View\-Calc} ({\bf Camera} $\ast$in\-Cam)
+\item 
+{\bf Camera} $\ast$ {\bf cam\-Create} ()
+\begin{CompactList}\small\item\em Create a valid initialized \doxyref{Camera}{p.}{structCamera} struct. \item\end{CompactList}\item 
+void {\bf cam\-Free} ({\bf Camera} $\ast$in\-Cam)
+\begin{CompactList}\small\item\em Free a camera struct from memory. \item\end{CompactList}\item 
+void {\bf cam\-Reset} ({\bf Camera} $\ast$in\-Cam)
+\begin{CompactList}\small\item\em Reset the camera to its home position. \item\end{CompactList}\item 
+void {\bf cam\-View} ({\bf Camera} $\ast$in\-Cam)
+\begin{CompactList}\small\item\em Set the view matrix to the cameras view. \item\end{CompactList}\item 
+void {\bf cam\-Move} ({\bf Camera} $\ast$in\-Cam, {\bf vect3f} in\-Move)
+\begin{CompactList}\small\item\em Move a \doxyref{Camera}{p.}{structCamera} relative to it's current position. \item\end{CompactList}\item 
+void {\bf cam\-Move\-To} ({\bf Camera} $\ast$in\-Cam, {\bf vect3f} in\-Target)
+\begin{CompactList}\small\item\em Move a \doxyref{Camera}{p.}{structCamera} to a specific location. \item\end{CompactList}\item 
+void {\bf cam\-Move\-Forward} ({\bf Camera} $\ast$in\-Cam, float in\-Size)
+\begin{CompactList}\small\item\em Move a \doxyref{Camera}{p.}{structCamera} forward in the direction it is pointing in. \item\end{CompactList}\item 
+void {\bf cam\-Move\-Strafe} ({\bf Camera} $\ast$in\-Cam, float in\-Size)
+\begin{CompactList}\small\item\em Move a \doxyref{Camera}{p.}{structCamera} horizontally with respect to the direction it is pointing. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flCamera.c@{fl\-Camera.c}!camCreate@{camCreate}}
+\index{camCreate@{camCreate}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Camera}$\ast$ cam\-Create ()}\label{flCamera_8c_6962e33a7caa83bdc73bb3238e7480a1}
+
+
+Create a valid initialized \doxyref{Camera}{p.}{structCamera} struct. 
+
+\begin{Desc}
+\item[Returns:]An initialized \doxyref{Camera}{p.}{structCamera} struct. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{cam\-Free()}{p.}{flCamera_8c_935c51bb27d8cd4fef98ed4962714a0e} \end{Desc}
+\begin{Desc}
+\item[Note:]This uses \doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} internally so it needs to be free'd using \doxyref{cam\-Free()}{p.}{flCamera_8c_935c51bb27d8cd4fef98ed4962714a0e} when finished. \end{Desc}
+
+
+Definition at line 44 of file fl\-Camera.c.
+
+References cam\-Reset(), debug\-Warning, mem\-Alloc, and NULL.\index{flCamera.c@{fl\-Camera.c}!camFree@{camFree}}
+\index{camFree@{camFree}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Free ({\bf Camera} $\ast$ {\em in\-Cam})}\label{flCamera_8c_935c51bb27d8cd4fef98ed4962714a0e}
+
+
+Free a camera struct from memory. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The camera struct to be free'd. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{cam\-Create()}{p.}{flCamera_8c_6962e33a7caa83bdc73bb3238e7480a1} \end{Desc}
+\begin{Desc}
+\item[Note:]This uses \doxyref{mem\-Free()}{p.}{flMemory_8h_b5a200b09037e42c940e59383787470c} internally. \end{Desc}
+
+
+Definition at line 56 of file fl\-Camera.c.
+
+References mem\-Free.\index{flCamera.c@{fl\-Camera.c}!camMove@{camMove}}
+\index{camMove@{camMove}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Move ({\bf Camera} $\ast$ {\em in\-Cam}, {\bf vect3f} {\em in\-Move})}\label{flCamera_8c_125f86b6a2df522661347f0d238c7544}
+
+
+Move a \doxyref{Camera}{p.}{structCamera} relative to it's current position. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be moved. \item[{\em in\-Move}]A vector representing the amount to be moved in each dimension relative to it's current position. \end{description}
+\end{Desc}
+
+
+Definition at line 85 of file fl\-Camera.c.
+
+References Camera::cam\-Pos, and vect3f\_\-Add.
+
+Referenced by cam\-Move\-Forward(), cam\-Move\-Strafe(), and cam\-Move\-To().\index{flCamera.c@{fl\-Camera.c}!camMoveForward@{camMoveForward}}
+\index{camMoveForward@{camMoveForward}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Move\-Forward ({\bf Camera} $\ast$ {\em in\-Cam}, float {\em in\-Size})}\label{flCamera_8c_55c938ab6cf48ccec7da21e73e97f02d}
+
+
+Move a \doxyref{Camera}{p.}{structCamera} forward in the direction it is pointing in. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be moved. \item[{\em in\-Size}]The amount the camera should be moved forward. \end{description}
+\end{Desc}
+
+
+Definition at line 98 of file fl\-Camera.c.
+
+References cam\-Move(), Camera::cam\-View, and cam\-View\-Calc().\index{flCamera.c@{fl\-Camera.c}!camMoveStrafe@{camMoveStrafe}}
+\index{camMoveStrafe@{camMoveStrafe}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Move\-Strafe ({\bf Camera} $\ast$ {\em in\-Cam}, float {\em in\-Size})}\label{flCamera_8c_04cd570b5f4437fa1518925345b97cb6}
+
+
+Move a \doxyref{Camera}{p.}{structCamera} horizontally with respect to the direction it is pointing. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be moved. \item[{\em in\-Size}]The amount the camera should be strafed right by. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Warning:]There is an error in this function which means it may not strafe correctly when the cameras roll isn't default. \end{Desc}
+
+
+Definition at line 109 of file fl\-Camera.c.
+
+References cam\-Move(), Camera::cam\-Rot, cam\-View\-Calc(), math\-Cosf(), and math\-Sinf().\index{flCamera.c@{fl\-Camera.c}!camMoveTo@{camMoveTo}}
+\index{camMoveTo@{camMoveTo}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Move\-To ({\bf Camera} $\ast$ {\em in\-Cam}, {\bf vect3f} {\em in\-Target})}\label{flCamera_8c_9bacfccc2301fbee8a044ae16e508118}
+
+
+Move a \doxyref{Camera}{p.}{structCamera} to a specific location. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be moved. \item[{\em in\-Target}]A vector representing the destination that the \doxyref{Camera}{p.}{structCamera} will be moved to. \end{description}
+\end{Desc}
+
+
+Definition at line 91 of file fl\-Camera.c.
+
+References cam\-Move(), Camera::cam\-Pos, and vect3f\_\-Sub.\index{flCamera.c@{fl\-Camera.c}!camReset@{camReset}}
+\index{camReset@{camReset}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-Reset ({\bf Camera} $\ast$ {\em in\-Cam})}\label{flCamera_8c_8d6075d6b6fa1b618ec9e9e75bb7e385}
+
+
+Reset the camera to its home position. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be reset. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{cam\-Create()}{p.}{flCamera_8c_6962e33a7caa83bdc73bb3238e7480a1} \end{Desc}
+\begin{Desc}
+\item[Note:]This resets the camera so that it looks down the Y axis with Z being up, as does \doxyref{cam\-Create()}{p.}{flCamera_8c_6962e33a7caa83bdc73bb3238e7480a1}. \end{Desc}
+
+
+Definition at line 64 of file fl\-Camera.c.
+
+References Camera::cam\-Pos, Camera::cam\-Rot, Camera::cam\-Up, and Camera::cam\-View.
+
+Referenced by cam\-Create().\index{flCamera.c@{fl\-Camera.c}!camView@{camView}}
+\index{camView@{camView}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-View ({\bf Camera} $\ast$ {\em in\-Cam})}\label{flCamera_8c_926f023a85d2b0a4ffc1893399b993f7}
+
+
+Set the view matrix to the cameras view. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Cam}]The \doxyref{Camera}{p.}{structCamera} to be viewed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Note:]This should be called every frame that the camera is in use. \end{Desc}
+
+
+Definition at line 71 of file fl\-Camera.c.
+
+References Camera::cam\-Pos, Camera::cam\-Up, Camera::cam\-View, cam\-View\-Calc(), and vect3f\_\-Add.\index{flCamera.c@{fl\-Camera.c}!camViewCalc@{camViewCalc}}
+\index{camViewCalc@{camViewCalc}!flCamera.c@{fl\-Camera.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void cam\-View\-Calc ({\bf Camera} $\ast$ {\em in\-Cam})}\label{flCamera_8c_f27c6ac2e0ef9d16b54d68e2387c1864}
+
+
+
+
+Definition at line 19 of file fl\-Camera.c.
+
+References Camera::cam\-Rot, Camera::cam\-Up, Camera::cam\-View, MATH\_\-PI, math\-Cosf(), and math\-Sinf().
+
+Referenced by cam\-Move\-Forward(), cam\-Move\-Strafe(), and cam\-View().

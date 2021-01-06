@@ -1,0 +1,66 @@
+\section{func\-Lib.c File Reference}
+\label{funcLib_8c}\index{funcLib.c@{funcLib.c}}
+{\tt \#include \char`\"{}funclib.h\char`\"{}}\par
+{\tt \#include $<$pspdebug.h$>$}\par
+{\tt \#include $<$pspfpu.h$>$}\par
+{\tt \#include \char`\"{}fl\-Include\-C.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf fl\-Initialize} ()
+\begin{CompactList}\small\item\em Initialize funclib and all of its modules. \item\end{CompactList}\item 
+void {\bf fl\-Terminate} ()
+\begin{CompactList}\small\item\em Terminate funclib and all of its modules. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf bool} {\bf fl\-Running} = false
+\begin{CompactList}\small\item\em A boolean to represent the running state of funclib, a non-zero value indicates that funclib is running. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{funcLib.c@{func\-Lib.c}!flInitialize@{flInitialize}}
+\index{flInitialize@{flInitialize}!funcLib.c@{func\-Lib.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fl\-Initialize ()}\label{funcLib_8c_77803041c232261f158b071f587b9d08}
+
+
+Initialize funclib and all of its modules. 
+
+\begin{Desc}
+\item[Note:]This sets fl\-Running to a non-zero value. \end{Desc}
+
+
+Definition at line 21 of file func\-Lib.c.
+
+References callback\-Init(), debug\-Init(), debug\-Status\-Log, fl\-Running, font\-Init(), graphics\-Init(), graphics\-Set\-Projection(), input\-Init(), math\-Init(), mdl\-Init(), mem\-Init(), ntfy\-Init(), and tex\-Init().\index{funcLib.c@{func\-Lib.c}!flTerminate@{flTerminate}}
+\index{flTerminate@{flTerminate}!funcLib.c@{func\-Lib.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fl\-Terminate ()}\label{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}
+
+
+Terminate funclib and all of its modules. 
+
+\begin{Desc}
+\item[Note:]This sets fl\-Running to zero. \end{Desc}
+
+
+Definition at line 103 of file func\-Lib.c.
+
+References debug\-Status\-Log, fl\-Running, and mem\-Term().
+
+Referenced by callback\-Exit(), debug\-Critical\-Error\-From(), and debug\-Error\-From().
+
+\subsection{Variable Documentation}
+\index{funcLib.c@{func\-Lib.c}!flRunning@{flRunning}}
+\index{flRunning@{flRunning}!funcLib.c@{func\-Lib.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf fl\-Running} = false}\label{funcLib_8c_044d8733170ae7fcbfc6a4fd94c17dd8}
+
+
+A boolean to represent the running state of funclib, a non-zero value indicates that funclib is running. 
+
+\begin{Desc}
+\item[Note:]This should be used in infinite loops (e.g while(1) -$>$ while(fl\-Running) ) \end{Desc}
+
+
+Definition at line 19 of file func\-Lib.c.
+
+Referenced by fl\-Initialize(), fl\-Terminate(), memt\-Del\-From(), tex\-Tree\-Add(), tex\-Tree\-Find\-Tex\-By\-Path(), vmem\-Stride\-Align(), vmem\-Stride\-Free(), vmem\-Stride\-Free\-Space(), and vmem\-Stride\-Usage().

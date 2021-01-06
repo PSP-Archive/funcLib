@@ -1,0 +1,24 @@
+- Raphael, do you know how to calculate how big a display list is for x number of textured verts?
+
+= x*sizeof(vert) + ~4*numberofsceGucalls
+
+- ok, cheers
+
+= that is if you store the vertices in the display list of course
+
+- that's what i intend, is that the best way?
+
+= well, if you already have them stored in memory and only create copies in the display list, it's a waste
+
+- yeah, I intend to load them directly into a display list
+
+- Ok, 2 more quick questions:
+  1. Is sceGuFinish() stored in the display list?
+  2. How are the verteces stored in the display list, do I:-
+    A. draw from an external vertex array, then delete it, or
+    B. insert the vertex array into the display list at some point?
+
+= 1. Yes, it stores a terminating command, similar to a 0 character that terminates a string
+  2. if you want to draw them only for this single frame, you store them in the list by doing sceGuGetMemory(), else you just provide the pointer to the system ram. However, you need to make sure that pointer is legal until the GU finished drawing
+
+- ok, thanks

@@ -1,0 +1,232 @@
+\section{fl\-Font.c File Reference}
+\label{flFont_8c}\index{flFont.c@{flFont.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf font\-Init} ()
+\item 
+{\bf Font} $\ast$ {\bf font\-Load} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf font\-Save} (char $\ast$in\-Path, {\bf Font} $\ast$in\-Font)
+\item 
+{\bf Font} $\ast$ {\bf font\-Create\-Texture} ({\bf Texture} $\ast$in\-Tex, int in\-HSpace, int in\-VSpace, u32 in\-Color)
+\item 
+{\bf Font} $\ast$ {\bf font\-Create\-Debug} (int in\-HSpace, int in\-VSpace, u32 in\-Color)
+\item 
+{\bf bool} {\bf font\-Create\-Debug\-Tex} ()
+\item 
+void {\bf font\-Free} ({\bf Font} $\ast$in\-Font)
+\item 
+int {\bf font\-Height} ({\bf Font} $\ast$in\-Font)
+\item 
+int {\bf font\-Char\-Width} ({\bf Font} $\ast$in\-Font, char in\-Char)
+\item 
+int {\bf font\-String\-Width} ({\bf Font} $\ast$in\-Font, char $\ast$in\-String)
+\item 
+int {\bf font\-String\-Height} ({\bf Font} $\ast$in\-Font, char $\ast$in\-String)
+\item 
+{\bf bool} {\bf font\-Draw2d\-Char} (int in\-X, int in\-Y, {\bf Font} $\ast$in\-Font, char in\-Char)
+\item 
+void {\bf font\-Draw2d\-String} (int in\-X, int in\-Y, {\bf Font} $\ast$in\-Font, char $\ast$in\-String)
+\item 
+void {\bf font\-Draw2d\-String\-Center} (int in\-Y, {\bf Font} $\ast$in\-Font, char $\ast$in\-String)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+u8 {\bf msx} [$\,$]
+\item 
+u8 $\ast$ {\bf font\-Debug\-Tex} = NULL
+\item 
+u8 $\ast$ {\bf font\-Mono\-Pal} = NULL
+\item 
+{\bf Font} $\ast$ {\bf font\-Default} = NULL
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flFont.c@{fl\-Font.c}!fontCharWidth@{fontCharWidth}}
+\index{fontCharWidth@{fontCharWidth}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int font\-Char\-Width ({\bf Font} $\ast$ {\em in\-Font}, char {\em in\-Char})}\label{flFont_8c_885fc7115e929b241e957568f1e15be5}
+
+
+
+
+Definition at line 245 of file fl\-Font.c.
+
+References ASCII\_\-BS, ASCII\_\-TAB, debug\-Warning, FL\_\-FONT\_\-TABWIDTH\_\-DEFAULT, FONT\_\-TYPE\_\-DEBUG, FONT\_\-TYPE\_\-TEXTURE, FONT\_\-TYPE\_\-TEXTURE\_\-MONO, Font::font\-Data, Font::font\-Fixed\-Width, Font::font\-Type, and Texture::tex\-Width.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), and font\-String\-Width().\index{flFont.c@{fl\-Font.c}!fontCreateDebug@{fontCreateDebug}}
+\index{fontCreateDebug@{fontCreateDebug}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Font}$\ast$ font\-Create\-Debug (int {\em in\-HSpace}, int {\em in\-VSpace}, u32 {\em in\-Color})}\label{flFont_8c_e88ed5efe4bc9f93200dd3645a740a89}
+
+
+
+
+Definition at line 117 of file fl\-Font.c.
+
+References debug\-Warning, FONT\_\-TYPE\_\-DEBUG, Font::font\-Back\-Color, Font::font\-Color, font\-Create\-Debug\-Tex(), Font::font\-Data, Font::font\-Data\-Global, font\-Debug\-Tex, Font::font\-Fixed\-Width, Font::font\-HSpace, Font::font\-Type, Font::font\-VSpace, mem\-Alloc, and NULL.
+
+Referenced by font\-Init().\index{flFont.c@{fl\-Font.c}!fontCreateDebugTex@{fontCreateDebugTex}}
+\index{fontCreateDebugTex@{fontCreateDebugTex}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} font\-Create\-Debug\-Tex ()}\label{flFont_8c_86a3890982bcea3c59bdc0a52d465f98}
+
+
+
+
+Definition at line 143 of file fl\-Font.c.
+
+References debug\-Error, font\-Debug\-Tex, font\-Mono\-Pal, graphics\-Swizzle\-Data(), mem\-Align, msx, and vmem\-Alloc.
+
+Referenced by font\-Create\-Debug().\index{flFont.c@{fl\-Font.c}!fontCreateTexture@{fontCreateTexture}}
+\index{fontCreateTexture@{fontCreateTexture}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Font}$\ast$ font\-Create\-Texture ({\bf Texture} $\ast$ {\em in\-Tex}, int {\em in\-HSpace}, int {\em in\-VSpace}, u32 {\em in\-Color})}\label{flFont_8c_3974ca441bf8e3f8af7cd80f8e4e247d}
+
+
+
+
+Definition at line 90 of file fl\-Font.c.
+
+References debug\-Warning, FONT\_\-TYPE\_\-TEXTURE, Font::font\-Back\-Color, Font::font\-Color, Font::font\-Data, Font::font\-Data\-Global, Font::font\-Fixed\-Width, Font::font\-HSpace, Font::font\-Type, Font::font\-VSpace, mem\-Alloc, and NULL.
+
+Referenced by font\-Load().\index{flFont.c@{fl\-Font.c}!fontDraw2dChar@{fontDraw2dChar}}
+\index{fontDraw2dChar@{fontDraw2dChar}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} font\-Draw2d\-Char (int {\em in\-X}, int {\em in\-Y}, {\bf Font} $\ast$ {\em in\-Font}, char {\em in\-Char})}\label{flFont_8c_bd6cbddc091774731d817cd169b35bfe}
+
+
+
+
+Definition at line 310 of file fl\-Font.c.
+
+References debug\-Error, debug\-Warning, FONT\_\-TYPE\_\-DEBUG, FONT\_\-TYPE\_\-TEXTURE, FONT\_\-TYPE\_\-TEXTURE\_\-MONO, Font::font\-Back\-Color, font\-Char\-Width(), Font::font\-Color, Font::font\-Data, font\-Debug\-Tex, font\-Height(), font\-Mono\-Pal, Font::font\-Type, NULL, pal\-Bound, pal\-Create\-Mono\-T4(), Palette::pal\-Data, pal\-Free(), tex\-Bind(), tex\-Bound, Texture::tex\-Palette, vert\-CVs::vert\-Color, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-CVs::vert\-X, vert\-Ts\-Vs::vert\-X, vert\-CVs::vert\-Y, vert\-Ts\-Vs::vert\-Y, vert\-CVs::vert\-Z, and vert\-Ts\-Vs::vert\-Z.\index{flFont.c@{fl\-Font.c}!fontDraw2dString@{fontDraw2dString}}
+\index{fontDraw2dString@{fontDraw2dString}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void font\-Draw2d\-String (int {\em in\-X}, int {\em in\-Y}, {\bf Font} $\ast$ {\em in\-Font}, char $\ast$ {\em in\-String})}\label{flFont_8c_0f17a042bd1e5d440c89e3da55e20898}
+
+
+
+
+Definition at line 435 of file fl\-Font.c.
+
+References ASCII\_\-BS, ASCII\_\-CR, ASCII\_\-LF, ASCII\_\-SPACE, ASCII\_\-TAB, debug\-Error, debug\-Warning, FONT\_\-TYPE\_\-DEBUG, FONT\_\-TYPE\_\-TEXTURE, FONT\_\-TYPE\_\-TEXTURE\_\-MONO, Font::font\-Back\-Color, font\-Char\-Width(), Font::font\-Color, Font::font\-Data, font\-Debug\-Tex, font\-Height(), Font::font\-HSpace, font\-Mono\-Pal, Font::font\-Type, Font::font\-VSpace, NULL, pal\-Bound, pal\-Create\-Mono\-T4(), Palette::pal\-Data, pal\-Free(), tex\-Bind(), tex\-Bound, Texture::tex\-Palette, vert\-CVs::vert\-Color, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-CVs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-CVs::vert\-Y, vert\-Ts\-Vs::vert\-Z, and vert\-CVs::vert\-Z.
+
+Referenced by font\-Draw2d\-String\-Center(), graphics\-Swap\-Buffers(), ntfy\-Show\-Battery(), ntfy\-Show\-Time(), and ntfy\-Tray\-Show().\index{flFont.c@{fl\-Font.c}!fontDraw2dStringCenter@{fontDraw2dStringCenter}}
+\index{fontDraw2dStringCenter@{fontDraw2dStringCenter}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void font\-Draw2d\-String\-Center (int {\em in\-Y}, {\bf Font} $\ast$ {\em in\-Font}, char $\ast$ {\em in\-String})}\label{flFont_8c_c90a718ef77455f561eafddf1fb8cc7b}
+
+
+
+
+Definition at line 590 of file fl\-Font.c.
+
+References font\-Draw2d\-String(), font\-Height(), font\-String\-Width(), and SCREEN\_\-WIDTH.\index{flFont.c@{fl\-Font.c}!fontFree@{fontFree}}
+\index{fontFree@{fontFree}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void font\-Free ({\bf Font} $\ast$ {\em in\-Font})}\label{flFont_8c_9ba3d4e083b5da133a02be810608c100}
+
+
+
+
+Definition at line 206 of file fl\-Font.c.
+
+References debug\-Warning, FONT\_\-TYPE\_\-TEXTURE, FONT\_\-TYPE\_\-TEXTURE\_\-MONO, Font::font\-Data, Font::font\-Data\-Global, Font::font\-Type, mem\-Free, and tex\-Free().\index{flFont.c@{fl\-Font.c}!fontHeight@{fontHeight}}
+\index{fontHeight@{fontHeight}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int font\-Height ({\bf Font} $\ast$ {\em in\-Font})}\label{flFont_8c_52a6b73a87f357f4063ff8ebc8e5f974}
+
+
+
+
+Definition at line 227 of file fl\-Font.c.
+
+References debug\-Warning, FONT\_\-TYPE\_\-DEBUG, FONT\_\-TYPE\_\-TEXTURE, FONT\_\-TYPE\_\-TEXTURE\_\-MONO, Font::font\-Data, Font::font\-Type, and Texture::tex\-Height.
+
+Referenced by font\-Draw2d\-Char(), font\-Draw2d\-String(), font\-Draw2d\-String\-Center(), font\-String\-Height(), ntfy\-Show\-Battery(), ntfy\-Show\-Time(), and ntfy\-Tray\-Show().\index{flFont.c@{fl\-Font.c}!fontInit@{fontInit}}
+\index{fontInit@{fontInit}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void font\-Init ()}\label{flFont_8c_0416d15ad6ddec5fe49d09760dceee01}
+
+
+
+
+Definition at line 38 of file fl\-Font.c.
+
+References FL\_\-FONT\_\-COLOR\_\-DEFAULT, font\-Create\-Debug(), and font\-Default.
+
+Referenced by fl\-Initialize().\index{flFont.c@{fl\-Font.c}!fontLoad@{fontLoad}}
+\index{fontLoad@{fontLoad}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Font}$\ast$ font\-Load (char $\ast$ {\em in\-Path})}\label{flFont_8c_21e0e8e442c8946619ed709ab8758dd5}
+
+
+
+
+Definition at line 42 of file fl\-Font.c.
+
+References ASCII\_\-A, ASCII\_\-Z, debug\-Dev\-Warning, debug\-Warning, FL\_\-FONT\_\-COLOR\_\-DEFAULT, FL\_\-FONT\_\-HSPACE\_\-DEFAULT, FL\_\-FONT\_\-VSPACE\_\-DEFAULT, font\-Create\-Texture(), Font::font\-Data\-Global, NULL, and tex\-Load().\index{flFont.c@{fl\-Font.c}!fontSave@{fontSave}}
+\index{fontSave@{fontSave}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} font\-Save (char $\ast$ {\em in\-Path}, {\bf Font} $\ast$ {\em in\-Font})}\label{flFont_8c_9ff5be1b2dc43f06e50f98f7215de099}
+
+
+
+
+Definition at line 82 of file fl\-Font.c.
+
+References debug\-Dev\-Warning.\index{flFont.c@{fl\-Font.c}!fontStringHeight@{fontStringHeight}}
+\index{fontStringHeight@{fontStringHeight}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int font\-String\-Height ({\bf Font} $\ast$ {\em in\-Font}, char $\ast$ {\em in\-String})}\label{flFont_8c_9b818f638545e3ddd7720598f9633d13}
+
+
+
+
+Definition at line 297 of file fl\-Font.c.
+
+References font\-Height().\index{flFont.c@{fl\-Font.c}!fontStringWidth@{fontStringWidth}}
+\index{fontStringWidth@{fontStringWidth}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int font\-String\-Width ({\bf Font} $\ast$ {\em in\-Font}, char $\ast$ {\em in\-String})}\label{flFont_8c_d75ea5a21fc0145cf0509698bbd57ed4}
+
+
+
+
+Definition at line 277 of file fl\-Font.c.
+
+References ASCII\_\-LF, ASCII\_\-SPACE, font\-Char\-Width(), and Font::font\-HSpace.
+
+Referenced by font\-Draw2d\-String\-Center(), and ntfy\-Show\-Battery().
+
+\subsection{Variable Documentation}
+\index{flFont.c@{fl\-Font.c}!fontDebugTex@{fontDebugTex}}
+\index{fontDebugTex@{fontDebugTex}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8$\ast$ {\bf font\-Debug\-Tex} = NULL}\label{flFont_8c_15856dc4b3f06ce8ab011570ab980871}
+
+
+
+
+Definition at line 30 of file fl\-Font.c.
+
+Referenced by font\-Create\-Debug(), font\-Create\-Debug\-Tex(), font\-Draw2d\-Char(), and font\-Draw2d\-String().\index{flFont.c@{fl\-Font.c}!fontDefault@{fontDefault}}
+\index{fontDefault@{fontDefault}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Font}$\ast$ {\bf font\-Default} = NULL}\label{flFont_8c_b1e771ff1965e62f65eab80b2ca4475f}
+
+
+
+
+Definition at line 36 of file fl\-Font.c.
+
+Referenced by font\-Init(), graphics\-Swap\-Buffers(), ntfy\-Show\-Battery(), ntfy\-Show\-Time(), and ntfy\-Tray\-Show().\index{flFont.c@{fl\-Font.c}!fontMonoPal@{fontMonoPal}}
+\index{fontMonoPal@{fontMonoPal}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8$\ast$ {\bf font\-Mono\-Pal} = NULL}\label{flFont_8c_c052cbaf897ef9ff80c958ca1099f64a}
+
+
+
+
+Definition at line 31 of file fl\-Font.c.
+
+Referenced by font\-Create\-Debug\-Tex(), font\-Draw2d\-Char(), and font\-Draw2d\-String().\index{flFont.c@{fl\-Font.c}!msx@{msx}}
+\index{msx@{msx}!flFont.c@{fl\-Font.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf msx}[$\,$]}\label{flFont_8c_fd6d8db70c0aefa39fc4dea1108e309b}
+
+
+
+
+Referenced by font\-Create\-Debug\-Tex().

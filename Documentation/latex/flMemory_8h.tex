@@ -1,0 +1,860 @@
+\section{fl\-Memory.h File Reference}
+\label{flMemory_8h}\index{flMemory.h@{flMemory.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include \char`\"{}fl\-Memory\-VMem.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf Memory\-Tree}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf MEMORY\_\-UNCACHED\_\-OFFSET}~0x40000000
+\begin{CompactList}\small\item\em The offset that is added in order to make a pointer uncached. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-USER\_\-BASE}~0x08800000
+\begin{CompactList}\small\item\em The start of the user memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-USER\_\-SIZE}~0x01800000
+\begin{CompactList}\small\item\em The length of the user memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-KERNEL\_\-BASE}~0x08000000
+\begin{CompactList}\small\item\em The start of the kernel memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-KERNEL\_\-SIZE}~0x00800000
+\begin{CompactList}\small\item\em The length of the kernel memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-SCRATCHPAD\_\-BASE}~0x00010000
+\begin{CompactList}\small\item\em The start of the scratchpad memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-SCRATCHPAD\_\-SIZE}~0x00004000
+\begin{CompactList}\small\item\em The length of the scratchpad memory. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL1\_\-BASE}~0x88000000
+\begin{CompactList}\small\item\em The start of kernel partition 1. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL1\_\-SIZE}~0x00300000
+\begin{CompactList}\small\item\em The size of kernel partition 1. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL2\_\-BASE}~0x88300000
+\begin{CompactList}\small\item\em The start of kernel partition 2. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL2\_\-SIZE}~0x00100000
+\begin{CompactList}\small\item\em The size of kernel partition 2. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL3\_\-BASE}~0x88400000
+\begin{CompactList}\small\item\em The start of kernel partition 3. \item\end{CompactList}\item 
+\#define {\bf MEMORY\_\-PARTITION\_\-KERNEL3\_\-SIZE}~0x00400000
+\begin{CompactList}\small\item\em The size of kernel partition 3. \item\end{CompactList}\item 
+\#define {\bf mem\-Set\-Byte}(in\-Ptr, in\-Val, in\-Size)~mem\-Set\-Byte\-From(in\-Ptr, in\-Val, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Set\-Short}(in\-Ptr, in\-Val, in\-Size)~mem\-Set\-Short\-From(in\-Ptr, in\-Val, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Clear}(in\-Ptr, in\-Size)~mem\-Clear\-From(in\-Ptr, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Copy}(in\-Dest, in\-Src, in\-Size)~mem\-Copy\-From(in\-Dest, in\-Src, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Compare}(in\-Src0, in\-Src1, in\-Size)~mem\-Compare\-From(in\-Src0, in\-Src1, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Alloc}(in\-Size)~mem\-Alloc\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\begin{CompactList}\small\item\em This is a wrapper for malloc, it allows for extra options such as higher default alignment, memory integrity checks and overflowing into areas other than the heap. \item\end{CompactList}\item 
+\#define {\bf mem\-Calloc}(in\-Size0, in\-Size1)~mem\-Calloc\-From(in\-Size0, in\-Size1, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Qalloc}(in\-Size)~mem\-Qalloc\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Alloc\-Uncached}(in\-Size)~mem\-Alloc\-Uncached\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Realloc}(in\-Data, in\-Size)~mem\-Realloc\-From(in\-Data, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Align}(in\-Boundry, in\-Size)~mem\-Align\-From(in\-Boundry, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Free}(in\-Data)~mem\-Free\-From(in\-Data, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Uncached\-Ptr}(in\-Ptr)~mem\-Uncached\-Ptr\-From(in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Error\-Bytes\-Check}(in\-Ptr)~mem\-Error\-Bytes\-Check\-From(in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf memt\-Add}(in\-Mem\-Tree, in\-Ptr, in\-Size, in\-Alignment)~memt\-Add\-From(in\-Mem\-Tree, in\-Ptr, in\-Size, in\-Alignment, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf memt\-Del}(in\-Mem\-Tree, in\-Ptr)~memt\-Del\-From(in\-Mem\-Tree, in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf memt\-Error\-Bytes\-Check}(in\-Mem\-Tree)~memt\-Error\-Bytes\-Check\-From(in\-Mem\-Tree, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)
+\item 
+\#define {\bf mem\-Cached\-Ptr}(in\-Ptr)~((void$\ast$)((unsigned int)(in\-Ptr) \& $\sim$MEMORY\_\-UNCACHED\_\-OFFSET))
+\item 
+\#define {\bf mem\-Is\-Uncached\-Ptr}(in\-Ptr)~(((unsigned int)(in\-Ptr) \& MEMORY\_\-UNCACHED\_\-OFFSET) != 0)
+\item 
+\#define {\bf mem\-Is\-Cached\-Ptr}(in\-Ptr)~(((unsigned int)(in\-Ptr) \& MEMORY\_\-UNCACHED\_\-OFFSET) == 0)
+\item 
+\#define {\bf mem\-Cached\-Pointer}(in\-Ptr)~mem\-Cached\-Ptr(in\-Ptr);
+\item 
+\#define {\bf mem\-Uncached\-Pointer}(in\-Ptr)~mem\-Uncached\-Ptr(in\-Ptr);
+\item 
+\#define {\bf mem\-Is\-Uncached\-Pointer}(in\-Ptr)~mem\-Is\-Uncached\-Ptr(in\-Ptr)
+\item 
+\#define {\bf mem\-Is\-Cached\-Pointer}(in\-Ptr)~mem\-Is\-Cached\-Ptr(in\-Ptr)
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf mem\-Init} ()
+\begin{CompactList}\small\item\em Called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize the memory system. \item\end{CompactList}\item 
+void {\bf mem\-Term} ()
+\begin{CompactList}\small\item\em Called by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} to deinitialize the memory system. \item\end{CompactList}\item 
+u32 {\bf mem\-Free\-Space} (u32 in\-Accuracy)
+\begin{CompactList}\small\item\em Returns a close estimate of the amount of free space. \item\end{CompactList}\item 
+u32 {\bf mem\-Free\-Space\-Total} ()
+\begin{CompactList}\small\item\em Returns a close estimate of the total amount of free space available to the program on the whole system, this includes video memory, scratchpad and any other memory func\-Lib can get it's hands on. \item\end{CompactList}\item 
+char $\ast$ {\bf mem\-String} (u32 in\-Bytes, {\bf bool} in\-Binary)
+\begin{CompactList}\small\item\em Converts an amount of bytes into a more humanly readable string to be printed in a log or to the screen. \item\end{CompactList}\item 
+void {\bf mem\-Set\-Byte\-From} (void $\ast$in\-Ptr, int in\-Val, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Set\-Short\-From} (void $\ast$in\-Ptr, int in\-Val, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Clear\-From} (void $\ast$in\-Ptr, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Copy\-From} (void $\ast$in\-Dest, void $\ast$in\-Src, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+int {\bf mem\-Compare\-From} (void $\ast$in\-Src0, void $\ast$in\-Src1, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Alloc\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\begin{CompactList}\small\item\em This functions is identical to \doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} except that it takes extra parameters to define where it was called from,. \item\end{CompactList}\item 
+void $\ast$ {\bf mem\-Calloc\-From} (int in\-Size0, int in\-Size1, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Qalloc\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Alloc\-Uncached\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Realloc\-From} (void $\ast$in\-Data, int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Align\-From} (int in\-Boundry, int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Free\-From} (void $\ast$in\-Data, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Uncached\-Ptr\-From} (void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+u32 {\bf mem\-Address\-Alignment} (void $\ast$in\-Ptr)
+\begin{CompactList}\small\item\em Calculates the largest binary increment that a pointer is aligned to (e.g 16, 32, 64, 128, etc. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Address\-Valid} (void $\ast$in\-Ptr)
+\begin{CompactList}\small\item\em Checks if a pointer resides within valid memory blocks on the terget platform. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Block\-Valid} (void $\ast$in\-Ptr, u32 in\-Size)
+\begin{CompactList}\small\item\em Checks if a memory block resides within valid memory blocks on the terget platform. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Error\-Bytes\-Check\-From} (void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Add\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, void $\ast$in\-Ptr, u32 in\-Size, u32 in\-Alignment, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Del\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Error\-Bytes\-Check\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf Memory\-Tree} $\ast$ {\bf mem\-Error\-Tree}
+\item 
+{\bf bool} {\bf mem\-Initialized}
+\begin{CompactList}\small\item\em A boolean to represent whether the memory system has been initialized or not, this is set by \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} and \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c}. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Scratchpad\-Used}
+\begin{CompactList}\small\item\em A boolean to represent whether the scratchpad is currently in use or not, this allows the fastest possible allocation/free'ing of memory for temp data. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flMemory.h@{fl\-Memory.h}!memAlign@{memAlign}}
+\index{memAlign@{memAlign}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Align(in\-Boundry, in\-Size)~mem\-Align\-From(in\-Boundry, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_6a5fc18df2332bcb43ce16a7e266870a}
+
+
+
+
+Definition at line 160 of file fl\-Memory.h.
+
+Referenced by font\-Create\-Debug\-Tex(), graphics\-Init(), mem\-Align\-From(), mem\-Alloc\-Uncached\-From(), pal\-Create(), and tex\-Create().\index{flMemory.h@{fl\-Memory.h}!memAlloc@{memAlloc}}
+\index{memAlloc@{memAlloc}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Alloc(in\-Size)~mem\-Alloc\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c}
+
+
+This is a wrapper for malloc, it allows for extra options such as higher default alignment, memory integrity checks and overflowing into areas other than the heap. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]Size of the block to be allocated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pointer to the allocated block or NULL on failiure. \end{Desc}
+\begin{Desc}
+\item[Note:]This acts in exactly the same way as malloc but complies with the funclib options, this macro version of the function is used when FL\_\-DEBUG\_\-CALLEDFROM is defined to reserve compatability and trace where an error was called from without lots of modifications. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT}{p.}{flConfigValidate_8h_d48e104c81048824fb6d6aba8efe5004}, \doxyref{FL\_\-MEMORY\_\-ERRORBYTES}{p.}{flConfigValidate_8h_6299bc95c7cc7fee09bb99151e3d761a}, \doxyref{FL\_\-MEMORY\_\-VMEM\_\-OVERFLOW}{p.}{flConfigValidate_8h_b87f3228f2e381627c72b6f240424006}, \doxyref{FL\_\-MEMORY\_\-VMEM\_\-STIDE\_\-FILL}{p.}{flConfigDefault_8h_f4f1fa1104c26b00549c820b4f8c8270} \end{Desc}
+
+
+Definition at line 155 of file fl\-Memory.h.
+
+Referenced by cam\-Create(), file\-Extension(), file\-Name\-From\-Path(), file\-Open(), font\-Create\-Debug(), font\-Create\-Texture(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Load\-OBJ(), mdl3d\-Stat\-Load\-OBJ\_\-face\-Read(), mem\-Calloc\-From(), memp\-Create(), mem\-Qalloc\-From(), mem\-String(), pal\-Create(), sprite\-Create(), tex\-Create(), tex\-Tree\-Add(), timer\-Create(), vmem\-Init(), and vmem\-Stride\-Block\-Add().\index{flMemory.h@{fl\-Memory.h}!memAllocUncached@{memAllocUncached}}
+\index{memAllocUncached@{memAllocUncached}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Alloc\-Uncached(in\-Size)~mem\-Alloc\-Uncached\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_4efbca75a88542440eabfa89ad206c08}
+
+
+
+
+Definition at line 158 of file fl\-Memory.h.
+
+Referenced by mem\-Alloc\-Uncached\-From(), pal\-Create(), and tex\-Create().\index{flMemory.h@{fl\-Memory.h}!memCachedPointer@{memCachedPointer}}
+\index{memCachedPointer@{memCachedPointer}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Cached\-Pointer(in\-Ptr)~mem\-Cached\-Ptr(in\-Ptr);}\label{flMemory_8h_fe0ef87c80b034a364c18d959a8f0e3f}
+
+
+
+
+Definition at line 258 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!memCachedPtr@{memCachedPtr}}
+\index{memCachedPtr@{memCachedPtr}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Cached\-Ptr(in\-Ptr)~((void$\ast$)((unsigned int)(in\-Ptr) \& $\sim$MEMORY\_\-UNCACHED\_\-OFFSET))}\label{flMemory_8h_d3b22e57c8a50f36f4d31d5b535d8c8d}
+
+
+
+
+Definition at line 255 of file fl\-Memory.h.
+
+Referenced by graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), mem\-Address\-Valid(), mem\-Block\-Valid(), vmem\-Normal\-Ptr(), and vmem\-Realloc\-From().\index{flMemory.h@{fl\-Memory.h}!memCalloc@{memCalloc}}
+\index{memCalloc@{memCalloc}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Calloc(in\-Size0, in\-Size1)~mem\-Calloc\-From(in\-Size0, in\-Size1, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_34cf9254ae3ed7564e3cd74dc0190a11}
+
+
+
+
+Definition at line 156 of file fl\-Memory.h.
+
+Referenced by mem\-Calloc\-From().\index{flMemory.h@{fl\-Memory.h}!memClear@{memClear}}
+\index{memClear@{memClear}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Clear(in\-Ptr, in\-Size)~mem\-Clear\-From(in\-Ptr, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_2560a862e6fa62ccacda1a49dbc3e4e9}
+
+
+
+
+Definition at line 114 of file fl\-Memory.h.
+
+Referenced by file\-Open(), graphics\-Init(), mdl3d\-Stat\-Load\-OBJ\_\-face\-Read(), mem\-Calloc\-From(), mem\-Clear\-From(), memp\-Calloc(), mem\-Term(), pal\-Create(), tex\-Create(), tex\-Create\-Blank(), vmem\-Calloc\-From(), vmem\-Stride\-Block\-Add(), and vmem\-Stride\-Calloc().\index{flMemory.h@{fl\-Memory.h}!memCompare@{memCompare}}
+\index{memCompare@{memCompare}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Compare(in\-Src0, in\-Src1, in\-Size)~mem\-Compare\-From(in\-Src0, in\-Src1, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_b294f93e59fec54be61110f36b0cafa5}
+
+
+
+
+Definition at line 116 of file fl\-Memory.h.
+
+Referenced by mem\-Compare\-From().\index{flMemory.h@{fl\-Memory.h}!memCopy@{memCopy}}
+\index{memCopy@{memCopy}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Copy(in\-Dest, in\-Src, in\-Size)~mem\-Copy\-From(in\-Dest, in\-Src, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_eca2e80b2f9492f5eb8844a4f501dd20}
+
+
+
+
+Definition at line 115 of file fl\-Memory.h.
+
+Referenced by file\-Name\-From\-Path(), file\-Read(), file\-Write(), graphics\-Swizzle\-Data(), graphics\-Unswizzle\-Data(), mem\-Copy\-From(), mem\-Init(), mem\-Term(), pal\-Move\-VMem(), tex\-Move\-VMem(), tex\-Pixel(), tex\-Screenshot(), and vmem\-Realloc\-From().\index{flMemory.h@{fl\-Memory.h}!memErrorBytesCheck@{memErrorBytesCheck}}
+\index{memErrorBytesCheck@{memErrorBytesCheck}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Error\-Bytes\-Check(in\-Ptr)~mem\-Error\-Bytes\-Check\-From(in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_b6b48081c664b9ba0c0622466348c1b7}
+
+
+
+
+Definition at line 220 of file fl\-Memory.h.
+
+Referenced by mem\-Error\-Bytes\-Check\-From(), mem\-Free\-From(), and mem\-Realloc\-From().\index{flMemory.h@{fl\-Memory.h}!memFree@{memFree}}
+\index{memFree@{memFree}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Free(in\-Data)~mem\-Free\-From(in\-Data, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_b5a200b09037e42c940e59383787470c}
+
+
+
+
+Definition at line 161 of file fl\-Memory.h.
+
+Referenced by cam\-Free(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Log(), debug\-Log\-From(), debug\-Status\-Log\-From(), debug\-Warning\-From(), file\-Close(), file\-Delete(), file\-Open(), font\-Free(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Swizzle\-Data(), graphics\-Term(), graphics\-Unswizzle\-Data(), mdl3d\-Anim\-Load(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Free(), mdl3d\-Stat\-Load(), mdl3d\-Stat\-Save(), mem\-Copy\-From(), mem\-Free\-From(), memp\-Destroy(), pal\-Create(), pal\-Free(), pal\-Move\-VMem(), sprite\-Free(), tex\-Create(), tex\-Free(), tex\-Load(), tex\-Move\-VMem(), tex\-Save(), timer\-Free(), vmem\-Stride\-Block\-Del(), vmem\-Stride\-Block\-Del\-Recursive(), and vmem\-Term().\index{flMemory.h@{fl\-Memory.h}!memIsCachedPointer@{memIsCachedPointer}}
+\index{memIsCachedPointer@{memIsCachedPointer}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Is\-Cached\-Pointer(in\-Ptr)~mem\-Is\-Cached\-Ptr(in\-Ptr)}\label{flMemory_8h_4248c9e8601f4983715a1e12dda403ff}
+
+
+
+
+Definition at line 261 of file fl\-Memory.h.
+
+Referenced by graphics\-Swizzle\-Data(), graphics\-Unswizzle\-Data(), and tex\-Load().\index{flMemory.h@{fl\-Memory.h}!memIsCachedPtr@{memIsCachedPtr}}
+\index{memIsCachedPtr@{memIsCachedPtr}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Is\-Cached\-Ptr(in\-Ptr)~(((unsigned int)(in\-Ptr) \& MEMORY\_\-UNCACHED\_\-OFFSET) == 0)}\label{flMemory_8h_74127f64371a406230e43a7237dbe613}
+
+
+
+
+Definition at line 257 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!memIsUncachedPointer@{memIsUncachedPointer}}
+\index{memIsUncachedPointer@{memIsUncachedPointer}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Is\-Uncached\-Pointer(in\-Ptr)~mem\-Is\-Uncached\-Ptr(in\-Ptr)}\label{flMemory_8h_12f90acce181477495b4e927d21c7002}
+
+
+
+
+Definition at line 260 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!memIsUncachedPtr@{memIsUncachedPtr}}
+\index{memIsUncachedPtr@{memIsUncachedPtr}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Is\-Uncached\-Ptr(in\-Ptr)~(((unsigned int)(in\-Ptr) \& MEMORY\_\-UNCACHED\_\-OFFSET) != 0)}\label{flMemory_8h_05618b7503dfca5c1badb36081b136a6}
+
+
+
+
+Definition at line 256 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_KERNEL_BASE@{MEMORY\_\-KERNEL\_\-BASE}}
+\index{MEMORY_KERNEL_BASE@{MEMORY\_\-KERNEL\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-KERNEL\_\-BASE~0x08000000}\label{flMemory_8h_9c568e1901930bb3bf6520404704cef9}
+
+
+The start of the kernel memory. 
+
+
+
+Definition at line 20 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_KERNEL_SIZE@{MEMORY\_\-KERNEL\_\-SIZE}}
+\index{MEMORY_KERNEL_SIZE@{MEMORY\_\-KERNEL\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-KERNEL\_\-SIZE~0x00800000}\label{flMemory_8h_564e7e19e997689fc3793ab8c3c8eed7}
+
+
+The length of the kernel memory. 
+
+
+
+Definition at line 21 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL1_BASE@{MEMORY\_\-PARTITION\_\-KERNEL1\_\-BASE}}
+\index{MEMORY_PARTITION_KERNEL1_BASE@{MEMORY\_\-PARTITION\_\-KERNEL1\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL1\_\-BASE~0x88000000}\label{flMemory_8h_304053a79e9819766df763ee283b80a6}
+
+
+The start of kernel partition 1. 
+
+
+
+Definition at line 26 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL1_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL1\_\-SIZE}}
+\index{MEMORY_PARTITION_KERNEL1_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL1\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL1\_\-SIZE~0x00300000}\label{flMemory_8h_3bd1ef1a5f3419c4e4baf4844e3740e9}
+
+
+The size of kernel partition 1. 
+
+
+
+Definition at line 27 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL2_BASE@{MEMORY\_\-PARTITION\_\-KERNEL2\_\-BASE}}
+\index{MEMORY_PARTITION_KERNEL2_BASE@{MEMORY\_\-PARTITION\_\-KERNEL2\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL2\_\-BASE~0x88300000}\label{flMemory_8h_2124d67d74d1a938cd6083a97514c552}
+
+
+The start of kernel partition 2. 
+
+
+
+Definition at line 28 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL2_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL2\_\-SIZE}}
+\index{MEMORY_PARTITION_KERNEL2_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL2\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL2\_\-SIZE~0x00100000}\label{flMemory_8h_0bb02cd6e4a61d704c5b259af54038bc}
+
+
+The size of kernel partition 2. 
+
+
+
+Definition at line 29 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL3_BASE@{MEMORY\_\-PARTITION\_\-KERNEL3\_\-BASE}}
+\index{MEMORY_PARTITION_KERNEL3_BASE@{MEMORY\_\-PARTITION\_\-KERNEL3\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL3\_\-BASE~0x88400000}\label{flMemory_8h_9448c698ab855fbc90207ab993546eab}
+
+
+The start of kernel partition 3. 
+
+
+
+Definition at line 30 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_PARTITION_KERNEL3_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL3\_\-SIZE}}
+\index{MEMORY_PARTITION_KERNEL3_SIZE@{MEMORY\_\-PARTITION\_\-KERNEL3\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-PARTITION\_\-KERNEL3\_\-SIZE~0x00400000}\label{flMemory_8h_23ebe595001988f5061d361a44f1d503}
+
+
+The size of kernel partition 3. 
+
+
+
+Definition at line 31 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!MEMORY_SCRATCHPAD_BASE@{MEMORY\_\-SCRATCHPAD\_\-BASE}}
+\index{MEMORY_SCRATCHPAD_BASE@{MEMORY\_\-SCRATCHPAD\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-SCRATCHPAD\_\-BASE~0x00010000}\label{flMemory_8h_c56daf62f89d5cf9c151a0ac523a8f67}
+
+
+The start of the scratchpad memory. 
+
+
+
+Definition at line 23 of file fl\-Memory.h.
+
+Referenced by mem\-Address\-Valid(), mem\-Align\-From(), mem\-Block\-Valid(), mem\-Free\-From(), mem\-Init(), mem\-Qalloc\-From(), and mem\-Term().\index{flMemory.h@{fl\-Memory.h}!MEMORY_SCRATCHPAD_SIZE@{MEMORY\_\-SCRATCHPAD\_\-SIZE}}
+\index{MEMORY_SCRATCHPAD_SIZE@{MEMORY\_\-SCRATCHPAD\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-SCRATCHPAD\_\-SIZE~0x00004000}\label{flMemory_8h_b9238da492a2739cd62e2e427739655a}
+
+
+The length of the scratchpad memory. 
+
+
+
+Definition at line 24 of file fl\-Memory.h.
+
+Referenced by mem\-Address\-Valid(), mem\-Block\-Valid(), mem\-Free\-From(), mem\-Init(), mem\-Qalloc\-From(), and mem\-Term().\index{flMemory.h@{fl\-Memory.h}!MEMORY_UNCACHED_OFFSET@{MEMORY\_\-UNCACHED\_\-OFFSET}}
+\index{MEMORY_UNCACHED_OFFSET@{MEMORY\_\-UNCACHED\_\-OFFSET}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-UNCACHED\_\-OFFSET~0x40000000}\label{flMemory_8h_cc5dbd625951d69c67f58aad2ac687ad}
+
+
+The offset that is added in order to make a pointer uncached. 
+
+
+
+Definition at line 15 of file fl\-Memory.h.
+
+Referenced by mem\-Realloc\-From(), and mem\-Uncached\-Ptr\-From().\index{flMemory.h@{fl\-Memory.h}!MEMORY_USER_BASE@{MEMORY\_\-USER\_\-BASE}}
+\index{MEMORY_USER_BASE@{MEMORY\_\-USER\_\-BASE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-USER\_\-BASE~0x08800000}\label{flMemory_8h_50f3a83b3eab0742d9c8cf5ccf8ffcff}
+
+
+The start of the user memory. 
+
+
+
+Definition at line 17 of file fl\-Memory.h.
+
+Referenced by mem\-Address\-Valid(), and mem\-Block\-Valid().\index{flMemory.h@{fl\-Memory.h}!MEMORY_USER_SIZE@{MEMORY\_\-USER\_\-SIZE}}
+\index{MEMORY_USER_SIZE@{MEMORY\_\-USER\_\-SIZE}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MEMORY\_\-USER\_\-SIZE~0x01800000}\label{flMemory_8h_26d5c2300c562b473ca6712d6ec48578}
+
+
+The length of the user memory. 
+
+
+
+Definition at line 18 of file fl\-Memory.h.
+
+Referenced by mem\-Address\-Valid(), mem\-Block\-Valid(), and mem\-Free\-Space().\index{flMemory.h@{fl\-Memory.h}!memQalloc@{memQalloc}}
+\index{memQalloc@{memQalloc}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Qalloc(in\-Size)~mem\-Qalloc\-From(in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_39edd59a7b482bd6b887b0786b74ce42}
+
+
+
+
+Definition at line 157 of file fl\-Memory.h.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Log(), debug\-Log\-From(), debug\-Status\-Log\-From(), debug\-Warning\-From(), file\-Copy(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Swizzle\-Data(), graphics\-Unswizzle\-Data(), mem\-Copy\-From(), mem\-Qalloc\-From(), and tex\-Load\-PCX().\index{flMemory.h@{fl\-Memory.h}!memRealloc@{memRealloc}}
+\index{memRealloc@{memRealloc}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Realloc(in\-Data, in\-Size)~mem\-Realloc\-From(in\-Data, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_353b3bffeaad3c638f6b2d53d0d15f28}
+
+
+
+
+Definition at line 159 of file fl\-Memory.h.
+
+Referenced by mem\-Realloc\-From().\index{flMemory.h@{fl\-Memory.h}!memSetByte@{memSetByte}}
+\index{memSetByte@{memSetByte}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Set\-Byte(in\-Ptr, in\-Val, in\-Size)~mem\-Set\-Byte\-From(in\-Ptr, in\-Val, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_d6029d16ec401f440a70afbc4419d500}
+
+
+
+
+Definition at line 112 of file fl\-Memory.h.
+
+Referenced by mem\-Set\-Byte\-From().\index{flMemory.h@{fl\-Memory.h}!memSetShort@{memSetShort}}
+\index{memSetShort@{memSetShort}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Set\-Short(in\-Ptr, in\-Val, in\-Size)~mem\-Set\-Short\-From(in\-Ptr, in\-Val, in\-Size, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_289a3c075ec5f7e56375d0adcf92dbce}
+
+
+
+
+Definition at line 113 of file fl\-Memory.h.
+
+Referenced by mem\-Set\-Short\-From().\index{flMemory.h@{fl\-Memory.h}!memtAdd@{memtAdd}}
+\index{memtAdd@{memtAdd}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define memt\-Add(in\-Mem\-Tree, in\-Ptr, in\-Size, in\-Alignment)~memt\-Add\-From(in\-Mem\-Tree, in\-Ptr, in\-Size, in\-Alignment, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_5b4d827211c7e0bd14b9b6d3ff78f766}
+
+
+
+
+Definition at line 221 of file fl\-Memory.h.
+
+Referenced by mem\-Align\-From(), mem\-Realloc\-From(), and memt\-Add\-From().\index{flMemory.h@{fl\-Memory.h}!memtDel@{memtDel}}
+\index{memtDel@{memtDel}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define memt\-Del(in\-Mem\-Tree, in\-Ptr)~memt\-Del\-From(in\-Mem\-Tree, in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_4b8bad83bb97bedc92eb4f020dfc4e87}
+
+
+
+
+Definition at line 222 of file fl\-Memory.h.
+
+Referenced by mem\-Free\-From(), and memt\-Del\-From().\index{flMemory.h@{fl\-Memory.h}!memtErrorBytesCheck@{memtErrorBytesCheck}}
+\index{memtErrorBytesCheck@{memtErrorBytesCheck}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define memt\-Error\-Bytes\-Check(in\-Mem\-Tree)~memt\-Error\-Bytes\-Check\-From(in\-Mem\-Tree, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_fd951557309326e6d102e24ec257ab21}
+
+
+
+
+Definition at line 223 of file fl\-Memory.h.
+
+Referenced by mem\-Align\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), mem\-Set\-Short\-From(), and memt\-Error\-Bytes\-Check\-From().\index{flMemory.h@{fl\-Memory.h}!memUncachedPointer@{memUncachedPointer}}
+\index{memUncachedPointer@{memUncachedPointer}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Uncached\-Pointer(in\-Ptr)~mem\-Uncached\-Ptr(in\-Ptr);}\label{flMemory_8h_e7cfd9a16d11376d12fe5fa1a66f1da9}
+
+
+
+
+Definition at line 259 of file fl\-Memory.h.\index{flMemory.h@{fl\-Memory.h}!memUncachedPtr@{memUncachedPtr}}
+\index{memUncachedPtr@{memUncachedPtr}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define mem\-Uncached\-Ptr(in\-Ptr)~mem\-Uncached\-Ptr\-From(in\-Ptr, \_\-\_\-FILE\_\-\_\-, \_\-\_\-FUNCTION\_\-\_\-, \_\-\_\-LINE\_\-\_\-)}\label{flMemory_8h_ccf76bcfc81eabf0a03bdb48f116f442}
+
+
+
+
+Definition at line 162 of file fl\-Memory.h.
+
+Referenced by graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), graphics\-Effect\-Fs\-Thermal\-Vision(), mem\-Alloc\-Uncached\-From(), mem\-Realloc\-From(), mem\-Uncached\-Ptr\-From(), and vmem\-Init().
+
+\subsection{Function Documentation}
+\index{flMemory.h@{fl\-Memory.h}!memAddressAlignment@{memAddressAlignment}}
+\index{memAddressAlignment@{memAddressAlignment}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Address\-Alignment (void $\ast$ {\em in\-Ptr})}\label{flMemory_8h_154f4844567ac94e656ed58eecdca4e2}
+
+
+Calculates the largest binary increment that a pointer is aligned to (e.g 16, 32, 64, 128, etc. 
+
+). \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer whose alignment will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The mamximum alignment value. \end{Desc}
+
+
+Definition at line 912 of file fl\-Memory.c.
+
+Referenced by vmem\-Stride\-Block\-Add().\index{flMemory.h@{fl\-Memory.h}!memAddressValid@{memAddressValid}}
+\index{memAddressValid@{memAddressValid}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Address\-Valid (void $\ast$ {\em in\-Ptr})}\label{flMemory_8h_9b271ac66a90bb6b7321a4fd8372cbbb}
+
+
+Checks if a pointer resides within valid memory blocks on the terget platform. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer whose validity will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]True if the pointer is valid. \end{Desc}
+
+
+Definition at line 922 of file fl\-Memory.c.
+
+References mem\-Cached\-Ptr, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, MEMORY\_\-USER\_\-BASE, MEMORY\_\-USER\_\-SIZE, MEMORY\_\-VMEM\_\-BASE, and MEMORY\_\-VMEM\_\-SIZE.
+
+Referenced by mem\-Free\-From().\index{flMemory.h@{fl\-Memory.h}!memAlignFrom@{memAlignFrom}}
+\index{memAlignFrom@{memAlignFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Align\-From (int {\em in\-Boundry}, int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_1d6c59cb348872a8fe146f08f3f4fd85}
+
+
+
+
+Definition at line 702 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, mem\-Align, mem\-Error\-Tree, MEMORY\_\-SCRATCHPAD\_\-BASE, mem\-Scratchpad\-Used, memt\-Add, memt\-Add\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), NULL, vmem\-Alloc, and vmem\-Stride\-Align().
+
+Referenced by mem\-Alloc\-From().\index{flMemory.h@{fl\-Memory.h}!memAllocFrom@{memAllocFrom}}
+\index{memAllocFrom@{memAllocFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Alloc\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_8d43c64dc9d5b2342c178028d4e037a2}
+
+
+This functions is identical to \doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} except that it takes extra parameters to define where it was called from,. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]The size of the block to be allocated. \item[{\em in\-File}]The source file that the original call came from. \item[{\em in\-Func}]The function that the original call originated from. \item[{\em in\-Line}]The line on which the original call was on. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the allocated memory block. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c}, \doxyref{mem\-Alloc}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} \end{Desc}
+
+
+Definition at line 511 of file fl\-Memory.c.
+
+References FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, and mem\-Align\-From().
+
+Referenced by mem\-Calloc\-From().\index{flMemory.h@{fl\-Memory.h}!memAllocUncachedFrom@{memAllocUncachedFrom}}
+\index{memAllocUncachedFrom@{memAllocUncachedFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Alloc\-Uncached\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_2906a6a22f562e5b03c59cb0eab90922}
+
+
+
+
+Definition at line 577 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, max, mem\-Align, mem\-Alloc\-Uncached, mem\-Uncached\-Ptr, and NULL.\index{flMemory.h@{fl\-Memory.h}!memBlockValid@{memBlockValid}}
+\index{memBlockValid@{memBlockValid}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Block\-Valid (void $\ast$ {\em in\-Ptr}, u32 {\em in\-Size})}\label{flMemory_8h_7a74ef3a6f998f56bc4d31b71f29ffe5}
+
+
+Checks if a memory block resides within valid memory blocks on the terget platform. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer to the start of the memory block whose validity will be checked. \item[{\em in\-Size}]The length of the memory block whose validity will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]True if the pointer is valid. \end{Desc}
+
+
+Definition at line 933 of file fl\-Memory.c.
+
+References mem\-Cached\-Ptr, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, MEMORY\_\-USER\_\-BASE, MEMORY\_\-USER\_\-SIZE, MEMORY\_\-VMEM\_\-BASE, and MEMORY\_\-VMEM\_\-SIZE.
+
+Referenced by mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Set\-Byte\-From(), mem\-Set\-Short\-From(), memt\-Add\-From(), memt\-Error\-Bytes\-Check\-From(), and vmem\-Stride\-Block\-Add().\index{flMemory.h@{fl\-Memory.h}!memCallocFrom@{memCallocFrom}}
+\index{memCallocFrom@{memCallocFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Calloc\-From (int {\em in\-Size0}, int {\em in\-Size1}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_3e5c4a051011dbbc40b04dd502685b05}
+
+
+
+
+Definition at line 560 of file fl\-Memory.c.
+
+References mem\-Alloc, mem\-Alloc\-From(), mem\-Calloc, mem\-Clear, mem\-Clear\-From(), and NULL.\index{flMemory.h@{fl\-Memory.h}!memClearFrom@{memClearFrom}}
+\index{memClearFrom@{memClearFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Clear\-From (void $\ast$ {\em in\-Ptr}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_ae72c87f868251028bd9d6c8c3c83dd9}
+
+
+
+
+Definition at line 307 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Clear, mem\-Error\-Tree, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().
+
+Referenced by mem\-Calloc\-From().\index{flMemory.h@{fl\-Memory.h}!memCompareFrom@{memCompareFrom}}
+\index{memCompareFrom@{memCompareFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int mem\-Compare\-From (void $\ast$ {\em in\-Src0}, void $\ast$ {\em in\-Src1}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_5989db9d27d3070cded7114aec28eb1c}
+
+
+
+
+Definition at line 453 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Compare, mem\-Error\-Tree, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.h@{fl\-Memory.h}!memCopyFrom@{memCopyFrom}}
+\index{memCopyFrom@{memCopyFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Copy\-From (void $\ast$ {\em in\-Dest}, void $\ast$ {\em in\-Src}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_b7cad720c4dc44260a2b78a3ee0f6370}
+
+
+
+
+Definition at line 366 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Copy, mem\-Error\-Tree, mem\-Free, mem\-Qalloc, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.h@{fl\-Memory.h}!memErrorBytesCheckFrom@{memErrorBytesCheckFrom}}
+\index{memErrorBytesCheckFrom@{memErrorBytesCheckFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Error\-Bytes\-Check\-From (void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_407e7c26b374b40f070ad5f8ae9be0ec}
+
+
+
+
+Definition at line 1039 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), and mem\-Error\-Bytes\-Check.\index{flMemory.h@{fl\-Memory.h}!memFreeFrom@{memFreeFrom}}
+\index{memFreeFrom@{memFreeFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Free\-From (void $\ast$ {\em in\-Data}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_8af670f117031ebb2c7f49239ca71a22}
+
+
+
+
+Definition at line 820 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), mem\-Address\-Valid(), mem\-Error\-Bytes\-Check, mem\-Error\-Tree, mem\-Free, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, mem\-Scratchpad\-Used, memt\-Del, memt\-Del\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), vmem\-Free, vmem\-Free\-From(), and vmem\-Pointer.\index{flMemory.h@{fl\-Memory.h}!memFreeSpace@{memFreeSpace}}
+\index{memFreeSpace@{memFreeSpace}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Free\-Space (u32 {\em in\-Accuracy})}\label{flMemory_8h_73ea91150f42d42e6a8440a562945539}
+
+
+Returns a close estimate of the amount of free space. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Accuracy}]The amount of bytes that the returned answer should be accurate to. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The amount of free space accurate to in\-Accuracy bytes. \end{Desc}
+\begin{Desc}
+\item[Note:]Since malloc allocates 16 byte aligned data, this is the closest accuracy you will get, so there's not much point in setting in\-Accuracy to below 16. \end{Desc}
+
+
+Definition at line 101 of file fl\-Memory.c.
+
+References MEMORY\_\-USER\_\-SIZE.
+
+Referenced by mem\-Free\-Space\-Total().\index{flMemory.h@{fl\-Memory.h}!memFreeSpaceTotal@{memFreeSpaceTotal}}
+\index{memFreeSpaceTotal@{memFreeSpaceTotal}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Free\-Space\-Total ()}\label{flMemory_8h_7fec44b65999ebb03866cdebbfdc0693}
+
+
+Returns a close estimate of the total amount of free space available to the program on the whole system, this includes video memory, scratchpad and any other memory func\-Lib can get it's hands on. 
+
+\begin{Desc}
+\item[Returns:]The amount of free space available on the whole system, to the highest accuracy possible. \end{Desc}
+
+
+Definition at line 128 of file fl\-Memory.c.
+
+References mem\-Free\-Space(), mem\-Scratchpad\-Used, and vmem\-Free\-Space().\index{flMemory.h@{fl\-Memory.h}!memInit@{memInit}}
+\index{memInit@{memInit}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Init ()}\label{flMemory_8h_760b9edaf9bb07ced46a2b3cbc0d12eb}
+
+
+Called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize the memory system. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}, \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c} \end{Desc}
+
+
+Definition at line 28 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Status\-Log, FL\_\-DEBUG\_\-STATUS, mem\-Copy, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, and MEMORY\_\-SCRATCHPAD\_\-SIZE.
+
+Referenced by fl\-Initialize().\index{flMemory.h@{fl\-Memory.h}!memQallocFrom@{memQallocFrom}}
+\index{memQallocFrom@{memQallocFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Qalloc\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_fd094a5ea54739dbab177531a2ed94dc}
+
+
+
+
+Definition at line 521 of file fl\-Memory.c.
+
+References debug\-Warning\-From(), mem\-Alloc, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, mem\-Qalloc, mem\-Scratchpad\-Used, vmem\-Alloc, and vmem\-Initialized.\index{flMemory.h@{fl\-Memory.h}!memReallocFrom@{memReallocFrom}}
+\index{memReallocFrom@{memReallocFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Realloc\-From (void $\ast$ {\em in\-Data}, int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_1fb91084004393395e8a6361e0ae0bd7}
+
+
+
+
+Definition at line 608 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), mem\-Error\-Bytes\-Check, mem\-Error\-Tree, MEMORY\_\-UNCACHED\_\-OFFSET, mem\-Realloc, memt\-Add, memt\-Add\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), mem\-Uncached\-Ptr, NULL, vmem\-Pointer, and vmem\-Realloc.\index{flMemory.h@{fl\-Memory.h}!memSetByteFrom@{memSetByteFrom}}
+\index{memSetByteFrom@{memSetByteFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Set\-Byte\-From (void $\ast$ {\em in\-Ptr}, int {\em in\-Val}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_0ad1e328769b035bed5bf0257f7e53a8}
+
+
+
+
+Definition at line 175 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Error\-Tree, mem\-Set\-Byte, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.h@{fl\-Memory.h}!memSetShortFrom@{memSetShortFrom}}
+\index{memSetShortFrom@{memSetShortFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Set\-Short\-From (void $\ast$ {\em in\-Ptr}, int {\em in\-Val}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_8b8a9f1186ceb51280ceb5c304a9887f}
+
+
+
+
+Definition at line 240 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Error\-Tree, mem\-Set\-Short, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.h@{fl\-Memory.h}!memString@{memString}}
+\index{memString@{memString}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mem\-String (u32 {\em in\-Bytes}, {\bf bool} {\em in\-Binary})}\label{flMemory_8h_9ece09d572ea23f0f04e271406b3942a}
+
+
+Converts an amount of bytes into a more humanly readable string to be printed in a log or to the screen. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Bytes}]The amount of bytes. \item[{\em in\-Binary}]If set to true then it will return binary results where there are 1024 bytes in a Kilobyte (and append e.g. \char`\"{}Ki\-B\char`\"{}), if not then a Kilo\-Byte will be considered 1000 bytes (and e.g \char`\"{}KB\char`\"{} will be printed). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A string representing the bytes in SI units, (e.g 1024 bytes = \char`\"{}1 Ki\-B\char`\"{} or \char`\"{}1.02 KB\char`\"{}). \end{Desc}
+\begin{Desc}
+\item[Warning:]This returns an allocated string that must be free'd after use. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Free\-Space()}{p.}{flMemory_8c_73ea91150f42d42e6a8440a562945539}, \doxyref{mem\-Free\-Space\-Total()}{p.}{flMemory_8c_7fec44b65999ebb03866cdebbfdc0693}, \doxyref{mem\-Free()}{p.}{flMemory_8h_b5a200b09037e42c940e59383787470c} \end{Desc}
+
+
+Definition at line 137 of file fl\-Memory.c.
+
+References mem\-Alloc.\index{flMemory.h@{fl\-Memory.h}!memtAddFrom@{memtAddFrom}}
+\index{memtAddFrom@{memtAddFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Add\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, void $\ast$ {\em in\-Ptr}, u32 {\em in\-Size}, u32 {\em in\-Alignment}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_71604af9533f2031af2a95ed5f8e2b75}
+
+
+
+
+Definition at line 1083 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), mem\-Block\-Valid(), memt\-Add, Memory\-Tree::memt\-Alignment, Memory\-Tree::memt\-Data, Memory\-Tree::memt\-Next, Memory\-Tree::memt\-Size, and NULL.
+
+Referenced by mem\-Align\-From(), and mem\-Realloc\-From().\index{flMemory.h@{fl\-Memory.h}!memtDelFrom@{memtDelFrom}}
+\index{memtDelFrom@{memtDelFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Del\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_578ceaba9e5c0a6ed3f395ffb5287ec8}
+
+
+
+
+Definition at line 1151 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), fl\-Running, Memory\-Tree::memt\-Data, memt\-Del, Memory\-Tree::memt\-Next, and NULL.
+
+Referenced by mem\-Free\-From().\index{flMemory.h@{fl\-Memory.h}!memTerm@{memTerm}}
+\index{memTerm@{memTerm}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Term ()}\label{flMemory_8h_a2685ff8b5f4f201ed6bd2f166a1cb3c}
+
+
+Called by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} to deinitialize the memory system. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}, \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} \end{Desc}
+
+
+Definition at line 72 of file fl\-Memory.c.
+
+References debug\-Status\-Log, file\-Delete(), FL\_\-MEMORY\_\-PAGE\_\-PATH, mem\-Clear, mem\-Copy, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, and MEMORY\_\-SCRATCHPAD\_\-SIZE.
+
+Referenced by fl\-Terminate().\index{flMemory.h@{fl\-Memory.h}!memtErrorBytesCheckFrom@{memtErrorBytesCheckFrom}}
+\index{memtErrorBytesCheckFrom@{memtErrorBytesCheckFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Error\-Bytes\-Check\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_8fd6378b9c64db2ef17c63970e1a9a8f}
+
+
+
+
+Definition at line 1196 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), FL\_\-DEBUG\_\-CALLEDFROM, FL\_\-DEBUG\_\-ERROR, mem\-Block\-Valid(), Memory\-Tree::memt\-Alignment, Memory\-Tree::memt\-Data, memt\-Error\-Bytes\-Check, Memory\-Tree::memt\-Next, and Memory\-Tree::memt\-Size.
+
+Referenced by mem\-Align\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), and mem\-Set\-Short\-From().\index{flMemory.h@{fl\-Memory.h}!memUncachedPtrFrom@{memUncachedPtrFrom}}
+\index{memUncachedPtrFrom@{memUncachedPtrFrom}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Uncached\-Ptr\-From (void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8h_5c4f9bcc3cb6c784dda2341081424c41}
+
+
+
+
+Definition at line 894 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), MEMORY\_\-UNCACHED\_\-OFFSET, mem\-Uncached\-Ptr, and NULL.
+
+\subsection{Variable Documentation}
+\index{flMemory.h@{fl\-Memory.h}!memErrorTree@{memErrorTree}}
+\index{memErrorTree@{memErrorTree}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\-Tree}$\ast$ {\bf mem\-Error\-Tree}}\label{flMemory_8h_3c11a75397704795cb62e5f4301138b3}
+
+
+
+
+Definition at line 22 of file fl\-Memory.c.
+
+Referenced by mem\-Align\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), and mem\-Set\-Short\-From().\index{flMemory.h@{fl\-Memory.h}!memInitialized@{memInitialized}}
+\index{memInitialized@{memInitialized}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf mem\-Initialized}}\label{flMemory_8h_f7144acb190d35f7cd6c38319b97318d}
+
+
+A boolean to represent whether the memory system has been initialized or not, this is set by \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} and \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb}, \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c} \end{Desc}
+
+
+Definition at line 25 of file fl\-Memory.c.
+
+Referenced by mem\-Init(), mem\-Qalloc\-From(), and mem\-Term().\index{flMemory.h@{fl\-Memory.h}!memScratchpadUsed@{memScratchpadUsed}}
+\index{memScratchpadUsed@{memScratchpadUsed}!flMemory.h@{fl\-Memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf mem\-Scratchpad\-Used}}\label{flMemory_8h_a0978678b01f700e5d8a291ba1fc9a8a}
+
+
+A boolean to represent whether the scratchpad is currently in use or not, this allows the fastest possible allocation/free'ing of memory for temp data. 
+
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Qalloc()}{p.}{flMemory_8h_39edd59a7b482bd6b887b0786b74ce42} \end{Desc}
+
+
+Definition at line 26 of file fl\-Memory.c.
+
+Referenced by mem\-Align\-From(), mem\-Free\-From(), mem\-Free\-Space\-Total(), and mem\-Qalloc\-From().

@@ -1,0 +1,355 @@
+\section{fl\-Memory\-VMem.c File Reference}
+\label{flMemoryVMem_8c}\index{flMemoryVMem.c@{flMemoryVMem.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf vmem\-Init} ()
+\item 
+void {\bf vmem\-Term} ()
+\item 
+void $\ast$ {\bf vmem\-Normal\-Ptr} (void $\ast$in\-Ptr)
+\item 
+void $\ast$ {\bf vmem\-Alloc\-Buffer} (u32 in\-Width, u32 in\-Height, u8 in\-Bit\-Depth, u32 in\-Stride)
+\item 
+void $\ast$ {\bf vmem\-Alloc\-From} (u32 in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf vmem\-Calloc\-From} (u32 in\-Size0, u32 in\-Size1, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf vmem\-Realloc\-From} (void $\ast$in\-Data, u32 in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf vmem\-Free\-From} (void $\ast$in\-Data, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+u32 {\bf vmem\-Free\-Space} ()
+\item 
+u32 {\bf vmem\-Largest\-Free\-Block} ()
+\item 
+float {\bf vmem\-Fragmentation} ()
+\item 
+void {\bf vmem\-Stride\-Block\-Add} (void $\ast$in\-Start, u32 in\-Stride, u32 in\-Block\-Size, u32 in\-Block\-Count)
+\item 
+void {\bf vmem\-Stride\-Block\-Del} ({\bf Vmem\-Stride\-Block} $\ast$in\-Block)
+\item 
+void {\bf vmem\-Stride\-Block\-Del\-Recursive} ({\bf Vmem\-Stride\-Block} $\ast$in\-Block)
+\item 
+void $\ast$ {\bf vmem\-Stride\-Align} (u32 in\-Align, u32 in\-Size)
+\item 
+void $\ast$ {\bf vmem\-Stride\-Alloc} (u32 in\-Size)
+\item 
+void $\ast$ {\bf vmem\-Stride\-Calloc} (u32 in\-Size0, u32 in\-Size1)
+\item 
+{\bf bool} {\bf vmem\-Stride\-Free} (void $\ast$in\-Data)
+\item 
+float {\bf vmem\-Stride\-Usage} ()
+\item 
+u32 {\bf vmem\-Stride\-Free\-Space} ()
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+u32 {\bf vmem\-Start} = MEMORY\_\-VMEM\_\-BASE
+\item 
+u32 {\bf vmem\-Size} = MEMORY\_\-VMEM\_\-SIZE
+\item 
+u32 $\ast$ {\bf vmem\-Block\-Table} = NULL
+\item 
+u32 {\bf vmem\-Blocks} = 0
+\item 
+u32 {\bf vmem\-Free\-Blocks} = 0
+\item 
+{\bf bool} {\bf vmem\-Initialized} = false
+\item 
+void $\ast$ {\bf vmem\-Cache} = (void$\ast$)((MEMORY\_\-VMEM\_\-BASE + MEMORY\_\-VMEM\_\-SIZE) - FL\_\-MEMORY\_\-VMEM\_\-CACHE)
+\item 
+{\bf Vmem\-Stride\-Block} $\ast$ {\bf vmem\-Stride\-Blocks} = NULL
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemAllocBuffer@{vmemAllocBuffer}}
+\index{vmemAllocBuffer@{vmemAllocBuffer}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Alloc\-Buffer (u32 {\em in\-Width}, u32 {\em in\-Height}, u8 {\em in\-Bit\-Depth}, u32 {\em in\-Stride})}\label{flMemoryVMem_8c_e971a3895e09e6afd7520db283258211}
+
+
+
+
+Definition at line 97 of file fl\-Memory\-VMem.c.
+
+References debug\-Dev\-Warning, debug\-Error, MEMORY\_\-VMEM\_\-SIZE, vmem\-Alloc, vmem\-Initialized, vmem\-Relative\-Ptr, vmem\-Size, vmem\-Start, and vmem\-Stride\-Block\-Add().
+
+Referenced by graphics\-Init(), and vmem\-Init().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemAllocFrom@{vmemAllocFrom}}
+\index{vmemAllocFrom@{vmemAllocFrom}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Alloc\-From (u32 {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemoryVMem_8c_fc3b16b88f6442e62ab9aacc0947e2c4}
+
+
+
+
+Definition at line 126 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, NULL, vmem\-Alloc, vmem\-Blocks, vmem\-Block\-Table, vmem\-Free\-Blocks, vmem\-Initialized, vmem\-Start, and vmem\-Stride\-Alloc().
+
+Referenced by vmem\-Calloc\-From().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemCallocFrom@{vmemCallocFrom}}
+\index{vmemCallocFrom@{vmemCallocFrom}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Calloc\-From (u32 {\em in\-Size0}, u32 {\em in\-Size1}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemoryVMem_8c_4f45e2c3068d12fc1e2e04303fc5b1c3}
+
+
+
+
+Definition at line 216 of file fl\-Memory\-VMem.c.
+
+References mem\-Clear, NULL, vmem\-Alloc, vmem\-Alloc\-From(), vmem\-Calloc, and vmem\-Stride\-Calloc().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemFragmentation@{vmemFragmentation}}
+\index{vmemFragmentation@{vmemFragmentation}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float vmem\-Fragmentation ()}\label{flMemoryVMem_8c_d65d9069bd87a54399bbc16b629ec252}
+
+
+
+
+Definition at line 376 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, vmem\-Blocks, vmem\-Block\-Table, vmem\-Free\-Space(), and vmem\-Initialized.\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemFreeFrom@{vmemFreeFrom}}
+\index{vmemFreeFrom@{vmemFreeFrom}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Free\-From (void $\ast$ {\em in\-Data}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemoryVMem_8c_26a131b91a9f5fa087737310af66299a}
+
+
+
+
+Definition at line 290 of file fl\-Memory\-VMem.c.
+
+References debug\-Error, debug\-Error\-From(), FL\_\-DEBUG\_\-CALLEDFROM, FL\_\-DEBUG\_\-ERROR, FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, vmem\-Blocks, vmem\-Block\-Table, vmem\-Free, vmem\-Free\-Blocks, vmem\-Initialized, vmem\-Normal\-Ptr(), vmem\-Size, vmem\-Start, and vmem\-Stride\-Free().
+
+Referenced by mem\-Free\-From().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemFreeSpace@{vmemFreeSpace}}
+\index{vmemFreeSpace@{vmemFreeSpace}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 vmem\-Free\-Space ()}\label{flMemoryVMem_8c_87da7eb38a8d057e45dc6ce6f346f63f}
+
+
+
+
+Definition at line 353 of file fl\-Memory\-VMem.c.
+
+References FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, vmem\-Free\-Blocks, and vmem\-Stride\-Free\-Space().
+
+Referenced by mem\-Free\-Space\-Total(), and vmem\-Fragmentation().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemInit@{vmemInit}}
+\index{vmemInit@{vmemInit}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Init ()}\label{flMemoryVMem_8c_2089203f3b650112b2532238ef57d6d0}
+
+
+
+
+Definition at line 29 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, FL\_\-MEMORY\_\-VMEM\_\-CACHE, mem\-Alloc, mem\-Uncached\-Ptr, vmem\-Absolute\-Ptr, vmem\-Alloc\-Buffer(), vmem\-Blocks, vmem\-Block\-Table, vmem\-Cache, vmem\-Free\-Blocks, vmem\-Initialized, vmem\-Size, and vmem\-Start.
+
+Referenced by graphics\-Init().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemLargestFreeBlock@{vmemLargestFreeBlock}}
+\index{vmemLargestFreeBlock@{vmemLargestFreeBlock}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 vmem\-Largest\-Free\-Block ()}\label{flMemoryVMem_8c_9c58c42e2ef77c55eca5f31df1ffd5c4}
+
+
+
+
+Definition at line 357 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, vmem\-Blocks, and vmem\-Block\-Table.\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemNormalPtr@{vmemNormalPtr}}
+\index{vmemNormalPtr@{vmemNormalPtr}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Normal\-Ptr (void $\ast$ {\em in\-Ptr})}\label{flMemoryVMem_8c_e876e1020d33a6504c9f4a14ff9dcb49}
+
+
+
+
+Definition at line 82 of file fl\-Memory\-VMem.c.
+
+References mem\-Cached\-Ptr, MEMORY\_\-VMEM\_\-BASE, MEMORY\_\-VMEM\_\-SIZE, and NULL.
+
+Referenced by vmem\-Free\-From(), vmem\-Stride\-Block\-Add(), and vmem\-Stride\-Free().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemReallocFrom@{vmemReallocFrom}}
+\index{vmemReallocFrom@{vmemReallocFrom}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Realloc\-From (void $\ast$ {\em in\-Data}, u32 {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemoryVMem_8c_512f73544599a5fd0df10e5f9c9ee071}
+
+
+
+
+Definition at line 237 of file fl\-Memory\-VMem.c.
+
+References debug\-Dev\-Warning, debug\-Dev\-Warning\-From(), debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-VMEM\_\-BLOCKSIZE, mem\-Cached\-Ptr, mem\-Copy, NULL, vmem\-Alloc, vmem\-Blocks, vmem\-Block\-Table, vmem\-Free, vmem\-Realloc, vmem\-Relative\-Ptr, and vmem\-Start.\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideAlign@{vmemStrideAlign}}
+\index{vmemStrideAlign@{vmemStrideAlign}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Stride\-Align (u32 {\em in\-Align}, u32 {\em in\-Size})}\label{flMemoryVMem_8c_d1a90582a0b9a549a0cc3bfd3a142c34}
+
+
+
+
+Definition at line 456 of file fl\-Memory\-VMem.c.
+
+References FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, fl\-Running, NULL, vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Block\-Align, Vmem\-Stride\-Block::vmsb\-Block\-Count, Vmem\-Stride\-Block::vmsb\-Block\-Size, Vmem\-Stride\-Block::vmsb\-Block\-Table, and Vmem\-Stride\-Block::vmsb\-Next.
+
+Referenced by mem\-Align\-From(), and vmem\-Stride\-Alloc().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideAlloc@{vmemStrideAlloc}}
+\index{vmemStrideAlloc@{vmemStrideAlloc}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Stride\-Alloc (u32 {\em in\-Size})}\label{flMemoryVMem_8c_dfe51ec95e7145599cf42de9e54f390b}
+
+
+
+
+Definition at line 492 of file fl\-Memory\-VMem.c.
+
+References FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, and vmem\-Stride\-Align().
+
+Referenced by vmem\-Alloc\-From(), and vmem\-Stride\-Calloc().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideBlockAdd@{vmemStrideBlockAdd}}
+\index{vmemStrideBlockAdd@{vmemStrideBlockAdd}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Stride\-Block\-Add (void $\ast$ {\em in\-Start}, u32 {\em in\-Stride}, u32 {\em in\-Block\-Size}, u32 {\em in\-Block\-Count})}\label{flMemoryVMem_8c_a642a6370458c1f3b28e42ed4fa1876c}
+
+
+
+
+Definition at line 396 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, mem\-Address\-Alignment(), mem\-Alloc, mem\-Block\-Valid(), mem\-Clear, min, NULL, vmem\-Normal\-Ptr(), vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Block\-Align, Vmem\-Stride\-Block::vmsb\-Block\-Count, Vmem\-Stride\-Block::vmsb\-Block\-Size, Vmem\-Stride\-Block::vmsb\-Block\-Table, Vmem\-Stride\-Block::vmsb\-Last, Vmem\-Stride\-Block::vmsb\-Next, Vmem\-Stride\-Block::vmsb\-Start, and Vmem\-Stride\-Block::vmsb\-Stride.
+
+Referenced by vmem\-Alloc\-Buffer().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideBlockDel@{vmemStrideBlockDel}}
+\index{vmemStrideBlockDel@{vmemStrideBlockDel}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Stride\-Block\-Del ({\bf Vmem\-Stride\-Block} $\ast$ {\em in\-Block})}\label{flMemoryVMem_8c_0733a131032b6396507ab6163e5da8dd}
+
+
+
+
+Definition at line 434 of file fl\-Memory\-VMem.c.
+
+References mem\-Free, vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Last, and Vmem\-Stride\-Block::vmsb\-Next.\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideBlockDelRecursive@{vmemStrideBlockDelRecursive}}
+\index{vmemStrideBlockDelRecursive@{vmemStrideBlockDelRecursive}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Stride\-Block\-Del\-Recursive ({\bf Vmem\-Stride\-Block} $\ast$ {\em in\-Block})}\label{flMemoryVMem_8c_ec5ead58cf103c59c742d84eb9266176}
+
+
+
+
+Definition at line 444 of file fl\-Memory\-VMem.c.
+
+References mem\-Free, vmem\-Stride\-Block\-Del\-Recursive(), Vmem\-Stride\-Block::vmsb\-Last, and Vmem\-Stride\-Block::vmsb\-Next.
+
+Referenced by vmem\-Stride\-Block\-Del\-Recursive(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideCalloc@{vmemStrideCalloc}}
+\index{vmemStrideCalloc@{vmemStrideCalloc}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ vmem\-Stride\-Calloc (u32 {\em in\-Size0}, u32 {\em in\-Size1})}\label{flMemoryVMem_8c_29bad506a933463bcced39a356cd71eb}
+
+
+
+
+Definition at line 496 of file fl\-Memory\-VMem.c.
+
+References mem\-Clear, and vmem\-Stride\-Alloc().
+
+Referenced by vmem\-Calloc\-From().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideFree@{vmemStrideFree}}
+\index{vmemStrideFree@{vmemStrideFree}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} vmem\-Stride\-Free (void $\ast$ {\em in\-Data})}\label{flMemoryVMem_8c_a986e759682fc3a182f333d0e3f0f8b6}
+
+
+
+
+Definition at line 502 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, fl\-Running, vmem\-Normal\-Ptr(), vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Block\-Count, Vmem\-Stride\-Block::vmsb\-Block\-Size, Vmem\-Stride\-Block::vmsb\-Block\-Table, Vmem\-Stride\-Block::vmsb\-Next, Vmem\-Stride\-Block::vmsb\-Start, and Vmem\-Stride\-Block::vmsb\-Stride.
+
+Referenced by vmem\-Free\-From().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideFreeSpace@{vmemStrideFreeSpace}}
+\index{vmemStrideFreeSpace@{vmemStrideFreeSpace}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 vmem\-Stride\-Free\-Space ()}\label{flMemoryVMem_8c_9d368ada737fd80bb8abed2825c326ff}
+
+
+
+
+Definition at line 563 of file fl\-Memory\-VMem.c.
+
+References fl\-Running, vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Block\-Count, Vmem\-Stride\-Block::vmsb\-Block\-Size, Vmem\-Stride\-Block::vmsb\-Block\-Table, and Vmem\-Stride\-Block::vmsb\-Next.
+
+Referenced by vmem\-Free\-Space().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideUsage@{vmemStrideUsage}}
+\index{vmemStrideUsage@{vmemStrideUsage}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float vmem\-Stride\-Usage ()}\label{flMemoryVMem_8c_c1ffa02ebd6cebc73b39aba7dff8a43a}
+
+
+
+
+Definition at line 534 of file fl\-Memory\-VMem.c.
+
+References fl\-Running, vmem\-Stride\-Blocks, Vmem\-Stride\-Block::vmsb\-Block\-Count, Vmem\-Stride\-Block::vmsb\-Block\-Size, Vmem\-Stride\-Block::vmsb\-Block\-Table, and Vmem\-Stride\-Block::vmsb\-Next.\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemTerm@{vmemTerm}}
+\index{vmemTerm@{vmemTerm}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void vmem\-Term ()}\label{flMemoryVMem_8c_ae3e2102bd1766ba9ac8ddf6bbc1ccdb}
+
+
+
+
+Definition at line 67 of file fl\-Memory\-VMem.c.
+
+References debug\-Warning, mem\-Free, MEMORY\_\-VMEM\_\-BASE, MEMORY\_\-VMEM\_\-SIZE, vmem\-Blocks, vmem\-Block\-Table, vmem\-Initialized, vmem\-Size, vmem\-Start, vmem\-Stride\-Block\-Del\-Recursive(), and vmem\-Stride\-Blocks.
+
+Referenced by graphics\-Term().
+
+\subsection{Variable Documentation}
+\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemBlocks@{vmemBlocks}}
+\index{vmemBlocks@{vmemBlocks}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf vmem\-Blocks} = 0}\label{flMemoryVMem_8c_76eb0f2936c402d05c70a0e710407d6a}
+
+
+
+
+Definition at line 19 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Alloc\-From(), vmem\-Fragmentation(), vmem\-Free\-From(), vmem\-Init(), vmem\-Largest\-Free\-Block(), vmem\-Realloc\-From(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemBlockTable@{vmemBlockTable}}
+\index{vmemBlockTable@{vmemBlockTable}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32$\ast$ {\bf vmem\-Block\-Table} = NULL}\label{flMemoryVMem_8c_c26d629e42eb543afddfb13534009a59}
+
+
+
+
+Definition at line 18 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Alloc\-From(), vmem\-Fragmentation(), vmem\-Free\-From(), vmem\-Init(), vmem\-Largest\-Free\-Block(), vmem\-Realloc\-From(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemCache@{vmemCache}}
+\index{vmemCache@{vmemCache}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf vmem\-Cache} = (void$\ast$)((MEMORY\_\-VMEM\_\-BASE + MEMORY\_\-VMEM\_\-SIZE) - FL\_\-MEMORY\_\-VMEM\_\-CACHE)}\label{flMemoryVMem_8c_e7f60e45abdf4f11468a2444c8a315bf}
+
+
+
+
+Definition at line 24 of file fl\-Memory\-VMem.c.
+
+Referenced by graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), and vmem\-Init().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemFreeBlocks@{vmemFreeBlocks}}
+\index{vmemFreeBlocks@{vmemFreeBlocks}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf vmem\-Free\-Blocks} = 0}\label{flMemoryVMem_8c_ca271688574e8c57b674a9db91d23e42}
+
+
+
+
+Definition at line 20 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Alloc\-From(), vmem\-Free\-From(), vmem\-Free\-Space(), and vmem\-Init().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemInitialized@{vmemInitialized}}
+\index{vmemInitialized@{vmemInitialized}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf vmem\-Initialized} = false}\label{flMemoryVMem_8c_f7488958314b830b42be236096a8550c}
+
+
+
+
+Definition at line 21 of file fl\-Memory\-VMem.c.
+
+Referenced by mem\-Qalloc\-From(), vmem\-Alloc\-Buffer(), vmem\-Alloc\-From(), vmem\-Fragmentation(), vmem\-Free\-From(), vmem\-Init(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemSize@{vmemSize}}
+\index{vmemSize@{vmemSize}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf vmem\-Size} = MEMORY\_\-VMEM\_\-SIZE}\label{flMemoryVMem_8c_5bdb4a91bd69dda7958d392b8a318405}
+
+
+
+
+Definition at line 17 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Alloc\-Buffer(), vmem\-Free\-From(), vmem\-Init(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStart@{vmemStart}}
+\index{vmemStart@{vmemStart}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 {\bf vmem\-Start} = MEMORY\_\-VMEM\_\-BASE}\label{flMemoryVMem_8c_8ca615adf1b61b83d3787473691f050b}
+
+
+
+
+Definition at line 16 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Alloc\-Buffer(), vmem\-Alloc\-From(), vmem\-Free\-From(), vmem\-Init(), vmem\-Realloc\-From(), and vmem\-Term().\index{flMemoryVMem.c@{fl\-Memory\-VMem.c}!vmemStrideBlocks@{vmemStrideBlocks}}
+\index{vmemStrideBlocks@{vmemStrideBlocks}!flMemoryVMem.c@{fl\-Memory\-VMem.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Vmem\-Stride\-Block}$\ast$ {\bf vmem\-Stride\-Blocks} = NULL}\label{flMemoryVMem_8c_f76725e6d15a4b7ccf09e2a47b8bd21d}
+
+
+
+
+Definition at line 27 of file fl\-Memory\-VMem.c.
+
+Referenced by vmem\-Stride\-Align(), vmem\-Stride\-Block\-Add(), vmem\-Stride\-Block\-Del(), vmem\-Stride\-Free(), vmem\-Stride\-Free\-Space(), vmem\-Stride\-Usage(), and vmem\-Term().

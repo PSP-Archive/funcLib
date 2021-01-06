@@ -1,0 +1,200 @@
+\section{fl\-Model.h File Reference}
+\label{flModel_8h}\index{flModel.h@{flModel.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include \char`\"{}fl\-Texture.h\char`\"{}}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf Model3d\-Static\-Face}
+\item 
+struct {\bf Model3d\-Static}
+\item 
+struct {\bf Model3d\-Animated}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf MODEL\_\-ANIM\_\-TYPE\_\-NONE}~0
+\item 
+\#define {\bf MODEL\_\-ANIM\_\-TYPE\_\-MD2}~1
+\item 
+\#define {\bf MODEL\_\-ANIM\_\-TYPE\_\-MD3}~2
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef {\bf Model3d\-Static\-Face} {\bf Mdl3d\-Stat\-Face}
+\item 
+typedef {\bf Model3d\-Static} {\bf Mdl3d\-Stat}
+\item 
+typedef {\bf Model3d\-Animated} {\bf Mdl3d\-Anim}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf mdl\-Init} ()
+\item 
+{\bf Model3d\-Static} $\ast$ {\bf mdl3d\-Stat\-Load} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf mdl3d\-Stat\-Save} (char $\ast$in\-Path, {\bf Model3d\-Static} $\ast$in\-Model)
+\item 
+void {\bf mdl3d\-Stat\-Draw} ({\bf Model3d\-Static} $\ast$in\-Model)
+\item 
+void {\bf mdl3d\-Stat\-Optimize} ({\bf Model3d\-Static} $\ast$in\-Model)
+\item 
+void {\bf mdl3d\-Stat\-Free} ({\bf Model3d\-Static} $\ast$in\-Model)
+\item 
+{\bf Model3d\-Animated} $\ast$ {\bf mdl3d\-Anim\-Load} (char $\ast$in\-Path)
+\item 
+{\bf bool} {\bf mdl3d\-Anim\-Save} (char $\ast$in\-Path, {\bf Model3d\-Animated} $\ast$in\-Model)
+\item 
+void {\bf mdl3d\-Anim\-Draw} ({\bf Model3d\-Animated} $\ast$in\-Model)
+\item 
+void {\bf mdl3d\-Anim\-Free} ({\bf Model3d\-Animated} $\ast$in\-Model)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flModel.h@{fl\-Model.h}!MODEL_ANIM_TYPE_MD2@{MODEL\_\-ANIM\_\-TYPE\_\-MD2}}
+\index{MODEL_ANIM_TYPE_MD2@{MODEL\_\-ANIM\_\-TYPE\_\-MD2}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MODEL\_\-ANIM\_\-TYPE\_\-MD2~1}\label{flModel_8h_4ba59df590fcbf41f4d7961925c77c19}
+
+
+
+
+Definition at line 25 of file fl\-Model.h.
+
+Referenced by mdl3d\-Anim\-Draw(), and mdl3d\-Anim\-Load\-MD2().\index{flModel.h@{fl\-Model.h}!MODEL_ANIM_TYPE_MD3@{MODEL\_\-ANIM\_\-TYPE\_\-MD3}}
+\index{MODEL_ANIM_TYPE_MD3@{MODEL\_\-ANIM\_\-TYPE\_\-MD3}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MODEL\_\-ANIM\_\-TYPE\_\-MD3~2}\label{flModel_8h_b1906d93e0192e7135f3ccfbee63b76e}
+
+
+
+
+Definition at line 26 of file fl\-Model.h.\index{flModel.h@{fl\-Model.h}!MODEL_ANIM_TYPE_NONE@{MODEL\_\-ANIM\_\-TYPE\_\-NONE}}
+\index{MODEL_ANIM_TYPE_NONE@{MODEL\_\-ANIM\_\-TYPE\_\-NONE}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MODEL\_\-ANIM\_\-TYPE\_\-NONE~0}\label{flModel_8h_36164ac4eb0e2f2ea9dd071949f00268}
+
+
+
+
+Definition at line 24 of file fl\-Model.h.
+
+\subsection{Typedef Documentation}
+\index{flModel.h@{fl\-Model.h}!Mdl3dAnim@{Mdl3dAnim}}
+\index{Mdl3dAnim@{Mdl3dAnim}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Model3d\-Animated} {\bf Mdl3d\-Anim}}\label{flModel_8h_ef66f26d4b0a01ab1ca40fa7edab544c}
+
+
+
+
+Definition at line 56 of file fl\-Model.h.\index{flModel.h@{fl\-Model.h}!Mdl3dStat@{Mdl3dStat}}
+\index{Mdl3dStat@{Mdl3dStat}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Model3d\-Static} {\bf Mdl3d\-Stat}}\label{flModel_8h_381a803dc5cd951f98c0ce00b815ab87}
+
+
+
+
+Definition at line 50 of file fl\-Model.h.\index{flModel.h@{fl\-Model.h}!Mdl3dStatFace@{Mdl3dStatFace}}
+\index{Mdl3dStatFace@{Mdl3dStatFace}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf Model3d\-Static\-Face} {\bf Mdl3d\-Stat\-Face}}\label{flModel_8h_d2d606c3d1e86af6a9d92f96fe5aa7e4}
+
+
+
+
+Definition at line 35 of file fl\-Model.h.
+
+\subsection{Function Documentation}
+\index{flModel.h@{fl\-Model.h}!mdl3dAnimDraw@{mdl3dAnimDraw}}
+\index{mdl3dAnimDraw@{mdl3dAnimDraw}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Anim\-Draw ({\bf Model3d\-Animated} $\ast$ {\em in\-Model})}\label{flModel_8h_fda07d8b0fa108ae3b3a53fb02179f9e}
+
+
+
+
+Definition at line 529 of file fl\-Model.c.
+
+References mdl3d\-Anim\-Draw\-MD2(), Model3d\-Animated::mdl\-Data, Model3d\-Animated::mdl\-Type, and MODEL\_\-ANIM\_\-TYPE\_\-MD2.\index{flModel.h@{fl\-Model.h}!mdl3dAnimFree@{mdl3dAnimFree}}
+\index{mdl3dAnimFree@{mdl3dAnimFree}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Anim\-Free ({\bf Model3d\-Animated} $\ast$ {\em in\-Model})}\label{flModel_8h_505d5a999b50546385c81e59ed9a16c8}
+
+
+
+
+Definition at line 536 of file fl\-Model.c.
+
+Referenced by mdl3d\-Anim\-Load\-MD2().\index{flModel.h@{fl\-Model.h}!mdl3dAnimLoad@{mdl3dAnimLoad}}
+\index{mdl3dAnimLoad@{mdl3dAnimLoad}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Model3d\-Animated}$\ast$ mdl3d\-Anim\-Load (char $\ast$ {\em in\-Path})}\label{flModel_8h_473ee9490cf7380372e04daf1289587f}
+
+
+
+
+Definition at line 491 of file fl\-Model.c.
+
+References debug\-Dev\-Warning, debug\-Warning, file\-Extension(), mdl3d\-Anim\-Load\-MD2(), mem\-Free, and NULL.\index{flModel.h@{fl\-Model.h}!mdl3dAnimSave@{mdl3dAnimSave}}
+\index{mdl3dAnimSave@{mdl3dAnimSave}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mdl3d\-Anim\-Save (char $\ast$ {\em in\-Path}, {\bf Model3d\-Animated} $\ast$ {\em in\-Model})}\label{flModel_8h_ea4bbb9d2e21e14e66b277b5a94f6285}
+
+
+
+
+Definition at line 525 of file fl\-Model.c.\index{flModel.h@{fl\-Model.h}!mdl3dStatDraw@{mdl3dStatDraw}}
+\index{mdl3dStatDraw@{mdl3dStatDraw}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Stat\-Draw ({\bf Model3d\-Static} $\ast$ {\em in\-Model})}\label{flModel_8h_0438033ad631c43e2df1592edfa1e101}
+
+
+
+
+Definition at line 215 of file fl\-Model.c.
+
+References debug\-Warning, graphics\-Wireframe, mdl3d\-Stat\-Draw\-Textured(), Model3d\-Static::mdl\-Face\-Count, Model3d\-Static::mdl\-Faces, Model3d\-Static\-Face::mdlf\-Vert\-Count, Model3d\-Static\-Face::mdlf\-Verts, Model3d\-Static::mdl\-Texture\-Count, Model3d\-Static::mdl\-Verts, vert\-Vf::vert\-X, vert\-Vf::vert\-Y, and vert\-Vf::vert\-Z.\index{flModel.h@{fl\-Model.h}!mdl3dStatFree@{mdl3dStatFree}}
+\index{mdl3dStatFree@{mdl3dStatFree}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Stat\-Free ({\bf Model3d\-Static} $\ast$ {\em in\-Model})}\label{flModel_8h_14a01a131005745a25373e338494dc6e}
+
+
+
+
+Definition at line 462 of file fl\-Model.c.
+
+References debug\-Warning, Model3d\-Static::mdl\-Face\-Count, Model3d\-Static::mdl\-Faces, Model3d\-Static\-Face::mdlf\-Verts, Model3d\-Static::mdl\-Texture\-Count, Model3d\-Static::mdl\-Textures, Model3d\-Static::mdl\-Verts, mem\-Free, and tex\-Free().
+
+Referenced by mdl3d\-Stat\-Load\-OBJ().\index{flModel.h@{fl\-Model.h}!mdl3dStatLoad@{mdl3dStatLoad}}
+\index{mdl3dStatLoad@{mdl3dStatLoad}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Model3d\-Static}$\ast$ mdl3d\-Stat\-Load (char $\ast$ {\em in\-Path})}\label{flModel_8h_f1d48e04f0daa9248cb6b5fb6488a164}
+
+
+
+
+Definition at line 38 of file fl\-Model.c.
+
+References debug\-Dev\-Warning, debug\-Warning, file\-Extension(), mdl3d\-Stat\-Load\-OBJ(), mdl3d\-Stat\-Optimize(), mem\-Free, and NULL.\index{flModel.h@{fl\-Model.h}!mdl3dStatOptimize@{mdl3dStatOptimize}}
+\index{mdl3dStatOptimize@{mdl3dStatOptimize}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Stat\-Optimize ({\bf Model3d\-Static} $\ast$ {\em in\-Model})}\label{flModel_8h_f4de6b2e261a216256748986384238a1}
+
+
+
+
+Definition at line 294 of file fl\-Model.c.
+
+References debug\-Warning, Model3d\-Static::mdl\-Normal\-Count, Model3d\-Static::mdl\-Optimized, Model3d\-Static::mdl\-Texture\-Count, Model3d\-Static::mdl\-Tex\-Vert\-Count, Model3d\-Static::mdl\-Vert\-Count, Model3d\-Static::mdl\-Verts, and vect3f\_\-Cmp.
+
+Referenced by mdl3d\-Stat\-Load(), and mdl3d\-Stat\-Save().\index{flModel.h@{fl\-Model.h}!mdl3dStatSave@{mdl3dStatSave}}
+\index{mdl3dStatSave@{mdl3dStatSave}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mdl3d\-Stat\-Save (char $\ast$ {\em in\-Path}, {\bf Model3d\-Static} $\ast$ {\em in\-Model})}\label{flModel_8h_571078f0a72c08e3f00a191a07bbcb58}
+
+
+
+
+Definition at line 78 of file fl\-Model.c.
+
+References debug\-Dev\-Warning, debug\-Warning, file\-Extension(), mdl3d\-Stat\-Optimize(), mdl3d\-Stat\-Save\-OBJ(), and mem\-Free.\index{flModel.h@{fl\-Model.h}!mdlInit@{mdlInit}}
+\index{mdlInit@{mdlInit}!flModel.h@{fl\-Model.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl\-Init ()}\label{flModel_8h_f881fa3ed05c8767efb292b84b836af3}
+
+
+
+
+Definition at line 34 of file fl\-Model.c.
+
+Referenced by fl\-Initialize().

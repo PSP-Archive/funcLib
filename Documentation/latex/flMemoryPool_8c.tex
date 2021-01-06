@@ -1,0 +1,90 @@
+\section{fl\-Memory\-Pool.c File Reference}
+\label{flMemoryPool_8c}\index{flMemoryPool.c@{flMemoryPool.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Memory\-Pool} $\ast$ {\bf memp\-Create} (u32 in\-Size, u32 in\-Type)
+\item 
+void {\bf memp\-Destroy} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool)
+\item 
+void $\ast$ {\bf memp\-Alloc} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool, u32 in\-Size)
+\item 
+void $\ast$ {\bf memp\-Calloc} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool, u32 in\-Size0, u32 in\-Size1)
+\item 
+void $\ast$ {\bf memp\-Realloc} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool, void $\ast$in\-Ptr, u32 in\-Size)
+\item 
+void $\ast$ {\bf memp\-Align} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool, u32 in\-Boundry, u32 in\-Size)
+\item 
+void {\bf memp\-Free} ({\bf Memory\-Pool} $\ast$in\-Mem\-Pool, void $\ast$in\-Ptr)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempAlign@{mempAlign}}
+\index{mempAlign@{mempAlign}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memp\-Align ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool}, u32 {\em in\-Boundry}, u32 {\em in\-Size})}\label{flMemoryPool_8c_8c5a1bdc836c08ee66a4551223b78a89}
+
+
+
+
+Definition at line 112 of file fl\-Memory\-Pool.c.
+
+References NULL.\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempAlloc@{mempAlloc}}
+\index{mempAlloc@{mempAlloc}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memp\-Alloc ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool}, u32 {\em in\-Size})}\label{flMemoryPool_8c_8347fb9bc94ce7ffbfeecd3a061524ae}
+
+
+
+
+Definition at line 60 of file fl\-Memory\-Pool.c.
+
+References debug\-Warning, MEMORY\_\-POOL\_\-TYPE\_\-LINKLIST, Memory\-Pool::memp\-Alloc\-Data, Memory\-Pool::memp\-Data, Memory\-Pool\-Hdr\-LL::memp\-HLLData, Memory\-Pool\-Hdr\-LL::memp\-HLLNext, Memory\-Pool\-Hdr\-LL::memp\-HLLPrev, Memory\-Pool\-Hdr\-LL::memp\-HLLSize, Memory\-Pool::memp\-Type, and NULL.
+
+Referenced by memp\-Calloc().\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempCalloc@{mempCalloc}}
+\index{mempCalloc@{mempCalloc}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memp\-Calloc ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool}, u32 {\em in\-Size0}, u32 {\em in\-Size1})}\label{flMemoryPool_8c_22a72c10177a340b5451f0f21d7ae2a2}
+
+
+
+
+Definition at line 100 of file fl\-Memory\-Pool.c.
+
+References mem\-Clear, memp\-Alloc(), and NULL.\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempCreate@{mempCreate}}
+\index{mempCreate@{mempCreate}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\-Pool}$\ast$ memp\-Create (u32 {\em in\-Size}, u32 {\em in\-Type})}\label{flMemoryPool_8c_2dcdd7fd2c4b14a1f1c2a692d6d99e12}
+
+
+
+
+Definition at line 16 of file fl\-Memory\-Pool.c.
+
+References debug\-Warning, mem\-Alloc, Memory\-Pool::memp\-Alloc\-Data, Memory\-Pool::memp\-Data, Memory\-Pool::memp\-Size, Memory\-Pool::memp\-Type, and NULL.\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempDestroy@{mempDestroy}}
+\index{mempDestroy@{mempDestroy}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memp\-Destroy ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool})}\label{flMemoryPool_8c_4ea44cdbe9ed23b758d649449c75b8db}
+
+
+
+
+Definition at line 46 of file fl\-Memory\-Pool.c.
+
+References debug\-Warning, mem\-Free, MEMORY\_\-POOL\_\-TYPE\_\-TABLE, Memory\-Pool::memp\-Alloc\-Data, and Memory\-Pool::memp\-Type.\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempFree@{mempFree}}
+\index{mempFree@{mempFree}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memp\-Free ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool}, void $\ast$ {\em in\-Ptr})}\label{flMemoryPool_8c_a5168ffae3d62c3014e3365c997ca944}
+
+
+
+
+Definition at line 116 of file fl\-Memory\-Pool.c.\index{flMemoryPool.c@{fl\-Memory\-Pool.c}!mempRealloc@{mempRealloc}}
+\index{mempRealloc@{mempRealloc}!flMemoryPool.c@{fl\-Memory\-Pool.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memp\-Realloc ({\bf Memory\-Pool} $\ast$ {\em in\-Mem\-Pool}, void $\ast$ {\em in\-Ptr}, u32 {\em in\-Size})}\label{flMemoryPool_8c_4bf21cb48cb26dfcdd48fb0dca0ce4a0}
+
+
+
+
+Definition at line 108 of file fl\-Memory\-Pool.c.
+
+References NULL.

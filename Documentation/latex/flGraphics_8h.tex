@@ -1,0 +1,464 @@
+\section{fl\-Graphics.h File Reference}
+\label{flGraphics_8h}\index{flGraphics.h@{flGraphics.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf graphics\-Render\-To\-Texture}(in\-Tex)~graphics\-Render\-To\-Vmem((in\-Tex) $\rightarrow$ tex\-Data, (in\-Tex) $\rightarrow$ tex\-Data\-Width, (in\-Tex) $\rightarrow$ tex\-Pixel\-Format)
+\begin{CompactList}\small\item\em This sets the render target to a texture. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ {\bf graphics\-Disp\-List\-Cur} ()
+\begin{CompactList}\small\item\em Returns the address of the current display list, to be written to. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Disp\-List\-Last} ()
+\begin{CompactList}\small\item\em Returns the address of the last display list, to be drawn onto the screen. \item\end{CompactList}\item 
+void {\bf graphics\-Init} ()
+\begin{CompactList}\small\item\em Initializes the graphics system, this is called internally by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. \item\end{CompactList}\item 
+void {\bf graphics\-Term} ()
+\begin{CompactList}\small\item\em Terminates the graphics system, this is called internally by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}. \item\end{CompactList}\item 
+void {\bf graphics\-Swap\-Buffers} ()
+\begin{CompactList}\small\item\em Swaps the buffers and display lists around to show what you drew last frame, this function is used as a launching off point for the notify functions and other functions that need to be called each frame. \item\end{CompactList}\item 
+void {\bf graphics\-Set\-Projection} ()
+\begin{CompactList}\small\item\em Sets up the projection matrix for 3d. \item\end{CompactList}\item 
+void {\bf graphics\-Begin\-Ortho} ()
+\begin{CompactList}\small\item\em Begins orthographic drawing mode. \item\end{CompactList}\item 
+void {\bf graphics\-End\-Ortho} ()
+\begin{CompactList}\small\item\em Ends orthographic drawing mode. \item\end{CompactList}\item 
+void {\bf graphics\-Set\-Lines\-Anti\-Alias} ({\bf bool} in\-Value)
+\begin{CompactList}\small\item\em This is basically a wrapper for sce\-Gu\-Enable/Disable(GU\_\-LINE\_\-SMOOTH). \item\end{CompactList}\item 
+void {\bf graphics\-Render\-To\-Framebuffer} ()
+\begin{CompactList}\small\item\em This restores the render target to being the draw buffer again. \item\end{CompactList}\item 
+{\bf bool} {\bf graphics\-Render\-To\-Vmem} (void $\ast$in\-Ptr, int in\-Stride, u8 in\-Pixel\-Format)
+\begin{CompactList}\small\item\em This sets the render target to an area in vmem. \item\end{CompactList}\item 
+u8 {\bf graphics\-Pixel\-Format\-BPP} (u8 in\-Pixel\-Format)
+\begin{CompactList}\small\item\em Gets the bits per pixel (BPP) of a pixel type. \item\end{CompactList}\item 
+u8 $\ast$ {\bf graphics\-Swizzle\-Data} (u8 $\ast$in\-Data, u32 in\-Width, u32 in\-Height, u8 in\-Pixel\-Format)
+\begin{CompactList}\small\item\em Swizzles data so it is optimized for the PSP GPU. \item\end{CompactList}\item 
+u8 $\ast$ {\bf graphics\-Unswizzle\-Data} (u8 $\ast$in\-Data, u32 in\-Width, u32 in\-Height, u8 in\-Pixel\-Format)
+\begin{CompactList}\small\item\em Unswizzles data so it is back in it's natural state ready for saving/modifying. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf bool} {\bf graphics\-VSync}
+\begin{CompactList}\small\item\em This boolean stores whether VSync is currently activated or not, it defaults to GRAPHICS\_\-VSYNC\_\-DEFAULT and can only be overridden if FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO is enabled. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Display\-List}
+\begin{CompactList}\small\item\em Display list memory, used as the main 2 display lists. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Display\-List\-Cache}
+\begin{CompactList}\small\item\em A small display list, used for graphics using GU\_\-DIRECT . \item\end{CompactList}\item 
+u8 {\bf graphics\-Display\-List\-Current}
+\begin{CompactList}\small\item\em The current display list to be used. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Draw\-Buffer}
+\begin{CompactList}\small\item\em Address of the draw buffer. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Disp\-Buffer}
+\begin{CompactList}\small\item\em Address of the display buffer. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Depth\-Buffer}
+\begin{CompactList}\small\item\em Address of the Depth/Z buffer. \item\end{CompactList}\item 
+{\bf bool} {\bf graphics\-Lines\-Anti\-Alias}
+\begin{CompactList}\small\item\em Whether line antialiasing is currently enabled or not. \item\end{CompactList}\item 
+{\bf bool} {\bf graphics\-Wireframe}
+\begin{CompactList}\small\item\em Whether wireframe mode is enabled or not, this currently only effects the drawing of 3d primatives and models. \item\end{CompactList}\item 
+float {\bf graphics\-FPS}
+\begin{CompactList}\small\item\em The current fps, this is recalculated every frame so modifying it has almost no effect. \item\end{CompactList}\item 
+{\bf bool} {\bf graphics\-FPSShow}
+\begin{CompactList}\small\item\em This variable stores whether the FPS display is enabled or not, it defaults to FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT. \item\end{CompactList}\item 
+{\bf bool} {\bf graphics\-Frame}
+\begin{CompactList}\small\item\em This stores whether the graphics system is currently mid-frame or not. \item\end{CompactList}\item 
+void $\ast$ {\bf graphics\-Render\-Target}
+\begin{CompactList}\small\item\em The current render target address. \item\end{CompactList}\item 
+int {\bf graphics\-Render\-Target\-Stride}
+\begin{CompactList}\small\item\em The current render target buffer width. \item\end{CompactList}\item 
+u8 {\bf graphics\-Render\-Target\-Pixel\-Format}
+\begin{CompactList}\small\item\em The current render target pixel format. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderToTexture@{graphicsRenderToTexture}}
+\index{graphicsRenderToTexture@{graphicsRenderToTexture}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define graphics\-Render\-To\-Texture(in\-Tex)~graphics\-Render\-To\-Vmem((in\-Tex) $\rightarrow$ tex\-Data, (in\-Tex) $\rightarrow$ tex\-Data\-Width, (in\-Tex) $\rightarrow$ tex\-Pixel\-Format)}\label{flGraphics_8h_f03d9ec423c65c58b6526edfa96ed6a7}
+
+
+This sets the render target to a texture. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Tex}]The texture that will be rendered to. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Whether the target switch was successful or not. \end{Desc}
+\begin{Desc}
+\item[Note:]As this is a macro it isn't type safe, ensure that in\-Tex is a Texture$\ast$. \end{Desc}
+
+
+Definition at line 232 of file fl\-Graphics.h.
+
+\subsection{Function Documentation}
+\index{flGraphics.h@{fl\-Graphics.h}!graphicsBeginOrtho@{graphicsBeginOrtho}}
+\index{graphicsBeginOrtho@{graphicsBeginOrtho}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Begin\-Ortho ()}\label{flGraphics_8h_6147869865e8322c3d48f1c0484be17e}
+
+
+Begins orthographic drawing mode. 
+
+\begin{Desc}
+\item[Warning:]This isn't working at the minute, but all 2d on the PSP uses GU\_\-TRANSFORM\_\-2D anyway. \end{Desc}
+
+
+Definition at line 324 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsDispListCur@{graphicsDispListCur}}
+\index{graphicsDispListCur@{graphicsDispListCur}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ graphics\-Disp\-List\-Cur ()}\label{flGraphics_8h_97c985d1ebb25af517a253aa4049571b}
+
+
+Returns the address of the current display list, to be written to. 
+
+\begin{Desc}
+\item[Returns:]The address of the current display list. \end{Desc}
+
+
+Definition at line 51 of file fl\-Graphics.c.
+
+Referenced by graphics\-Init(), and graphics\-Swap\-Buffers().\index{flGraphics.h@{fl\-Graphics.h}!graphicsDispListLast@{graphicsDispListLast}}
+\index{graphicsDispListLast@{graphicsDispListLast}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ graphics\-Disp\-List\-Last ()}\label{flGraphics_8h_a105d1a4843adb4621d881b7e4c941a5}
+
+
+Returns the address of the last display list, to be drawn onto the screen. 
+
+\begin{Desc}
+\item[Returns:]The address of the last display list. \end{Desc}
+
+
+Definition at line 59 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsEndOrtho@{graphicsEndOrtho}}
+\index{graphicsEndOrtho@{graphicsEndOrtho}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-End\-Ortho ()}\label{flGraphics_8h_3feedfe1dd666426cc3bba67e0fc83eb}
+
+
+Ends orthographic drawing mode. 
+
+\begin{Desc}
+\item[Warning:]This isn't working at the minute, but all 2d on the PSP uses GU\_\-TRANSFORM\_\-2D anyway. \end{Desc}
+
+
+Definition at line 339 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsInit@{graphicsInit}}
+\index{graphicsInit@{graphicsInit}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Init ()}\label{flGraphics_8h_950a1257956da32debfb2d8730a6b52d}
+
+
+Initializes the graphics system, this is called internally by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}, \doxyref{graphics\-Term()}{p.}{flGraphics_8c_b0f0df5d88851a06d529ad27f8798cc6} \end{Desc}
+
+
+Definition at line 67 of file fl\-Graphics.c.
+
+References debug\-Error, FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT, FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT, graphics\-Disp\-List\-Cur(), graphics\-FPSTimer, graphics\-Pixel\-Format\-BPP(), GU\_\-SYNC\_\-WAIT, mem\-Align, mem\-Clear, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, SCREEN\_\-WIDTH, timer\-Create(), vmem\-Alloc\-Buffer(), and vmem\-Init().
+
+Referenced by fl\-Initialize().\index{flGraphics.h@{fl\-Graphics.h}!graphicsPixelFormatBPP@{graphicsPixelFormatBPP}}
+\index{graphicsPixelFormatBPP@{graphicsPixelFormatBPP}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 graphics\-Pixel\-Format\-BPP (u8 {\em in\-Pixel\-Format})}\label{flGraphics_8h_6a600c76029269c962e1b1034f8ad76a}
+
+
+Gets the bits per pixel (BPP) of a pixel type. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Pixel\-Format}]The format to get the BPP from, using gu defines (e.g GU\_\-PSM\_\-8888). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The BPP of the pixel format. \end{Desc}
+
+
+Definition at line 382 of file fl\-Graphics.c.
+
+Referenced by graphics\-Init(), graphics\-Swizzle\-Data(), graphics\-Unswizzle\-Data(), and pal\-BPP().\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderToFramebuffer@{graphicsRenderToFramebuffer}}
+\index{graphicsRenderToFramebuffer@{graphicsRenderToFramebuffer}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Render\-To\-Framebuffer ()}\label{flGraphics_8h_c34c64bbfdb095e3cd68d9d8377d9e6d}
+
+
+This restores the render target to being the draw buffer again. 
+
+
+
+Definition at line 361 of file fl\-Graphics.c.
+
+References FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT, and SCREEN\_\-STRIDE.\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderToVmem@{graphicsRenderToVmem}}
+\index{graphicsRenderToVmem@{graphicsRenderToVmem}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} graphics\-Render\-To\-Vmem (void $\ast$ {\em in\-Ptr}, int {\em in\-Stride}, u8 {\em in\-Pixel\-Format})}\label{flGraphics_8h_9acf5c5efe925b509ea0f7492470beb1}
+
+
+This sets the render target to an area in vmem. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]Pointer to the start of the render target. \item[{\em in\-Stride}]The total width of the buffer including stride. \item[{\em in\-Pixel\-Format}]The format of the render target using gu defines (e.g GU\_\-PSM\_\-8888). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Whether the target switch was successful or not. \end{Desc}
+
+
+Definition at line 368 of file fl\-Graphics.c.
+
+References debug\-Error.\index{flGraphics.h@{fl\-Graphics.h}!graphicsSetLinesAntiAlias@{graphicsSetLinesAntiAlias}}
+\index{graphicsSetLinesAntiAlias@{graphicsSetLinesAntiAlias}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Set\-Lines\-Anti\-Alias ({\bf bool} {\em in\-Value})}\label{flGraphics_8h_0d2da17590b400353918b7e9c13da25d}
+
+
+This is basically a wrapper for sce\-Gu\-Enable/Disable(GU\_\-LINE\_\-SMOOTH). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Value}]Whether to enable/disable line anti-aliasing. \end{description}
+\end{Desc}
+
+
+Definition at line 351 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsSetProjection@{graphicsSetProjection}}
+\index{graphicsSetProjection@{graphicsSetProjection}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Set\-Projection ()}\label{flGraphics_8h_10680cb607f0141656c16c5d2043492c}
+
+
+Sets up the projection matrix for 3d. 
+
+\begin{Desc}
+\item[Note:]This is currently called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} although this may change in the future. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} \end{Desc}
+
+
+Definition at line 190 of file fl\-Graphics.c.
+
+References SCREEN\_\-HEIGHT, and SCREEN\_\-WIDTH.
+
+Referenced by fl\-Initialize().\index{flGraphics.h@{fl\-Graphics.h}!graphicsSwapBuffers@{graphicsSwapBuffers}}
+\index{graphicsSwapBuffers@{graphicsSwapBuffers}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Swap\-Buffers ()}\label{flGraphics_8h_db756c191c21b69d74abc3660195b5b5}
+
+
+Swaps the buffers and display lists around to show what you drew last frame, this function is used as a launching off point for the notify functions and other functions that need to be called each frame. 
+
+\begin{Desc}
+\item[See also:]\doxyref{ntfy\-Tick()}{p.}{flNotify_8c_7aeb64804d2b67f5d68a9e737a8c929b} \end{Desc}
+
+
+Definition at line 219 of file fl\-Graphics.c.
+
+References FL\_\-GRAPHICS\_\-DISP\_\-BUFFER\_\-FORMAT, FL\_\-GRAPHICS\_\-DRAW\_\-BUFFER\_\-FORMAT, FL\_\-GRAPHICS\_\-FPS\_\-DAMPRATIO, FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-COLOR, FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO\_\-CUTOFF, font\-Default, font\-Draw2d\-String(), graphics\-Disp\-List\-Cur(), graphics\-FPSTimer, graphics\-VSync, GU\_\-SYNC\_\-WAIT, ntfy\-Tick(), NULL, SCREEN\_\-HEIGHT, SCREEN\_\-STRIDE, SCREEN\_\-WIDTH, tex\-Bound, timer\-Get\-Delta\-Time(), vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, and vert\-Ts\-Vs::vert\-Z.
+
+Referenced by debug\-Critical\-Error\-From().\index{flGraphics.h@{fl\-Graphics.h}!graphicsSwizzleData@{graphicsSwizzleData}}
+\index{graphicsSwizzleData@{graphicsSwizzleData}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8$\ast$ graphics\-Swizzle\-Data (u8 $\ast$ {\em in\-Data}, u32 {\em in\-Width}, u32 {\em in\-Height}, u8 {\em in\-Pixel\-Format})}\label{flGraphics_8h_d7f9558dce0ff8ff296f9fe4add9f95e}
+
+
+Swizzles data so it is optimized for the PSP GPU. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Data}]A pointer to the data that is to be swizzled. \item[{\em in\-Width}]The width of the data in pixels. \item[{\em in\-Height}]The height of the data in pixels. \item[{\em in\-Pixel\-Format}]The pixel format of the data, using gu defines (e.g GU\_\-PSM\_\-8888). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The pointer to the swizzled data or NULL on failure. \end{Desc}
+\begin{Desc}
+\item[Note:]This doesn't keep the original data, it simply swizzles the pointer you pass in. \end{Desc}
+
+
+Definition at line 403 of file fl\-Graphics.c.
+
+References debug\-Error, debug\-Warning, graphics\-Pixel\-Format\-BPP(), mem\-Copy, mem\-Free, mem\-Is\-Cached\-Pointer, mem\-Qalloc, and NULL.
+
+Referenced by font\-Create\-Debug\-Tex(), and tex\-Swizzle().\index{flGraphics.h@{fl\-Graphics.h}!graphicsTerm@{graphicsTerm}}
+\index{graphicsTerm@{graphicsTerm}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Term ()}\label{flGraphics_8h_b0f0df5d88851a06d529ad27f8798cc6}
+
+
+Terminates the graphics system, this is called internally by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}, \doxyref{graphics\-Init()}{p.}{flGraphics_8c_950a1257956da32debfb2d8730a6b52d} \end{Desc}
+
+
+Definition at line 205 of file fl\-Graphics.c.
+
+References GU\_\-SYNC\_\-WAIT, mem\-Free, and vmem\-Term().\index{flGraphics.h@{fl\-Graphics.h}!graphicsUnswizzleData@{graphicsUnswizzleData}}
+\index{graphicsUnswizzleData@{graphicsUnswizzleData}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8$\ast$ graphics\-Unswizzle\-Data (u8 $\ast$ {\em in\-Data}, u32 {\em in\-Width}, u32 {\em in\-Height}, u8 {\em in\-Pixel\-Format})}\label{flGraphics_8h_7384cae5dd83d48f3fa86c76fa9c9a65}
+
+
+Unswizzles data so it is back in it's natural state ready for saving/modifying. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Data}]A pointer to the data that is to be unswizzled. \item[{\em in\-Width}]The width of the data in pixels. \item[{\em in\-Height}]The height of the data in pixels. \item[{\em in\-Pixel\-Format}]The pixel format of the data, using gu defines (e.g GU\_\-PSM\_\-8888). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The pointer to the unswizzled data or NULL on failure. \end{Desc}
+\begin{Desc}
+\item[Note:]This doesn't keep the original data, it simply swizzles the pointer you pass in. \end{Desc}
+
+
+Definition at line 476 of file fl\-Graphics.c.
+
+References debug\-Error, debug\-Warning, graphics\-Pixel\-Format\-BPP(), mem\-Copy, mem\-Free, mem\-Is\-Cached\-Pointer, mem\-Qalloc, and NULL.
+
+Referenced by tex\-Unswizzle().
+
+\subsection{Variable Documentation}
+\index{flGraphics.h@{fl\-Graphics.h}!graphicsDepthBuffer@{graphicsDepthBuffer}}
+\index{graphicsDepthBuffer@{graphicsDepthBuffer}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Depth\-Buffer}}\label{flGraphics_8h_80558b8a647ebbf046d6fcda333254b2}
+
+
+Address of the Depth/Z buffer. 
+
+
+
+Definition at line 34 of file fl\-Graphics.c.
+
+Referenced by graphics\-Effect\-Fs\-Depth\-Fog().\index{flGraphics.h@{fl\-Graphics.h}!graphicsDispBuffer@{graphicsDispBuffer}}
+\index{graphicsDispBuffer@{graphicsDispBuffer}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Disp\-Buffer}}\label{flGraphics_8h_00c31250a9a33b5ce7426901d9958619}
+
+
+Address of the display buffer. 
+
+
+
+Definition at line 33 of file fl\-Graphics.c.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Warning\-From(), and tex\-Screenshot().\index{flGraphics.h@{fl\-Graphics.h}!graphicsDisplayList@{graphicsDisplayList}}
+\index{graphicsDisplayList@{graphicsDisplayList}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Display\-List}}\label{flGraphics_8h_40f49cc09feeb2b6c8fef8325fc90aba}
+
+
+Display list memory, used as the main 2 display lists. 
+
+
+
+Definition at line 27 of file fl\-Graphics.c.
+
+Referenced by pal\-Move\-VMem(), and tex\-Move\-VMem().\index{flGraphics.h@{fl\-Graphics.h}!graphicsDisplayListCache@{graphicsDisplayListCache}}
+\index{graphicsDisplayListCache@{graphicsDisplayListCache}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Display\-List\-Cache}}\label{flGraphics_8h_db5399fdb1ca4467759e3ccf4c99e0b9}
+
+
+A small display list, used for graphics using GU\_\-DIRECT . 
+
+
+
+Definition at line 28 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsDisplayListCurrent@{graphicsDisplayListCurrent}}
+\index{graphicsDisplayListCurrent@{graphicsDisplayListCurrent}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf graphics\-Display\-List\-Current}}\label{flGraphics_8h_06148e10fb8fa75f75c73eddcefbec78}
+
+
+The current display list to be used. 
+
+
+
+Definition at line 30 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsDrawBuffer@{graphicsDrawBuffer}}
+\index{graphicsDrawBuffer@{graphicsDrawBuffer}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Draw\-Buffer}}\label{flGraphics_8h_f8a409b48fa6480d486c049d90011c65}
+
+
+Address of the draw buffer. 
+
+
+
+Definition at line 32 of file fl\-Graphics.c.
+
+Referenced by debug\-Critical\-Error\-From(), debug\-Dev\-Warning\-From(), debug\-Error\-From(), debug\-Warning\-From(), graphics2d\-Draw\-Texture(), graphics2d\-Draw\-Texture\-Section(), graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Grayscale\-SW(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Night\-Vision\-SW(), and graphics\-Effect\-Fs\-Thermal\-Vision().\index{flGraphics.h@{fl\-Graphics.h}!graphicsFPS@{graphicsFPS}}
+\index{graphicsFPS@{graphicsFPS}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf graphics\-FPS}}\label{flGraphics_8h_d78448ff1858409fc980546359826f4d}
+
+
+The current fps, this is recalculated every frame so modifying it has almost no effect. 
+
+
+
+Definition at line 41 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsFPSShow@{graphicsFPSShow}}
+\index{graphicsFPSShow@{graphicsFPSShow}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf graphics\-FPSShow}}\label{flGraphics_8h_8efd064411b947d206b301d09fa9ac2f}
+
+
+This variable stores whether the FPS display is enabled or not, it defaults to FL\_\-GRAPHICS\_\-FPS\_\-SHOW\_\-DEFAULT. 
+
+
+
+Definition at line 42 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsFrame@{graphicsFrame}}
+\index{graphicsFrame@{graphicsFrame}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf graphics\-Frame}}\label{flGraphics_8h_e9703c746d9202bb1aa8fd247db81333}
+
+
+This stores whether the graphics system is currently mid-frame or not. 
+
+\begin{Desc}
+\item[Note:]At the minute this is unused, but it was used in older versions and is planned to be used in the future. \end{Desc}
+
+
+Definition at line 45 of file fl\-Graphics.c.
+
+Referenced by pal\-Move\-VMem(), and tex\-Move\-VMem().\index{flGraphics.h@{fl\-Graphics.h}!graphicsLinesAntiAlias@{graphicsLinesAntiAlias}}
+\index{graphicsLinesAntiAlias@{graphicsLinesAntiAlias}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf graphics\-Lines\-Anti\-Alias}}\label{flGraphics_8h_68a88667878da75e01a03f227f334b23}
+
+
+Whether line antialiasing is currently enabled or not. 
+
+
+
+Definition at line 36 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderTarget@{graphicsRenderTarget}}
+\index{graphicsRenderTarget@{graphicsRenderTarget}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf graphics\-Render\-Target}}\label{flGraphics_8h_6cdc962cb371526e73cd7d363b069799}
+
+
+The current render target address. 
+
+
+
+Definition at line 47 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderTargetPixelFormat@{graphicsRenderTargetPixelFormat}}
+\index{graphicsRenderTargetPixelFormat@{graphicsRenderTargetPixelFormat}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 {\bf graphics\-Render\-Target\-Pixel\-Format}}\label{flGraphics_8h_142112aabd5f33b9969439da2e03a7ec}
+
+
+The current render target pixel format. 
+
+
+
+Definition at line 49 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsRenderTargetStride@{graphicsRenderTargetStride}}
+\index{graphicsRenderTargetStride@{graphicsRenderTargetStride}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf graphics\-Render\-Target\-Stride}}\label{flGraphics_8h_1bfc36a9d69a4452a8ac16fe2fe5a5b7}
+
+
+The current render target buffer width. 
+
+
+
+Definition at line 48 of file fl\-Graphics.c.\index{flGraphics.h@{fl\-Graphics.h}!graphicsVSync@{graphicsVSync}}
+\index{graphicsVSync@{graphicsVSync}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf graphics\-VSync}}\label{flGraphics_8h_1036c245309b8f3d954093d58fa19b55}
+
+
+This boolean stores whether VSync is currently activated or not, it defaults to GRAPHICS\_\-VSYNC\_\-DEFAULT and can only be overridden if FL\_\-GRAPHICS\_\-VSYNC\_\-AUTO is enabled. 
+
+
+
+Definition at line 22 of file fl\-Graphics.c.
+
+Referenced by graphics\-Swap\-Buffers().\index{flGraphics.h@{fl\-Graphics.h}!graphicsWireframe@{graphicsWireframe}}
+\index{graphicsWireframe@{graphicsWireframe}!flGraphics.h@{fl\-Graphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf graphics\-Wireframe}}\label{flGraphics_8h_a32f1cad7201bc2b7dfc26fea2c8e8f7}
+
+
+Whether wireframe mode is enabled or not, this currently only effects the drawing of 3d primatives and models. 
+
+\begin{Desc}
+\item[Warning:]This is not implemented completely yet (even within the 3d drawing routines) so use it sparingly. \end{Desc}
+
+
+Definition at line 37 of file fl\-Graphics.c.
+
+Referenced by graphics3d\-Draw\-Cube(), graphics3d\-Draw\-Cube\-Coloreda(), mdl3d\-Stat\-Draw(), and mdl3d\-Stat\-Draw\-Textured().

@@ -1,0 +1,225 @@
+\section{graphics\-Old.h File Reference}
+\label{graphicsOld_8h}\index{graphicsOld.h@{graphicsOld.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf g\_\-vram\_\-base}~(u32$\ast$)(MEMORY\_\-VMEM\_\-BASE $|$ MEMORY\_\-UNCACHED\_\-OFFSET);
+\item 
+\#define {\bf PSP\_\-LINE\_\-SIZE}~SCREEN\_\-STRIDE
+\item 
+\#define {\bf A}(color)~((u8)(color $>$$>$ 24 \& 0x\-FF))
+\item 
+\#define {\bf B}(color)~((u8)(color $>$$>$ 16 \& 0x\-FF))
+\item 
+\#define {\bf G}(color)~((u8)(color $>$$>$ 8 \& 0x\-FF))
+\item 
+\#define {\bf R}(color)~((u8)(color \& 0x\-FF))
+\item 
+\#define {\bf IS\_\-ALPHA}(color)~(((color) \& 0xff000000) == 0xff000000 ? 0 : 1)
+\item 
+\#define {\bf FRAMEBUFFER\_\-SIZE}~((SCREEN\_\-STRIDE $\ast$ SCREEN\_\-HEIGHT) $<$$<$ 2)
+\item 
+\#define {\bf MAX}(X, Y)~max(x, y)
+\item 
+\#define {\bf Color}~u32
+\item 
+\#define {\bf Image}~{\bf Texture}
+\item 
+\#define {\bf load\-Image}(filename)~tex\-Load(filename)
+\item 
+\#define {\bf blit\-Image\-To\-Screen}(sx, sy, width, height, source, dx, dy)~graphics2d\-Draw\-Texture\-Section(dx, dy, width, height, source, sx, sy, width, height)
+\item 
+\#define {\bf blit\-Alpha\-Image\-To\-Screen}(sx, sy, width, height, source, dx, dy)~graphics2d\-Draw\-Texture\-Section(dx, dy, width, height, source, sx, sy, width, height)
+\item 
+\#define {\bf create\-Image}(width, height)~tex\-Create(width, height, GU\_\-PSM\_\-8888)
+\item 
+\#define {\bf free\-Image}(image)~tex\-Free(image)
+\item 
+\#define {\bf fill\-Screen\-Rect}(color, x0, y0, width, height)~graphics2d\-Draw\-Rect\-Filled(x0, y0, width, height, color)
+\item 
+\#define {\bf put\-Pixel\-Screen}(color, x, y)~graphics2d\-Draw\-Point(x, y, color)
+\item 
+\#define {\bf flip\-Screen}()~graphics\-Swap\-Buffers()
+\item 
+\#define {\bf init\-Graphics}()~graphics\-Init()
+\item 
+\#define {\bf disable\-Graphics}()~graphics\-Term()
+\item 
+\#define {\bf draw\-Line\-Screen}(x0, y0, x1, y1, color)~graphics2d\-Draw\-Line(x0, y0, x1, y1, color)
+\item 
+\#define {\bf get\-Vram\-Draw\-Buffer}()~{\bf graphics\-Draw\-Buffer}
+\item 
+\#define {\bf get\-Vram\-Display\-Buffer}()~graphics\-Display\-Buffer
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{graphicsOld.h@{graphics\-Old.h}!A@{A}}
+\index{A@{A}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define A(color)~((u8)(color $>$$>$ 24 \& 0x\-FF))}\label{graphicsOld_8h_bed7f16f971412916fead0bf2c0f62d9}
+
+
+
+
+Definition at line 5 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!B@{B}}
+\index{B@{B}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define B(color)~((u8)(color $>$$>$ 16 \& 0x\-FF))}\label{graphicsOld_8h_934a37224d883fbf98cc009c755bd712}
+
+
+
+
+Definition at line 6 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!blitAlphaImageToScreen@{blitAlphaImageToScreen}}
+\index{blitAlphaImageToScreen@{blitAlphaImageToScreen}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define blit\-Alpha\-Image\-To\-Screen(sx, sy, width, height, source, dx, dy)~graphics2d\-Draw\-Texture\-Section(dx, dy, width, height, source, sx, sy, width, height)}\label{graphicsOld_8h_55e6ad8db7b8d1df725f927084c19aa2}
+
+
+
+
+Definition at line 25 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!blitImageToScreen@{blitImageToScreen}}
+\index{blitImageToScreen@{blitImageToScreen}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define blit\-Image\-To\-Screen(sx, sy, width, height, source, dx, dy)~graphics2d\-Draw\-Texture\-Section(dx, dy, width, height, source, sx, sy, width, height)}\label{graphicsOld_8h_67325319d3c8d2e7f162e226499bb6bb}
+
+
+
+
+Definition at line 23 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!Color@{Color}}
+\index{Color@{Color}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Color~u32}\label{graphicsOld_8h_2f17017b1ef643696b678a0703f0f166}
+
+
+
+
+Definition at line 14 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!createImage@{createImage}}
+\index{createImage@{createImage}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define create\-Image(width, height)~tex\-Create(width, height, GU\_\-PSM\_\-8888)}\label{graphicsOld_8h_e2cba7c145720c8a9accfa917452a8b3}
+
+
+
+
+Definition at line 26 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!disableGraphics@{disableGraphics}}
+\index{disableGraphics@{disableGraphics}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define disable\-Graphics()~graphics\-Term()}\label{graphicsOld_8h_9805a7b4816ff499332bc57b352a458c}
+
+
+
+
+Definition at line 41 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!drawLineScreen@{drawLineScreen}}
+\index{drawLineScreen@{drawLineScreen}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define draw\-Line\-Screen(x0, y0, x1, y1, color)~graphics2d\-Draw\-Line(x0, y0, x1, y1, color)}\label{graphicsOld_8h_dcf1f38106baa0c899aef7bf2a65a484}
+
+
+
+
+Definition at line 42 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!fillScreenRect@{fillScreenRect}}
+\index{fillScreenRect@{fillScreenRect}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define fill\-Screen\-Rect(color, x0, y0, width, height)~graphics2d\-Draw\-Rect\-Filled(x0, y0, width, height, color)}\label{graphicsOld_8h_82b309b0eb5bbbbcbf3727d3cbee5b7a}
+
+
+
+
+Definition at line 31 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!flipScreen@{flipScreen}}
+\index{flipScreen@{flipScreen}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define flip\-Screen()~graphics\-Swap\-Buffers()}\label{graphicsOld_8h_6c9ebf33b45ef22a2b0499423a59639a}
+
+
+
+
+Definition at line 39 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!FRAMEBUFFER_SIZE@{FRAMEBUFFER\_\-SIZE}}
+\index{FRAMEBUFFER_SIZE@{FRAMEBUFFER\_\-SIZE}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FRAMEBUFFER\_\-SIZE~((SCREEN\_\-STRIDE $\ast$ SCREEN\_\-HEIGHT) $<$$<$ 2)}\label{graphicsOld_8h_8967718357443550d22f17c281a67587}
+
+
+
+
+Definition at line 11 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!freeImage@{freeImage}}
+\index{freeImage@{freeImage}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define free\-Image(image)~tex\-Free(image)}\label{graphicsOld_8h_a962222a2df29d1ec3b021e095a6b025}
+
+
+
+
+Definition at line 27 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!G@{G}}
+\index{G@{G}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define G(color)~((u8)(color $>$$>$ 8 \& 0x\-FF))}\label{graphicsOld_8h_7721ca941dbab8a1a0704d4bd60e513f}
+
+
+
+
+Definition at line 7 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!g_vram_base@{g\_\-vram\_\-base}}
+\index{g_vram_base@{g\_\-vram\_\-base}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define g\_\-vram\_\-base~(u32$\ast$)(MEMORY\_\-VMEM\_\-BASE $|$ MEMORY\_\-UNCACHED\_\-OFFSET);}\label{graphicsOld_8h_eb021147427f5005732a89d0034a8647}
+
+
+
+
+Definition at line 1 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!getVramDisplayBuffer@{getVramDisplayBuffer}}
+\index{getVramDisplayBuffer@{getVramDisplayBuffer}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define get\-Vram\-Display\-Buffer()~graphics\-Display\-Buffer}\label{graphicsOld_8h_d08befdec35ad8e2a5b5eb0803ef78db}
+
+
+
+
+Definition at line 45 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!getVramDrawBuffer@{getVramDrawBuffer}}
+\index{getVramDrawBuffer@{getVramDrawBuffer}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define get\-Vram\-Draw\-Buffer()~{\bf graphics\-Draw\-Buffer}}\label{graphicsOld_8h_3cccae3a5f088e1e88613e8d307969e5}
+
+
+
+
+Definition at line 44 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!Image@{Image}}
+\index{Image@{Image}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Image~{\bf Texture}}\label{graphicsOld_8h_00e10f90bb04c63972b0729024b0883b}
+
+
+
+
+Definition at line 16 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!initGraphics@{initGraphics}}
+\index{initGraphics@{initGraphics}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define init\-Graphics()~graphics\-Init()}\label{graphicsOld_8h_39d7cad70442fe75bd303d6532363854}
+
+
+
+
+Definition at line 40 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!IS_ALPHA@{IS\_\-ALPHA}}
+\index{IS_ALPHA@{IS\_\-ALPHA}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define IS\_\-ALPHA(color)~(((color) \& 0xff000000) == 0xff000000 ? 0 : 1)}\label{graphicsOld_8h_eba177bc43c7d8025d5794fe5dd3dfd5}
+
+
+
+
+Definition at line 10 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!loadImage@{loadImage}}
+\index{loadImage@{loadImage}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define load\-Image(filename)~tex\-Load(filename)}\label{graphicsOld_8h_ec920fa0f8a1905ccf239c7715089736}
+
+
+
+
+Definition at line 21 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!MAX@{MAX}}
+\index{MAX@{MAX}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define MAX(X, Y)~max(x, y)}\label{graphicsOld_8h_ff9931d7524c88e07743af6535b20761}
+
+
+
+
+Definition at line 12 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!PSP_LINE_SIZE@{PSP\_\-LINE\_\-SIZE}}
+\index{PSP_LINE_SIZE@{PSP\_\-LINE\_\-SIZE}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define PSP\_\-LINE\_\-SIZE~SCREEN\_\-STRIDE}\label{graphicsOld_8h_566171f653f06e90c747b069c9cbdabd}
+
+
+
+
+Definition at line 3 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!putPixelScreen@{putPixelScreen}}
+\index{putPixelScreen@{putPixelScreen}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define put\-Pixel\-Screen(color, x, y)~graphics2d\-Draw\-Point(x, y, color)}\label{graphicsOld_8h_a9ec52e7249b94d1dd010006f2443cd1}
+
+
+
+
+Definition at line 32 of file graphics\-Old.h.\index{graphicsOld.h@{graphics\-Old.h}!R@{R}}
+\index{R@{R}!graphicsOld.h@{graphics\-Old.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define R(color)~((u8)(color \& 0x\-FF))}\label{graphicsOld_8h_de8726343ca32cab0df4d619b18bf083}
+
+
+
+
+Definition at line 8 of file graphics\-Old.h.

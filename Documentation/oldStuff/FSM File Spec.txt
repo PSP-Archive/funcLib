@@ -1,0 +1,60 @@
+FSM - Flatmush Static Mesh/Model
+
+
+=================================================
+	File Definition
+=================================================
+
+Header
+{
+	char[4] FileType	= "FSM\0"
+	ubyte	Version		= 1
+	uint32	ChunksOffset	(Other applications may add chunks to a file to hold additional information)
+	
+
+	uint32	numTextures
+        uint32  numTexCoords
+	uint32	numVerts
+	uint32	numFaces
+	float	mdlScale
+	vect3f	mdlOffset
+}
+
+TexturesData
+{
+	char		StrLen
+	char[StrLen]	TexName
+}
+
+TexCoordsData
+{
+        uint32  Texture
+        float   U
+        float   V
+}
+
+VertexData
+{
+	float	X
+	float	Y
+	float	Z
+}
+
+FacesData
+{
+	uint32	Verts[3]
+        uint32  TexCoords[3]
+}
+
+<Raw Model Data>
+
+<Chunked Data>
+
+
+
+
+=================================================
+	Notes
+=================================================
+
+This format is basically like a static MD2.

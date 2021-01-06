@@ -1,0 +1,333 @@
+\section{fl\-Types.h File Reference}
+\label{flTypes_8h}\index{flTypes.h@{flTypes.h}}
+{\tt \#include $<$psptypes.h$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf vert\-Vs}
+\item 
+struct {\bf vert\-Vf}
+\item 
+struct {\bf vert\-CVs}
+\item 
+struct {\bf vert\-CVf}
+\item 
+struct {\bf vertc\-Vf}
+\item 
+struct {\bf vert\-Tf\-CVs}
+\item 
+struct {\bf vert\-Tf\-CVf}
+\item 
+struct {\bf vert\-Tf\-Vf}
+\item 
+struct {\bf vert\-Tf\-Vs}
+\item 
+struct {\bf vert\-Ts\-Vf}
+\item 
+struct {\bf vert\-Ts\-Vs}
+\item 
+struct {\bf Line2d}
+\item 
+struct {\bf Triangle2d}
+\item 
+struct {\bf Circle2d}
+\item 
+struct {\bf Ellipse2d}
+\item 
+struct {\bf Quad2d}
+\item 
+struct {\bf Rect2d}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf false}~0
+\item 
+\#define {\bf true}~!false
+\item 
+\#define {\bf FALSE}~0
+\item 
+\#define {\bf TRUE}~!FALSE
+\item 
+\#define {\bf False}~0
+\item 
+\#define {\bf True}~!False
+\item 
+\#define {\bf null}~((void $\ast$)0)
+\item 
+\#define {\bf NULL}~((void $\ast$)0)
+\item 
+\#define {\bf INVALID}~(({\bf dword})-1)
+\item 
+\#define {\bf vect2f\_\-Cmp}(in\-Vect0, in\-Vect1)~(((in\-Vect0).x == (in\-Vect1).x) \&\& ((in\-Vect0).y == (in\-Vect1).y))
+\item 
+\#define {\bf vect2f\_\-Add}(in\-Vect0, in\-Vect1)~(({\bf vect2f})\{ ((in\-Vect0).x + (in\-Vect1).x), ((in\-Vect0).y + (in\-Vect1).y) \})
+\item 
+\#define {\bf vect2f\_\-Sub}(in\-Vect0, in\-Vect1)~(({\bf vect2f})\{ ((in\-Vect0).x - (in\-Vect1).x), ((in\-Vect0).y - (in\-Vect1).y) \})
+\item 
+\#define {\bf vect3f\_\-Cmp}(in\-Vect0, in\-Vect1)~(((in\-Vect0).x == (in\-Vect1).x) \&\& ((in\-Vect0).y == (in\-Vect1).y) \&\& ((in\-Vect0).z == (in\-Vect1).z))
+\item 
+\#define {\bf vect3f\_\-Add}(in\-Vect0, in\-Vect1)~(({\bf vect3f})\{ ((in\-Vect0).x + (in\-Vect1).x), ((in\-Vect0).y + (in\-Vect1).y), ((in\-Vect0).z + (in\-Vect1).z) \})
+\item 
+\#define {\bf vect3f\_\-Sub}(in\-Vect0, in\-Vect1)~(({\bf vect3f})\{ ((in\-Vect0).x - (in\-Vect1).x), ((in\-Vect0).y - (in\-Vect1).y), ((in\-Vect0).z - (in\-Vect1).z) \})
+\item 
+\#define {\bf vect3f\_\-Mulf}(in\-Vect, in\-Float)~(({\bf vect3f})\{ ((in\-Vect).x $\ast$ (in\-Float)), ((in\-Vect).y $\ast$ (in\-Float)), ((in\-Vect).y $\ast$ (in\-Float)) \})
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef u8 {\bf uint8}
+\item 
+typedef u16 {\bf uint16}
+\item 
+typedef u32 {\bf uint32}
+\item 
+typedef u64 {\bf uint64}
+\item 
+typedef s8 {\bf int8}
+\item 
+typedef unsigned char {\bf byte}
+\item 
+typedef unsigned short {\bf word}
+\item 
+typedef unsigned long {\bf dword}
+\item 
+typedef char {\bf bool}
+\begin{CompactList}\small\item\em This could be an int, but I prefer to use a char as it's smaller. \item\end{CompactList}\item 
+typedef {\bf bool} {\bf boolean}
+\item 
+typedef Sce\-Psp\-FVector2 {\bf vect2f}
+\item 
+typedef Sce\-Psp\-FVector3 {\bf vect3f}
+\item 
+typedef Sce\-Psp\-FVector4 {\bf vect4f}
+\item 
+typedef {\bf vect4f} {\bf quat4f}
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{flTypes.h@{fl\-Types.h}!False@{False}}
+\index{False@{False}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define False~0}\label{flTypes_8h_306ebd41c0cd1303b1372c6153f0caf8}
+
+
+
+
+Definition at line 67 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FALSE~0}\label{flTypes_8h_a93f0eb578d23995850d61f7d61c55c1}
+
+
+
+
+Definition at line 59 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!false@{false}}
+\index{false@{false}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define false~0}\label{flTypes_8h_65e9886d74aaee76545e83dd09011727}
+
+
+
+
+Definition at line 51 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!INVALID@{INVALID}}
+\index{INVALID@{INVALID}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define INVALID~(({\bf dword})-1)}\label{flTypes_8h_df770fe2eec438e3758ffe905dbae208}
+
+
+
+
+Definition at line 83 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!NULL@{NULL}}
+\index{NULL@{NULL}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NULL~((void $\ast$)0)}\label{flTypes_8h_070d2ce7b6bb7e5c05602aa8c308d0c4}
+
+
+
+
+Definition at line 79 of file fl\-Types.h.
+
+Referenced by callback\-Create\-Thread(), cam\-Create(), file\-Extension(), file\-Gets(), file\-Name\-From\-Path(), file\-Open(), file\-Path\-Validate(), font\-Create\-Debug(), font\-Create\-Texture(), font\-Draw2d\-Char(), font\-Draw2d\-String(), font\-Load(), graphics\-Effect\-Fs\-Color\-Enhance(), graphics\-Effect\-Fs\-Depth\-Fog(), graphics\-Effect\-Fs\-Dichrome(), graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Grayscale(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), graphics\-Effect\-Fs\-Thermal\-Vision(), graphics\-Swap\-Buffers(), graphics\-Swizzle\-Data(), graphics\-Unswizzle\-Data(), mdl3d\-Anim\-Load(), mdl3d\-Anim\-Load\-MD2(), mdl3d\-Stat\-Draw\-Textured(), mdl3d\-Stat\-Load(), mdl3d\-Stat\-Load\-OBJ(), mdl3d\-Stat\-Load\-OBJ\_\-face\-Read(), mem\-Align\-From(), mem\-Alloc\-Uncached\-From(), mem\-Calloc\-From(), memp\-Align(), memp\-Alloc(), memp\-Calloc(), memp\-Create(), memp\-Realloc(), mem\-Realloc\-From(), memt\-Add\-From(), memt\-Del\-From(), mem\-Uncached\-Ptr\-From(), pal\-Create(), pal\-Free(), sprite\-Create(), tex\-Bind(), tex\-Create(), tex\-Create\-Blank(), tex\-Free(), tex\-Load(), tex\-Load\-BMP(), tex\-Load\-PCX(), tex\-Load\-TGA(), tex\-Screenshot(), tex\-Tree\-Add(), tex\-Tree\-Find\-Node\-By\-Tex(), tex\-Tree\-Find\-Node\-By\-Tex\-R(), tex\-Tree\-Find\-Path\-By\-Tex(), tex\-Tree\-Find\-Tex\-By\-Path(), timer\-Create(), vmem\-Alloc\-From(), vmem\-Calloc\-From(), vmem\-Normal\-Ptr(), vmem\-Realloc\-From(), vmem\-Stride\-Align(), and vmem\-Stride\-Block\-Add().\index{flTypes.h@{fl\-Types.h}!null@{null}}
+\index{null@{null}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define null~((void $\ast$)0)}\label{flTypes_8h_c97b8ee753e4405397a42ad5799b0f9e}
+
+
+
+
+Definition at line 75 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!True@{True}}
+\index{True@{True}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define True~!False}\label{flTypes_8h_dd3ca9eefe3b5b754426f51d3043e579}
+
+
+
+
+Definition at line 71 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TRUE~!FALSE}\label{flTypes_8h_a8cecfc5c5c054d2875c03e77b7be15d}
+
+
+
+
+Definition at line 63 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!true@{true}}
+\index{true@{true}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define true~!false}\label{flTypes_8h_41f9c5fb8b08eb5dc3edce4dcb37fee7}
+
+
+
+
+Definition at line 55 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect2f_Add@{vect2f\_\-Add}}
+\index{vect2f_Add@{vect2f\_\-Add}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect2f\_\-Add(in\-Vect0, in\-Vect1)~(({\bf vect2f})\{ ((in\-Vect0).x + (in\-Vect1).x), ((in\-Vect0).y + (in\-Vect1).y) \})}\label{flTypes_8h_41d0d3660a0d10506528885deebf622e}
+
+
+
+
+Definition at line 185 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect2f_Cmp@{vect2f\_\-Cmp}}
+\index{vect2f_Cmp@{vect2f\_\-Cmp}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect2f\_\-Cmp(in\-Vect0, in\-Vect1)~(((in\-Vect0).x == (in\-Vect1).x) \&\& ((in\-Vect0).y == (in\-Vect1).y))}\label{flTypes_8h_0755d7c21f77570367a26245f5cb0898}
+
+
+
+
+Definition at line 184 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect2f_Sub@{vect2f\_\-Sub}}
+\index{vect2f_Sub@{vect2f\_\-Sub}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect2f\_\-Sub(in\-Vect0, in\-Vect1)~(({\bf vect2f})\{ ((in\-Vect0).x - (in\-Vect1).x), ((in\-Vect0).y - (in\-Vect1).y) \})}\label{flTypes_8h_ab6c45c5df17a9a18f4187031046e82c}
+
+
+
+
+Definition at line 186 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect3f_Add@{vect3f\_\-Add}}
+\index{vect3f_Add@{vect3f\_\-Add}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect3f\_\-Add(in\-Vect0, in\-Vect1)~(({\bf vect3f})\{ ((in\-Vect0).x + (in\-Vect1).x), ((in\-Vect0).y + (in\-Vect1).y), ((in\-Vect0).z + (in\-Vect1).z) \})}\label{flTypes_8h_84108eba3fe297a1cf5acf286aea7682}
+
+
+
+
+Definition at line 189 of file fl\-Types.h.
+
+Referenced by cam\-Move(), and cam\-View().\index{flTypes.h@{fl\-Types.h}!vect3f_Cmp@{vect3f\_\-Cmp}}
+\index{vect3f_Cmp@{vect3f\_\-Cmp}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect3f\_\-Cmp(in\-Vect0, in\-Vect1)~(((in\-Vect0).x == (in\-Vect1).x) \&\& ((in\-Vect0).y == (in\-Vect1).y) \&\& ((in\-Vect0).z == (in\-Vect1).z))}\label{flTypes_8h_7ae34799dd290cad53e221456a5ff6e3}
+
+
+
+
+Definition at line 188 of file fl\-Types.h.
+
+Referenced by mdl3d\-Stat\-Optimize().\index{flTypes.h@{fl\-Types.h}!vect3f_Mulf@{vect3f\_\-Mulf}}
+\index{vect3f_Mulf@{vect3f\_\-Mulf}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect3f\_\-Mulf(in\-Vect, in\-Float)~(({\bf vect3f})\{ ((in\-Vect).x $\ast$ (in\-Float)), ((in\-Vect).y $\ast$ (in\-Float)), ((in\-Vect).y $\ast$ (in\-Float)) \})}\label{flTypes_8h_bbfdd6b9abb18c8ae319a1b633e7473a}
+
+
+
+
+Definition at line 191 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect3f_Sub@{vect3f\_\-Sub}}
+\index{vect3f_Sub@{vect3f\_\-Sub}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define vect3f\_\-Sub(in\-Vect0, in\-Vect1)~(({\bf vect3f})\{ ((in\-Vect0).x - (in\-Vect1).x), ((in\-Vect0).y - (in\-Vect1).y), ((in\-Vect0).z - (in\-Vect1).z) \})}\label{flTypes_8h_1807c5909484b46dbeec2894f8463609}
+
+
+
+
+Definition at line 190 of file fl\-Types.h.
+
+Referenced by cam\-Move\-To().
+
+\subsection{Typedef Documentation}
+\index{flTypes.h@{fl\-Types.h}!bool@{bool}}
+\index{bool@{bool}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef char {\bf bool}}\label{flTypes_8h_d5c9d4ba3dc37783a528b0925dc981a0}
+
+
+This could be an int, but I prefer to use a char as it's smaller. 
+
+
+
+Definition at line 43 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!boolean@{boolean}}
+\index{boolean@{boolean}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf bool} {\bf boolean}}\label{flTypes_8h_f29b166bf5fea7f0bbc07f7014a8c6b5}
+
+
+
+
+Definition at line 47 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!byte@{byte}}
+\index{byte@{byte}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char {\bf byte}}\label{flTypes_8h_0c8186d9b9b7880309c27230bbb5e69d}
+
+
+
+
+Definition at line 31 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!dword@{dword}}
+\index{dword@{dword}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned long {\bf dword}}\label{flTypes_8h_74cb93d430006e784da73b8ca406ee6e}
+
+
+
+
+Definition at line 39 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!int8@{int8}}
+\index{int8@{int8}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef s8 {\bf int8}}\label{flTypes_8h_e652227737a6faf57dd88c9005ce1c48}
+
+
+
+
+Definition at line 27 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!quat4f@{quat4f}}
+\index{quat4f@{quat4f}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf vect4f} {\bf quat4f}}\label{flTypes_8h_9685a5eb7bee6706c3a1253287fd8efc}
+
+
+
+
+Definition at line 155 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!uint16@{uint16}}
+\index{uint16@{uint16}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef u16 {\bf uint16}}\label{flTypes_8h_61a80909816e20159dd5e79a5c7cb343}
+
+
+
+
+Definition at line 15 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!uint32@{uint32}}
+\index{uint32@{uint32}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef u32 {\bf uint32}}\label{flTypes_8h_13bdb6ec18cd62b254a4635c9873ef5d}
+
+
+
+
+Definition at line 19 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!uint64@{uint64}}
+\index{uint64@{uint64}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef u64 {\bf uint64}}\label{flTypes_8h_080c27aa89210a5bd4ed59bcdef18996}
+
+
+
+
+Definition at line 23 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!uint8@{uint8}}
+\index{uint8@{uint8}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef u8 {\bf uint8}}\label{flTypes_8h_30aeb5ca91db64dfc0e591cafba4abe2}
+
+
+
+
+Definition at line 11 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect2f@{vect2f}}
+\index{vect2f@{vect2f}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef Sce\-Psp\-FVector2 {\bf vect2f}}\label{flTypes_8h_aa82c9fe8f73d95dd2c04111f6c4df04}
+
+
+
+
+Definition at line 151 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect3f@{vect3f}}
+\index{vect3f@{vect3f}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef Sce\-Psp\-FVector3 {\bf vect3f}}\label{flTypes_8h_3a47c621e6f02f2c15ee0f9ac6a4c9a1}
+
+
+
+
+Definition at line 152 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!vect4f@{vect4f}}
+\index{vect4f@{vect4f}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef Sce\-Psp\-FVector4 {\bf vect4f}}\label{flTypes_8h_0a7e4dee7a86fb93c0c120722f1151eb}
+
+
+
+
+Definition at line 153 of file fl\-Types.h.\index{flTypes.h@{fl\-Types.h}!word@{word}}
+\index{word@{word}!flTypes.h@{fl\-Types.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short {\bf word}}\label{flTypes_8h_285e72252c100e2508e4e933a0738f2b}
+
+
+
+
+Definition at line 35 of file fl\-Types.h.

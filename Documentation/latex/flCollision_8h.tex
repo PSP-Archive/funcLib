@@ -1,0 +1,84 @@
+\section{fl\-Collision.h File Reference}
+\label{flCollision_8h}\index{flCollision.h@{flCollision.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf vect2f} {\bf collision2d\-Line\-Closest\-Point} ({\bf Line2d} in\-Line, {\bf vect2f} in\-Point)
+\item 
+{\bf bool} {\bf collision2d\-Line\-Line} ({\bf Line2d} in\-Line0, {\bf Line2d} in\-Line1)
+\item 
+{\bf bool} {\bf collision2d\-Circle\-Circle} ({\bf Circle2d} in\-Circ0, {\bf Circle2d} in\-Circ1)
+\item 
+{\bf bool} {\bf collision2d\-Line\-Circle} ({\bf Line2d} in\-Line, {\bf Circle2d} in\-Circ)
+\item 
+{\bf bool} {\bf collision2d\-Rect\-Rect} ({\bf Rect2d} in\-Rect0, {\bf Rect2d} in\-Rect1)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf vect2f} {\bf collision\-Last}
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flCollision.h@{fl\-Collision.h}!collision2dCircleCircle@{collision2dCircleCircle}}
+\index{collision2dCircleCircle@{collision2dCircleCircle}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} collision2d\-Circle\-Circle ({\bf Circle2d} {\em in\-Circ0}, {\bf Circle2d} {\em in\-Circ1})}\label{flCollision_8h_6a13d562d73bdbdbe4578c16fbc2d3b7}
+
+
+
+
+Definition at line 142 of file fl\-Collision.c.
+
+References Circle2d::circ\-Center, Circle2d::circ\-Radius, collision\-Last, max, and min.\index{flCollision.h@{fl\-Collision.h}!collision2dLineCircle@{collision2dLineCircle}}
+\index{collision2dLineCircle@{collision2dLineCircle}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} collision2d\-Line\-Circle ({\bf Line2d} {\em in\-Line}, {\bf Circle2d} {\em in\-Circ})}\label{flCollision_8h_6aeb26d3a4760cd389a1fdd3a06ec498}
+
+
+
+
+Definition at line 160 of file fl\-Collision.c.
+
+References Circle2d::circ\-Center, Circle2d::circ\-Radius, collision2d\-Line\-Closest\-Point(), collision\-Last, max, and min.\index{flCollision.h@{fl\-Collision.h}!collision2dLineClosestPoint@{collision2dLineClosestPoint}}
+\index{collision2dLineClosestPoint@{collision2dLineClosestPoint}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect2f} collision2d\-Line\-Closest\-Point ({\bf Line2d} {\em in\-Line}, {\bf vect2f} {\em in\-Point})}\label{flCollision_8h_87cca69b4fc64de635bbd81da906c3ae}
+
+
+
+
+Definition at line 10 of file fl\-Collision.c.
+
+References Line2d::line\-Points.
+
+Referenced by collision2d\-Line\-Circle().\index{flCollision.h@{fl\-Collision.h}!collision2dLineLine@{collision2dLineLine}}
+\index{collision2dLineLine@{collision2dLineLine}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} collision2d\-Line\-Line ({\bf Line2d} {\em in\-Line0}, {\bf Line2d} {\em in\-Line1})}\label{flCollision_8h_0273e7aa05da48542d9a2dca76944955}
+
+
+
+
+Definition at line 30 of file fl\-Collision.c.
+
+References collision\-Last, Line2d::line\-Points, max, and min.\index{flCollision.h@{fl\-Collision.h}!collision2dRectRect@{collision2dRectRect}}
+\index{collision2dRectRect@{collision2dRectRect}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} collision2d\-Rect\-Rect ({\bf Rect2d} {\em in\-Rect0}, {\bf Rect2d} {\em in\-Rect1})}\label{flCollision_8h_0bc28bfeb7982182d0168423a6ae8b9c}
+
+
+
+
+Definition at line 175 of file fl\-Collision.c.
+
+References collision\-Last, Rect2d::rect\-Points, and Rect2d::rect\-Size.
+
+\subsection{Variable Documentation}
+\index{flCollision.h@{fl\-Collision.h}!collisionLast@{collisionLast}}
+\index{collisionLast@{collisionLast}!flCollision.h@{fl\-Collision.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect2f} {\bf collision\-Last}}\label{flCollision_8h_bd00ab8c248da82912ff1a8ca676cf86}
+
+
+
+
+Definition at line 8 of file fl\-Collision.c.
+
+Referenced by collision2d\-Circle\-Circle(), collision2d\-Line\-Circle(), collision2d\-Line\-Line(), and collision2d\-Rect\-Rect().

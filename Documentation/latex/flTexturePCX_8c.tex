@@ -1,0 +1,64 @@
+\section{fl\-Texture\-PCX.c File Reference}
+\label{flTexturePCX_8c}\index{flTexturePCX.c@{flTexturePCX.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$pspgu.h$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf pcx\-File\-Header}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Load\-PCX} (char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Loads a pcx image into a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\item 
+{\bf bool} {\bf tex\-Save\-PCX} ({\bf Texture} $\ast$in\-Tex, char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Saves a pcx image from a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flTexturePCX.c@{fl\-Texture\-PCX.c}!texLoadPCX@{texLoadPCX}}
+\index{texLoadPCX@{texLoadPCX}!flTexturePCX.c@{fl\-Texture\-PCX.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Load\-PCX (char $\ast$ {\em in\-Path})}\label{flTexturePCX_8c_9d7641e47c72b61961e1147e415a9153}
+
+
+Loads a pcx image into a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Path}]Path to the pcx image in memory or file. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the texture struct created to hold the pcx, or NULL on failure. \end{Desc}
+
+
+Definition at line 39 of file fl\-Texture\-PCX.c.
+
+References pcx\-File\-Header::bpp, pcx\-File\-Header::bytes\-Per\-Line, pcx\-File\-Header::color\-Planes, debug\-Error, pcx\-File\-Header::encoding, FILE\_\-MODE\_\-BINARY, FILE\_\-MODE\_\-READ, file\-Close(), file\-Open(), file\-Read(), pcx\-File\-Header::filler, pcx\-File\-Header::horizontal\-DPI, pcx\-File\-Header::h\-Scr\-Size, pcx\-File\-Header::manufacturer, mem\-Qalloc, NULL, pcx\-File\-Header::palette, pcx\-File\-Header::palette\-Type, pcx\-File\-Header::reserved, pcx\-File\-Header::version, pcx\-File\-Header::vertical\-DPI, pcx\-File\-Header::v\-Scr\-Size, pcx\-File\-Header::x\-Max, pcx\-File\-Header::x\-Min, pcx\-File\-Header::y\-Max, and pcx\-File\-Header::y\-Min.
+
+Referenced by tex\-Load().\index{flTexturePCX.c@{fl\-Texture\-PCX.c}!texSavePCX@{texSavePCX}}
+\index{texSavePCX@{texSavePCX}!flTexturePCX.c@{fl\-Texture\-PCX.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Save\-PCX ({\bf Texture} $\ast$ {\em in\-Tex}, char $\ast$ {\em in\-Path})}\label{flTexturePCX_8c_3a47214f4f264bd2f85808dfb0aa9ea1}
+
+
+Saves a pcx image from a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Tex}]The texture to save as a pcx. \item[{\em in\-Path}]Path to the file to which the pcx image will be written. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Whether the pcx was saved successfully or not. \end{Desc}
+\begin{Desc}
+\item[Warning:]This will always return false an log an error as it is not yet implemented. \end{Desc}
+
+
+Definition at line 260 of file fl\-Texture\-PCX.c.
+
+References debug\-Warning.
+
+Referenced by tex\-Save().

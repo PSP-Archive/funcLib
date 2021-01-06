@@ -1,0 +1,57 @@
+\section{fl\-Texture\-BMP.h File Reference}
+\label{flTextureBMP_8h}\index{flTextureBMP.h@{flTextureBMP.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include \char`\"{}fl\-Texture.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Texture} $\ast$ {\bf tex\-Load\-BMP} (char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Loads a bitmap image into a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\item 
+{\bf bool} {\bf tex\-Save\-BMP} ({\bf Texture} $\ast$in\-Tex, char $\ast$in\-Path)
+\begin{CompactList}\small\item\em Saves a bitmap image from a \doxyref{Texture}{p.}{structTexture} struct. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flTextureBMP.h@{fl\-Texture\-BMP.h}!texLoadBMP@{texLoadBMP}}
+\index{texLoadBMP@{texLoadBMP}!flTextureBMP.h@{fl\-Texture\-BMP.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Texture}$\ast$ tex\-Load\-BMP (char $\ast$ {\em in\-Path})}\label{flTextureBMP_8h_2f420e1ef597a67e6686e560b2609b89}
+
+
+Loads a bitmap image into a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Path}]Path to the bitmap image in memory or file. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the texture struct created to hold the bmp, or NULL on failure. \end{Desc}
+
+
+Definition at line 206 of file fl\-Texture\-BMP.c.
+
+References BMP\_\-HEADER\_\-WV1, bmp\-Info\-Header\-Generic::bmp\-Alpha\-Mask, bmp\-Info\-Header\-Generic::bmp\-Blue\-Mask, bmp\-Info\-Header\-Generic::bmp\-BPP, bmp\-Info\-Header\-Generic::bmp\-Byte\-Width, bmp\-Info\-Header\-Generic::bmp\-Color\-Encoding, bmp\-Info\-Header\-Generic::bmp\-Colors\-Important, bmp\-Info\-Header\-Generic::bmp\-Colors\-Used, bmp\-Info\-Header\-Generic::bmp\-Compression, bmp\-Info\-Header\-Generic::bmp\-CSType, bmp\-Header::bmp\-Data\-Offset, bmp\-Info\-Header\-Generic::bmp\-Endpoints, bmp\-Header::bmp\-File\-Size, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Blue, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Green, bmp\-Info\-Header\-Generic::bmp\-Gamma\-Red, bmp\-Info\-Header\-Generic::bmp\-Green\-Mask, bmp\-Info\-Header\-Generic::bmp\-Height, bmp\-Info\-Header\-Generic::bmp\-Identifier, bmp\-Info\-Header\-Generic::bmp\-Image\-Size, bmp\-Info\-Header\-Generic::bmp\-Intent, bmp\-Info\-Header\-Generic::bmp\-Planes, bmp\-Info\-Header\-Generic::bmp\-Profile\-Data, bmp\-Info\-Header\-Generic::bmp\-Profile\-Size, bmp\-Info\-Header\-Generic::bmp\-Recording, bmp\-Info\-Header\-Generic::bmp\-Red\-Mask, bmp\-Info\-Header\-Generic::bmp\-Rendering, bmp\-Info\-Header\-Generic::bmp\-Reserved, bmp\-Header::bmp\-Reserved, bmp\-Header::bmp\-Signature, bmp\-Info\-Header\-Generic::bmp\-Size, bmp\-Info\-Header\-Generic::bmp\-Size1, bmp\-Info\-Header\-Generic::bmp\-Size2, bmp\-Info\-Header\-Generic::bmp\-Type, bmp\-Info\-Header\-Generic::bmp\-Units, bmp\-Info\-Header\-Generic::bmp\-Width, bmp\-Info\-Header\-Generic::bmp\-XResolution, bmp\-Info\-Header\-Generic::bmp\-YResolution, debug\-Error, debug\-Warning, FILE\_\-MODE\_\-BINARY, FILE\_\-MODE\_\-READ, file\-Close(), file\-Open(), file\-Read(), and NULL.
+
+Referenced by tex\-Load().\index{flTextureBMP.h@{fl\-Texture\-BMP.h}!texSaveBMP@{texSaveBMP}}
+\index{texSaveBMP@{texSaveBMP}!flTextureBMP.h@{fl\-Texture\-BMP.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} tex\-Save\-BMP ({\bf Texture} $\ast$ {\em in\-Tex}, char $\ast$ {\em in\-Path})}\label{flTextureBMP_8h_4d61259e31bfe870c7b2b621e3d50092}
+
+
+Saves a bitmap image from a \doxyref{Texture}{p.}{structTexture} struct. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Tex}]The texture to save as a bmp. \item[{\em in\-Path}]Path to the file to which the bitmap image will be written. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Whether the bitmap was saved successfully or not. \end{Desc}
+\begin{Desc}
+\item[Warning:]This will always return false an log an error as it is not yet implemented. \end{Desc}
+
+
+Definition at line 859 of file fl\-Texture\-BMP.c.
+
+References debug\-Warning.
+
+Referenced by tex\-Save().

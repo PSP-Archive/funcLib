@@ -1,0 +1,135 @@
+\section{fl\-Color.c File Reference}
+\label{flColor_8c}\index{flColor.c@{flColor.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+u32 {\bf color\-HSL} (u8 in\-Hue, u8 in\-Sat, u8 in\-Lum)
+\item 
+u8 {\bf color\-Hue8888} (u32 in\-Color)
+\item 
+u8 {\bf color\-Sat8888} (u32 in\-Color)
+\item 
+u8 {\bf color\-Lum8888} (u32 in\-Color)
+\item 
+u32 {\bf color\-Merge\-N8888} (u32 $\ast$in\-Color, u32 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N4444} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N5551} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u16 {\bf color\-Merge\-N565} (u16 $\ast$in\-Color, u16 in\-Color\-Count)
+\item 
+u32 {\bf color\-Random8888} (u8 in\-Base\-Lum, u8 in\-Rand\-Lum, u8 in\-Alpha)
+\item 
+u32 {\bf color\-Lum\-Mult8888} (u32 in\-Color, float in\-Lum)
+\item 
+u32 {\bf color\-Alpha\-Mult8888} (u32 in\-Color, float in\-Mult)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flColor.c@{fl\-Color.c}!colorAlphaMult8888@{colorAlphaMult8888}}
+\index{colorAlphaMult8888@{colorAlphaMult8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Alpha\-Mult8888 (u32 {\em in\-Color}, float {\em in\-Mult})}\label{flColor_8c_fb596a1100915bb37f2077abd553b0f4}
+
+
+
+
+Definition at line 194 of file fl\-Color.c.
+
+References color8888\_\-Alpha, and min.\index{flColor.c@{fl\-Color.c}!colorHSL@{colorHSL}}
+\index{colorHSL@{colorHSL}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-HSL (u8 {\em in\-Hue}, u8 {\em in\-Sat}, u8 {\em in\-Lum})}\label{flColor_8c_1f1236cd3a557da2460a8ea749a1a281}
+
+
+
+
+Definition at line 11 of file fl\-Color.c.
+
+References color8888\_\-RGB.\index{flColor.c@{fl\-Color.c}!colorHue8888@{colorHue8888}}
+\index{colorHue8888@{colorHue8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Hue8888 (u32 {\em in\-Color})}\label{flColor_8c_9b21668439ded2a1e473584fa56ee9a1}
+
+
+
+
+Definition at line 43 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, max, and min.\index{flColor.c@{fl\-Color.c}!colorLum8888@{colorLum8888}}
+\index{colorLum8888@{colorLum8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Lum8888 (u32 {\em in\-Color})}\label{flColor_8c_a8a43be1182590891faaf0c93d26e62f}
+
+
+
+
+Definition at line 89 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, max, and min.\index{flColor.c@{fl\-Color.c}!colorLumMult8888@{colorLumMult8888}}
+\index{colorLumMult8888@{colorLumMult8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Lum\-Mult8888 (u32 {\em in\-Color}, float {\em in\-Lum})}\label{flColor_8c_eabbaad667dc71427eb83782d1588762}
+
+
+
+
+Definition at line 185 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, min, and pos.
+
+Referenced by graphics2d\-Draw\-Spheroid\-Shaded().\index{flColor.c@{fl\-Color.c}!colorMergeN4444@{colorMergeN4444}}
+\index{colorMergeN4444@{colorMergeN4444}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N4444 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8c_9061458880496c59dbb038847f691c21}
+
+
+
+
+Definition at line 122 of file fl\-Color.c.
+
+References color4444\_\-Alpha, color4444\_\-Blue, color4444\_\-Green, color4444\_\-Red, and color4444\_\-RGBA.\index{flColor.c@{fl\-Color.c}!colorMergeN5551@{colorMergeN5551}}
+\index{colorMergeN5551@{colorMergeN5551}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N5551 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8c_bb41f344d97f285f6e39ae0e931e3b80}
+
+
+
+
+Definition at line 139 of file fl\-Color.c.
+
+References color5551\_\-Alpha, color5551\_\-Blue, color5551\_\-Green, color5551\_\-Red, and color5551\_\-RGBA.\index{flColor.c@{fl\-Color.c}!colorMergeN565@{colorMergeN565}}
+\index{colorMergeN565@{colorMergeN565}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u16 color\-Merge\-N565 (u16 $\ast$ {\em in\-Color}, u16 {\em in\-Color\-Count})}\label{flColor_8c_7aa019d179d856b74f3c50b1bd0187a5}
+
+
+
+
+Definition at line 156 of file fl\-Color.c.
+
+References color565\_\-Blue, color565\_\-Green, color565\_\-Red, and color565\_\-RGB.\index{flColor.c@{fl\-Color.c}!colorMergeN8888@{colorMergeN8888}}
+\index{colorMergeN8888@{colorMergeN8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Merge\-N8888 (u32 $\ast$ {\em in\-Color}, u32 {\em in\-Color\-Count})}\label{flColor_8c_b8b06e4b309e0490876e4c853ccbebcd}
+
+
+
+
+Definition at line 104 of file fl\-Color.c.
+
+References color8888\_\-RGBA.\index{flColor.c@{fl\-Color.c}!colorRandom8888@{colorRandom8888}}
+\index{colorRandom8888@{colorRandom8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 color\-Random8888 (u8 {\em in\-Base\-Lum}, u8 {\em in\-Rand\-Lum}, u8 {\em in\-Alpha})}\label{flColor_8c_30cd44a08fded741a0764165d2062f45}
+
+
+
+
+Definition at line 171 of file fl\-Color.c.
+
+References math\-Randi().\index{flColor.c@{fl\-Color.c}!colorSat8888@{colorSat8888}}
+\index{colorSat8888@{colorSat8888}!flColor.c@{fl\-Color.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u8 color\-Sat8888 (u32 {\em in\-Color})}\label{flColor_8c_7c525628b898faa9a99e217c0232c4d7}
+
+
+
+
+Definition at line 72 of file fl\-Color.c.
+
+References color8888\_\-Blue, color8888\_\-Green, and color8888\_\-Red.

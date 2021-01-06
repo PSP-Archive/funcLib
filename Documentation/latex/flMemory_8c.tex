@@ -1,0 +1,432 @@
+\section{fl\-Memory.c File Reference}
+\label{flMemory_8c}\index{flMemory.c@{flMemory.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$malloc.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$string.h$>$}\par
+{\tt \#include $<$pspkernel.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf mem\-Init} ()
+\begin{CompactList}\small\item\em Called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize the memory system. \item\end{CompactList}\item 
+void {\bf mem\-Term} ()
+\begin{CompactList}\small\item\em Called by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} to deinitialize the memory system. \item\end{CompactList}\item 
+u32 {\bf mem\-Free\-Space} (u32 in\-Accuracy)
+\begin{CompactList}\small\item\em Returns a close estimate of the amount of free space. \item\end{CompactList}\item 
+u32 {\bf mem\-Free\-Space\-Total} ()
+\begin{CompactList}\small\item\em Returns a close estimate of the total amount of free space available to the program on the whole system, this includes video memory, scratchpad and any other memory func\-Lib can get it's hands on. \item\end{CompactList}\item 
+char $\ast$ {\bf mem\-String} (u32 in\-Bytes, {\bf bool} in\-Binary)
+\begin{CompactList}\small\item\em Converts an amount of bytes into a more humanly readable string to be printed in a log or to the screen. \item\end{CompactList}\item 
+void {\bf mem\-Set\-Byte\-From} (void $\ast$in\-Ptr, int in\-Val, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Set\-Short\-From} (void $\ast$in\-Ptr, int in\-Val, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Clear\-From} (void $\ast$in\-Ptr, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Copy\-From} (void $\ast$in\-Dest, void $\ast$in\-Src, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+int {\bf mem\-Compare\-From} (void $\ast$in\-Src0, void $\ast$in\-Src1, unsigned int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Alloc\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\begin{CompactList}\small\item\em This functions is identical to \doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} except that it takes extra parameters to define where it was called from,. \item\end{CompactList}\item 
+void $\ast$ {\bf mem\-Qalloc\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Calloc\-From} (int in\-Size0, int in\-Size1, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Alloc\-Uncached\-From} (int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Realloc\-From} (void $\ast$in\-Data, int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Align\-From} (int in\-Boundry, int in\-Size, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf mem\-Free\-From} (void $\ast$in\-Data, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void $\ast$ {\bf mem\-Uncached\-Ptr\-From} (void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+u32 {\bf mem\-Address\-Alignment} (void $\ast$in\-Ptr)
+\begin{CompactList}\small\item\em Calculates the largest binary increment that a pointer is aligned to (e.g 16, 32, 64, 128, etc. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Address\-Valid} (void $\ast$in\-Ptr)
+\begin{CompactList}\small\item\em Checks if a pointer resides within valid memory blocks on the terget platform. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Block\-Valid} (void $\ast$in\-Ptr, u32 in\-Size)
+\begin{CompactList}\small\item\em Checks if a memory block resides within valid memory blocks on the terget platform. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Error\-Bytes\-Check\-From} (void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Add\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, void $\ast$in\-Ptr, u32 in\-Size, u32 in\-Alignment, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Del\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, void $\ast$in\-Ptr, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\item 
+void {\bf memt\-Error\-Bytes\-Check\-From} ({\bf Memory\-Tree} $\ast$$\ast$in\-Mem\-Tree, const char $\ast$in\-File, const char $\ast$in\-Func, int in\-Line)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf Memory\-Tree} $\ast$ {\bf mem\-Error\-Tree} = NULL
+\item 
+{\bf bool} {\bf mem\-Initialized} = false
+\begin{CompactList}\small\item\em A boolean to represent whether the memory system has been initialized or not, this is set by \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} and \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c}. \item\end{CompactList}\item 
+{\bf bool} {\bf mem\-Scratchpad\-Used} = false
+\begin{CompactList}\small\item\em A boolean to represent whether the scratchpad is currently in use or not, this allows the fastest possible allocation/free'ing of memory for temp data. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flMemory.c@{fl\-Memory.c}!memAddressAlignment@{memAddressAlignment}}
+\index{memAddressAlignment@{memAddressAlignment}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Address\-Alignment (void $\ast$ {\em in\-Ptr})}\label{flMemory_8c_154f4844567ac94e656ed58eecdca4e2}
+
+
+Calculates the largest binary increment that a pointer is aligned to (e.g 16, 32, 64, 128, etc. 
+
+). \begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer whose alignment will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The mamximum alignment value. \end{Desc}
+
+
+Definition at line 912 of file fl\-Memory.c.
+
+Referenced by vmem\-Stride\-Block\-Add().\index{flMemory.c@{fl\-Memory.c}!memAddressValid@{memAddressValid}}
+\index{memAddressValid@{memAddressValid}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Address\-Valid (void $\ast$ {\em in\-Ptr})}\label{flMemory_8c_9b271ac66a90bb6b7321a4fd8372cbbb}
+
+
+Checks if a pointer resides within valid memory blocks on the terget platform. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer whose validity will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]True if the pointer is valid. \end{Desc}
+
+
+Definition at line 922 of file fl\-Memory.c.
+
+References mem\-Cached\-Ptr, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, MEMORY\_\-USER\_\-BASE, MEMORY\_\-USER\_\-SIZE, MEMORY\_\-VMEM\_\-BASE, and MEMORY\_\-VMEM\_\-SIZE.
+
+Referenced by mem\-Free\-From().\index{flMemory.c@{fl\-Memory.c}!memAlignFrom@{memAlignFrom}}
+\index{memAlignFrom@{memAlignFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Align\-From (int {\em in\-Boundry}, int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_1d6c59cb348872a8fe146f08f3f4fd85}
+
+
+
+
+Definition at line 702 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, mem\-Align, mem\-Error\-Tree, MEMORY\_\-SCRATCHPAD\_\-BASE, mem\-Scratchpad\-Used, memt\-Add, memt\-Add\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), NULL, vmem\-Alloc, and vmem\-Stride\-Align().
+
+Referenced by mem\-Alloc\-From().\index{flMemory.c@{fl\-Memory.c}!memAllocFrom@{memAllocFrom}}
+\index{memAllocFrom@{memAllocFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Alloc\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_8d43c64dc9d5b2342c178028d4e037a2}
+
+
+This functions is identical to \doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} except that it takes extra parameters to define where it was called from,. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]The size of the block to be allocated. \item[{\em in\-File}]The source file that the original call came from. \item[{\em in\-Func}]The function that the original call originated from. \item[{\em in\-Line}]The line on which the original call was on. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the allocated memory block. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Alloc()}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c}, \doxyref{mem\-Alloc}{p.}{flMemory_8h_61b12aace9141e9aa9a733ab7e7d8f1c} \end{Desc}
+
+
+Definition at line 511 of file fl\-Memory.c.
+
+References FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, and mem\-Align\-From().
+
+Referenced by mem\-Calloc\-From().\index{flMemory.c@{fl\-Memory.c}!memAllocUncachedFrom@{memAllocUncachedFrom}}
+\index{memAllocUncachedFrom@{memAllocUncachedFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Alloc\-Uncached\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_2906a6a22f562e5b03c59cb0eab90922}
+
+
+
+
+Definition at line 577 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), FL\_\-MEMORY\_\-ALIGNMENT\_\-DEFAULT, max, mem\-Align, mem\-Alloc\-Uncached, mem\-Uncached\-Ptr, and NULL.\index{flMemory.c@{fl\-Memory.c}!memBlockValid@{memBlockValid}}
+\index{memBlockValid@{memBlockValid}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Block\-Valid (void $\ast$ {\em in\-Ptr}, u32 {\em in\-Size})}\label{flMemory_8c_7a74ef3a6f998f56bc4d31b71f29ffe5}
+
+
+Checks if a memory block resides within valid memory blocks on the terget platform. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Ptr}]The pointer to the start of the memory block whose validity will be checked. \item[{\em in\-Size}]The length of the memory block whose validity will be checked. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]True if the pointer is valid. \end{Desc}
+
+
+Definition at line 933 of file fl\-Memory.c.
+
+References mem\-Cached\-Ptr, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, MEMORY\_\-USER\_\-BASE, MEMORY\_\-USER\_\-SIZE, MEMORY\_\-VMEM\_\-BASE, and MEMORY\_\-VMEM\_\-SIZE.
+
+Referenced by mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Set\-Byte\-From(), mem\-Set\-Short\-From(), memt\-Add\-From(), memt\-Error\-Bytes\-Check\-From(), and vmem\-Stride\-Block\-Add().\index{flMemory.c@{fl\-Memory.c}!memCallocFrom@{memCallocFrom}}
+\index{memCallocFrom@{memCallocFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Calloc\-From (int {\em in\-Size0}, int {\em in\-Size1}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_3e5c4a051011dbbc40b04dd502685b05}
+
+
+
+
+Definition at line 560 of file fl\-Memory.c.
+
+References mem\-Alloc, mem\-Alloc\-From(), mem\-Calloc, mem\-Clear, mem\-Clear\-From(), and NULL.\index{flMemory.c@{fl\-Memory.c}!memClearFrom@{memClearFrom}}
+\index{memClearFrom@{memClearFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Clear\-From (void $\ast$ {\em in\-Ptr}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_ae72c87f868251028bd9d6c8c3c83dd9}
+
+
+
+
+Definition at line 307 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Clear, mem\-Error\-Tree, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().
+
+Referenced by mem\-Calloc\-From().\index{flMemory.c@{fl\-Memory.c}!memCompareFrom@{memCompareFrom}}
+\index{memCompareFrom@{memCompareFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int mem\-Compare\-From (void $\ast$ {\em in\-Src0}, void $\ast$ {\em in\-Src1}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_5989db9d27d3070cded7114aec28eb1c}
+
+
+
+
+Definition at line 453 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Compare, mem\-Error\-Tree, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.c@{fl\-Memory.c}!memCopyFrom@{memCopyFrom}}
+\index{memCopyFrom@{memCopyFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Copy\-From (void $\ast$ {\em in\-Dest}, void $\ast$ {\em in\-Src}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_b7cad720c4dc44260a2b78a3ee0f6370}
+
+
+
+
+Definition at line 366 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Copy, mem\-Error\-Tree, mem\-Free, mem\-Qalloc, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.c@{fl\-Memory.c}!memErrorBytesCheckFrom@{memErrorBytesCheckFrom}}
+\index{memErrorBytesCheckFrom@{memErrorBytesCheckFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mem\-Error\-Bytes\-Check\-From (void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_407e7c26b374b40f070ad5f8ae9be0ec}
+
+
+
+
+Definition at line 1039 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), and mem\-Error\-Bytes\-Check.\index{flMemory.c@{fl\-Memory.c}!memFreeFrom@{memFreeFrom}}
+\index{memFreeFrom@{memFreeFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Free\-From (void $\ast$ {\em in\-Data}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_8af670f117031ebb2c7f49239ca71a22}
+
+
+
+
+Definition at line 820 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), mem\-Address\-Valid(), mem\-Error\-Bytes\-Check, mem\-Error\-Tree, mem\-Free, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, mem\-Scratchpad\-Used, memt\-Del, memt\-Del\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), vmem\-Free, vmem\-Free\-From(), and vmem\-Pointer.\index{flMemory.c@{fl\-Memory.c}!memFreeSpace@{memFreeSpace}}
+\index{memFreeSpace@{memFreeSpace}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Free\-Space (u32 {\em in\-Accuracy})}\label{flMemory_8c_73ea91150f42d42e6a8440a562945539}
+
+
+Returns a close estimate of the amount of free space. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Accuracy}]The amount of bytes that the returned answer should be accurate to. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The amount of free space accurate to in\-Accuracy bytes. \end{Desc}
+\begin{Desc}
+\item[Note:]Since malloc allocates 16 byte aligned data, this is the closest accuracy you will get, so there's not much point in setting in\-Accuracy to below 16. \end{Desc}
+
+
+Definition at line 101 of file fl\-Memory.c.
+
+References MEMORY\_\-USER\_\-SIZE.
+
+Referenced by mem\-Free\-Space\-Total().\index{flMemory.c@{fl\-Memory.c}!memFreeSpaceTotal@{memFreeSpaceTotal}}
+\index{memFreeSpaceTotal@{memFreeSpaceTotal}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u32 mem\-Free\-Space\-Total ()}\label{flMemory_8c_7fec44b65999ebb03866cdebbfdc0693}
+
+
+Returns a close estimate of the total amount of free space available to the program on the whole system, this includes video memory, scratchpad and any other memory func\-Lib can get it's hands on. 
+
+\begin{Desc}
+\item[Returns:]The amount of free space available on the whole system, to the highest accuracy possible. \end{Desc}
+
+
+Definition at line 128 of file fl\-Memory.c.
+
+References mem\-Free\-Space(), mem\-Scratchpad\-Used, and vmem\-Free\-Space().\index{flMemory.c@{fl\-Memory.c}!memInit@{memInit}}
+\index{memInit@{memInit}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Init ()}\label{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb}
+
+
+Called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} to initialize the memory system. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}, \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c} \end{Desc}
+
+
+Definition at line 28 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Status\-Log, FL\_\-DEBUG\_\-STATUS, mem\-Copy, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, and MEMORY\_\-SCRATCHPAD\_\-SIZE.
+
+Referenced by fl\-Initialize().\index{flMemory.c@{fl\-Memory.c}!memQallocFrom@{memQallocFrom}}
+\index{memQallocFrom@{memQallocFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Qalloc\-From (int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_fd094a5ea54739dbab177531a2ed94dc}
+
+
+
+
+Definition at line 521 of file fl\-Memory.c.
+
+References debug\-Warning\-From(), mem\-Alloc, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, MEMORY\_\-SCRATCHPAD\_\-SIZE, mem\-Qalloc, mem\-Scratchpad\-Used, vmem\-Alloc, and vmem\-Initialized.\index{flMemory.c@{fl\-Memory.c}!memReallocFrom@{memReallocFrom}}
+\index{memReallocFrom@{memReallocFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Realloc\-From (void $\ast$ {\em in\-Data}, int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_1fb91084004393395e8a6361e0ae0bd7}
+
+
+
+
+Definition at line 608 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), mem\-Error\-Bytes\-Check, mem\-Error\-Tree, MEMORY\_\-UNCACHED\_\-OFFSET, mem\-Realloc, memt\-Add, memt\-Add\-From(), memt\-Error\-Bytes\-Check, memt\-Error\-Bytes\-Check\-From(), mem\-Uncached\-Ptr, NULL, vmem\-Pointer, and vmem\-Realloc.\index{flMemory.c@{fl\-Memory.c}!memSetByteFrom@{memSetByteFrom}}
+\index{memSetByteFrom@{memSetByteFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Set\-Byte\-From (void $\ast$ {\em in\-Ptr}, int {\em in\-Val}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_0ad1e328769b035bed5bf0257f7e53a8}
+
+
+
+
+Definition at line 175 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Error\-Tree, mem\-Set\-Byte, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.c@{fl\-Memory.c}!memSetShortFrom@{memSetShortFrom}}
+\index{memSetShortFrom@{memSetShortFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Set\-Short\-From (void $\ast$ {\em in\-Ptr}, int {\em in\-Val}, unsigned int {\em in\-Size}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_8b8a9f1186ceb51280ceb5c304a9887f}
+
+
+
+
+Definition at line 240 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), mem\-Block\-Valid(), mem\-Error\-Tree, mem\-Set\-Short, memt\-Error\-Bytes\-Check, and memt\-Error\-Bytes\-Check\-From().\index{flMemory.c@{fl\-Memory.c}!memString@{memString}}
+\index{memString@{memString}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mem\-String (u32 {\em in\-Bytes}, {\bf bool} {\em in\-Binary})}\label{flMemory_8c_9ece09d572ea23f0f04e271406b3942a}
+
+
+Converts an amount of bytes into a more humanly readable string to be printed in a log or to the screen. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Bytes}]The amount of bytes. \item[{\em in\-Binary}]If set to true then it will return binary results where there are 1024 bytes in a Kilobyte (and append e.g. \char`\"{}Ki\-B\char`\"{}), if not then a Kilo\-Byte will be considered 1000 bytes (and e.g \char`\"{}KB\char`\"{} will be printed). \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A string representing the bytes in SI units, (e.g 1024 bytes = \char`\"{}1 Ki\-B\char`\"{} or \char`\"{}1.02 KB\char`\"{}). \end{Desc}
+\begin{Desc}
+\item[Warning:]This returns an allocated string that must be free'd after use. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Free\-Space()}{p.}{flMemory_8c_73ea91150f42d42e6a8440a562945539}, \doxyref{mem\-Free\-Space\-Total()}{p.}{flMemory_8c_7fec44b65999ebb03866cdebbfdc0693}, \doxyref{mem\-Free()}{p.}{flMemory_8h_b5a200b09037e42c940e59383787470c} \end{Desc}
+
+
+Definition at line 137 of file fl\-Memory.c.
+
+References mem\-Alloc.\index{flMemory.c@{fl\-Memory.c}!memtAddFrom@{memtAddFrom}}
+\index{memtAddFrom@{memtAddFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Add\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, void $\ast$ {\em in\-Ptr}, u32 {\em in\-Size}, u32 {\em in\-Alignment}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_71604af9533f2031af2a95ed5f8e2b75}
+
+
+
+
+Definition at line 1083 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), mem\-Block\-Valid(), memt\-Add, Memory\-Tree::memt\-Alignment, Memory\-Tree::memt\-Data, Memory\-Tree::memt\-Next, Memory\-Tree::memt\-Size, and NULL.
+
+Referenced by mem\-Align\-From(), and mem\-Realloc\-From().\index{flMemory.c@{fl\-Memory.c}!memtDelFrom@{memtDelFrom}}
+\index{memtDelFrom@{memtDelFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Del\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_578ceaba9e5c0a6ed3f395ffb5287ec8}
+
+
+
+
+Definition at line 1151 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), fl\-Running, Memory\-Tree::memt\-Data, memt\-Del, Memory\-Tree::memt\-Next, and NULL.
+
+Referenced by mem\-Free\-From().\index{flMemory.c@{fl\-Memory.c}!memTerm@{memTerm}}
+\index{memTerm@{memTerm}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mem\-Term ()}\label{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c}
+
+
+Called by \doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729} to deinitialize the memory system. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Terminate()}{p.}{funcLib_8c_3f1263fb36b6e7a11d53bafafb251729}, \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} \end{Desc}
+
+
+Definition at line 72 of file fl\-Memory.c.
+
+References debug\-Status\-Log, file\-Delete(), FL\_\-MEMORY\_\-PAGE\_\-PATH, mem\-Clear, mem\-Copy, mem\-Initialized, MEMORY\_\-SCRATCHPAD\_\-BASE, and MEMORY\_\-SCRATCHPAD\_\-SIZE.
+
+Referenced by fl\-Terminate().\index{flMemory.c@{fl\-Memory.c}!memtErrorBytesCheckFrom@{memtErrorBytesCheckFrom}}
+\index{memtErrorBytesCheckFrom@{memtErrorBytesCheckFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memt\-Error\-Bytes\-Check\-From ({\bf Memory\-Tree} $\ast$$\ast$ {\em in\-Mem\-Tree}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_8fd6378b9c64db2ef17c63970e1a9a8f}
+
+
+
+
+Definition at line 1196 of file fl\-Memory.c.
+
+References debug\-Error, debug\-Error\-From(), debug\-Warning, debug\-Warning\-From(), FL\_\-DEBUG\_\-CALLEDFROM, FL\_\-DEBUG\_\-ERROR, mem\-Block\-Valid(), Memory\-Tree::memt\-Alignment, Memory\-Tree::memt\-Data, memt\-Error\-Bytes\-Check, Memory\-Tree::memt\-Next, and Memory\-Tree::memt\-Size.
+
+Referenced by mem\-Align\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), and mem\-Set\-Short\-From().\index{flMemory.c@{fl\-Memory.c}!memUncachedPtrFrom@{memUncachedPtrFrom}}
+\index{memUncachedPtrFrom@{memUncachedPtrFrom}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ mem\-Uncached\-Ptr\-From (void $\ast$ {\em in\-Ptr}, const char $\ast$ {\em in\-File}, const char $\ast$ {\em in\-Func}, int {\em in\-Line})}\label{flMemory_8c_5c4f9bcc3cb6c784dda2341081424c41}
+
+
+
+
+Definition at line 894 of file fl\-Memory.c.
+
+References debug\-Warning, debug\-Warning\-From(), MEMORY\_\-UNCACHED\_\-OFFSET, mem\-Uncached\-Ptr, and NULL.
+
+\subsection{Variable Documentation}
+\index{flMemory.c@{fl\-Memory.c}!memErrorTree@{memErrorTree}}
+\index{memErrorTree@{memErrorTree}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Memory\-Tree}$\ast$ {\bf mem\-Error\-Tree} = NULL}\label{flMemory_8c_3c11a75397704795cb62e5f4301138b3}
+
+
+
+
+Definition at line 22 of file fl\-Memory.c.
+
+Referenced by mem\-Align\-From(), mem\-Clear\-From(), mem\-Compare\-From(), mem\-Copy\-From(), mem\-Free\-From(), mem\-Realloc\-From(), mem\-Set\-Byte\-From(), and mem\-Set\-Short\-From().\index{flMemory.c@{fl\-Memory.c}!memInitialized@{memInitialized}}
+\index{memInitialized@{memInitialized}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf mem\-Initialized} = false}\label{flMemory_8c_f7144acb190d35f7cd6c38319b97318d}
+
+
+A boolean to represent whether the memory system has been initialized or not, this is set by \doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb} and \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c}. 
+
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Init()}{p.}{flMemory_8c_760b9edaf9bb07ced46a2b3cbc0d12eb}, \doxyref{mem\-Term()}{p.}{flMemory_8c_a2685ff8b5f4f201ed6bd2f166a1cb3c} \end{Desc}
+
+
+Definition at line 25 of file fl\-Memory.c.
+
+Referenced by mem\-Init(), mem\-Qalloc\-From(), and mem\-Term().\index{flMemory.c@{fl\-Memory.c}!memScratchpadUsed@{memScratchpadUsed}}
+\index{memScratchpadUsed@{memScratchpadUsed}!flMemory.c@{fl\-Memory.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} {\bf mem\-Scratchpad\-Used} = false}\label{flMemory_8c_a0978678b01f700e5d8a291ba1fc9a8a}
+
+
+A boolean to represent whether the scratchpad is currently in use or not, this allows the fastest possible allocation/free'ing of memory for temp data. 
+
+\begin{Desc}
+\item[See also:]\doxyref{mem\-Qalloc()}{p.}{flMemory_8h_39edd59a7b482bd6b887b0786b74ce42} \end{Desc}
+
+
+Definition at line 26 of file fl\-Memory.c.
+
+Referenced by mem\-Align\-From(), mem\-Free\-From(), mem\-Free\-Space\-Total(), and mem\-Qalloc\-From().

@@ -1,0 +1,159 @@
+\section{fl\-Graphics\-Effects\-Fullscreen.h File Reference}
+\label{flGraphicsEffectsFullscreen_8h}\index{flGraphicsEffectsFullscreen.h@{flGraphicsEffectsFullscreen.h}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf graphics\-Effect\-Fs\-Grayscale} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Grayscale\-SW} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Sepia} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Night\-Vision} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Night\-Vision\-SW} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Thermal\-Vision} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Monochrome} (u32 in\-Color)
+\item 
+void {\bf graphics\-Effect\-Fs\-Dichrome} (u32 in\-Color\-Light, u32 in\-Color\-Dark)
+\item 
+void {\bf graphics\-Effect\-Fs\-Color\-Enhance} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Light\-Enhance} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Invert} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Glow} ()
+\item 
+void {\bf graphics\-Effect\-Fs\-Depth\-Fog} (u32 in\-Color, {\bf bool} in\-Low\-Bit)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsColorEnhance@{graphicsEffectFsColorEnhance}}
+\index{graphicsEffectFsColorEnhance@{graphicsEffectFsColorEnhance}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Color\-Enhance ()}\label{flGraphicsEffectsFullscreen_8h_ead926c7b04516d1bb97b72c9e0c1365}
+
+
+
+
+Definition at line 788 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, mem\-Cached\-Ptr, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsDepthFog@{graphicsEffectFsDepthFog}}
+\index{graphicsEffectFsDepthFog@{graphicsEffectFsDepthFog}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Depth\-Fog (u32 {\em in\-Color}, {\bf bool} {\em in\-Low\-Bit})}\label{flGraphicsEffectsFullscreen_8h_9a2b81c1973c1834558b38e0c5c9d6a3}
+
+
+
+
+Definition at line 1298 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Width, block\-Width\-Safe, color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, debug\-Warning, graphics\-Depth\-Buffer, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-WIDTH, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, and vmem\-Absolute\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsDichrome@{graphicsEffectFsDichrome}}
+\index{graphicsEffectFsDichrome@{graphicsEffectFsDichrome}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Dichrome (u32 {\em in\-Color\-Light}, u32 {\em in\-Color\-Dark})}\label{flGraphicsEffectsFullscreen_8h_e79afa2a4e14dec02855e84ba168afde}
+
+
+
+
+Definition at line 630 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsGlow@{graphicsEffectFsGlow}}
+\index{graphicsEffectFsGlow@{graphicsEffectFsGlow}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Glow ()}\label{flGraphicsEffectsFullscreen_8h_d46c5e3e0ab2edd95dc6a95b8e90a249}
+
+
+
+
+Definition at line 1121 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Tf\-Vs::vert\-U, vert\-Ts\-Vs::vert\-U, vert\-Tf\-Vs::vert\-V, vert\-Ts\-Vs::vert\-V, vert\-Tf\-Vs::vert\-X, vert\-Ts\-Vs::vert\-X, vert\-Tf\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Y, vert\-Tf\-Vs::vert\-Z, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsGrayscale@{graphicsEffectFsGrayscale}}
+\index{graphicsEffectFsGrayscale@{graphicsEffectFsGrayscale}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Grayscale ()}\label{flGraphicsEffectsFullscreen_8h_f54c150ec57fe3f301804e0ce752d064}
+
+
+
+
+Definition at line 20 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Grayscale\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, SCREEN\_\-WIDTH, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.
+
+Referenced by graphics\-Effect\-Fs\-Sepia().\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsGrayscaleSW@{graphicsEffectFsGrayscaleSW}}
+\index{graphicsEffectFsGrayscaleSW@{graphicsEffectFsGrayscaleSW}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Grayscale\-SW ()}\label{flGraphicsEffectsFullscreen_8h_d55dd118ed912361ac5992552e9386e9}
+
+
+
+
+Definition at line 146 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References color8888\_\-Alpha, color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, color8888\_\-RGBA, graphics\-Draw\-Buffer, max, mem\-Uncached\-Ptr, min, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-WIDTH, and vmem\-Absolute\-Ptr.
+
+Referenced by graphics\-Effect\-Fs\-Grayscale().\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsInvert@{graphicsEffectFsInvert}}
+\index{graphicsEffectFsInvert@{graphicsEffectFsInvert}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Invert ()}\label{flGraphicsEffectsFullscreen_8h_09a118987c4bc745af0adc15b73bdf51}
+
+
+
+
+Definition at line 982 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsLightEnhance@{graphicsEffectFsLightEnhance}}
+\index{graphicsEffectFsLightEnhance@{graphicsEffectFsLightEnhance}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Light\-Enhance ()}\label{flGraphicsEffectsFullscreen_8h_628dc4ec92338d4544b60a4a90e37fd5}
+
+
+
+
+Definition at line 858 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsMonochrome@{graphicsEffectFsMonochrome}}
+\index{graphicsEffectFsMonochrome@{graphicsEffectFsMonochrome}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Monochrome (u32 {\em in\-Color})}\label{flGraphicsEffectsFullscreen_8h_7f31d631662d7e8c81e3c669eaaa1384}
+
+
+
+
+Definition at line 505 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsNightVision@{graphicsEffectFsNightVision}}
+\index{graphicsEffectFsNightVision@{graphicsEffectFsNightVision}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Night\-Vision ()}\label{flGraphicsEffectsFullscreen_8h_98487e403cf47fa69dcec36d7f272267}
+
+
+
+
+Definition at line 184 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsNightVisionSW@{graphicsEffectFsNightVisionSW}}
+\index{graphicsEffectFsNightVisionSW@{graphicsEffectFsNightVisionSW}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Night\-Vision\-SW ()}\label{flGraphicsEffectsFullscreen_8h_eff760794c3e2f70e05c99cb308ebc94}
+
+
+
+
+Definition at line 310 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References color8888\_\-Alpha, color8888\_\-Blue, color8888\_\-Green, color8888\_\-Red, color8888\_\-RGBA, graphics\-Draw\-Buffer, max, mem\-Uncached\-Ptr, min, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-WIDTH, and vmem\-Absolute\-Ptr.
+
+Referenced by graphics\-Effect\-Fs\-Glow(), graphics\-Effect\-Fs\-Invert(), graphics\-Effect\-Fs\-Light\-Enhance(), graphics\-Effect\-Fs\-Monochrome(), graphics\-Effect\-Fs\-Night\-Vision(), and graphics\-Effect\-Fs\-Thermal\-Vision().\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsSepia@{graphicsEffectFsSepia}}
+\index{graphicsEffectFsSepia@{graphicsEffectFsSepia}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Sepia ()}\label{flGraphicsEffectsFullscreen_8h_57c69a455a44486ab5be74117bc36604}
+
+
+
+
+Definition at line 162 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References graphics\-Effect\-Fs\-Grayscale(), SCREEN\_\-HEIGHT, SCREEN\_\-WIDTH, vert\-CVs::vert\-Color, vert\-CVs::vert\-X, vert\-CVs::vert\-Y, and vert\-CVs::vert\-Z.\index{flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}!graphicsEffectFsThermalVision@{graphicsEffectFsThermalVision}}
+\index{graphicsEffectFsThermalVision@{graphicsEffectFsThermalVision}!flGraphicsEffectsFullscreen.h@{fl\-Graphics\-Effects\-Fullscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void graphics\-Effect\-Fs\-Thermal\-Vision ()}\label{flGraphicsEffectsFullscreen_8h_1a90fa1f7c7ce5255ec19fd152b41fc4}
+
+
+
+
+Definition at line 328 of file fl\-Graphics\-Effects\-Fullscreen.c.
+
+References block\-Height, block\-Height\-Safe, block\-Width, block\-Width\-Safe, debug\-Warning, graphics\-Draw\-Buffer, graphics\-Effect\-Fs\-Night\-Vision\-SW(), mem\-Cached\-Ptr, mem\-Free, mem\-Qalloc, mem\-Uncached\-Ptr, NULL, pal\-Bound, SCREEN\_\-HEIGHT, SCREEN\_\-PITCH, SCREEN\_\-STRIDE, tex\-Bound, vert\-Ts\-Vs::vert\-U, vert\-Ts\-Vs::vert\-V, vert\-Ts\-Vs::vert\-X, vert\-Ts\-Vs::vert\-Y, vert\-Ts\-Vs::vert\-Z, vmem\-Absolute\-Ptr, vmem\-Alloc, vmem\-Cache, vmem\-Free, and vmem\-Relative\-Ptr.

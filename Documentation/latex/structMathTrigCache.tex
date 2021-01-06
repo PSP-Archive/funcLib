@@ -1,0 +1,68 @@
+\section{Math\-Trig\-Cache Struct Reference}
+\label{structMathTrigCache}\index{MathTrigCache@{MathTrigCache}}
+This structure is used when FL\_\-MATH\_\-TRIGCACHE is more than 0, it is used to store cached sin parameters and their value.  
+
+
+{\tt \#include $<$fl\-Math.h$>$}
+
+\subsection*{Public Attributes}
+\begin{CompactItemize}
+\item 
+u64 {\bf mtg\-Last\-Used}
+\begin{CompactList}\small\item\em The last tick in which this value was used. \item\end{CompactList}\item 
+float {\bf mtg\-In}
+\begin{CompactList}\small\item\em The input value. \item\end{CompactList}\item 
+float {\bf mtg\-Out}
+\begin{CompactList}\small\item\em The cached answer. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This structure is used when FL\_\-MATH\_\-TRIGCACHE is more than 0, it is used to store cached sin parameters and their value. 
+
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MATH\_\-TRIGCACHE}{p.}{flConfigValidate_8h_1714c4ffc6f7774695089af0a74730c1} \end{Desc}
+
+
+
+
+Definition at line 30 of file fl\-Math.h.
+
+\subsection{Member Data Documentation}
+\index{MathTrigCache@{Math\-Trig\-Cache}!mtgLastUsed@{mtgLastUsed}}
+\index{mtgLastUsed@{mtgLastUsed}!MathTrigCache@{Math\-Trig\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}u64 {\bf Math\-Trig\-Cache::mtg\-Last\-Used}}\label{structMathTrigCache_75aceb3963a348a0d6c21efda0c68474}
+
+
+The last tick in which this value was used. 
+
+
+
+Definition at line 34 of file fl\-Math.h.
+
+Referenced by math\-Trig\-Cache\-Add\-Sin().\index{MathTrigCache@{Math\-Trig\-Cache}!mtgIn@{mtgIn}}
+\index{mtgIn@{mtgIn}!MathTrigCache@{Math\-Trig\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf Math\-Trig\-Cache::mtg\-In}}\label{structMathTrigCache_7985b535d65d7d0a603064610e6d302f}
+
+
+The input value. 
+
+
+
+Definition at line 38 of file fl\-Math.h.
+
+Referenced by math\-Trig\-Cache\-Add\-Sin().\index{MathTrigCache@{Math\-Trig\-Cache}!mtgOut@{mtgOut}}
+\index{mtgOut@{mtgOut}!MathTrigCache@{Math\-Trig\-Cache}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float {\bf Math\-Trig\-Cache::mtg\-Out}}\label{structMathTrigCache_b5204a9ed2edd925fce9828af31d142e}
+
+
+The cached answer. 
+
+
+
+Definition at line 42 of file fl\-Math.h.
+
+Referenced by math\-Trig\-Cache\-Add\-Sin(), and math\-Trig\-Cache\-Check\-Sin().
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf fl\-Math.h}\end{CompactItemize}

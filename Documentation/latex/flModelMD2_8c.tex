@@ -1,0 +1,67 @@
+\section{fl\-Model\-MD2.c File Reference}
+\label{flModelMD2_8c}\index{flModelMD2.c@{flModelMD2.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$psprtc.h$>$}\par
+\subsection*{Classes}
+\begin{CompactItemize}
+\item 
+struct {\bf md2Header}
+\item 
+struct {\bf md2Texture}
+\item 
+struct {\bf md2Tex\-Vert}
+\item 
+struct {\bf md2Tri}
+\item 
+struct {\bf md2Vertex}
+\item 
+struct {\bf md2Frame}
+\item 
+struct {\bf Model3d\-Animated\-MD2}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf Model3d\-Animated} $\ast$ {\bf mdl3d\-Anim\-Load\-MD2} (char $\ast$in\-Path)
+\item 
+void {\bf mdl3d\-Anim\-Draw\-MD2} (void $\ast$in\-Model, float in\-Frame)
+\item 
+{\bf bool} {\bf mdl3d\-Anim\-Save\-MD2} (char $\ast$in\-Path, {\bf Model3d\-Animated} $\ast$in\-Model)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flModelMD2.c@{fl\-Model\-MD2.c}!mdl3dAnimDrawMD2@{mdl3dAnimDrawMD2}}
+\index{mdl3dAnimDrawMD2@{mdl3dAnimDrawMD2}!flModelMD2.c@{fl\-Model\-MD2.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void mdl3d\-Anim\-Draw\-MD2 (void $\ast$ {\em in\-Model}, float {\em in\-Frame})}\label{flModelMD2_8c_fe14c5983ff7ec31b62b50fc5c83eaf9}
+
+
+
+
+Definition at line 222 of file fl\-Model\-MD2.c.
+
+References debug\-Warning, and Model3d\-Animated\-MD2::md2Frame\-Count.
+
+Referenced by mdl3d\-Anim\-Draw().\index{flModelMD2.c@{fl\-Model\-MD2.c}!mdl3dAnimLoadMD2@{mdl3dAnimLoadMD2}}
+\index{mdl3dAnimLoadMD2@{mdl3dAnimLoadMD2}!flModelMD2.c@{fl\-Model\-MD2.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf Model3d\-Animated}$\ast$ mdl3d\-Anim\-Load\-MD2 (char $\ast$ {\em in\-Path})}\label{flModelMD2_8c_44cbc511d53f5bac06b5abea496f5c29}
+
+
+
+
+Definition at line 84 of file fl\-Model\-MD2.c.
+
+References debug\-Warning, FILE\_\-MODE\_\-BINARY, FILE\_\-MODE\_\-READ, FILE\_\-SEEK\_\-SET, file\-Close(), file\-Open(), file\-Read(), file\-Seek(), md2Header::md2End\-Offset, md2Header::md2Frame\-Count, Model3d\-Animated\-MD2::md2Frame\-Count, md2Frame::md2Frame\-Name, md2Header::md2Frame\-Offset, Model3d\-Animated\-MD2::md2Frames, md2Frame::md2Frame\-Scale, md2Header::md2Frame\-Size, md2Frame::md2Frame\-Translate, md2Frame::md2Frame\-Verts, md2Header::md2Gl\-Cmd\-Count, md2Header::md2Gl\-Cmd\-Offset, md2Header::md2Ident, md2Header::md2Skin\-Height, md2Header::md2Skin\-Width, md2Header::md2Texture\-Count, Model3d\-Animated\-MD2::md2Texture\-Count, md2Header::md2Texture\-Offset, Model3d\-Animated\-MD2::md2Textures, md2Header::md2Tex\-Vert\-Count, Model3d\-Animated\-MD2::md2Tex\-Vert\-Count, md2Header::md2Tex\-Vert\-Offset, Model3d\-Animated\-MD2::md2Tex\-Verts, md2Tex\-Vert::md2Tex\-Vert\-U, md2Tex\-Vert::md2Tex\-Vert\-V, md2Header::md2Tri\-Count, Model3d\-Animated\-MD2::md2Tri\-Count, md2Header::md2Tri\-Offset, Model3d\-Animated\-MD2::md2Tris, md2Tri::md2Tri\-Tex\-Verts, md2Tri::md2Tri\-Verts, md2Header::md2Version, md2Header::md2Vert\-Count, Model3d\-Animated\-MD2::md2Vert\-Count, md2Vertex::md2Vertex\-Normal, md2Vertex::md2Vertex\-Pos, mdl3d\-Anim\-Free(), Model3d\-Animated::mdl\-Data, Model3d\-Animated::mdl\-Type, mem\-Alloc, mem\-Free, MODEL\_\-ANIM\_\-TYPE\_\-MD2, NULL, and tex\-Load().
+
+Referenced by mdl3d\-Anim\-Load().\index{flModelMD2.c@{fl\-Model\-MD2.c}!mdl3dAnimSaveMD2@{mdl3dAnimSaveMD2}}
+\index{mdl3dAnimSaveMD2@{mdl3dAnimSaveMD2}!flModelMD2.c@{fl\-Model\-MD2.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf bool} mdl3d\-Anim\-Save\-MD2 (char $\ast$ {\em in\-Path}, {\bf Model3d\-Animated} $\ast$ {\em in\-Model})}\label{flModelMD2_8c_ea2d3e833bd2cf5916d1747a53e16012}
+
+
+
+
+Definition at line 269 of file fl\-Model\-MD2.c.
+
+References debug\-Dev\-Warning.

@@ -1,0 +1,6 @@
+Small update on 11 June of 2008.
+
+Sleepy has gone through and made an attempt to fix every sample and beta so that it will
+compile right out of the box without any toying around. Enjoy.
+
+funcLib is now considered as version 1.0.1

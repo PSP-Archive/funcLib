@@ -1,0 +1,81 @@
+FEATURES
+     - BMP Loading, TGA Loading/Saving, PCX Loading, RAW Loading/Saving
+     - Full texture support with swizzling, mipmap and palette support aswell as vmem.
+     - Easy and extendable graphics API with support for perspective and ortho modes aswell as vsync, Show FPS, etc.
+     - Memory allocation module, with vmem allocation included aswell as a simple paging mechanism, memory pooling, scratchpad usage, stride allocation and much more.
+     - File wrapper that allows loading of files from memory aswell as from the memorystick and from a pbp-plus file aswell as additional functions.
+     - Fullscreen effects Invert, Grayscale, Sepia, Night Vision, Thermal Vision, Monochrome, Di-Chrome, Light Enhance, Color Enhance
+     - 2d graphics module capable of drawing ellipses, quads, triangles, lines, outlines, shaded ellipsoids, textures (strip blitted), etc.
+     - 3d graphics module capable of many primatives, textured or otherwise at fast speeds.
+     - Sprite module capable of drawing rotated and scaled sprites aswell as handling animations and a few other things.
+     - Math module with fast vfpu maths to speed up your maths heavy programs aswell as 3 types of random number generation.
+     - 2d Collision module supporting closestLine, line-line, circle-circle, line-circle, rect-rect.
+     - Input module for polling input and retrieving the state of buttons (e.g JUST_UP, STILL_UP, etc.)
+     - Callbacks sorted out (aswell as power callbacks).
+     - Complex debugging module that logs errors, screenshots them and shows a warning (all configurable).
+     - Font module which can draw most types of font, and also converts the debug font into a swizzled clut4 texture in vram for faster rendering.
+     - Timer module, for timing oddly enough :)
+     - A collection of samples of how to use different features, including 2 full games (flAstro and flMineSweeper).
+     - Color manipulation module for graphical programs and random color generation.
+     - A 3d camera class that allows all views and is easy to use.
+     - Thousands of defines, types, etc. which should come in handy (e.g SCREEN_GAMMA, MATH_PI, etc.)
+
+
+
+TODO
+     - Fix font module so it can colorize picture fonts aswell as debug.
+     - Fix font palette not being able to be allocated in the vmem stride (it clears to white).
+     - Fix up the fullscreen effects module so that it works with the new optimization.
+     - Use the back buffers stride strip for fullscreen effects.
+     - Fix up vmemRealloc and make memRealloc work with any pointer type and keeps alignment.
+     - Add png support.
+     - Add lighting support.
+     - Add particle engine.
+     - Add sound module.
+     - Add compression module (/w Wavelet, RLE and Flatmush compression).
+     - Fix up 16-bit tga loading.
+     - Finish memory pool module.
+     - Add resource management module.
+     - Add random-reseeding to all types of rand.
+     - (Fix/Test) HSV/HSB Color space conversion macros.
+     - Add FTF/FSM support.
+     - Add simple encryption module (Port VB6 version from BENcryption).
+     - Option to save debug log only on exit/threshold.
+     - Add texCopy, texCopyVMem
+     - Add palCopy, palCopyVMem
+     - Free textures appropriate number of times when optimizing objs, and fix obj loader in general.
+     - Test use of FL_ERRORTEX_COMPILE option.
+
+WIP TODOS
+     - Complete flConfig.
+     - Complete mipmapping code (and maybe add dxt mipmapping).
+     - Add to texture manipulation module (maybe move some stuff back into flTexture.c).
+     - Add wireframe mode.
+     - Fix preserving of render target context during fullscreen effects.
+     - Add texture slicing to aligned (maybe unaligned too) draw functions (May need adding to texture draw section).
+     - Write a graphics.c wrapper.
+
+ONGOING TODOS
+     - Minimize code repetition.
+     - Add more aliases (especially to graphics2d.h).
+     - Make defines less messy.
+     - Remove as many dependancies as possible.
+     - Fix up defines, now that they are guaranteed not to clash.
+     - Make safety checks configurable to lower code size.
+
+POSSIBLE TODOS
+     - Implement flString.h instead of string.h
+     - Get sprites to rotate using gum (Maybe, if faster).
+     - Add 2d model module (shapes).
+     - Add defines for multi-platform support and comments on where to implement for future use.
+     - Vector fonts and converting bitmap/debug fonts into vector fonts.
+     - Add corridor mapping module.
+
+SCRAPPED TODOS
+     - Add an option to enable prefixing of function names (maybe just macros).
+     - Add pgf font support.
+     - Write an improved graphics.c wrapper.
+     - Write a font.c wrapper.
+     - Write a sprite.c wrapper.
+
+Release as a library, so that source doesn't have to be released until required.

@@ -1,0 +1,529 @@
+\section{fl\-Math.c File Reference}
+\label{flMath_8c}\index{flMath.c@{flMath.c}}
+{\tt \#include \char`\"{}fl\-Global.h\char`\"{}}\par
+{\tt \#include $<$stdlib.h$>$}\par
+{\tt \#include $<$stdio.h$>$}\par
+{\tt \#include $<$math.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf math\-Init} ()
+\begin{CompactList}\small\item\em This is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}, it initializes the maths system, by seeding the random number generator and if trigcaching is used then it creates the cache. \item\end{CompactList}\item 
+void {\bf math\-Rand\-Seed} (u32 in\-Seed)
+\begin{CompactList}\small\item\em This function reseeds the random number generator. \item\end{CompactList}\item 
+float {\bf math\-Randf} (float in\-Size)
+\begin{CompactList}\small\item\em This function returns a pseudo random number between 0 and in\-Size. \item\end{CompactList}\item 
+float {\bf math\-Rand\-Fractf} ()
+\begin{CompactList}\small\item\em This function returns a pseudo random number between 0 and 1. \item\end{CompactList}\item 
+unsigned int {\bf math\-Randi} (unsigned int in\-Size)
+\begin{CompactList}\small\item\em This function returns a pseudo random integer between 0 and in\-Size - 1, for example math\-Randi(10) would return a number from 0 to 9. \item\end{CompactList}\item 
+s64 {\bf math\-Randl} (s64 in\-Size)
+\begin{CompactList}\small\item\em This function returns a pseudo random integer between 0 and in\-Size - 1, this function is the same as \doxyref{math\-Randi()}{p.}{flMath_8c_c03044f1144d8073f884520ab609d77e} however it uses double accuracy signed integers. \item\end{CompactList}\item 
+float {\bf math\-Fix\-Deg\-Range} (float in\-Deg)
+\begin{CompactList}\small\item\em Fixes numbers to be within the standard range for degrees which is 0 to 360. \item\end{CompactList}\item 
+float {\bf math\-Fix\-Rad\-Range} (float in\-Rad)
+\begin{CompactList}\small\item\em Fixes numbers to be within the standard range for radians which is 0 to 2pi. \item\end{CompactList}\item 
+float {\bf math\-Deg\-To\-Rad} (float in\-Deg)
+\begin{CompactList}\small\item\em Converts a degree value to radians (e.g 180 would return pi). \item\end{CompactList}\item 
+float {\bf math\-Rad\-To\-Deg} (float in\-Rad)
+\begin{CompactList}\small\item\em Converts a radian value to degrees (e.g pi/2 would return 90). \item\end{CompactList}\item 
+float {\bf math\-Sinf} (float in\-Angle)
+\begin{CompactList}\small\item\em This is basically a wrapper for sinf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. \item\end{CompactList}\item 
+float {\bf math\-Cosf} (float in\-Angle)
+\begin{CompactList}\small\item\em This is basically a wrapper for cosf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. \item\end{CompactList}\item 
+float {\bf math\-ACosf} (float in\-Angle)
+\begin{CompactList}\small\item\em This is basically a wrapper for acosf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. \item\end{CompactList}\item 
+float {\bf math\-ATanf} (float in\-Angle)
+\begin{CompactList}\small\item\em This is basically a wrapper for atanf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. \item\end{CompactList}\item 
+float {\bf math\-Expnf} (float in\-Value)
+\begin{CompactList}\small\item\em This is basically a wrapper for expf from libmath, it returns the natural exponent of a number. \item\end{CompactList}\item 
+float {\bf math\-Lnf} (float in\-Value)
+\begin{CompactList}\small\item\em This is basically a wrapper for logf from libmath, it returns the natural logarithm of a number. \item\end{CompactList}\item 
+float {\bf math\-Pythag2f} (float in\-X, float in\-Y)
+\begin{CompactList}\small\item\em This returns the the square root of in\-X$^\wedge$2 + in\-Y$^\wedge$2. \item\end{CompactList}\item 
+float {\bf math\-Pythag3f} (float in\-X, float in\-Y, float in\-Z)
+\begin{CompactList}\small\item\em This returns the the square root of in\-X$^\wedge$2 + in\-Y$^\wedge$2 + in\-Z$^\wedge$2. \item\end{CompactList}\item 
+float {\bf math\-Dot\-Prod\-N} (float $\ast$in\-Value0, float $\ast$in\-Value1, u8 in\-Count)
+\begin{CompactList}\small\item\em This returns the dot product of in\-Count sets of values. \item\end{CompactList}\item 
+float {\bf math\-Quat\-Length} ({\bf quat4f} in\-Quat)
+\item 
+{\bf quat4f} $\ast$ {\bf math\-Quat\-Normalize} ({\bf quat4f} $\ast$in\-Quat)
+\item 
+{\bf quat4f} {\bf math\-Quat\-Normal} ({\bf quat4f} in\-Quat)
+\item 
+{\bf quat4f} $\ast$ {\bf math\-Quat\-Negate} ({\bf quat4f} $\ast$in\-Quat)
+\item 
+{\bf quat4f} {\bf math\-Quat\-Negation} ({\bf quat4f} in\-Quat)
+\item 
+{\bf quat4f} {\bf math\-Quat\-Mult} ({\bf quat4f} in\-Quat0, {\bf quat4f} in\-Quat1)
+\item 
+{\bf vect3f} {\bf math\-Vect3f\-Rotate} ({\bf vect3f} in\-Vect, {\bf vect3f} in\-Axis, float in\-Angle)
+\begin{CompactList}\small\item\em This function is meant to rotate a direction vector around an axix by in\-Angle. \item\end{CompactList}\item 
+{\bf vect3f} {\bf math\-Vect3f\-Cross\-Prod} ({\bf vect3f} in\-Vect0, {\bf vect3f} in\-Vect1)
+\item 
+float {\bf math\-Vect3f\-Length} ({\bf vect3f} in\-Vect)
+\item 
+{\bf vect3f} $\ast$ {\bf math\-Vect3f\-Normalize} ({\bf vect3f} $\ast$in\-Vect)
+\item 
+{\bf vect3f} {\bf math\-Vect3f\-Normal} ({\bf vect3f} in\-Vect)
+\end{CompactItemize}
+
+
+\subsection{Function Documentation}
+\index{flMath.c@{fl\-Math.c}!mathACosf@{mathACosf}}
+\index{mathACosf@{mathACosf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-ACosf (float {\em in\-Angle})}\label{flMath_8c_afdfebe0062fa920a9d4e4a7791af5ff}
+
+
+This is basically a wrapper for acosf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Angle}]The angle whose arc-cosine will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The arc-cosine of in\-Angle. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MATH\_\-VFPU}{p.}{flConfigValidate_8h_4f5459716e8b74a4e5127a0b8006de98} \end{Desc}
+
+
+Definition at line 249 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathATanf@{mathATanf}}
+\index{mathATanf@{mathATanf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-ATanf (float {\em in\-Angle})}\label{flMath_8c_68b697bb38ee56c6d6dbab3d4a4f0bca}
+
+
+This is basically a wrapper for atanf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Angle}]The angle whose arc-tangent will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The arc-tangent of in\-Angle. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MATH\_\-VFPU}{p.}{flConfigValidate_8h_4f5459716e8b74a4e5127a0b8006de98} \end{Desc}
+\begin{Desc}
+\item[Warning:]A VFPU version of this function has not yet been written. \end{Desc}
+
+
+Definition at line 266 of file fl\-Math.c.
+
+Referenced by sprite\-Draw2d\-Frame().\index{flMath.c@{fl\-Math.c}!mathCosf@{mathCosf}}
+\index{mathCosf@{mathCosf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Cosf (float {\em in\-Angle})}\label{flMath_8c_41271ed579db553404e244d281da8208}
+
+
+This is basically a wrapper for cosf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Angle}]The angle whose cosine will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The cosine of in\-Angle. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MATH\_\-VFPU}{p.}{flConfigValidate_8h_4f5459716e8b74a4e5127a0b8006de98} \end{Desc}
+
+
+Definition at line 222 of file fl\-Math.c.
+
+Referenced by cam\-Move\-Strafe(), cam\-View\-Calc(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), graphics2d\-Draw\-Spheroid\-Shaded(), graphics3d\-Draw\-Sphere(), graphics3d\-Draw\-Sphere\-Textured(), and sprite\-Draw2d\-Frame().\index{flMath.c@{fl\-Math.c}!mathDegToRad@{mathDegToRad}}
+\index{mathDegToRad@{mathDegToRad}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Deg\-To\-Rad (float {\em in\-Deg})}\label{flMath_8c_a194a0354f586d691c21d2277ce551b6}
+
+
+Converts a degree value to radians (e.g 180 would return pi). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Deg}]The degree value that is to be converted. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The equivalent angle in radians. \end{Desc}
+
+
+Definition at line 157 of file fl\-Math.c.
+
+References MATH\_\-PI, and math\-Fix\-Deg\-Range().\index{flMath.c@{fl\-Math.c}!mathDotProdN@{mathDotProdN}}
+\index{mathDotProdN@{mathDotProdN}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Dot\-Prod\-N (float $\ast$ {\em in\-Value0}, float $\ast$ {\em in\-Value1}, u8 {\em in\-Count})}\label{flMath_8c_bd0715795941d834028df0f93af76ecf}
+
+
+This returns the dot product of in\-Count sets of values. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Value0}]An array of floats of length in\-Count to be dotted with in\-Value1. \item[{\em in\-Value1}]An array of floats of length in\-Count to be dotted with in\-Value0. \item[{\em in\-Count}]The number of elements in the arrays passed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The dot product of in\-Value0 and in\-Value1. \end{Desc}
+
+
+Definition at line 369 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathExpnf@{mathExpnf}}
+\index{mathExpnf@{mathExpnf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Expnf (float {\em in\-Value})}\label{flMath_8c_6f3ddd0e975804563b82259ed3c9ae07}
+
+
+This is basically a wrapper for expf from libmath, it returns the natural exponent of a number. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Value}]The value whose natural exponent will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The natural exponent of in\-Value. \end{Desc}
+
+
+Definition at line 284 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathFixDegRange@{mathFixDegRange}}
+\index{mathFixDegRange@{mathFixDegRange}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Fix\-Deg\-Range (float {\em in\-Deg})\hspace{0.3cm}{\tt  [inline]}}\label{flMath_8c_a72b97e2a4182c8f53a4d82c35b6b44f}
+
+
+Fixes numbers to be within the standard range for degrees which is 0 to 360. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Deg}]The value whose range needs to be fixed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The fixed range version of in\-Deg (e.g if in\-Deg = 370, 10 is returned). \end{Desc}
+
+
+Definition at line 141 of file fl\-Math.c.
+
+Referenced by math\-Deg\-To\-Rad().\index{flMath.c@{fl\-Math.c}!mathFixRadRange@{mathFixRadRange}}
+\index{mathFixRadRange@{mathFixRadRange}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Fix\-Rad\-Range (float {\em in\-Rad})\hspace{0.3cm}{\tt  [inline]}}\label{flMath_8c_c339c07cf89060e7fbf6ce4bdf413da1}
+
+
+Fixes numbers to be within the standard range for radians which is 0 to 2pi. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Rad}]The value whose range needs to be fixed. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The fixed range version of in\-Rad (e.g if in\-Deg = 3pi, 1pi is returned). \end{Desc}
+
+
+Definition at line 149 of file fl\-Math.c.
+
+References MATH\_\-PI.
+
+Referenced by math\-Rad\-To\-Deg().\index{flMath.c@{fl\-Math.c}!mathInit@{mathInit}}
+\index{mathInit@{mathInit}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void math\-Init ()}\label{flMath_8c_421354ce8df4cc1419efa1510f291fc4}
+
+
+This is called by \doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08}, it initializes the maths system, by seeding the random number generator and if trigcaching is used then it creates the cache. 
+
+\begin{Desc}
+\item[See also:]\doxyref{fl\-Initialize()}{p.}{funcLib_8c_77803041c232261f158b071f587b9d08} \end{Desc}
+
+
+Definition at line 25 of file fl\-Math.c.
+
+References math\-Rand\-Seed().
+
+Referenced by fl\-Initialize().\index{flMath.c@{fl\-Math.c}!mathLnf@{mathLnf}}
+\index{mathLnf@{mathLnf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Lnf (float {\em in\-Value})}\label{flMath_8c_86fbe34418ff265a3c02d0bee14a47e4}
+
+
+This is basically a wrapper for logf from libmath, it returns the natural logarithm of a number. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Value}]The value whose natural logarithm will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The natural logarithm of in\-Value. \end{Desc}
+
+
+Definition at line 301 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathPythag2f@{mathPythag2f}}
+\index{mathPythag2f@{mathPythag2f}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Pythag2f (float {\em in\-X}, float {\em in\-Y})}\label{flMath_8c_4b49362dad111bc56729d74cb5fd5bf5}
+
+
+This returns the the square root of in\-X$^\wedge$2 + in\-Y$^\wedge$2. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-X}]The length of side A of a right angle triangle. \item[{\em in\-Y}]The length of side B of a right angle triangle. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The length of side C of a right angle triangle. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{math\-Pythag2f}{p.}{flMath_8h_4b49362dad111bc56729d74cb5fd5bf5} \end{Desc}
+
+
+Definition at line 332 of file fl\-Math.c.
+
+Referenced by sprite\-Draw2d\-Frame().\index{flMath.c@{fl\-Math.c}!mathPythag3f@{mathPythag3f}}
+\index{mathPythag3f@{mathPythag3f}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Pythag3f (float {\em in\-X}, float {\em in\-Y}, float {\em in\-Z})}\label{flMath_8c_1012b701c3d5aed06e8128a7d042ece7}
+
+
+This returns the the square root of in\-X$^\wedge$2 + in\-Y$^\wedge$2 + in\-Z$^\wedge$2. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-X}]Size 0. \item[{\em in\-Y}]Side 1. \item[{\em in\-Z}]Side 2 \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Side 3. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{math\-Pythag3f}{p.}{flMath_8h_1012b701c3d5aed06e8128a7d042ece7} \end{Desc}
+
+
+Definition at line 349 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathQuatLength@{mathQuatLength}}
+\index{mathQuatLength@{mathQuatLength}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Quat\-Length ({\bf quat4f} {\em in\-Quat})}\label{flMath_8c_5d9321270cdb84c9f88e0461708d8dc5}
+
+
+
+
+Definition at line 392 of file fl\-Math.c.
+
+Referenced by math\-Quat\-Normalize().\index{flMath.c@{fl\-Math.c}!mathQuatMult@{mathQuatMult}}
+\index{mathQuatMult@{mathQuatMult}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf quat4f} math\-Quat\-Mult ({\bf quat4f} {\em in\-Quat0}, {\bf quat4f} {\em in\-Quat1})}\label{flMath_8c_a86fe39666ae952e832ac0a093b4df6f}
+
+
+
+
+Definition at line 464 of file fl\-Math.c.
+
+Referenced by math\-Vect3f\-Rotate().\index{flMath.c@{fl\-Math.c}!mathQuatNegate@{mathQuatNegate}}
+\index{mathQuatNegate@{mathQuatNegate}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf quat4f}$\ast$ math\-Quat\-Negate ({\bf quat4f} $\ast$ {\em in\-Quat})}\label{flMath_8c_460315fea4d23576f80a98ce0d12352e}
+
+
+
+
+Definition at line 450 of file fl\-Math.c.
+
+Referenced by math\-Quat\-Negation(), and math\-Vect3f\-Rotate().\index{flMath.c@{fl\-Math.c}!mathQuatNegation@{mathQuatNegation}}
+\index{mathQuatNegation@{mathQuatNegation}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf quat4f} math\-Quat\-Negation ({\bf quat4f} {\em in\-Quat})}\label{flMath_8c_185417e3d7791f94c3e57c6f99bcffae}
+
+
+
+
+Definition at line 458 of file fl\-Math.c.
+
+References math\-Quat\-Negate().\index{flMath.c@{fl\-Math.c}!mathQuatNormal@{mathQuatNormal}}
+\index{mathQuatNormal@{mathQuatNormal}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf quat4f} math\-Quat\-Normal ({\bf quat4f} {\em in\-Quat})}\label{flMath_8c_83e6d2f465c7c6cd290e2b1cfd29f8fb}
+
+
+
+
+Definition at line 444 of file fl\-Math.c.
+
+References math\-Quat\-Normalize().\index{flMath.c@{fl\-Math.c}!mathQuatNormalize@{mathQuatNormalize}}
+\index{mathQuatNormalize@{mathQuatNormalize}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf quat4f}$\ast$ math\-Quat\-Normalize ({\bf quat4f} $\ast$ {\em in\-Quat})}\label{flMath_8c_d4c0081f8f2d0c13addda251b29fb7bf}
+
+
+
+
+Definition at line 415 of file fl\-Math.c.
+
+References math\-Quat\-Length().
+
+Referenced by math\-Quat\-Normal().\index{flMath.c@{fl\-Math.c}!mathRadToDeg@{mathRadToDeg}}
+\index{mathRadToDeg@{mathRadToDeg}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Rad\-To\-Deg (float {\em in\-Rad})}\label{flMath_8c_6430e8fbb4f288ca1f6345a61b1b925f}
+
+
+Converts a radian value to degrees (e.g pi/2 would return 90). 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Rad}]The radian value that is to be converted. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The equivalent angle in degrees. \end{Desc}
+
+
+Definition at line 176 of file fl\-Math.c.
+
+References MATH\_\-PI, and math\-Fix\-Rad\-Range().\index{flMath.c@{fl\-Math.c}!mathRandf@{mathRandf}}
+\index{mathRandf@{mathRandf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Randf (float {\em in\-Size})}\label{flMath_8c_7633ee877f8d868c082f2c464ae1eaa3}
+
+
+This function returns a pseudo random number between 0 and in\-Size. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]The range of the random number returned. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pseudo-random number between 0 and in\-Size. \end{Desc}
+
+
+Definition at line 50 of file fl\-Math.c.
+
+References FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY.\index{flMath.c@{fl\-Math.c}!mathRandFractf@{mathRandFractf}}
+\index{mathRandFractf@{mathRandFractf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Rand\-Fractf ()}\label{flMath_8c_07922167d7565fc47c6a92c7b0e4e29a}
+
+
+This function returns a pseudo random number between 0 and 1. 
+
+\begin{Desc}
+\item[Returns:]Pseudo-random number between 0 and 1. \end{Desc}
+
+
+Definition at line 80 of file fl\-Math.c.
+
+References FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY.\index{flMath.c@{fl\-Math.c}!mathRandi@{mathRandi}}
+\index{mathRandi@{mathRandi}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int math\-Randi (unsigned int {\em in\-Size})}\label{flMath_8c_c03044f1144d8073f884520ab609d77e}
+
+
+This function returns a pseudo random integer between 0 and in\-Size - 1, for example math\-Randi(10) would return a number from 0 to 9. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]One more than the maximum integer that will be returned. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pseudo-random integer between 0 and in\-Size - 1. \end{Desc}
+
+
+Definition at line 108 of file fl\-Math.c.
+
+References FL\_\-MATH\_\-RANDOMSEED\_\-FREQUENCY.
+
+Referenced by color\-Random8888(), and math\-Randl().\index{flMath.c@{fl\-Math.c}!mathRandl@{mathRandl}}
+\index{mathRandl@{mathRandl}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}s64 math\-Randl (s64 {\em in\-Size})}\label{flMath_8c_ecf97c30dcf0e606e45e6ff9a4d61894}
+
+
+This function returns a pseudo random integer between 0 and in\-Size - 1, this function is the same as \doxyref{math\-Randi()}{p.}{flMath_8c_c03044f1144d8073f884520ab609d77e} however it uses double accuracy signed integers. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Size}]One more than the maximum integer that will be returned. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Pseudo-random integer between 0 and in\-Size - 1. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{math\-Randi()}{p.}{flMath_8c_c03044f1144d8073f884520ab609d77e} \end{Desc}
+
+
+Definition at line 135 of file fl\-Math.c.
+
+References math\-Randi().\index{flMath.c@{fl\-Math.c}!mathRandSeed@{mathRandSeed}}
+\index{mathRandSeed@{mathRandSeed}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void math\-Rand\-Seed (u32 {\em in\-Seed})}\label{flMath_8c_ca109f10dc7dc3a808c2fb310d094d8c}
+
+
+This function reseeds the random number generator. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Seed}]The seed to use for random number generation. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{math\-Randf()}{p.}{flMath_8c_7633ee877f8d868c082f2c464ae1eaa3}, \doxyref{math\-Rand\-Fractf()}{p.}{flMath_8c_07922167d7565fc47c6a92c7b0e4e29a}, \doxyref{math\-Randi()}{p.}{flMath_8c_c03044f1144d8073f884520ab609d77e}, \doxyref{math\-Randl()}{p.}{flMath_8c_ecf97c30dcf0e606e45e6ff9a4d61894} \end{Desc}
+
+
+Definition at line 35 of file fl\-Math.c.
+
+Referenced by math\-Init().\index{flMath.c@{fl\-Math.c}!mathSinf@{mathSinf}}
+\index{mathSinf@{mathSinf}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Sinf (float {\em in\-Angle})}\label{flMath_8c_3a36ab8e2194babab47ff2a167045eb0}
+
+
+This is basically a wrapper for sinf from libmath, however if FL\_\-MATH\_\-VFPU is enabled then it will use the VFPU ro speed up the process. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Angle}]The angle whose sine will be calculated. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The sine of in\-Angle. \end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{FL\_\-MATH\_\-VFPU}{p.}{flConfigValidate_8h_4f5459716e8b74a4e5127a0b8006de98} \end{Desc}
+
+
+Definition at line 195 of file fl\-Math.c.
+
+Referenced by cam\-Move\-Strafe(), cam\-View\-Calc(), graphics2d\-Draw\-Ellipse(), graphics2d\-Draw\-Ellipse\-Filled\-Grad(), graphics2d\-Draw\-Spheroid\-Shaded(), graphics3d\-Draw\-Sphere(), graphics3d\-Draw\-Sphere\-Textured(), and sprite\-Draw2d\-Frame().\index{flMath.c@{fl\-Math.c}!mathVect3fCrossProd@{mathVect3fCrossProd}}
+\index{mathVect3fCrossProd@{mathVect3fCrossProd}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} math\-Vect3f\-Cross\-Prod ({\bf vect3f} {\em in\-Vect0}, {\bf vect3f} {\em in\-Vect1})}\label{flMath_8c_62c2f89019b529ea9195fc079a3747e5}
+
+
+
+
+Definition at line 569 of file fl\-Math.c.\index{flMath.c@{fl\-Math.c}!mathVect3fLength@{mathVect3fLength}}
+\index{mathVect3fLength@{mathVect3fLength}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}float math\-Vect3f\-Length ({\bf vect3f} {\em in\-Vect})}\label{flMath_8c_b0e862d275d6eeec712974c8a1d61380}
+
+
+
+
+Definition at line 604 of file fl\-Math.c.
+
+Referenced by math\-Vect3f\-Normalize().\index{flMath.c@{fl\-Math.c}!mathVect3fNormal@{mathVect3fNormal}}
+\index{mathVect3fNormal@{mathVect3fNormal}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} math\-Vect3f\-Normal ({\bf vect3f} {\em in\-Vect})}\label{flMath_8c_ee1701de9eaa0821f9c912bc10f8b853}
+
+
+
+
+Definition at line 649 of file fl\-Math.c.
+
+References math\-Vect3f\-Normalize().\index{flMath.c@{fl\-Math.c}!mathVect3fNormalize@{mathVect3fNormalize}}
+\index{mathVect3fNormalize@{mathVect3fNormalize}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f}$\ast$ math\-Vect3f\-Normalize ({\bf vect3f} $\ast$ {\em in\-Vect})}\label{flMath_8c_eeb976df1dc67db8db3805832249cb36}
+
+
+
+
+Definition at line 624 of file fl\-Math.c.
+
+References math\-Vect3f\-Length().
+
+Referenced by math\-Vect3f\-Normal().\index{flMath.c@{fl\-Math.c}!mathVect3fRotate@{mathVect3fRotate}}
+\index{mathVect3fRotate@{mathVect3fRotate}!flMath.c@{fl\-Math.c}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf vect3f} math\-Vect3f\-Rotate ({\bf vect3f} {\em in\-Vect}, {\bf vect3f} {\em in\-Axis}, float {\em in\-Angle})}\label{flMath_8c_0993e187b4a98a53e918887b26aa0eb6}
+
+
+This function is meant to rotate a direction vector around an axix by in\-Angle. 
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em in\-Vect}]The vector to be rotated. \item[{\em in\-Axis}]The axis to rotate around. \item[{\em in\-Angle}]The angle to rotate by. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The rotated vector. \end{Desc}
+\begin{Desc}
+\item[Warning:]This function doesn't seem to work. \end{Desc}
+
+
+Definition at line 523 of file fl\-Math.c.
+
+References math\-Quat\-Mult(), and math\-Quat\-Negate().
